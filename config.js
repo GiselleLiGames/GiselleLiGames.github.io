@@ -174,16 +174,16 @@ const CONFIG = {
       category: 'shader',
       group: 'art',
       hasVideo: true,
-      image: 'assets/uploads/previews/lycirus-shader.webp',
-      title: { en: 'Lycirus Shader Iteration', zh: 'Lycirus Shader 迭代' },
+      image: 'assets/uploads/previews/lycorius-shader.webp',
+      title: { en: 'Lycorius Shader Iteration', zh: 'Lycorius Shader 迭代' },
       desc:  {
-        en: 'An iterative shader study for Lycirus, exploring stylized surface response and presentation polish.',
-        zh: '围绕 Lycirus 的 Shader 迭代研究，探索风格化表面响应与展示效果。',
+        en: 'An iterative shader study for Lycorius, exploring stylized surface response and presentation polish.',
+        zh: '围绕 Lycorius 的 Shader 迭代研究，探索风格化表面响应与展示效果。',
       },
       tags: ['Shader', 'Iteration'],
       pdf: 'assets/uploads/Project2_Compressed.pdf',
       links: [
-        { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/LycirusShader迭代.mp4' },
+        { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/LycoriusShader迭代.mp4' },
       ],
     },
     {

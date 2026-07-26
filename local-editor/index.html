@@ -264,6 +264,45 @@
   @media (max-width: 760px) { .work-layout-editor { grid-template-columns:1fr; } }
 
   /* ── Divider ── */
+  .visual-layout-toolbar { position:sticky; top:0; z-index:12; display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px; padding:12px; border:1px solid var(--border2); border-radius:10px; background:rgba(17,17,17,.96); box-shadow:0 8px 28px rgba(0,0,0,.35); backdrop-filter:blur(12px); }
+  .visual-toolbar-title { min-width:150px; margin-right:auto; }
+  .visual-toolbar-title b { display:block; color:var(--text); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .visual-toolbar-title span { color:var(--text-muted); font-size:10px; }
+  .visual-control-group { display:flex; align-items:center; gap:4px; padding-left:8px; border-left:1px solid var(--border); }
+  .visual-control-group > span { margin-right:3px; color:var(--text-muted); font-size:10px; }
+  .visual-control-group button { min-width:34px; padding:5px 7px; border:1px solid var(--border2); border-radius:5px; background:var(--bg3); color:var(--text-muted); font-size:10px; cursor:pointer; }
+  .visual-control-group button:hover,.visual-control-group button.active { border-color:var(--pink); color:#fff; background:rgba(255,45,117,.16); }
+  .visual-control-group input[type="range"] { width:92px; accent-color:var(--pink); }
+  .visual-layout-help { display:flex; flex-wrap:wrap; gap:14px; margin:0 0 12px; padding:10px 12px; border:1px dashed var(--border2); border-radius:8px; color:var(--text-muted); font-size:11px; }
+  .visual-layout-help b { color:var(--text); font-weight:500; }
+  .visual-layout-canvas { min-height:480px; padding:22px; border:1px solid #4c3524; border-radius:12px; background:radial-gradient(circle at 50% 0,rgba(128,76,30,.15),transparent 35%),#120b08; box-shadow:inset 0 0 50px rgba(0,0,0,.45); }
+  .visual-group { margin-bottom:30px; }
+  .visual-group:last-child { margin-bottom:0; }
+  .visual-group-title { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; margin:0 0 14px; color:#d8aa61; font-family:Georgia,serif; font-size:13px; letter-spacing:.16em; text-align:center; text-transform:uppercase; }
+  .visual-group-title::before,.visual-group-title::after { content:""; height:1px; background:linear-gradient(90deg,transparent,rgba(216,170,97,.55)); }
+  .visual-group-title::after { background:linear-gradient(90deg,rgba(216,170,97,.55),transparent); }
+  .visual-card-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:18px; min-height:70px; }
+  .visual-work-card { position:relative; min-width:0; overflow:hidden; border:1px solid rgba(216,170,97,.42); border-radius:4px; background:#21130d; box-shadow:0 12px 24px rgba(0,0,0,.32); cursor:pointer; transition:border-color .16s,box-shadow .16s,transform .16s; }
+  .visual-work-card:hover { transform:translateY(-2px); border-color:rgba(245,205,129,.75); }
+  .visual-work-card.selected { border-color:var(--pink); box-shadow:0 0 0 2px rgba(255,45,117,.28),0 14px 32px rgba(0,0,0,.45); }
+  .visual-work-card.drag-over { outline:2px dashed var(--pink); outline-offset:3px; }
+  .visual-card-handle { position:absolute; z-index:4; top:8px; left:8px; width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.28); border-radius:5px; background:rgba(0,0,0,.7); color:#fff; cursor:grab; user-select:none; }
+  .visual-card-handle:active { cursor:grabbing; }
+  .visual-work-thumb { position:relative; overflow:hidden; background-color:#080605; background-repeat:no-repeat; touch-action:none; cursor:grab; }
+  .visual-work-thumb.panning { cursor:grabbing; }
+  .visual-focus-dot { position:absolute; width:14px; height:14px; border:2px solid #fff; border-radius:50%; transform:translate(-50%,-50%); box-shadow:0 0 0 2px var(--pink),0 1px 5px #000; pointer-events:none; opacity:0; }
+  .visual-work-card.selected .visual-focus-dot { opacity:1; }
+  .visual-card-resize { position:absolute; z-index:5; right:5px; bottom:5px; width:24px; height:24px; display:grid; place-items:center; border:0; border-radius:4px; background:rgba(0,0,0,.62); color:#f5d59d; cursor:ew-resize; font-size:15px; line-height:1; touch-action:none; }
+  .visual-card-resize:hover { background:var(--pink); color:#fff; }
+
+  .visual-work-info { min-height:86px; padding:13px 15px 14px; border-top:1px solid rgba(216,170,97,.25); background:linear-gradient(90deg,#1b0f0a,#342015,#1b0f0a); }
+  .visual-work-kicker { margin-bottom:6px; color:rgba(216,170,97,.68); font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
+  .visual-work-title { margin:0;color:#f5d59d;font-family:Georgia,serif;font-size:clamp(13px,1.4vw,20px);line-height:1.15; }
+  .visual-work-desc { display:-webkit-box; margin:7px 0 0; overflow:hidden; color:rgba(245,213,157,.58); font-size:10px; line-height:1.45; -webkit-box-orient:vertical; -webkit-line-clamp:2; }
+  .visual-empty-group { grid-column:1/-1; display:grid; place-items:center; min-height:72px; border:1px dashed rgba(216,170,97,.22); color:rgba(216,170,97,.42); font-size:11px; }
+  @media (max-width:900px) { .visual-work-card { grid-column:span 6 !important; }.visual-work-card[data-span="12"],.visual-work-card[data-span="8"] { grid-column:1/-1 !important; }.visual-layout-canvas{padding:14px}.visual-control-group{border-left:0;padding-left:0}.visual-layout-toolbar{position:relative} }
+  @media (max-width:620px) { .visual-work-card { grid-column:1/-1 !important; }.visual-card-grid{gap:14px}.visual-layout-canvas{padding:10px} }
+
   .field-divider { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 
   /* ── Scrollbar ── */
@@ -525,6 +564,9 @@
     </div>
     <div class="nav-item" data-panel="p4" onclick="switchPanel('p4',this)">
       <span class="nav-icon">🎨</span><span>4 作品集</span>
+    </div>
+    <div class="nav-item" data-panel="pLayout" onclick="switchPanel('pLayout',this)">
+      <span class="nav-icon">&#x25A6;</span><span>&#x53EF;&#x89C6;&#x6392;&#x7248;</span>
     </div>
     <div class="nav-divider"></div>
     <div class="nav-item" data-panel="p5" onclick="switchPanel('p5',this)">
@@ -1024,6 +1066,28 @@
       <button class="btn btn-add" onclick="addInterest()">＋ 添加兴趣方向</button>
     </div>
 
+    <div class="panel" id="pLayout">
+      <div class="section-header">
+        <h2>VISUAL LAYOUT</h2>
+        <p>&#x76F4;&#x63A5;&#x62D6;&#x62FD;&#x4F5C;&#x54C1;&#x3001;&#x8C03;&#x6574;&#x5361;&#x7247;&#x5927;&#x5C0F;&#x548C;&#x5C01;&#x9762;&#x53D6;&#x666F;</p>
+      </div>
+      <div class="visual-layout-toolbar" id="visual_layout_toolbar">
+        <div class="visual-toolbar-title"><b id="visual_selected_title">&#x8BF7;&#x9009;&#x62E9;&#x4F5C;&#x54C1;</b><span id="visual_selected_meta">--</span></div>
+        <div class="visual-control-group"><span>&#x5BBD;&#x5EA6;</span>
+          <button type="button" data-visual-span="4" onclick="setVisualWorkSpan(4)">1/3</button><button type="button" data-visual-span="6" onclick="setVisualWorkSpan(6)">1/2</button><button type="button" data-visual-span="8" onclick="setVisualWorkSpan(8)">2/3</button><button type="button" data-visual-span="12" onclick="setVisualWorkSpan(12)">1/1</button>
+        </div>
+        <div class="visual-control-group"><span>&#x753B;&#x5E45;</span>
+          <button type="button" data-visual-aspect="16/7" onclick="setVisualWorkAspect('16/7')">16:7</button><button type="button" data-visual-aspect="16/9" onclick="setVisualWorkAspect('16/9')">16:9</button><button type="button" data-visual-aspect="4/3" onclick="setVisualWorkAspect('4/3')">4:3</button><button type="button" data-visual-aspect="1/1" onclick="setVisualWorkAspect('1/1')">1:1</button>
+        </div>
+        <div class="visual-control-group"><span>&#x5BF9;&#x9F50;</span><button type="button" data-visual-align="left" onclick="setVisualTextAlign('left')">&#x5DE6;</button><button type="button" data-visual-align="center" onclick="setVisualTextAlign('center')">&#x4E2D;</button></div>
+        <div class="visual-control-group"><span>&#x7F29;&#x653E;</span><input id="visual_zoom" type="range" min="100" max="220" value="100" oninput="setVisualCoverZoom(this.value,false)" onchange="snapshot()"><b id="visual_zoom_value" style="min-width:36px;font-size:10px;color:var(--text);">100%</b></div>
+        <button class="btn btn-ghost" type="button" onclick="resetVisualCover()">&#x91CD;&#x7F6E;&#x53D6;&#x666F;</button>
+      </div>
+      <div class="visual-layout-help"><span><b>&#x22EE;&#x22EE;</b> &#x62D6;&#x52A8;&#x5361;&#x7247;&#x6362;&#x4F4D;</span><span><b>&#x62D6;&#x52A8;&#x56FE;&#x7247;</b> &#x8C03;&#x6574;&#x5C01;&#x9762;&#x53D6;&#x666F;</span><span><b>&#x9F20;&#x6807;&#x6EDA;&#x8F6E;</b> &#x653E;&#x5927;&#x6216;&#x7F29;&#x5C0F;</span><span><b>&#x70B9;&#x9009;&#x5361;&#x7247;</b> &#x540E;&#x7528;&#x4E0A;&#x65B9;&#x5DE5;&#x5177;&#x680F;&#x6539;&#x7248;&#x5F0F;</span></div>
+      <div class="visual-layout-canvas" id="visual_layout_canvas"></div>
+    </div>
+
+
     <!-- §4 作品集 -->
     <div class="panel" id="p4">
       <div class="section-header">
@@ -1286,6 +1350,6 @@
   </div>
 </div>
 
-<script src="editor.js?v=20260718b"></script>
+<script src="editor.js?v=20260718d"></script>
 </body>
 </html>

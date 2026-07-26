@@ -13,6 +13,7 @@
 (function () {
   'use strict';
   var _portfolioVideoBound = false;
+  var _portfolioThumbObserver = null;
 
   function _escAttr(v) {
     return String(v || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -110,6 +111,34 @@
     });
   }
 
+  function _hydratePortfolioThumbs() {
+    var thumbs = document.querySelectorAll('[data-bg-image]');
+    if (_portfolioThumbObserver) _portfolioThumbObserver.disconnect();
+
+    function loadThumb(thumb) {
+      var src = thumb.getAttribute('data-bg-image');
+      if (!src) return;
+      thumb.style.backgroundImage = 'url("' + src.replace(/"/g, '\\"') + '")';
+      thumb.removeAttribute('data-bg-image');
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      thumbs.forEach(loadThumb);
+      return;
+    }
+
+    _portfolioThumbObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        loadThumb(entry.target);
+        _portfolioThumbObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '360px 0px' });
+
+    thumbs.forEach(function (thumb) {
+      _portfolioThumbObserver.observe(thumb);
+    });
+  }
   function _t(field, lang) {
     if (!field) return '';
     if (typeof field === 'string') return field;
@@ -178,6 +207,7 @@
         category: w.category || '',
         id: index,
         group: w.group || (w.category === 'tool' ? 'tool' : ((w.category === 'code' || w.category === 'pcg') ? 'project' : 'art')),
+        image: w.image || '',
         bgStyle: bgStyle,
         layout: w.layout || {},
         cover: cover,
@@ -384,7 +414,11 @@
 
     works.forEach(function (w, index) {
       var previewVideo = getPreviewVideoUrl(w.links);
-      var thumbContent = w.bgStyle
+      var cover = w.cover || {};
+      var thumbStyle = 'background-size: ' + (cover.zoom || 100) + '%; background-position: ' + (cover.x == null ? 50 : cover.x) + '% ' + (cover.y == null ? 50 : cover.y) + '%; background-repeat: no-repeat;';
+      var thumbContent = w.image
+        ? '<div class="work-thumb-bg has-image" data-bg-image="' + _escAttr(w.image) + '" style="' + thumbStyle + '" aria-label="' + _escAttr(w.title) + '"></div>'
+        : w.bgStyle
         ? '<div class="work-thumb-bg has-image" style="' + w.bgStyle + '" aria-label="' + _escAttr(w.title) + '"></div>'
         : w.bgText
         ? '<div class="work-thumb-bg" style="' + w.bgStyle + '">' + w.bgText + '</div>'
@@ -441,6 +475,8 @@
       if (targetNo) targetGrid.insertBefore(card, targetNo);
       else targetGrid.appendChild(card);
     });
+
+    _hydratePortfolioThumbs();
 
     if (noResultsProject) noResultsProject.style.display = projectGrid.querySelectorAll('.work-card').length ? 'none' : 'block';
     if (noResultsTool) noResultsTool.style.display = toolGrid.querySelectorAll('.work-card').length ? 'none' : 'block';

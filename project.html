@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="KYUKAO project case study" />
   <title>Project | Hanqing Li - KYUKAO</title>
-  <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260718" />
+  <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260726a" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
     :root {
       --gold: #d7a85f;
       --gold-soft: rgba(226,176,94,.55);
@@ -59,11 +59,12 @@
     .pdf-page img { display: block; width: 100%; height: auto; aspect-ratio: 1590.95/566.22; object-fit: contain; cursor: zoom-in; }
     .pdf-page figcaption { display: flex; justify-content: space-between; gap: 20px; padding: 8px 3px 0; color: rgba(245,213,157,.42); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; }
     .pdf-page figcaption span:first-child { color: var(--gold); }
-    .project-switcher { display: grid; grid-template-columns: 1fr 1fr; margin-top: 68px; border-block: 1px solid var(--gold-dim); }
-    .switch-link { padding: 22px 0; }
+    .project-switcher { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; width: min(720px,100%); margin: 46px auto 0; border: 0; }
+    .switch-link { min-width: 0; display: grid; gap: 4px; padding: 11px 14px; border: 1px solid var(--gold-dim); background: rgba(20,9,5,.42); text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+    .switch-link:hover { border-color: var(--gold-soft); background: rgba(42,19,9,.58); }
     .switch-link:last-child { text-align: right; }
-    .switch-link span { display: block; margin-bottom: 6px; color: var(--muted); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
-    .switch-link strong { font-family: var(--display); font-size: 1.35rem; font-weight: 600; }
+    .switch-link span { display: block; color: var(--muted); font-size: .52rem; line-height: 1.2; letter-spacing: .1em; text-transform: uppercase; }
+    .switch-link strong { display: block; overflow: hidden; color: var(--paper); font-family: var(--display); font-size: clamp(.86rem,1.35vw,1.02rem); font-weight: 600; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
     .lightbox { position: fixed; inset: 0; z-index: 80; display: none; padding: 60px 22px 24px; overflow: auto; background: rgba(0,0,0,.95); }
     .lightbox.open { display: block; }
     .lightbox img { display: block; width: min(1900px,100%); height: auto; margin: auto; }
@@ -85,8 +86,8 @@
       .pdf-page-frame { overflow-x: auto; border-inline: 0; }
       .pdf-page img { width: 960px; max-width: none; }
       .pdf-page figcaption { padding-inline: 16px; }
-      .project-switcher { grid-template-columns: 1fr; }
-      .switch-link:last-child { border-top: 1px solid var(--gold-dim); text-align: left; }
+      .project-switcher { grid-template-columns: 1fr; gap: 8px; width: 100%; margin-top: 36px; }
+      .switch-link:last-child { text-align: left; }
     }
   </style>
 </head>
@@ -103,7 +104,7 @@
   <main class="project-shell" id="projectContent" hidden>
     <section class="video-wrap" id="videoSection" aria-label="Project video">
       <div class="video-label"><span id="videoLabel">Project Film</span><span>Hanqing Li · KYUKAO</span></div>
-      <div class="video-frame"><video id="projectVideo" controls autoplay muted playsinline preload="metadata"></video></div>
+      <div class="video-frame"><video id="projectVideo" controls muted playsinline preload="none"></video></div>
     </section>
     <header class="project-header">
       <div><p class="project-kicker" id="projectKicker">Project Case Study</p><h1 class="project-title" id="projectTitle"></h1></div>
@@ -143,8 +144,8 @@
         setCopy();var title=t(work.title),video=findVideo(work),set=pageSets[work.pdf],zh=lang==='zh';
         document.title=title+' | Hanqing Li - KYUKAO';document.getElementById('projectTitle').textContent=title;document.getElementById('projectDesc').textContent=t(work.desc);
         document.getElementById('tagList').innerHTML=(work.tags||[]).map(function(tag){return'<span class="tag">'+esc(tag)+'</span>';}).join('');
-        if(video){document.getElementById('projectVideo').src=video;}else{document.getElementById('videoSection').hidden=true;}
-        if(set){document.getElementById('openPdf').href=work.pdf;document.getElementById('pdfPages').innerHTML=Array.from({length:set[1]},function(_,i){var p=i+1,src='assets/uploads/pdf-pages/'+set[0]+'/page-'+p+'.webp';return'<figure class="pdf-page"><div class="pdf-page-frame"><img src="'+src+'" alt="'+esc(title)+' - '+(zh?'第 '+p+' 页':'Page '+p)+'" '+(p===1?'fetchpriority="high"':'loading="lazy"')+' /></div><figcaption><span>Page '+String(p).padStart(2,'0')+'</span><span>Original presentation layout</span></figcaption></figure>';}).join('');}else{document.getElementById('documentSection').hidden=true;}
+        if(video){var projectVideo=document.getElementById('projectVideo');projectVideo.src=video;if(work.image)projectVideo.poster=work.image;}else{document.getElementById('videoSection').hidden=true;}
+        if(set){document.getElementById('openPdf').href=work.pdf;document.getElementById('pdfPages').innerHTML=Array.from({length:set[1]},function(_,i){var p=i+1,src='assets/uploads/pdf-pages/'+set[0]+'/page-'+p+'.webp';return'<figure class="pdf-page"><div class="pdf-page-frame"><img src="'+src+'" alt="'+esc(title)+' - '+(zh?'第 '+p+' 页':'Page '+p)+'" '+'loading="lazy" decoding="async"'+' /></div><figcaption><span>Page '+String(p).padStart(2,'0')+'</span><span>Original presentation layout</span></figcaption></figure>';}).join('');}else{document.getElementById('documentSection').hidden=true;}
         document.getElementById('projectSwitcher').innerHTML=switchLink((projectId-1+works.length)%works.length,zh?'上一个项目':'Previous project')+switchLink((projectId+1)%works.length,zh?'下一个项目':'Next project');document.getElementById('projectContent').hidden=false;
       }
       document.getElementById('langButton').addEventListener('click',function(){lang=lang==='zh'?'en':'zh';try{localStorage.setItem('lang',lang);}catch(e){}var url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url.pathname+url.search);render();});

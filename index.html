@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KYUKAO | Portfolio Entry</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;700&display=swap');
+
 
     :root {
       --ink: #1d110c;
@@ -885,7 +885,7 @@
   <iframe class="portfolio-embed" id="portfolioEmbed" data-src="portfolio.html" title="KYUKAO portfolio"></iframe>
   <main class="entry-stage" aria-label="KYUKAO portfolio entrance">
     <div class="video-layer" aria-hidden="true">
-      <video id="openingOne" class="opening-video is-active" src="assets/entry/video/opening-1-ui.mp4" preload="metadata" autoplay playsinline muted></video>
+      <video id="openingOne" class="opening-video is-active" data-src="assets/entry/video/opening-1-ui.mp4" preload="none" playsinline muted></video>
     </div>
 
     <div class="grade" aria-hidden="true"></div>
@@ -954,8 +954,11 @@
     const fallback = document.getElementById('fallback');
     let hasStarted = false;
     let openingOneComplete = false;
+    let openingVideoRequested = false;
     const transitionLeadTime = 0.5;
-    startLayer.classList.add('is-loading');
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const skipOpeningVideo = Boolean((connection && connection.saveData) || window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if (!skipOpeningVideo) startLayer.classList.add('is-loading');
     updateTransitionLabels();
 
     portfolioEmbed.addEventListener('load', () => {
@@ -982,11 +985,9 @@
     };
 
     const showFallback = () => {
-      loadPortfolio();
+      startLayer.classList.remove('is-loading');
+      fallback.textContent = entryLang === 'zh' ? '点击进入作品集' : 'Click to enter portfolio';
       fallback.classList.add('is-visible');
-      brand.classList.add('is-hidden');
-      startLayer.classList.add('is-hidden');
-      window.setTimeout(goToPortfolio, 500);
     };
 
     const playVideo = async (video) => {
@@ -995,6 +996,15 @@
       } catch (error) {
         showFallback();
       }
+    };
+
+    const loadOpeningVideo = () => {
+      if (openingVideoRequested || hasStarted || skipOpeningVideo) return;
+      openingVideoRequested = true;
+      openingOne.src = openingOne.dataset.src;
+      openingOne.load();
+      openingOne.playbackRate = 3;
+      playVideo(openingOne);
     };
 
     openingOne.addEventListener('loadeddata', () => {
@@ -1038,10 +1048,17 @@
       if (event.key === 'Enter' || event.key === ' ') startExperience();
     });
 
-    openingOne.load();
-    openingOne.playbackRate = 3;
-    if (openingOne.readyState >= 2) openingOne.classList.add('is-loaded');
-    playVideo(openingOne);
+    startLayer.addEventListener('pointerenter', loadPortfolio, { once: true, passive: true });
+    startLayer.addEventListener('focus', loadPortfolio, { once: true });
+    startLayer.addEventListener('touchstart', loadPortfolio, { once: true, passive: true });
+
+    if (skipOpeningVideo) {
+      startLayer.classList.remove('is-loading');
+    } else if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadOpeningVideo, { timeout: 800 });
+    } else {
+      window.setTimeout(loadOpeningVideo, 180);
+    }
   </script>
 </body>
 </html>

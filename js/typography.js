@@ -18,7 +18,7 @@ const TYPOGRAPHY = {
 
   /* ── Google Fonts
      Set to '' to disable (use system fonts only)            */
-  googleFonts: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap',
+  googleFonts: '',
 
   /* ── Font Families
      fontBody    : used on home / portfolio / about pages

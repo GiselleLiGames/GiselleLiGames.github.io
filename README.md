@@ -97,6 +97,7 @@ KYUKAO.github.io/
 ├── local-editor/
 │   ├── index.html                  # 可视化编辑器入口
 │   ├── editor.js                   # 编辑器逻辑
+│   ├── server.js                   # 零依赖本地服务器
 │   └── start-editor.bat            # Windows 一键启动
 ├── assets/
 │   ├── entry/                      # 入口页视频、门框、预览图、场景背景

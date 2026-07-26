@@ -171,6 +171,7 @@
         category: w.category,
         id:       index,
         group:    w.group || (w.category === 'tool' ? 'tool' : ((w.category === 'code' || w.category === 'pcg') ? 'project' : 'art')),
+        image:    w.image || '',
         bgStyle:  bgStyle,
         layout:   w.layout || {},
         cover:    cover,

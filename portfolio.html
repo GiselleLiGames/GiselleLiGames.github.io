@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Hanqing Li - KYUKAO</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;700&display=swap');
+
 
     :root {
       --gold: #d7a85f;
@@ -518,7 +518,7 @@
       }
     }
   </style>
-    <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260711e" />
+    <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260726a" />
     <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
     .portfolio-theater .works-section {
@@ -581,6 +581,19 @@
     body.portfolio-theater .work-desc { display: block !important; margin: 9px 0 0 !important; color: rgba(245, 213, 157, .64) !important; font-size: .76rem !important; line-height: 1.58 !important; }
     body.portfolio-theater .work-tags { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; margin-bottom: 10px !important; }
     body.portfolio-theater .work-tag { padding: 4px 7px !important; border: 1px solid rgba(226, 176, 94, .26) !important; color: rgba(245, 213, 157, .68) !important; font-size: .57rem !important; letter-spacing: .07em !important; text-transform: uppercase !important; }
+    /* PCG uses a landscape editorial card; every other project keeps the standard stack. */
+    body.portfolio-theater .work-card[data-category="pcg"] { height: clamp(260px, 34vw, 420px) !important; grid-template-columns: minmax(0, 1.62fr) minmax(220px, .88fr) !important; grid-template-rows: minmax(0, 1fr) !important; }
+    body.portfolio-theater .work-card[data-category="pcg"] .work-thumb { width: 100% !important; height: 100% !important; min-height: 0 !important; aspect-ratio: auto !important; clip-path: polygon(0 7%, 5% 0, 100% 0, 100% 100%, 5% 100%, 0 93%) !important; }
+    body.portfolio-theater .work-card[data-category="pcg"] .work-thumb-bg { background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; }
+    body.portfolio-theater .work-card[data-category="pcg"] .work-info { display: flex !important; flex-direction: column !important; justify-content: center !important; box-sizing: border-box !important; height: 100% !important; min-height: 0 !important; padding: 24px clamp(20px, 2.4vw, 34px) !important; border-top: 0 !important; border-left: 1px solid var(--gold-dim) !important; }
+    @media (max-width: 620px) {
+      body.portfolio-theater .work-card[data-category="pcg"] { height: clamp(220px, 58vw, 300px) !important; grid-template-columns: minmax(0, 1.15fr) minmax(150px, .85fr) !important; grid-template-rows: minmax(0, 1fr) !important; }
+      body.portfolio-theater .work-card[data-category="pcg"] .work-thumb { min-height: 0 !important; aspect-ratio: auto !important; }
+      body.portfolio-theater .work-card[data-category="pcg"] .work-info { min-height: 0 !important; padding: 18px 16px !important; }
+      body.portfolio-theater .work-card[data-category="pcg"] .work-title { font-size: clamp(1rem, 5vw, 1.35rem) !important; }
+      body.portfolio-theater .work-card[data-category="pcg"] .work-desc { font-size: .68rem !important; line-height: 1.45 !important; }
+    }
+
     @media (max-width: 980px) {
       body.portfolio-theater .portfolio-frame { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
       body.portfolio-theater .work-card.is-portfolio-feature { grid-column: 1 / -1 !important; }
@@ -654,9 +667,9 @@
   </footer>
 
   <script src="config.js?v=20260718a"></script>
-  <script src="js/typography.js?v=20260528d"></script>
-  <script src="js/content.js?v=20260718b"></script>
-  <script src="js/i18n.js?v=20260718b"></script>
+  <script src="js/typography.js?v=20260726a"></script>
+  <script src="js/content.js?v=20260726a"></script>
+  <script src="js/i18n.js?v=20260726a"></script>
   <script src="assets/entry/scene-background.js?v=20260711"></script>
   <script>
     var revealObserver = new IntersectionObserver(function (entries) {
