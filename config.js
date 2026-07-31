@@ -302,12 +302,12 @@ const CONFIG = {
           zh: '<strong>美术资产沟通与迭代：</strong>与 CP 方沟通制作效果所需的美术资产，审核交付内容并提出打回修改意见，推动后续迭代。',
         },
         {
-          en: '<strong>AI Pipeline & Automated Testing:</strong> Engineered a multi-agent collaborative workflow to automate Python-based TA tool generation.',
-          zh: '<strong>AI 流水线与自动化测试：</strong>构建多智能体协作工作流，通过 MCP 实现 Python TA 工具的自动生成、测试与验证。',
+          en: '<strong>Python TA Tool Development & Testing:</strong> Developed Python-based TA tools and established repeatable testing and verification workflows.',
+          zh: '<strong>Python TA 工具开发与测试：</strong>开发 Python TA 工具，并建立规范化的测试与验证流程。',
         },
         {
-          en: '<strong>AI-to-Character Animation Pipeline:</strong> Architected an end-to-end pipeline from AI video generation to project-ready character animation; increased production efficiency by 80%.',
-          zh: '<strong>AI 转角色动画流水线：</strong>构建从 AI 视频生成到可用角色动画的端到端流水线，自研重定向工具集，生产效率提升 80%。',
+          en: '<strong>Video-to-Character Animation Pipeline:</strong> Architected an end-to-end pipeline from source video to project-ready character animation; increased production efficiency by 80%.',
+          zh: '<strong>视频转角色动画流水线：</strong>构建从视频素材到可用角色动画的端到端流水线，自研重定向工具集，生产效率提升 80%。',
         },
       ],
     },
@@ -455,8 +455,8 @@ const CONFIG = {
           zh: '<strong>视觉设计与 Shader：</strong>设计高冲击力的敌人外观，并实现自定义恐怖主题着色器。',
         },
         {
-          en: '<strong>Enemy AI Programming:</strong> Programmed enemy AI behaviors (detection, pursuit, ambush) in Unity C#.',
-          zh: '<strong>敌人 AI 编程：</strong>在 Unity C# 中编程实现敌人 AI 行为（探测、追击、伏击）。',
+          en: '<strong>Enemy Behavior Programming:</strong> Programmed enemy detection, pursuit, and ambush behaviors in Unity C#.',
+          zh: '<strong>敌人行为编程：</strong>在 Unity C# 中实现敌人的探测、追击与伏击行为。',
         },
       ],
     },
