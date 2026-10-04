@@ -1,4 +1,4 @@
-# Agent Reference - KYUKAO Portfolio
+# Agent Reference - GiselleLi Portfolio
 
 给接手本项目的前端 Agent 使用的速查文档。项目是纯静态站点，没有构建步骤。
 
@@ -68,7 +68,7 @@ typography.js      # 读取 TYPOGRAPHY，注入 CSS
 
 ```javascript
 const CONFIG = {
-  name: { en: 'Hanqing Li', zh: '李涵清', alias: 'KYUKAO' },
+  name: { en: 'Hanqing Li', zh: '李涵清', alias: 'GiselleLi' },
   role: { en: 'Technical Artist · Game Creator', zh: '技术美术师 · 游戏创作者' },
   location: { en: 'Shanghai, China', zh: '中国 · 上海' },
   contact: { email, github, artstation, linkedin, tel },

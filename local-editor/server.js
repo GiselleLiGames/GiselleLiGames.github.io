@@ -66,6 +66,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, '127.0.0.1', () => {
-  console.log(`KYUKAO local editor: http://localhost:${port}/local-editor/`);
+  console.log(`GiselleLi local editor: http://localhost:${port}/local-editor/`);
   console.log('Keep this window open while editing. Press Ctrl+C to stop.');
 });

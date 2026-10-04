@@ -17,7 +17,7 @@ const CONFIG = {
   name: {
     en: 'Hanqing Li',
     zh: '李涵清',
-    alias: 'KYUKAO',
+    alias: 'GiselleLi',
   },
 
   role: {
@@ -47,7 +47,7 @@ const CONFIG = {
 
   contact: {
     email:      'kyuandart@gmail.com',
-    github:     'https://kyukao.github.io/index.html',
+    github:     'https://GiselleLi.github.io/index.html',
     artstation: 'N/A',
     linkedin:   'https://www.linkedin.com/in/hanqing-li-000069223',
     tel:        '13061878150',
@@ -62,7 +62,7 @@ const CONFIG = {
 
   home: {
     subtitle: {
-      en: 'Technical Artist · <span style="color:var(--pink)">Kyukao</span>',
+      en: 'Technical Artist · <span style="color:var(--pink)">GiselleLi</span>',
       zh: '技术美术师 · <span style="color:var(--pink)">九十九</span>',
     },
 

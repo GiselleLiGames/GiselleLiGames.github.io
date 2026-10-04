@@ -56,7 +56,7 @@ const TYPOGRAPHY = {
   labelSize:      '0.70rem',
   labelSpacing:   '0.30em',
 
-  /* ── Hero Title (home page big KYUKAO text)              */
+  /* ── Hero Title (home page big GiselleLi text)              */
   heroTitleSize:    'clamp(3.5rem, 10vw, 9rem)',
   heroTitleWeight:  '800',
   heroTitleSpacing: '0.08em',

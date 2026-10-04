@@ -1,4 +1,4 @@
-# KYUKAO Portfolio
+# GiselleLi Portfolio
 
 一个纯静态个人作品集网站，包含开场入口、作品集、简历、关于、联系页，以及用于维护内容的本地可视化编辑器。
 
@@ -81,7 +81,7 @@ assets/entry/*          # 入口页和场景背景资源
 ## 项目结构
 
 ```text
-KYUKAO.github.io/
+GiselleLi.github.io/
 ├── index.html                      # 开场入口（GitHub Pages 默认入口）
 ├── menu.html                       # 静态快速菜单
 ├── home.html                       # 主页

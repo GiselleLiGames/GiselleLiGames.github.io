@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="KYUKAO project case study" />
-  <title>Project | Hanqing Li - KYUKAO</title>
+  <meta name="description" content="GiselleLi project case study" />
+  <title>Project | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260726a" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
@@ -95,7 +95,7 @@
   <div class="page-grade" aria-hidden="true"></div>
   <div class="read-progress" id="readProgress" aria-hidden="true"></div>
   <nav class="top-nav" aria-label="Project navigation">
-    <a class="nav-logo" href="index.html">KYUKAO</a>
+    <a class="nav-logo" href="index.html">GiselleLi</a>
     <div class="nav-actions">
       <a class="nav-back" id="backLink" href="portfolio.html">← <span id="backLabel">作品集</span></a>
       <button class="lang-button" id="langButton" type="button" aria-label="Switch language">EN</button>
@@ -103,7 +103,7 @@
   </nav>
   <main class="project-shell" id="projectContent" hidden>
     <section class="video-wrap" id="videoSection" aria-label="Project video">
-      <div class="video-label"><span id="videoLabel">Project Film</span><span>Hanqing Li · KYUKAO</span></div>
+      <div class="video-label"><span id="videoLabel">Project Film</span><span>Hanqing Li · GiselleLi</span></div>
       <div class="video-frame"><video id="projectVideo" controls muted playsinline preload="none"></video></div>
     </section>
     <header class="project-header">
@@ -142,7 +142,7 @@
       function render(){
         if(!work){document.getElementById('projectError').style.display='block';return;}
         setCopy();var title=t(work.title),video=findVideo(work),set=pageSets[work.pdf],zh=lang==='zh';
-        document.title=title+' | Hanqing Li - KYUKAO';document.getElementById('projectTitle').textContent=title;document.getElementById('projectDesc').textContent=t(work.desc);
+        document.title=title+' | Hanqing Li - GiselleLi';document.getElementById('projectTitle').textContent=title;document.getElementById('projectDesc').textContent=t(work.desc);
         document.getElementById('tagList').innerHTML=(work.tags||[]).map(function(tag){return'<span class="tag">'+esc(tag)+'</span>';}).join('');
         if(video){var projectVideo=document.getElementById('projectVideo');projectVideo.src=video;if(work.image)projectVideo.poster=work.image;}else{document.getElementById('videoSection').hidden=true;}
         if(set){document.getElementById('openPdf').href=work.pdf;document.getElementById('pdfPages').innerHTML=Array.from({length:set[1]},function(_,i){var p=i+1,src='assets/uploads/pdf-pages/'+set[0]+'/page-'+p+'.webp';return'<figure class="pdf-page"><div class="pdf-page-frame"><img src="'+src+'" alt="'+esc(title)+' - '+(zh?'第 '+p+' 页':'Page '+p)+'" '+'loading="lazy" decoding="async"'+' /></div><figcaption><span>Page '+String(p).padStart(2,'0')+'</span><span>Original presentation layout</span></figcaption></figure>';}).join('');}else{document.getElementById('documentSection').hidden=true;}
