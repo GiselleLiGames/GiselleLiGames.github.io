@@ -1566,11 +1566,13 @@ body.resume-scene > header > div span {
 
 /* Shared identity typography across Portfolio, Resume, and About. */
 .portfolio-theater .intro__title,
+body.scene-page h1.page-name,
 body.resume-scene > header h1,
 body.about-scene .hero-name {
   color: var(--scene-paper) !important;
   font-family: var(--scene-display) !important;
-  font-size: clamp(3.6rem, 7vw, 6.5rem) !important;
+  /* One name size for Portfolio, Resume and Contact */
+  font-size: clamp(2.5rem, 4.6vw, 3.9rem) !important;
   font-style: normal !important;
   font-weight: 600 !important;
   line-height: 0.92 !important;
@@ -1730,4 +1732,83 @@ body.about-scene .about-info > .block-title:first-child {
     min-height: 34vh !important;
     padding: 34px 4px 22px !important;
   }
+}
+
+
+/* =============================================================
+   Page header shared by Portfolio / Resume / Contact (2026-10-13)
+   Same container, top spacing and left alignment as portfolio.html
+   ============================================================= */
+body.resume-scene > header,
+body.about-scene .about-hero {
+  display: block !important;
+  min-height: 0 !important;
+  width: min(1480px, calc(100vw - 64px)) !important;
+  margin: 0 auto clamp(36px, 6vw, 64px) !important;
+  padding: 114px 0 0 !important;
+  text-align: left !important;
+}
+body.about-scene .hero-text {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto !important;
+  max-width: 720px !important;
+  margin: 0 !important;
+}
+
+/* eyebrow: small gold label above the name */
+body.resume-scene > header > p,
+body.about-scene .hero-role {
+  order: -1;
+  margin: 0 0 10px !important;
+  color: var(--scene-gold) !important;
+  font-family: var(--scene-font) !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+body.about-scene .section-label,
+body.about-scene .divider { display: none !important; }
+
+/* name (size shared via .page-name rule above) */
+body.resume-scene > header h1,
+body.about-scene .hero-name {
+  margin: 0 !important;
+  line-height: 1 !important;
+  text-align: left !important;
+}
+
+/* line under the name */
+body.resume-scene > header > div {
+  justify-content: flex-start !important;
+  gap: 8px 28px !important;
+  margin: 16px 0 0 !important;
+}
+body.about-scene .hero-bio {
+  max-width: 600px !important;
+  margin: 16px 0 0 !important;
+  font-size: clamp(14px, 1.6vw, 16px) !important;
+  line-height: 1.8 !important;
+  text-align: left !important;
+}
+
+/* page body uses the same column as the header, so left edges line up */
+body.resume-scene > main.max-w-5xl,
+body.about-scene .about-body {
+  width: min(1480px, calc(100vw - 64px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 760px) {
+  body.resume-scene > header,
+  body.about-scene .about-hero,
+  body.resume-scene > main.max-w-5xl,
+  body.about-scene .about-body { width: calc(100vw - 32px) !important; }
+  body.resume-scene > header,
+  body.about-scene .about-hero { padding-top: 96px !important; }
 }

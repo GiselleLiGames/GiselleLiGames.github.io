@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Work | Hanqing Li - GiselleLi</title>
+  <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20261013a" />
+  <link rel="stylesheet" href="assets/entry/pv.css?v=20261013a" />
+  <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
+  <style>
+    .pv-progress { position: fixed; left: 0; top: 0; z-index: 60; height: 2px; width: 0; background: linear-gradient(90deg, var(--pv-gold), var(--pv-rose)); box-shadow: 0 0 8px var(--pv-gold); }
+
+    /* ---------- Sticky sub-bar: back · position · prev / next ---------- */
+    .pv-subbar {
+      position: sticky; top: var(--nav-h, 64px); z-index: 30; margin: 0 calc(-1 * var(--pv-gutter)) 22px; padding: 10px var(--pv-gutter);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(14, 6, 3, .78); backdrop-filter: blur(12px); border-bottom: 1px solid var(--pv-line);
+      font-size: 13px; font-weight: 700;
+    }
+    .pv-subbar a { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--pv-line); color: var(--pv-paper); text-decoration: none; background: rgba(24, 10, 6, .5); }
+    @media (hover: hover) { .pv-subbar a:hover { border-color: var(--pv-line-hi); } }
+    .pv-subbar__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--pv-dim); }
+    .pv-subbar__title b { color: var(--pv-gold); margin-right: 8px; font-variant-numeric: tabular-nums; }
+    .pv-subbar__nav { display: flex; gap: 6px; }
+    @media (max-width: 560px) { .pv-subbar__nav .txt { display: none; } }
+
+    /* ---------- Hero ---------- */
+    .pv-hero { display: grid; gap: 24px; margin-bottom: 28px; }
+    @media (min-width: 1024px) { .pv-hero { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; gap: 40px; } }
+    .pv-hero .pv-media { border-radius: var(--pv-r); box-shadow: 0 30px 70px rgba(0, 0, 0, .45); border: 1px solid var(--pv-line); }
+    .pv-htitle { margin: 8px 0 0; font: 700 clamp(30px, 4.4vw, 50px)/1.05 var(--pv-serif); color: var(--pv-paper); }
+    .pv-hdesc { margin: 14px 0 0; font-size: 15px; line-height: 1.8; color: var(--pv-dim); }
+    .pv-hactions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    /* ---------- Facts ---------- */
+    .pv-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0 0 22px; }
+    @media (min-width: 760px) { .pv-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .pv-fact { padding: 14px 16px; border-radius: 12px; background: var(--pv-card); border: 1px solid var(--pv-line); }
+    .pv-fact small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--pv-gold); }
+    .pv-fact span { display: block; margin-top: 6px; font-size: 15px; font-weight: 600; }
+
+    /* ---------- In-page section menu ---------- */
+    .pv-toc { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 0 34px; padding: 2px; }
+    .pv-toc::-webkit-scrollbar { display: none; }
+    .pv-toc a {
+      flex: none; display: inline-flex; align-items: center; min-height: 42px; padding: 0 18px;
+      border: 1px solid rgba(226, 176, 94, .45); background: rgba(21, 11, 8, .55); color: rgba(245, 213, 157, .8);
+      font: 700 14px/1 var(--pv-sans); letter-spacing: .1em; text-decoration: none;
+    }
+    .pv-toc a.is-on { color: var(--pv-paper); border-color: var(--pv-gold); background: rgba(90, 42, 16, .7); }
+
+    /* ---------- Sections ---------- */
+    .pv-sec { scroll-margin-top: 130px; margin-bottom: clamp(40px, 7vw, 72px); }
+    .pv-sec h2 { margin: 0 0 18px; font: 700 clamp(26px, 3.4vw, 36px)/1.1 var(--pv-serif); color: var(--pv-gold-hi); }
+    .pv-sec h2::before { content: "✿ "; color: rgba(226, 176, 94, .7); font-size: .7em; vertical-align: middle; }
+    .pv-prose { max-width: 760px; font-size: 16px; line-height: 1.9; color: rgba(255, 244, 220, .88); }
+    .pv-list { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; max-width: 860px; }
+    .pv-list li { padding: 14px 16px; border-left: 2px solid var(--pv-gold); background: rgba(26, 11, 6, .5); font-size: 15px; line-height: 1.7; }
+    .pv-metrics { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 18px; }
+    .pv-metrics b { display: block; font: 700 40px/1 var(--pv-serif); color: var(--pv-gold-hi); }
+    .pv-metrics span { font-size: 13px; color: var(--pv-dim); }
+    .pv-player { border-radius: var(--pv-r); overflow: hidden; border: 1px solid var(--pv-line); background: #000; }
+    .pv-player video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+    .pv-pages { display: grid; gap: 16px; }
+    .pv-vids { display: grid; gap: 28px; }
+    .pv-vid__cap { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: var(--pv-paper); }
+    .pv-vid__cap b { margin-right: 10px; font-family: var(--pv-serif); font-size: 20px; color: var(--pv-gold); }
+    .pv-page-img { display: block; padding: 0; border: 1px solid var(--pv-line); border-radius: 12px; overflow: hidden; background: #120604; cursor: zoom-in; }
+    .pv-page-img img { display: block; width: 100%; height: auto; }
+    .pv-doc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+
+    /* ---------- More works ---------- */
+    .pv-more { display: grid; gap: 14px; grid-template-columns: 1fr; max-width: 900px; }
+    @media (min-width: 720px) { .pv-more { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
+    /* compact horizontal cards: small clip on the left, title on the right */
+    .pv-card--mini { flex-direction: row; align-items: center; gap: 4px; padding: 6px; }
+    .pv-card--mini .pv-media { flex: 0 0 42%; border-radius: 10px; }
+    .pv-card--mini .pv-badge { display: none; }
+    .pv-card--mini .pv-card__body { min-width: 0; padding: 6px 10px; }
+    .pv-card--mini .pv-card__title { font-size: 18px; line-height: 1.2; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .pv-card--mini .pv-card__go { margin-top: 8px; }
+    .pv-more__label { font-size: 11px; font-weight: 800; letter-spacing: .16em; color: var(--pv-dim); margin-bottom: 8px; }
+
+    /* ---------- Zoom ---------- */
+    .pv-zoom { position: fixed; inset: 0; z-index: 110; display: none; place-items: center; padding: 16px; background: rgba(5, 2, 1, .9); cursor: zoom-out; }
+    .pv-zoom.is-open { display: grid; }
+    .pv-zoom img { max-width: 100%; max-height: 100%; border-radius: 8px; animation: pvZoom 320ms var(--pv-spring); }
+    @keyframes pvZoom { from { transform: scale(.9); opacity: 0; } }
+
+    .pv-missing { padding: 120px 0; text-align: center; }
+  </style>
+</head>
+<body class="portfolio-theater scene-page pv-page">
+  <div class="portfolio-bg-grade" aria-hidden="true"></div>
+  <div class="pv-progress" id="pvProgress" aria-hidden="true"></div>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo">GiselleLi</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="portfolio.html" class="active" data-i18n="nav.portfolio">Portfolio</a></li>
+      <li><a href="resume.html" data-i18n="nav.resume">Resume</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <main class="pv-shell" id="pvMain"></main>
+
+  <footer>
+    <span class="footer-logo">GiselleLi</span>
+    <div class="footer-links">
+      <a href="portfolio.html" data-i18n="footer.portfolio">作品集</a>
+      <a href="resume.html" data-i18n="footer.resume">简历</a>
+      <a href="contact.html" data-i18n="footer.contact">联系</a>
+    </div>
+    <span data-i18n="footer.copy">© 2026 Hanqing Li - All rights reserved</span>
+  </footer>
+
+  <div class="pv-zoom" id="pvZoom" role="dialog" aria-modal="true"><img alt="" /></div>
+
+  <script src="config.js?v=20261013a"></script>
+  <script src="js/typography.js?v=20260726a"></script>
+  <script src="js/content.js?v=20260726a"></script>
+  <script src="js/i18n.js?v=20260726a"></script>
+  <script src="assets/entry/scene-background.js?v=20260711"></script>
+  <script src="js/pv.js?v=20261013a"></script>
+  <script>
+  (function () {
+    'use strict';
+    var P = window.PV, W = P.works(), main = document.getElementById('pvMain');
+    var id = parseInt(new URLSearchParams(location.search).get('id'), 10);
+    var GROUP = (typeof CONFIG !== 'undefined' && CONFIG.workGroupNames) || {};
+    var CAT = {
+      shader: { zh: '着色器', en: 'Shader' }, pcg: { zh: '程序化生成', en: 'PCG' }, render: { zh: '渲染', en: 'Render' },
+      tool: { zh: '工具', en: 'Tools' }, code: { zh: '代码', en: 'Code' }
+    };
+
+    /* Back link: return to the list exactly as it was (same category), otherwise the plain list */
+    function backHref() {
+      var ref = document.referrer || '';
+      return /portfolio\.html/.test(ref) && ref.indexOf(location.host) !== -1 ? ref : 'portfolio.html';
+    }
+
+    function render() {
+      var zh = P.lang() === 'zh', L = function (a, b) { return zh ? a : b; };
+      var w = W[id];
+      if (!w) {
+        main.innerHTML = '<div class="pv-missing"><h1 class="pv-htitle">' + L('没有找到这个作品', 'Work not found') + '</h1>' +
+          '<p style="margin-top:20px"><a class="pv-btn pv-btn--main" href="portfolio.html">← ' + L('回到作品集', 'Back to portfolio') + '</a></p></div>';
+        return;
+      }
+      var prev = (id - 1 + W.length) % W.length, next = (id + 1) % W.length;
+      var full = P.fullVideo(w), pages = P.pdfPages(w), d = w.detail || {};
+      var vids = (w.links || []).filter(function (l) { return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(l.href || ''); });
+      var images = (w.links || []).filter(function (l) { return l.type === 'image'; });
+      var title = P.t(w.title);
+      document.title = title + ' | Hanqing Li - GiselleLi';
+
+      var sections = [{ id: 'overview', name: L('概述', 'Overview') }];
+      if (full) sections.push({ id: 'video', name: vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video') });
+      if (images.length) sections.push({ id: 'gallery', name: L('图片', 'Images') });
+      if (pages) sections.push({ id: 'doc', name: L('项目演示', 'Presentation') });
+      sections.push({ id: 'more', name: L('更多作品', 'More works') });
+
+      var facts = [
+        [L('分类', 'CATEGORY'), P.t(CAT[w.category]) || w.category],
+        [L('类型', 'TYPE'), GROUP[w.group] ? P.t(GROUP[w.group]) : '—']
+      ];
+      if (d.role) facts.push([L('角色', 'ROLE'), P.t(d.role)]);
+      if (d.year) facts.push([L('时间', 'YEAR'), P.t(d.year)]);
+      if (d.team) facts.push([L('团队', 'TEAM'), P.t(d.team)]);
+      if (d.tools) facts.push([L('工具', 'TOOLS'), P.t(d.tools)]);
+      if (facts.length < 4) facts.push([L('内容', 'INCLUDES'), [full ? L('视频', 'Video') : '', pages ? L('演示 ' + pages[1] + ' 页', pages[1] + '-page deck') : '', images.length ? L('图片', 'Images') : ''].filter(Boolean).join(' · ') || '—']);
+      if (facts.length < 4) facts.push([L('标签', 'TAGS'), (w.tags || []).slice(0, 3).join(' / ') || '—']);
+
+      var listBlock = function (items) {
+        return items && items.length ? '<ul class="pv-list">' + items.map(function (x) { return '<li>' + P.esc(P.t(x)) + '</li>'; }).join('') + '</ul>' : '';
+      };
+
+      main.innerHTML =
+        '<div class="pv-subbar">' +
+          '<a href="' + P.esc(backHref()) + '">← <span class="txt">' + L('作品集', 'Portfolio') + '</span></a>' +
+          '<div class="pv-subbar__title"><b>' + String(id + 1).padStart(2, '0') + ' / ' + String(W.length).padStart(2, '0') + '</b>' + P.esc(title) + '</div>' +
+          '<div class="pv-subbar__nav">' +
+            '<a href="work.html?id=' + prev + '" aria-label="' + L('上一个', 'Previous') + '">‹ <span class="txt">' + L('上一个', 'Prev') + '</span></a>' +
+            '<a href="work.html?id=' + next + '" aria-label="' + L('下一个', 'Next') + '"><span class="txt">' + L('下一个', 'Next') + '</span> ›</a>' +
+          '</div>' +
+        '</div>' +
+
+        '<section class="pv-hero">' +
+          '<div class="pv-rise">' + P.mediaHTML(w, { autoplay: true }) + '</div>' +
+          '<div class="pv-rise" style="--d:100ms">' +
+            '<div class="pv-kicker">' + P.esc(GROUP[w.group] ? P.t(GROUP[w.group]) : '') + '</div>' +
+            '<h1 class="pv-htitle">' + P.esc(title) + '</h1>' +
+            '<p class="pv-hdesc">' + P.esc(P.t(w.desc)) + '</p>' +
+            '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(tg) + '</span>'; }).join('') + '</div>' +
+          '</div>' +
+        '</section>' +
+
+        '<div class="pv-facts pv-rise">' + facts.slice(0, 4).map(function (f) { return '<div class="pv-fact"><small>' + P.esc(f[0]) + '</small><span>' + P.esc(f[1]) + '</span></div>'; }).join('') + '</div>' +
+
+        '<div class="pv-toc" id="pvToc" role="navigation" aria-label="' + L('本页目录', 'On this page') + '">' +
+          sections.map(function (s) { return '<a href="#' + s.id + '">' + s.name + '</a>'; }).join('') +
+        '</div>' +
+
+        /* Overview — fills in automatically from `detail` in config.js when you add it */
+        '<section class="pv-sec pv-rise" id="overview"><h2>' + L('概述', 'Overview') + '</h2>' +
+          '<div class="pv-prose">' + P.esc(P.t(d.overview) || P.t(w.desc)) + '</div>' +
+          (d.goals ? '<h3 class="pv-kicker" style="margin-top:28px">' + L('目标与挑战', 'GOALS & CHALLENGES') + '</h3>' + listBlock(d.goals) : '') +
+          (d.process ? '<h3 class="pv-kicker" style="margin-top:28px">' + L('制作过程', 'PROCESS') + '</h3>' + listBlock(d.process) : '') +
+          (d.results ? '<h3 class="pv-kicker" style="margin-top:28px">' + L('成果', 'RESULTS') + '</h3><div class="pv-metrics">' +
+            d.results.map(function (r) { return '<div><b>' + P.esc(r.value) + '</b><span>' + P.esc(P.t(r.label)) + '</span></div>'; }).join('') + '</div>' : '') +
+        '</section>' +
+
+        (full ? '<section class="pv-sec pv-rise" id="video"><h2>' + (vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video')) + '</h2>' +
+          '<div class="pv-vids">' + vids.map(function (v, k) {
+            var label = vids.length > 1 ? '<div class="pv-vid__cap"><b>' + String(k + 1).padStart(2, '0') + '</b>' + P.esc(P.t(v.title) || P.t(v.label).replace(/[→↗]/g, '').trim()) + '</div>' : '';
+            return '<div class="pv-vid">' + label + '<div class="pv-player"><video controls playsinline preload="none"' + (k === 0 && w.image ? ' poster="' + P.esc(w.image) + '"' : '') + ' src="' + P.esc(v.href) + '"></video></div></div>';
+          }).join('') + '</div></section>' : '') +
+
+        (images.length ? '<section class="pv-sec pv-rise" id="gallery"><h2>' + L('图片', 'Images') + '</h2><div class="pv-pages">' +
+          images.map(function (l) { return '<button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(title) + '" loading="lazy"></button>'; }).join('') +
+          '</div></section>' : '') +
+
+        (pages ? '<section class="pv-sec pv-rise" id="doc"><h2>' + L('项目演示', 'Presentation') + '</h2><div class="pv-pages">' +
+          Array.from({ length: pages[1] }, function (_, i) {
+            return '<button class="pv-page-img" type="button"><img src="assets/uploads/pdf-pages/' + pages[0] + '/page-' + (i + 1) + '.webp" alt="' + P.esc(title) + ' ' + (i + 1) + '" loading="lazy" decoding="async"></button>';
+          }).join('') +
+          '</div><div class="pv-doc-actions"><a class="pv-btn" href="' + P.esc(w.pdf) + '" target="_blank" rel="noopener">' + L('打开原始 PDF', 'Open original PDF') + ' <span class="pv-arrow">↗</span></a></div></section>' : '') +
+
+        '<section class="pv-sec" id="more"><h2>' + L('更多作品', 'More works') + '</h2><div class="pv-more">' +
+          [[prev, L('上一个', 'PREVIOUS')], [next, L('下一个', 'NEXT')]].map(function (p) {
+            var o = W[p[0]];
+            return '<div class="pv-rise"><div class="pv-more__label">' + p[1] + '</div>' +
+              '<a class="pv-card pv-card--mini" href="work.html?id=' + p[0] + '">' + P.mediaHTML(o) +
+              '<div class="pv-card__body"><div class="pv-kicker">' + P.esc(GROUP[o.group] ? P.t(GROUP[o.group]) : '') + '</div>' +
+              '<h3 class="pv-card__title">' + P.esc(P.t(o.title)) + '</h3>' +
+              '<div class="pv-card__go">' + L('查看详情 ', 'View details ') + '<i>→</i></div></div></a></div>';
+          }).join('') +
+          '</div><p style="margin-top:22px"><a class="pv-btn" href="portfolio.html">' + L('返回全部作品', 'All works') + '</a></p></section>';
+
+      P.observeMedia(main); P.reveal(main); watchToc();
+    }
+
+    /* highlight the section currently on screen */
+    var tocIO;
+    function watchToc() {
+      if (tocIO) tocIO.disconnect();
+      var links = Array.prototype.slice.call(document.querySelectorAll('#pvToc a'));
+      tocIO = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + e.target.id); });
+        });
+      }, { rootMargin: '-35% 0px -55% 0px' });
+      document.querySelectorAll('.pv-sec').forEach(function (s) { tocIO.observe(s); });
+    }
+
+    /* page zoom */
+    var zoom = document.getElementById('pvZoom');
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest('.pv-page-img'); if (!b) return;
+      zoom.querySelector('img').src = b.querySelector('img').src; zoom.classList.add('is-open');
+    });
+    zoom.addEventListener('click', function () { zoom.classList.remove('is-open'); });
+
+    /* keyboard: ← → between works, Esc closes zoom */
+    addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') zoom.classList.remove('is-open');
+      if (zoom.classList.contains('is-open') || /input|textarea/i.test(document.activeElement.tagName)) return;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        var n = (id + (e.key === 'ArrowRight' ? 1 : -1) + W.length) % W.length;
+        document.body.classList.add('pv-leaving'); setTimeout(function () { location.href = 'work.html?id=' + n; }, 150);
+      }
+    });
+
+    /* reading progress */
+    var bar = document.getElementById('pvProgress');
+    addEventListener('scroll', function () {
+      var d = document.documentElement, a = d.scrollHeight - d.clientHeight;
+      bar.style.width = (a ? d.scrollTop / a * 100 : 0) + '%';
+    }, { passive: true });
+
+    /* keep the sub-bar tucked right under the site nav, whatever its height */
+    var setNavH = function () { var n = document.querySelector('.top-nav'); if (n) document.documentElement.style.setProperty('--nav-h', Math.round(n.getBoundingClientRect().bottom) + 'px'); };
+    addEventListener('resize', setNavH); setTimeout(setNavH, 50);
+
+    P.onLang(render);
+    render();
+  })();
+  </script>
+</body>
+</html>

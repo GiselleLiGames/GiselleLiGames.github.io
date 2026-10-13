@@ -156,6 +156,29 @@ const CONFIG = {
   works: [
     {
       category: 'shader',
+      group: 'art',
+      hasVideo: true,
+      image: 'assets/uploads/previews/casino-central-orbit.webp',
+      title: { en: 'Art Deco Casino Shader', zh: '装饰艺术赌场 Shader' },
+      desc: {
+        en: 'An Art Deco casino environment in Unreal Engine, shaded for standalone Meta Quest 3 — materials, lighting and reflections built to hold up on mobile VR hardware.',
+        zh: '在 Unreal Engine 中为 Meta Quest 3 一体机制作的 Art Deco 风格赌场场景着色，兼顾材质、灯光与反射效果和移动 VR 的性能限制。',
+      },
+      tags: ['Unreal Engine', 'Meta Quest 3', 'VR', 'Shader', 'Art Deco'],
+      detail: {
+        year: '2026',
+        tools: 'Unreal Engine',
+        overview: {
+          en: 'A 5.3-second casino environment showcase captured at 4K / 30 fps. The web edition preserves the complete camera movement at 2560 × 1440 / 30 fps.',
+          zh: '赌场场景的 5.3 秒环绕展示，原片为 4K / 30fps。网页版本保留完整镜头，采用 2560 × 1440 / 30fps。',
+        },
+      },
+      links: [
+        { type: 'video', label: { en: 'Watch 2K Video →', zh: '观看 2K 视频 →' }, href: 'assets/uploads/Casino_CentralOrbit_2K_30fps.mp4' },
+      ],
+    },
+    {
+      category: 'shader',
       group: 'project',
       hasVideo: true,
       image: 'assets/uploads/previews/pbr-shaders.webp',
