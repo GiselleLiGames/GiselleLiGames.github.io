@@ -122,7 +122,7 @@
 
   <div class="pv-zoom" id="pvZoom" role="dialog" aria-modal="true"><img alt="" /></div>
 
-  <script src="config.js?v=20261013-live-light-2x"></script>
+  <script src="config.js?v=20261013-shader-breakdown"></script>
   <script src="js/site-translations.js?v=9adb83a9190d"></script>
   <script src="js/typography.js?v=20260726a"></script>
   <script src="js/content.js?v=2bece7392724"></script>
@@ -231,7 +231,7 @@
           }).join('') + '</div></section>' : '') +
 
         (images.length ? '<section class="pv-sec pv-rise" id="gallery"><h2>' + L('图片', 'Images') + '</h2><div class="pv-pages">' +
-          images.map(function (l) { return '<button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(title) + '" loading="lazy"></button>'; }).join('') +
+          images.map(function (l) { return '<figure style="margin:0"><button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(P.t(l.label) || title) + '" loading="lazy"></button>' + (l.description ? '<figcaption class="pv-prose" style="margin-top:12px"><strong>' + P.esc(P.t(l.label)) + '</strong><p>' + P.esc(P.t(l.description)) + '</p></figcaption>' : '') + '</figure>'; }).join('') +
           '</div></section>' : '') +
 
         (hasStudy ? FigmaCaseStudy.render(w, zh ? 'zh' : 'en') : '') +
