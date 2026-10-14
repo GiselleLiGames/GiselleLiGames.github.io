@@ -1,10 +1,10 @@
 # Casino Shader — M_Toon / M_Floor
 
-这两张图是 Unreal 材质编辑器的真实节点截图，聚焦最终输出区；不是把所有节点缩到一张图里。材质逻辑未改动。以下流程说明还依据实际材质节点与 Custom HLSL 的读取结果。
+这两张图是 Unreal 材质编辑器的完整节点截图，包含所有节点分区与连线。截图时把鼠标移出画面，并裁去编辑器周边界面。材质逻辑未改动。以下流程说明还依据实际材质节点与 Custom HLSL 的读取结果。
 
 ## M_Toon：自己计算光照，再输出卡渲颜色
 
-![M_Toon 输出节点](M_Toon_Output.png)
+![M_Toon 完整节点图](M_Toon_FullGraph.png)
 
 大致流程：**材质颜色与法线 → 读取 MPC_Toon 中的光源数据 → 计算光照与笔刷式明暗色带 → 组合最终颜色 → Emissive Color。**
 
@@ -15,7 +15,7 @@
 
 ## M_Floor：在卡渲基础上加入房间反射和金属高光
 
-![M_Floor 输出节点](M_Floor_Output.png)
+![M_Floor 完整节点图](M_Floor_FullGraph.png)
 
 大致流程：**卡渲表面颜色 + 房间 Cubemap 反射 + 各光源金属高光 → 金属区域混合 → Metal_FinalUnlitColor → Emissive Color。**
 
