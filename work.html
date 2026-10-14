@@ -118,7 +118,7 @@
 
   <div class="pv-zoom" id="pvZoom" role="dialog" aria-modal="true"><img alt="" /></div>
 
-  <script src="config.js?v=20261013a"></script>
+  <script src="config.js?v=20261013-material2k"></script>
   <script src="js/typography.js?v=20260726a"></script>
   <script src="js/content.js?v=20260726a"></script>
   <script src="js/i18n.js?v=20260726a"></script>
@@ -215,7 +215,7 @@
         (full ? '<section class="pv-sec pv-rise" id="video"><h2>' + (vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video')) + '</h2>' +
           '<div class="pv-vids">' + vids.map(function (v, k) {
             var label = vids.length > 1 ? '<div class="pv-vid__cap"><b>' + String(k + 1).padStart(2, '0') + '</b>' + P.esc(P.t(v.title) || P.t(v.label).replace(/[→↗]/g, '').trim()) + '</div>' : '';
-            return '<div class="pv-vid">' + label + '<div class="pv-player"><video controls playsinline preload="none"' + (k === 0 && w.image ? ' poster="' + P.esc(w.image) + '"' : '') + ' src="' + P.esc(v.href) + '"></video></div></div>';
+            return '<div class="pv-vid">' + label + '<div class="pv-player"><video controls playsinline preload="none"' + (v.poster || (k === 0 && w.image) ? ' poster="' + P.esc(v.poster || w.image) + '"' : '') + ' src="' + P.esc(v.href) + '"></video></div></div>';
           }).join('') + '</div></section>' : '') +
 
         (images.length ? '<section class="pv-sec pv-rise" id="gallery"><h2>' + L('图片', 'Images') + '</h2><div class="pv-pages">' +

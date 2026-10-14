@@ -175,7 +175,7 @@ const CONFIG = {
       },
       links: [
         { type: 'video', label: { en: 'Watch 2K Video →', zh: '观看 2K 视频 →' }, href: 'assets/uploads/Casino_CentralOrbit_2K_30fps.mp4' },
-        { type: 'video', label: { en: 'Material Study · 4K →', zh: '材质球展示 · 4K →' }, href: 'assets/uploads/Toon_MaterialStudy_4K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study.webp', description: { en: 'One shader across three surfaces: shader-only, slot machine and floor. Synchronized rotating lights reveal the material response. 3840 × 2160 · 30 fps · 10 seconds.', zh: '同一 Shader 的三种表面：无颜色贴图、老虎机与地板。同步旋转光源展示材质的受光变化。3840 × 2160 · 30 fps · 10 秒。' } },
+        { type: 'video', label: { en: 'Material Study · 2K →', zh: '材质球展示 · 2K →' }, href: 'assets/uploads/Toon_MaterialStudy_2K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study.webp', description: { en: 'One shader across three surfaces: shader-only, slot machine and floor. Synchronized rotating lights reveal the material response. 2560 × 1440 · 30 fps · 10 seconds.', zh: '同一 Shader 的三种表面：无颜色贴图、老虎机与地板。同步旋转光源展示材质的受光变化。2560 × 1440 · 30 fps · 10 秒。' } },
       ],
     },
     {
