@@ -178,7 +178,7 @@ const CONFIG = {
       links: [
         { type: 'video', label: { en: 'Watch 2K Video →', zh: '观看 2K 视频 →' }, href: 'assets/uploads/Casino_CentralOrbit_2K_30fps.mp4' },
         { type: 'video', label: { en: 'Material Study · 2K →', zh: '材质球展示 · 2K →' }, href: 'assets/uploads/Toon_MaterialStudy_SingleLight_2K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study-single-light.webp', description: { en: 'One shader across three surfaces: shader-only, slot machine and floor. Each sphere receives one rotating light using the original light settings. 2560 × 1440 · 30 fps · 10 seconds.', zh: '同一 着色器 的三种表面：无颜色贴图、老虎机与地板。每个球仅使用一个旋转光源，参数沿用原来的灯光。2560 × 1440 · 30 fps · 10 秒。' } },
-        { type: 'video', label: { en: 'Live Lighting Adjustment →', zh: '实时光照调节 · 录屏 →' }, href: 'assets/uploads/Casino_LightAdjustment_Live_30fps.mp4', poster: 'assets/uploads/previews/casino-light-adjustment.webp', description: { en: 'Live Unreal Editor recording: BP_ToonLIght_Point2 moves vertically from Z −230 to +230. Light intensity and range stay fixed; the actor returns to its original position.', zh: 'Unreal 编辑器实时录屏：BP_ToonLIght_Point2 沿 Z 轴从 −230 到 +230 上下移动，展示墙面、地板和人物的光照变化。强度和范围保持不变，录完恢复原位置。' } },
+        { type: 'video', label: { en: 'Live Lighting Adjustment · 2× →', zh: '实时光照调节 · 2 倍速 →' }, href: 'assets/uploads/Casino_LightAdjustment_2x_NoCursor_Web_30fps.mp4', poster: 'assets/uploads/previews/casino-light-adjustment.webp', description: { en: 'Live Unreal Editor recording: BP_ToonLIght_Point2 moves vertically from Z −230 to +230. Light intensity and range stay fixed; the actor returns to its original position.', zh: 'Unreal 编辑器实时录屏：BP_ToonLIght_Point2 沿 Z 轴从 −230 到 +230 上下移动，展示墙面、地板和人物的光照变化。强度和范围保持不变，录完恢复原位置。' } },
       ],
     },
     {
