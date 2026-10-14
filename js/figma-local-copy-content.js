@@ -7,3 +7,15 @@ window.FIGMA_PORTFOLIO_COVER=imported.portfolioCover;
 window.FIGMA_MEDIA_KEYS={"assets/uploads/Eye.mp4":3,"assets/uploads/ShadowMan_Remaster.mp4":4};
 window.FIGMA_LOCAL_COPY_IMPORT=imported;
 })();
+
+// User corrections: remove the unrelated Tower of Fantasy banner from these chapters.
+(function () {
+  var studies = window.FIGMA_CASE_STUDIES || {};
+  [4, 6].forEach(function (key) {
+    (studies[key] || []).forEach(function (chapter) {
+      if (chapter.id === '706:500-shadow' || chapter.id === '690:217') {
+        chapter.background = '';
+      }
+    });
+  });
+})();

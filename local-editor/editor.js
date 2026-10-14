@@ -105,6 +105,7 @@ let S = {
     project: { en: 'Complete Projects', zh: '完整项目作品' },
     tool: { en: 'Tools', zh: '工具作品' },
     art: { en: 'Independent Works', zh: '独立作品' },
+    collab: { en: 'Collaborative Works', zh: '合作作品' },
   },
   works: [],
   education: [],
@@ -469,9 +470,6 @@ function switchPanel(id, el) {
   // Add animation class on next frame so display:block has already taken effect
   requestAnimationFrame(() => panel.classList.add('anim'));
   el.classList.add('active');
-  if (id === 'pLayout') {
-    renderVisualLayout();
-  }
   if (id === 'p4') {
     renderWorks();
     applyWorksMediaPanelState();
@@ -484,9 +482,9 @@ let worksMediaCollapsed = false;
 function openRequestedEditorPanel() {
   let requested = '';
   try { requested = new URLSearchParams(window.location.search).get('panel') || ''; } catch (e) {}
-  if (requested !== 'layout') return;
-  const navItem = document.querySelector('[data-panel="pLayout"]');
-  if (navItem) switchPanel('pLayout', navItem);
+  if (requested !== 'works' && requested !== 'layout') return;
+  const navItem = document.querySelector('[data-panel="p4"]');
+  if (navItem) switchPanel('p4', navItem);
 }
 
 function applyWorksMediaPanelState() {
@@ -711,13 +709,17 @@ let workLinkPresets = DEFAULT_WORK_LINK_PRESETS.map(x => ({ en: x.en, zh: x.zh }
 const WORK_CATS = ['shader','pcg','vfx','tool','render','code'];
 const WORK_GROUPS = [
   { id: 'project' },
-  { id: 'tool' },
+  { id: 'collab' },
   { id: 'art' },
+  { id: 'tool' },
 ];
+// The visual grid editor was retired with the portfolio redesign (the site now uses a fixed responsive grid).
+function renderVisualLayout() {}
 const WORK_GROUP_NAME_DEFAULTS = {
   project: { en: 'Complete Projects', zh: '完整项目作品' },
   tool: { en: 'Tools', zh: '工具作品' },
   art: { en: 'Independent Works', zh: '独立作品' },
+  collab: { en: 'Collaborative Works', zh: '合作作品' },
 };
 const WORK_VIDEO_EXT_RE = /\.(mp4|webm|mov|m4v|ogv|avi|mkv)(\?.*)?$/i;
 const WORK_IMAGE_EXT_RE = /\.(jpg|jpeg|png|gif|webp|svg)(\?.*)?$/i;
@@ -810,320 +812,6 @@ function setWorkCoverFocus(event, i) {
 }
 
 function normalizeWorkGroupNames() {
-let visualSelectedWorkIndex = 0;
-let visualDraggedWorkIndex = -1;
-let visualPanState = null;
-let visualWheelSnapshotTimer = null;
-
-const VISUAL_WORK_GROUPS = [
-  { id: 'project', fallback: 'Complete Projects' },
-  { id: 'tool', fallback: 'Tools' },
-  { id: 'art', fallback: 'Independent Works' },
-];
-
-function visualSelectedWork() {
-  if (!Array.isArray(S.works) || !S.works.length) return null;
-  visualSelectedWorkIndex = normalizeWorkIndex(visualSelectedWorkIndex);
-  return S.works[visualSelectedWorkIndex] || null;
-}
-
-function renderVisualLayout() {
-  const canvas = document.getElementById('visual_layout_canvas');
-  if (!canvas) return;
-  normalizeWorks();
-  if (!S.works.length) {
-    canvas.innerHTML = '<div class="visual-empty-group">No works yet. Add a work in the Works panel first.</div>';
-    syncVisualToolbar();
-    return;
-  }
-  visualSelectedWorkIndex = normalizeWorkIndex(visualSelectedWorkIndex);
-  canvas.innerHTML = VISUAL_WORK_GROUPS.map(group => {
-    const items = S.works.map((work, index) => ({ work, index })).filter(item => item.work.group === group.id);
-    const groupName = getWorkGroupName(group.id, 'zh') || getWorkGroupName(group.id, 'en') || group.fallback;
-    const cards = items.map(item => buildVisualWorkCard(item.work, item.index)).join('');
-    return `<section class="visual-group" data-group="${group.id}">
-      <h3 class="visual-group-title">${esc(groupName)}</h3>
-      <div class="visual-card-grid" ondragover="event.preventDefault()" ondrop="dropVisualWorkOnGroup(event,'${group.id}')">
-        ${cards || '<div class="visual-empty-group">Drag a work here</div>'}
-      </div>
-    </section>`;
-  }).join('');
-  syncVisualToolbar();
-}
-
-function buildVisualWorkCard(work, index) {
-  const layout = work.layout || {};
-  const cover = work.cover || {};
-  const title = (work.title && (work.title.zh || work.title.en)) || `Work ${index + 1}`;
-  const desc = (work.desc && (work.desc.zh || work.desc.en)) || '';
-  const groupLabel = getWorkGroupName(work.group, 'zh') || work.group || '';
-  const selected = index === visualSelectedWorkIndex ? ' selected' : '';
-  const imageStyle = work.image ? workCoverStyle(work) : '';
-  return `<article class="visual-work-card${selected}" data-work-index="${index}" data-span="${layout.span}" style="grid-column:span ${layout.span};" onclick="selectVisualWork(${index})" ondragover="visualWorkDragOver(event)" ondragleave="visualWorkDragLeave(event)" ondrop="dropVisualWork(event,${index},'${work.group}')">
-    <button class="visual-card-handle" type="button" draggable="true" title="Drag to reorder" onclick="event.stopPropagation()" ondragstart="startVisualWorkDrag(event,${index})" ondragend="endVisualWorkDrag()">&#x22EE;&#x22EE;</button>
-    <div class="visual-work-thumb" data-visual-thumb="${index}" style="aspect-ratio:${layout.aspect};${imageStyle}" onpointerdown="beginVisualCoverPan(event,${index})" onpointermove="moveVisualCoverPan(event)" onpointerup="endVisualCoverPan(event)" onpointercancel="endVisualCoverPan(event)" onwheel="visualCoverWheel(event,${index})">
-      ${work.image ? '' : '<span class="work-cover-empty">Choose a cover in the Works panel</span>'}
-      <span class="visual-focus-dot" style="left:${cover.x}%;top:${cover.y}%"></span>
-    </div>
-    <div class="visual-work-info" style="text-align:${layout.textAlign};">
-      <div class="visual-work-kicker">${esc(groupLabel)} &#xB7; ${esc(work.category || '')}</div>
-      <h3 class="visual-work-title">${esc(title)}</h3>
-      <p class="visual-work-desc">${esc(desc)}</p>
-    </div>
-    <button class="visual-card-resize" type="button" title="Drag to resize" onclick="event.stopPropagation()" onpointerdown="beginVisualCardResize(event,${index})" onpointermove="moveVisualCardResize(event)" onpointerup="endVisualCardResize(event)" onpointercancel="endVisualCardResize(event)">&#x2194;</button>
-  </article>`;
-}
-
-function selectVisualWork(index) {
-  visualSelectedWorkIndex = normalizeWorkIndex(index);
-  currentWorkIndex = visualSelectedWorkIndex;
-  document.querySelectorAll('.visual-work-card').forEach(card => {
-    card.classList.toggle('selected', Number(card.dataset.workIndex) === visualSelectedWorkIndex);
-  });
-  syncVisualToolbar();
-}
-
-function syncVisualToolbar() {
-  const work = visualSelectedWork();
-  const titleEl = document.getElementById('visual_selected_title');
-  const metaEl = document.getElementById('visual_selected_meta');
-  const zoom = document.getElementById('visual_zoom');
-  const zoomValue = document.getElementById('visual_zoom_value');
-  if (!work) {
-    if (titleEl) titleEl.textContent = '\u8bf7\u5148\u6dfb\u52a0\u4f5c\u54c1';
-    if (metaEl) metaEl.textContent = '--';
-    return;
-  }
-  const title = (work.title && (work.title.zh || work.title.en)) || `Work ${visualSelectedWorkIndex + 1}`;
-  if (titleEl) titleEl.textContent = title;
-  if (metaEl) metaEl.textContent = `${getWorkGroupLabel(work.group)} ? ${work.category || ''}`;
-  document.querySelectorAll('[data-visual-span]').forEach(btn => btn.classList.toggle('active', Number(btn.dataset.visualSpan) === work.layout.span));
-  document.querySelectorAll('[data-visual-aspect]').forEach(btn => btn.classList.toggle('active', btn.dataset.visualAspect === work.layout.aspect));
-  document.querySelectorAll('[data-visual-align]').forEach(btn => btn.classList.toggle('active', btn.dataset.visualAlign === work.layout.textAlign));
-  if (zoom) zoom.value = work.cover.zoom;
-  if (zoomValue) zoomValue.textContent = work.cover.zoom + '%';
-}
-
-function setVisualWorkSpan(span) {
-  const work = visualSelectedWork();
-  if (!work) return;
-  work.layout.span = Number(span);
-  renderVisualLayout();
-  snapshot();
-  updateStatus();
-}
-
-function setVisualWorkAspect(aspect) {
-  const work = visualSelectedWork();
-  if (!work) return;
-  work.layout.aspect = aspect;
-  renderVisualLayout();
-  snapshot();
-}
-
-function setVisualTextAlign(align) {
-  const work = visualSelectedWork();
-  if (!work) return;
-  work.layout.textAlign = align;
-  renderVisualLayout();
-  snapshot();
-}
-
-function setVisualCoverZoom(value, shouldSnapshot) {
-  const work = visualSelectedWork();
-  if (!work) return;
-  work.cover.zoom = Math.max(100, Math.min(220, Number(value) || 100));
-  updateVisualCoverDom(visualSelectedWorkIndex);
-  if (shouldSnapshot !== false) snapshot();
-}
-
-function resetVisualCover() {
-  const work = visualSelectedWork();
-  if (!work) return;
-  work.cover.x = 50;
-  work.cover.y = 50;
-  work.cover.zoom = 100;
-  updateVisualCoverDom(visualSelectedWorkIndex);
-  snapshot();
-}
-function beginVisualCardResize(event, index) {
-  if (event.button !== 0) return;
-  event.preventDefault();
-  event.stopPropagation();
-  selectVisualWork(index);
-  const card = event.currentTarget.closest('.visual-work-card');
-  const grid = card && card.closest('.visual-card-grid');
-  if (!card || !grid) return;
-  visualResizeState = {
-    pointerId: event.pointerId,
-    index,
-    startClientX: event.clientX,
-    startSpan: S.works[index].layout.span,
-    columnWidth: Math.max(1, grid.clientWidth / 12),
-    card,
-    changed: false,
-  };
-  event.currentTarget.setPointerCapture(event.pointerId);
-}
-
-function moveVisualCardResize(event) {
-  if (!visualResizeState || visualResizeState.pointerId !== event.pointerId) return;
-  event.preventDefault();
-  const deltaColumns = (event.clientX - visualResizeState.startClientX) / visualResizeState.columnWidth;
-  const wanted = visualResizeState.startSpan + deltaColumns;
-  const spans = [4, 6, 8, 12];
-  let nextSpan = spans[0];
-  spans.forEach(span => {
-    if (Math.abs(span - wanted) < Math.abs(nextSpan - wanted)) nextSpan = span;
-  });
-  const work = S.works[visualResizeState.index];
-  if (work.layout.span === nextSpan) return;
-  work.layout.span = nextSpan;
-  visualResizeState.changed = true;
-  visualResizeState.card.dataset.span = String(nextSpan);
-  visualResizeState.card.style.gridColumn = 'span ' + nextSpan;
-  syncVisualToolbar();
-}
-
-function endVisualCardResize(event) {
-  if (!visualResizeState || visualResizeState.pointerId !== event.pointerId) return;
-  const changed = visualResizeState.changed;
-  if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-  visualResizeState = null;
-  if (changed) {
-    renderVisualLayout();
-    snapshot();
-  }
-}
-
-
-function updateVisualCoverDom(index) {
-  const work = S.works[index];
-  const thumb = document.querySelector(`[data-visual-thumb="${index}"]`);
-  if (!work || !thumb) return;
-  thumb.style.backgroundSize = work.cover.zoom + '%';
-  thumb.style.backgroundPosition = work.cover.x + '% ' + work.cover.y + '%';
-  const dot = thumb.querySelector('.visual-focus-dot');
-  if (dot) {
-    dot.style.left = work.cover.x + '%';
-    dot.style.top = work.cover.y + '%';
-  }
-  if (index === visualSelectedWorkIndex) syncVisualToolbar();
-}
-
-function beginVisualCoverPan(event, index) {
-  if (event.button !== 0) return;
-  event.preventDefault();
-  event.stopPropagation();
-  selectVisualWork(index);
-  const work = S.works[index];
-  visualPanState = {
-    pointerId: event.pointerId,
-    index,
-    startClientX: event.clientX,
-    startClientY: event.clientY,
-    startX: work.cover.x,
-    startY: work.cover.y,
-    width: event.currentTarget.clientWidth || 1,
-    height: event.currentTarget.clientHeight || 1,
-    moved: false,
-  };
-  event.currentTarget.setPointerCapture(event.pointerId);
-  event.currentTarget.classList.add('panning');
-}
-
-function moveVisualCoverPan(event) {
-  if (!visualPanState || visualPanState.pointerId !== event.pointerId) return;
-  const dx = event.clientX - visualPanState.startClientX;
-  const dy = event.clientY - visualPanState.startClientY;
-  if (Math.abs(dx) + Math.abs(dy) > 2) visualPanState.moved = true;
-  const work = S.works[visualPanState.index];
-  work.cover.x = Math.max(0, Math.min(100, Math.round(visualPanState.startX - dx / visualPanState.width * 100)));
-  work.cover.y = Math.max(0, Math.min(100, Math.round(visualPanState.startY - dy / visualPanState.height * 100)));
-  updateVisualCoverDom(visualPanState.index);
-}
-
-function endVisualCoverPan(event) {
-  if (!visualPanState || visualPanState.pointerId !== event.pointerId) return;
-  const moved = visualPanState.moved;
-  event.currentTarget.classList.remove('panning');
-  if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-  visualPanState = null;
-  if (moved) snapshot();
-}
-
-function visualCoverWheel(event, index) {
-  event.preventDefault();
-  event.stopPropagation();
-  selectVisualWork(index);
-  const work = S.works[index];
-  work.cover.zoom = Math.max(100, Math.min(220, work.cover.zoom + (event.deltaY < 0 ? 5 : -5)));
-  updateVisualCoverDom(index);
-  clearTimeout(visualWheelSnapshotTimer);
-  visualWheelSnapshotTimer = setTimeout(snapshot, 180);
-}
-
-function startVisualWorkDrag(event, index) {
-  event.stopPropagation();
-  visualDraggedWorkIndex = index;
-  if (event.dataTransfer) {
-    event.dataTransfer.effectAllowed = 'move';
-    event.dataTransfer.setData('text/plain', String(index));
-  }
-}
-
-function endVisualWorkDrag() {
-  visualDraggedWorkIndex = -1;
-  document.querySelectorAll('.visual-work-card.drag-over').forEach(card => card.classList.remove('drag-over'));
-}
-
-function visualWorkDragOver(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  event.currentTarget.classList.add('drag-over');
-}
-
-function visualWorkDragLeave(event) {
-  event.currentTarget.classList.remove('drag-over');
-}
-
-function dropVisualWork(event, targetIndex, targetGroup) {
-  event.preventDefault();
-  event.stopPropagation();
-  const from = visualDraggedWorkIndex >= 0 ? visualDraggedWorkIndex : Number(event.dataTransfer && event.dataTransfer.getData('text/plain'));
-  const movedWork = S.works[from];
-  if (!movedWork) return;
-  movedWork.group = targetGroup;
-  if (from !== targetIndex) moveWorkItem(from, targetIndex);
-  visualSelectedWorkIndex = S.works.indexOf(movedWork);
-  currentWorkIndex = visualSelectedWorkIndex;
-  endVisualWorkDrag();
-  renderWorks();
-  renderVisualLayout();
-  snapshot();
-  updateStatus();
-}
-
-function dropVisualWorkOnGroup(event, targetGroup) {
-  event.preventDefault();
-  if (event.target.closest('.visual-work-card')) return;
-  const from = visualDraggedWorkIndex >= 0 ? visualDraggedWorkIndex : Number(event.dataTransfer && event.dataTransfer.getData('text/plain'));
-  const movedWork = S.works[from];
-  if (!movedWork) return;
-  S.works.splice(from, 1);
-  movedWork.group = targetGroup;
-  let insertAt = -1;
-  S.works.forEach((work, index) => { if (work.group === targetGroup) insertAt = index; });
-  S.works.splice(insertAt + 1, 0, movedWork);
-  visualSelectedWorkIndex = S.works.indexOf(movedWork);
-  currentWorkIndex = visualSelectedWorkIndex;
-  endVisualWorkDrag();
-  renderWorks();
-  renderVisualLayout();
-  snapshot();
-  updateStatus();
-}
-
   if (!S.workGroupNames || typeof S.workGroupNames !== 'object') S.workGroupNames = {};
   WORK_GROUPS.forEach(g => {
     const raw = S.workGroupNames[g.id] || {};
@@ -1148,37 +836,31 @@ function getWorkGroupName(groupId, lang) {
   return String(g[lang] || g.zh || g.en || '');
 }
 function renderWorkGroupNameInputs() {
-  const pEn = document.getElementById('work_group_project_en');
-  const pZh = document.getElementById('work_group_project_zh');
-  const tEn = document.getElementById('work_group_tool_en');
-  const tZh = document.getElementById('work_group_tool_zh');
-  const aEn = document.getElementById('work_group_art_en');
-  const aZh = document.getElementById('work_group_art_zh');
-  if (pEn) pEn.value = getWorkGroupName('project', 'en');
-  if (pZh) pZh.value = getWorkGroupName('project', 'zh');
-  if (tEn) tEn.value = getWorkGroupName('tool', 'en');
-  if (tZh) tZh.value = getWorkGroupName('tool', 'zh');
-  if (aEn) aEn.value = getWorkGroupName('art', 'en');
-  if (aZh) aZh.value = getWorkGroupName('art', 'zh');
+  const box = document.getElementById('work_group_inputs');
+  if (!box) return;
+  box.innerHTML = WORK_GROUPS.map(g => `
+    <div class="bilingual">
+      <div class="form-group">
+        <label class="form-label">${esc(WORK_GROUP_NAME_DEFAULTS[g.id].zh)} <span class="lang-badge lang-en">EN</span></label>
+        <input type="text" id="work_group_${g.id}_en" value="${esc(getWorkGroupName(g.id, 'en'))}" placeholder="${esc(WORK_GROUP_NAME_DEFAULTS[g.id].en)}" oninput="saveWorkGroupNamesFromInputs()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">${esc(WORK_GROUP_NAME_DEFAULTS[g.id].zh)} <span class="lang-badge lang-zh">ZH</span></label>
+        <input type="text" id="work_group_${g.id}_zh" value="${esc(getWorkGroupName(g.id, 'zh'))}" placeholder="${esc(WORK_GROUP_NAME_DEFAULTS[g.id].zh)}" oninput="saveWorkGroupNamesFromInputs()">
+      </div>
+    </div>`).join('');
 }
 function saveWorkGroupNamesFromInputs() {
   normalizeWorkGroupNames();
-  const pEn = document.getElementById('work_group_project_en');
-  const pZh = document.getElementById('work_group_project_zh');
-  const tEn = document.getElementById('work_group_tool_en');
-  const tZh = document.getElementById('work_group_tool_zh');
-  const aEn = document.getElementById('work_group_art_en');
-  const aZh = document.getElementById('work_group_art_zh');
-  if (pEn) S.workGroupNames.project.en = String(pEn.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.project.en;
-  if (pZh) S.workGroupNames.project.zh = String(pZh.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.project.zh;
-  if (tEn) S.workGroupNames.tool.en = String(tEn.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.tool.en;
-  if (tZh) S.workGroupNames.tool.zh = String(tZh.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.tool.zh;
-  if (aEn) S.workGroupNames.art.en = String(aEn.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.art.en;
-  if (aZh) S.workGroupNames.art.zh = String(aZh.value || '').trim() || WORK_GROUP_NAME_DEFAULTS.art.zh;
+  WORK_GROUPS.forEach(g => {
+    const en = document.getElementById(`work_group_${g.id}_en`);
+    const zh = document.getElementById(`work_group_${g.id}_zh`);
+    if (en) S.workGroupNames[g.id].en = en.value.trim() || WORK_GROUP_NAME_DEFAULTS[g.id].en;
+    if (zh) S.workGroupNames[g.id].zh = zh.value.trim() || WORK_GROUP_NAME_DEFAULTS[g.id].zh;
+  });
   renderWorks();
-  snapshot();
+  _s();
 }
-
 function getWorkLinkPreset(i) {
   const p = workLinkPresets[i] || {};
   return {
@@ -1661,7 +1343,8 @@ function renderWorks() {
   const kw = worksSearchKeyword.toLowerCase();
   const groupOnly = worksGroupFilter;
   const totalCount = S.works.length;
-  const groupBuckets = { project: [], tool: [], art: [], other: [] };
+  const groupBuckets = { other: [] };
+  WORK_GROUPS.forEach(g => { groupBuckets[g.id] = []; });
   S.works.forEach((w, i) => {
     const gid = w.group || inferWorkGroupFromCategory(w.category);
     if (groupOnly !== 'all' && gid !== groupOnly) return;
@@ -1677,7 +1360,7 @@ function renderWorks() {
     if (groupBuckets[gid]) groupBuckets[gid].push({ w, i });
     else groupBuckets.other.push({ w, i });
   });
-  const visibleCount = groupBuckets.project.length + groupBuckets.tool.length + groupBuckets.art.length + groupBuckets.other.length;
+  const visibleCount = Object.keys(groupBuckets).reduce((n, k) => n + groupBuckets[k].length, 0);
   if (statEl) statEl.textContent = `显示 ${visibleCount} / ${totalCount}`;
 
   const renderCard = (w, i, mount, groupIndex) => {
@@ -1751,34 +1434,27 @@ function renderWorks() {
         <div class="form-group"><label class="form-label">封面图地址（在右侧资源库点图片自动绑定）</label>
           <input type="text" value="${esc(w.image)}" placeholder="点击右侧图片后自动填充" readonly style="opacity:.9;">
         </div>
-        <div class="work-layout-editor">
-          <div class="work-cover-preview" id="w_cover_preview_${i}" style="aspect-ratio:${w.layout.aspect};${workCoverStyle(w)}" onclick="setWorkCoverFocus(event,${i})" title="&#x70B9;&#x51FB;&#x753B;&#x9762;&#x8BBE;&#x7F6E;&#x5C01;&#x9762;&#x7126;&#x70B9;">
-            <span class="work-cover-cross" style="left:${w.cover.x}%;top:${w.cover.y}%"></span>
-            ${w.image ? '' : '<span class="work-cover-empty">&#x8BF7;&#x5148;&#x4ECE;&#x53F3;&#x4FA7;&#x5A92;&#x4F53;&#x5E93;&#x9009;&#x62E9;&#x5C01;&#x9762;</span>'}
+        ${w.image ? `<img class="work-cover-thumb" src="${esc(editorPreviewUrl(w.image))}" alt="">` : '<div class="work-cover-thumb work-cover-thumb--empty">请先从右侧媒体库选择封面</div>'}
+        <div class="form-group"><label class="form-label">卡片预览短片（3–8 秒循环；填写不带扩展名的路径，需同时有 .mp4 和 .webp 封面帧）</label>
+          <input type="text" value="${esc(w.clip || '')}" placeholder="例如 assets/clips/casino" oninput="S.works[${i}].clip=this.value.trim().replace(/[.](mp4|webp)$/i,'');_s()">
+        </div>
+        <div class="form-group"><label class="form-label">作品 PDF（详情页会显示 PDF 图片页；以后换成视频可留空）</label>
+          <input type="text" value="${esc(w.pdf || '')}" placeholder="例如 assets/uploads/Project1_Compressed.pdf" oninput="S.works[${i}].pdf=this.value.trim();_s()">
+        </div>
+        <div class="bilingual">
+          <div class="form-group"><label class="form-label">详情页 · 年份</label>
+            <input type="text" value="${esc((w.detail && w.detail.year) || '')}" placeholder="2026" oninput="setWorkDetail(${i},'year',this.value)">
           </div>
-          <div class="work-layout-controls">
-            <div class="bilingual">
-              <div class="form-group"><label class="form-label">&#x5361;&#x7247;&#x5BBD;&#x5EA6;</label>
-                <select oninput="S.works[${i}].layout.span=Number(this.value)">
-                  <option value="4" ${w.layout.span===4?'selected':''}>1/3 - &#x6807;&#x51C6;</option>
-                  <option value="6" ${w.layout.span===6?'selected':''}>1/2 - &#x4E2D;&#x7B49;</option>
-                  <option value="8" ${w.layout.span===8?'selected':''}>2/3 - &#x4E3B;&#x89C6;&#x89C9;</option>
-                  <option value="12" ${w.layout.span===12?'selected':''}>&#x6574;&#x884C; - &#x6A2A;&#x5E45;</option>
-                </select>
-              </div>
-              <div class="form-group"><label class="form-label">&#x5C01;&#x9762;&#x6BD4;&#x4F8B;</label>
-                <select oninput="updateWorkLayoutAspect(${i},this.value)">
-                  <option value="16/7" ${w.layout.aspect==='16/7'?'selected':''}>&#x8D85;&#x5BBD; 16:7</option>
-                  <option value="16/9" ${w.layout.aspect==='16/9'?'selected':''}>&#x6A2A;&#x5411; 16:9</option>
-                  <option value="4/3" ${w.layout.aspect==='4/3'?'selected':''}>&#x7ECF;&#x5178; 4:3</option>
-                  <option value="1/1" ${w.layout.aspect==='1/1'?'selected':''}>&#x65B9;&#x5F62; 1:1</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group"><label class="form-label">&#x6A2A;&#x5411;&#x7126;&#x70B9; <b id="w_cover_x_value_${i}">${w.cover.x}</b></label><input type="range" min="0" max="100" value="${w.cover.x}" oninput="updateWorkCover(${i},'x',this.value)"></div>
-            <div class="form-group"><label class="form-label">&#x7EB5;&#x5411;&#x7126;&#x70B9; <b id="w_cover_y_value_${i}">${w.cover.y}</b></label><input type="range" min="0" max="100" value="${w.cover.y}" oninput="updateWorkCover(${i},'y',this.value)"></div>
-            <div class="form-group"><label class="form-label">&#x5C01;&#x9762;&#x7F29;&#x653E; <b id="w_cover_zoom_value_${i}">${w.cover.zoom}%</b></label><input type="range" min="100" max="220" value="${w.cover.zoom}" oninput="updateWorkCover(${i},'zoom',this.value)"></div>
-            <div class="form-group"><label class="form-label">&#x6587;&#x5B57;&#x5BF9;&#x9F50;</label><select oninput="S.works[${i}].layout.textAlign=this.value"><option value="left" ${w.layout.textAlign==='left'?'selected':''}>&#x5DE6;&#x5BF9;&#x9F50;</option><option value="center" ${w.layout.textAlign==='center'?'selected':''}>&#x5C45;&#x4E2D;</option></select></div>
+          <div class="form-group"><label class="form-label">详情页 · 工具 / 引擎</label>
+            <input type="text" value="${esc((w.detail && w.detail.tools) || '')}" placeholder="Unreal Engine, Houdini" oninput="setWorkDetail(${i},'tools',this.value)">
+          </div>
+        </div>
+        <div class="bilingual">
+          <div class="form-group"><label class="form-label">详情页 · 项目介绍 <span class="lang-badge lang-en">EN</span></label>
+            <textarea oninput="setWorkDetail(${i},'overview',this.value,'en')">${esc((w.detail && w.detail.overview && w.detail.overview.en) || '')}</textarea>
+          </div>
+          <div class="form-group"><label class="form-label">详情页 · 项目介绍 <span class="lang-badge lang-zh">ZH</span></label>
+            <textarea oninput="setWorkDetail(${i},'overview',this.value,'zh')">${esc((w.detail && w.detail.overview && w.detail.overview.zh) || '')}</textarea>
           </div>
         </div>
         <div class="form-group"><label class="form-label">资源关键词（用于自动筛选相关视频/图片）</label>
@@ -1863,9 +1539,7 @@ function renderWorks() {
     list.forEach((item, idx) => renderCard(item.w, item.i, grid, idx + 1));
   };
 
-  appendGroup('project', getWorkGroupLabel('project'));
-  appendGroup('tool', getWorkGroupLabel('tool'));
-  appendGroup('art', getWorkGroupLabel('art'));
+  WORK_GROUPS.forEach(g => appendGroup(g.id, getWorkGroupLabel(g.id)));
   if (groupBuckets.other.length) {
     const extraTitle = document.createElement('div');
     extraTitle.style.cssText = 'margin:12px 0 8px;color:var(--text-muted);font-size:11px;';
@@ -1877,6 +1551,17 @@ function renderWorks() {
     groupBuckets.other.forEach((item, idx) => renderCard(item.w, item.i, extraGrid, idx + 1));
   }
   renderWorkMediaLibraryPanel();
+}
+function setWorkDetail(i, key, value, lang) {
+  const w = S.works[i];
+  if (!w.detail || typeof w.detail !== 'object') w.detail = {};
+  if (lang) {
+    if (!w.detail.overview || typeof w.detail.overview !== 'object') w.detail.overview = { en: '', zh: '' };
+    w.detail.overview[lang] = value;
+  } else {
+    w.detail[key] = value;
+  }
+  _s();
 }
 function addWork() {
   S.works.push({group:'project',category:'shader',hasVideo:false,image:'',assetKey:'',layout:{span:4,aspect:'16/9',textAlign:'left'},cover:{x:50,y:50,zoom:100},title:{en:'',zh:''},desc:{en:'',zh:''},tags:[],links:[]});
@@ -2449,6 +2134,21 @@ function exportConfig() {
   toast(`✓ config_${stamp}.js 已下载！用它替换项目中的 config.js。`, 'success');
 }
 
+function workDetailJs(d) {
+  if (!d || typeof d !== 'object') return '';
+  const ov = d.overview || {};
+  const has = d.year || d.tools || ov.en || ov.zh;
+  if (!has) return '';
+  return `
+      detail: {
+        year: ${q(d.year || '')},
+        tools: ${q(d.tools || '')},
+        overview: {
+          en: ${q(ov.en || '')},
+          zh: ${q(ov.zh || '')},
+        },
+      },`;
+}
 function q(str) {
   // safely quote a string for JS source
   return "'" + String(str||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,'\\n') + "'";
@@ -2578,9 +2278,7 @@ ${s.about.interests.map(it => `      {
      ============================================================ */
 
   workGroupNames: {
-    project: { en: ${q((s.workGroupNames && s.workGroupNames.project && s.workGroupNames.project.en) || WORK_GROUP_NAME_DEFAULTS.project.en)}, zh: ${q((s.workGroupNames && s.workGroupNames.project && s.workGroupNames.project.zh) || WORK_GROUP_NAME_DEFAULTS.project.zh)} },
-    tool: { en: ${q((s.workGroupNames && s.workGroupNames.tool && s.workGroupNames.tool.en) || WORK_GROUP_NAME_DEFAULTS.tool.en)}, zh: ${q((s.workGroupNames && s.workGroupNames.tool && s.workGroupNames.tool.zh) || WORK_GROUP_NAME_DEFAULTS.tool.zh)} },
-    art: { en: ${q((s.workGroupNames && s.workGroupNames.art && s.workGroupNames.art.en) || WORK_GROUP_NAME_DEFAULTS.art.en)}, zh: ${q((s.workGroupNames && s.workGroupNames.art && s.workGroupNames.art.zh) || WORK_GROUP_NAME_DEFAULTS.art.zh)} },
+${WORK_GROUPS.map(g => `    ${g.id}: { en: ${q(getWorkGroupName(g.id, 'en'))}, zh: ${q(getWorkGroupName(g.id, 'zh'))} },`).join('\n')}
   },
 
   works: [
@@ -2597,7 +2295,9 @@ ${s.works.map(w => `    {
         en: ${q(w.desc.en)},
         zh: ${q(w.desc.zh)},
       },
-      tags: [${(w.tags||[]).map(t=>q(t)).join(', ')}],
+      tags: [${(w.tags||[]).map(t=>q(t)).join(', ')}],${w.clip ? `
+      clip: ${q(w.clip)},` : ''}${w.pdf ? `
+      pdf: ${q(w.pdf)},` : ''}${workDetailJs(w.detail)}
       links: [
 ${(w.links||[]).map((lk, li) => `        { type: ${q(inferLinkType(lk, li))}, label: { en: ${q(lk.label.en)}, zh: ${q(lk.label.zh)} }, href: ${q(lk.href)} },`).join('\n')}
       ],

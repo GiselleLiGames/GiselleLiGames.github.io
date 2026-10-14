@@ -1,4 +1,4 @@
-/* Hand-arranged case studies. */
+/* Hand-arranged case studies. Original layout preserved; source coverage reconciled. */
 window.CURATED_CASE_STUDIES = {
   "5": [
     {
@@ -28,12 +28,43 @@ window.CURATED_CASE_STUDIES = {
       ]
     },
     {
-      "id": "stylized-materials",
+      "id": "inspiration",
       "title": {
-        "zh": "风格化材质",
-        "en": "Stylized Materials"
+        "zh": "灵感与风格化材质",
+        "en": "Inspiration & Stylized Materials"
       },
       "sections": [
+        {
+          "h": "Inspiration — Why?",
+          "sub": "",
+          "text": "This project originated from my long-time admiration for Hayao Miyazaki's works. When I saw this image of Laputa's home in Castle in the Sky, its palette reminded me of the tones I love in ICO, yet it was rendered in a stylized manner—which inspired me to give it a try. At the same time, I noticed that many of its assets involved foundational workflows created with Houdini HDAs, so I also wanted to use this as an opportunity to practice hands-on Houdini development.",
+          "images": [
+            {
+              "src": "assets/uploads/figma/source/3febad7d14ac84184a8229ec58f174678143b383.webp",
+              "w": 1200,
+              "h": 1714,
+              "cap": "Castle in the Sky"
+            },
+            {
+              "src": "assets/uploads/figma/source/98da3b738a047ec08a22d7ebbb2da4c95f3e7089.jpg",
+              "w": 480,
+              "h": 288,
+              "cap": "Reference"
+            },
+            {
+              "src": "assets/uploads/figma/source/5922163136128a1a3d5a081f700d9f97aab1f8f5.webp",
+              "w": 665,
+              "h": 375,
+              "cap": "Reference"
+            },
+            {
+              "src": "assets/uploads/figma/source/9160fbfb4e4fda4495760fe5ff0d4c96d412ca3e.webp",
+              "w": 480,
+              "h": 637,
+              "cap": "Reference"
+            }
+          ]
+        },
         {
           "h": "Brick Wall Material",
           "sub": "Slope Blur Edge Wear + Flood Fill + Curvature Edge Highlights",

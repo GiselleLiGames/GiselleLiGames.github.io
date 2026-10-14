@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Portfolio | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20261013a" />
-  <link rel="stylesheet" href="assets/entry/pv.css?v=20261013a" />
+  <link rel="stylesheet" href="assets/entry/pv.css?v=20261014a" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
     /* ---------- Intro (left-aligned, name size shared with résumé / contact) ---------- */
@@ -31,7 +31,7 @@
     }
 
     /* ---------- Grid: phone 1 / iPad portrait 2 / iPad landscape+ 3 ---------- */
-    .pv-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+    .pv-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
     @media (min-width: 640px) { .pv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
     @media (min-width: 1080px) { .pv-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; } }
     .pv-empty { grid-column: 1 / -1; padding: 40px 0; text-align: center; color: var(--pv-dim); }
@@ -43,38 +43,29 @@
       var q = new URLSearchParams(location.search), seen = false;
       try { seen = sessionStorage.getItem('pv-curtain') === '1'; } catch (e) {}
       var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if ((q.has('intro') || !seen) && !reduced) document.documentElement.classList.add('pv-intro');
+      if ((q.has('intro') || !seen) && !reduced) document.documentElement.classList.add('pv-curtain-on');
       try { sessionStorage.setItem('pv-curtain', '1'); } catch (e) {}
       if (q.has('intro')) { q.delete('intro'); history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); }
     })();
   </script>
 </head>
 <body class="portfolio-theater scene-page pv-page">
-  <div class="pv-curtain" id="pvCurtain" aria-hidden="true" hidden>
-    <div class="pv-curtain__seam"></div>
-    <div class="pv-curtain__half pv-curtain__half--l"></div>
-    <div class="pv-curtain__half pv-curtain__half--r"></div>
-    <div class="pv-curtain__valance"></div>
-    <div class="pv-curtain__title">GiselleLi<small data-i18n="portfolio.intro.role">技术美术师</small></div>
-    <div class="pv-curtain__skip" data-pvskip>TAP TO SKIP</div>
-  </div>
+  <div id="pvCurtain" aria-hidden="true" hidden></div>
+  <script src="assets/entry/pv-curtain.js?v=20261014a"></script>
   <script>
     (function () {
       var root = document.documentElement, c = document.getElementById('pvCurtain');
-      if (!root.classList.contains('pv-intro')) { c.remove(); return; }
+      if (!root.classList.contains('pv-curtain-on') || !window.PVCurtain) { c.remove(); root.classList.remove('pv-curtain-on'); return; }
       c.hidden = false;
-      var opened = false;
-      function open() {
-        if (opened) return; opened = true;
-        c.classList.remove('is-peek'); c.classList.add('is-open');
-        root.classList.add('pv-intro-go');
-        setTimeout(function () { c.remove(); root.classList.remove('pv-intro', 'pv-intro-go'); }, 1500);
-      }
-      requestAnimationFrame(function () { c.classList.add('is-ready'); });
-      setTimeout(function () { if (!opened) c.classList.add('is-peek'); }, 650);
-      setTimeout(open, 1250);
-      c.addEventListener('pointerdown', open);
-      addEventListener('keydown', open, { once: true });
+      PVCurtain.play(c, {
+        variant: 'drape',
+        subtitleHTML: '<small data-i18n="portfolio.intro.role">技术美术师</small>',
+        onOpen: function () { root.classList.add('pv-curtain-go'); },
+        onDone: function () {
+          c.remove();
+          setTimeout(function () { root.classList.remove('pv-curtain-on', 'pv-curtain-go'); }, 900);
+        }
+      });
     })();
   </script>
   <div class="portfolio-bg-grade" aria-hidden="true"></div>

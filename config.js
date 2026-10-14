@@ -280,7 +280,6 @@ const CONFIG = {
       tags: ['Tool', 'Unreal Engine'],
       pdf: 'assets/uploads/Project4_Compressed.pdf',
       links: [
-        { type: 'image', label: { en: 'View Image →', zh: '查看图片 →' }, href: 'assets/uploads/UE关卡工具.webp' },
       ],
     },
   ],

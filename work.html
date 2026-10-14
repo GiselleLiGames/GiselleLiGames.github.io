@@ -6,7 +6,7 @@
   <title>Work | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20261013a" />
   <link rel="stylesheet" href="assets/entry/pv.css?v=20261013a" />
-  <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=fdfa0b8fbb34" />
+  <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=20261013h" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
     html { overflow-x: clip; }
@@ -122,16 +122,15 @@
 
   <div class="pv-zoom" id="pvZoom" role="dialog" aria-modal="true"><img alt="" /></div>
 
-  <script src="config.js?v=20261013-shader-breakdown"></script>
-  <script src="js/site-translations.js?v=9adb83a9190d"></script>
+  <script src="config.js?v=20261013-singlelight"></script>
   <script src="js/typography.js?v=20260726a"></script>
-  <script src="js/content.js?v=2bece7392724"></script>
-  <script src="js/i18n.js?v=b5e48c04f52f"></script>
+  <script src="js/content.js?v=20260726a"></script>
+  <script src="js/i18n.js?v=20260726a"></script>
   <script src="assets/entry/scene-background.js?v=20260711"></script>
-  <script src="js/pv.js?v=bd883637b15e"></script>
-  <script src="js/figma-case-studies.js?v=0f4d567b6609"></script>
-  <script src="js/case-study-curated.js?v=b29ded20b1d7"></script>
-  <script src="js/figma-case-study-renderer.js?v=e793d89089fc"></script>
+  <script src="js/pv.js?v=20261013a"></script>
+  <script src="js/figma-case-studies.js?v=70ed169089d8"></script>
+  <script src="js/case-study-curated.js?v=20261013h"></script>
+  <script src="js/figma-case-study-renderer.js?v=20261013h"></script>
   <script>
   (function () {
     'use strict';
@@ -166,7 +165,7 @@
       var vids = (w.links || []).filter(function (l) { return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(l.href || ''); });
       var images = (w.links || []).filter(function (l) { return l.type === 'image'; });
       var title = P.t(w.title);
-      document.title = title + ' | ' + P.t(CONFIG.name) + ' · GiselleLi';
+      document.title = title + ' | Hanqing Li - GiselleLi';
 
       var sections = [{ id: 'overview', name: L('概述', 'Overview') }];
       if (full) sections.push({ id: 'video', name: vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video') });
@@ -205,7 +204,7 @@
             '<div class="pv-kicker">' + P.esc(GROUP[w.group] ? P.t(GROUP[w.group]) : '') + '</div>' +
             '<h1 class="pv-htitle">' + P.esc(title) + '</h1>' +
             '<p class="pv-hdesc">' + P.esc(P.t(w.desc)) + '</p>' +
-            '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(P.t(tg)) + '</span>'; }).join('') + '</div>' +
+            '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(tg) + '</span>'; }).join('') + '</div>' +
           '</div>' +
         '</section>' +
 
@@ -231,7 +230,7 @@
           }).join('') + '</div></section>' : '') +
 
         (images.length ? '<section class="pv-sec pv-rise" id="gallery"><h2>' + L('图片', 'Images') + '</h2><div class="pv-pages">' +
-          images.map(function (l) { return '<figure style="margin:0"><button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(P.t(l.label) || title) + '" loading="lazy"></button>' + (l.description ? '<figcaption class="pv-prose" style="margin-top:12px"><strong>' + P.esc(P.t(l.label)) + '</strong><p>' + P.esc(P.t(l.description)) + '</p></figcaption>' : '') + '</figure>'; }).join('') +
+          images.map(function (l) { return '<button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(title) + '" loading="lazy"></button>'; }).join('') +
           '</div></section>' : '') +
 
         (hasStudy ? FigmaCaseStudy.render(w, zh ? 'zh' : 'en') : '') +

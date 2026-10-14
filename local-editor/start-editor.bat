@@ -31,7 +31,7 @@ start "GiselleLi Local Editor Server" cmd /k %EDITOR_PYTHON% -m http.server 8000
 
 :open_editor
 timeout /t 1 /nobreak >nul
-start "" "http://localhost:8000/local-editor/?panel=layout"
+start "" "http://localhost:8000/local-editor/?panel=works"
 popd
 
 echo The editor is opening in your browser.
