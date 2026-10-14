@@ -1,1 +1,10 @@
 *.log
+
+.figma-import/
+
+# Keep downloaded originals locally; publish the web image variants.
+assets/uploads/figma/*
+!assets/uploads/figma/source/
+!assets/uploads/figma/import-manifest.json
+assets/uploads/figma/source/*.png
+assets/uploads/figma/source/*.jpg

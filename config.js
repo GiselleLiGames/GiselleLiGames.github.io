@@ -70,7 +70,7 @@ const CONFIG = {
       title: { en: 'Technical Artist', zh: '游戏技术美术' },
       desc: {
         en: 'Focused on the intersection of game visuals and technology — specializing in shader development, procedural content generation, and real-time rendering optimization.',
-        zh: '专注于游戏视觉技术与艺术的交叉领域，擅长 Shader 开发、程序化内容生成与实时渲染优化。致力于将技术与美学融合，打造沉浸式游戏视觉体验。',
+        zh: '专注于游戏视觉技术与艺术的交叉领域，擅长 着色器 开发、程序化内容生成与实时渲染优化。致力于将技术与美学融合，打造沉浸式游戏视觉体验。',
       },
     },
 
@@ -105,12 +105,12 @@ const CONFIG = {
   about: {
     bio: {
       en: 'A technical artist who loves games — focused on shader development, procedural content, and real-time rendering. I believe the boundary between technology and art was always blurred: the best visuals in games are poetry written in code.',
-      zh: '热爱游戏的技术美术师，专注于 Shader 开发、程序化内容生成与实时渲染。相信技术与艺术的边界本就模糊——最好的游戏画面，是代码写出来的诗。',
+      zh: '热爱游戏的技术美术师，专注于 着色器 开发、程序化内容生成与实时渲染。相信技术与艺术的边界本就模糊——最好的游戏画面，是代码写出来的诗。',
     },
 
     desc: {
       en: 'Fell in love with games early on and taught myself shader programming in college. I enjoy solving "can this effect even be done?" questions — most of the time the answer is yes. In my free time I make Game Jam games and explore the aesthetic potential of indie development.',
-      zh: '从小热爱游戏，大学期间自学 Shader 编程并一头扎进技术美术领域。喜欢解决"这个效果能实现吗"这类问题——大多数时候，答案是可以的。业余时间喜欢制作 Game Jam 游戏，探索独立游戏的美学可能性。',
+      zh: '从小热爱游戏，大学期间自学 着色器 编程并一头扎进技术美术领域。喜欢解决"这个效果能实现吗"这类问题——大多数时候，答案是可以的。业余时间喜欢制作 Game Jam 游戏，探索独立游戏的美学可能性。',
     },
 
     photo: '',
@@ -152,30 +152,32 @@ const CONFIG = {
     project: { en: 'Complete Projects', zh: '完整项目作品' },
     tool: { en: 'Tools', zh: '工具作品' },
     art: { en: 'Independent Works', zh: '独立作品' },
+    collab: { en: 'Collaborative Works', zh: '合作作品' },
   },
   works: [
     {
       category: 'shader',
-      group: 'art',
+      group: 'collab',
       hasVideo: true,
       image: 'assets/uploads/previews/casino-central-orbit.webp',
-      title: { en: 'Art Deco Casino Shader', zh: '装饰艺术赌场 Shader' },
+      title: { en: 'Art Deco Casino Shader', zh: '装饰艺术赌场着色器' },
       desc: {
         en: 'An Art Deco casino environment in Unreal Engine, shaded for standalone Meta Quest 3 — materials, lighting and reflections built to hold up on mobile VR hardware.',
-        zh: '在 Unreal Engine 中为 Meta Quest 3 一体机制作的 Art Deco 风格赌场场景着色，兼顾材质、灯光与反射效果和移动 VR 的性能限制。',
+        zh: '在 Unreal Engine 中为 Meta Quest 3 一体机制作的 装饰艺术 风格赌场场景着色，兼顾材质、灯光与反射效果和移动 VR 的性能限制。',
       },
       tags: ['Unreal Engine', 'Meta Quest 3', 'VR', 'Shader', 'Art Deco'],
+      clip: 'assets/clips/casino',
       detail: {
         year: '2026',
         tools: 'Unreal Engine',
         overview: {
-          en: 'A 5.3-second casino environment showcase captured at 4K / 30 fps. The web edition preserves the complete camera movement at 2560 × 1440 / 30 fps.',
-          zh: '赌场场景的 5.3 秒环绕展示，原片为 4K / 30fps。网页版本保留完整镜头，采用 2560 × 1440 / 30fps。',
+          en: 'A stylized toon shader for an Art Deco casino environment, featuring custom metallic reflections and support for multiple lights.',
+          zh: '为 装饰艺术 风格赌场场景制作的风格化卡渲 着色器，结合自定义金属反射，并支持多光源。',
         },
       },
       links: [
         { type: 'video', label: { en: 'Watch 2K Video →', zh: '观看 2K 视频 →' }, href: 'assets/uploads/Casino_CentralOrbit_2K_30fps.mp4' },
-        { type: 'video', label: { en: 'Material Study · 2K →', zh: '材质球展示 · 2K →' }, href: 'assets/uploads/Toon_MaterialStudy_SingleLight_2K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study-single-light.webp', description: { en: 'One shader across three surfaces: shader-only, slot machine and floor. Each sphere receives one rotating light using the original light settings. 2560 × 1440 · 30 fps · 10 seconds.', zh: '同一 Shader 的三种表面：无颜色贴图、老虎机与地板。每个球仅使用一个旋转光源，参数沿用原来的灯光。2560 × 1440 · 30 fps · 10 秒。' } },
+        { type: 'video', label: { en: 'Material Study · 2K →', zh: '材质球展示 · 2K →' }, href: 'assets/uploads/Toon_MaterialStudy_SingleLight_2K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study-single-light.webp', description: { en: 'One shader across three surfaces: shader-only, slot machine and floor. Each sphere receives one rotating light using the original light settings. 2560 × 1440 · 30 fps · 10 seconds.', zh: '同一 着色器 的三种表面：无颜色贴图、老虎机与地板。每个球仅使用一个旋转光源，参数沿用原来的灯光。2560 × 1440 · 30 fps · 10 秒。' } },
       ],
     },
     {
@@ -183,12 +185,13 @@ const CONFIG = {
       group: 'project',
       hasVideo: true,
       image: 'assets/uploads/previews/pbr-shaders.webp',
-      title: { en: 'PBR Shaders', zh: 'PBR Shaders' },
+      title: { en: 'PBR Shaders', zh: 'PBR 着色器' },
       desc:  {
         en: 'A scene-based shader showreel focused on real-time material and rendering presentation.',
-        zh: '以场景展示为主的 Shader 作品集，聚焦实时材质与渲染表现。',
+        zh: '以场景展示为主的 着色器 作品集，聚焦实时材质与渲染表现。',
       },
       tags: ['Shader', 'Shading', 'Showreel'],
+      clip: 'assets/clips/pbr-shaders',
       pdf: 'assets/uploads/Project1_Compressed.pdf',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/ShadingShowreel.mp4' },
@@ -199,12 +202,13 @@ const CONFIG = {
       group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/lycorius-shader.webp',
-      title: { en: 'Lycorius Shader Iteration', zh: 'Lycorius Shader 迭代' },
+      title: { en: 'Lycorius Shader Iteration', zh: '彼岸花着色器迭代' },
       desc:  {
         en: 'An iterative shader study for Lycorius, exploring stylized surface response and presentation polish.',
-        zh: '围绕 Lycorius 的 Shader 迭代研究，探索风格化表面响应与展示效果。',
+        zh: '围绕 彼岸花 的 着色器 迭代研究，探索风格化表面响应与展示效果。',
       },
       tags: ['Shader', 'Iteration'],
+      clip: 'assets/clips/lycoris',
       pdf: 'assets/uploads/Project2_Compressed.pdf',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/LycoriusShader迭代.mp4' },
@@ -221,6 +225,7 @@ const CONFIG = {
         zh: '实时眼球材质研究，聚焦虹膜层次、角膜高光与角色表现力。',
       },
       tags: ['Shader', 'Character'],
+      clip: 'assets/clips/eye',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/Eye.mp4' },
       ],
@@ -230,12 +235,13 @@ const CONFIG = {
       group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/shadow-man.webp',
-      title: { en: 'Shadow Man', zh: 'Shadow Man' },
+      title: { en: 'Shadow Man', zh: '暗影人' },
       desc:  {
         en: 'A remastered presentation of ShadowMan, refining atmosphere, rendering, and scene mood.',
-        zh: 'ShadowMan 的重制展示，重点优化氛围、渲染表现与场景情绪。',
+        zh: '暗影人 的重制展示，重点优化氛围、渲染表现与场景情绪。',
       },
       tags: ['Render', 'Remaster'],
+      clip: 'assets/clips/shadow-man',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/ShadowMan_Remaster.mp4' },
       ],
@@ -251,6 +257,7 @@ const CONFIG = {
         zh: '程序化内容生成展示，聚焦可复用的场景构建流程与实时呈现效果。',
       },
       tags: ['PCG', 'Procedural', 'Tool'],
+      clip: 'assets/clips/pcg',
       pdf: 'assets/uploads/Project3_Compressed.pdf',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/PCG.mp4' },
@@ -319,7 +326,7 @@ const CONFIG = {
       bullets: [
         {
           en: '<strong>Shader Maintenance & Pipeline R&D:</strong> Maintained shader variant effects triggered by piece skills and integrated the variant-switching workflow with gameplay systems; researched and migrated shader effects across rendering pipelines; designed shaders for board environments.',
-          zh: '<strong>Shader 维护与管线预研：</strong>维护棋子技能效果触发时的 Shader 变体效果，整合变体切换方式与程序功能的连接；完成不同渲染管线下 Shader 效果的预研与迁移；负责棋盘场景 Shader 设计。',
+          zh: '<strong>着色器 维护与管线预研：</strong>维护棋子技能效果触发时的 着色器 变体效果，整合变体切换方式与程序功能的连接；完成不同渲染管线下 着色器 效果的预研与迁移；负责棋盘场景 着色器 设计。',
         },
         {
           en: '<strong>Art Asset Coordination & Iteration:</strong> Coordinated with co-development partners on art assets required for target effects; reviewed deliveries, requested revisions, and drove iterative improvements.',
@@ -377,11 +384,11 @@ const CONFIG = {
         },
         {
           en: '<strong>Performance Optimization:</strong> Conducted profiling analysis; collaborated with Rokid\'s technical team for stable frame rates.',
-          zh: '<strong>性能优化：</strong>进行 Profiling 分析定位瓶颈，与 Rokid 技术团队协作确保稳定帧率。',
+          zh: '<strong>性能优化：</strong>进行 性能分析 分析定位瓶颈，与 Rokid 技术团队协作确保稳定帧率。',
         },
         {
           en: '<strong>Shader Development:</strong> Developed custom shader solutions utilizing ASE, CG, and HLSL for stylized rendering.',
-          zh: '<strong>Shader 开发：</strong>使用 ASE、CG 和 HLSL 开发风格化渲染的自定义着色器方案。',
+          zh: '<strong>着色器 开发：</strong>使用 ASE、CG 和 HLSL 开发风格化渲染的自定义着色器方案。',
         },
       ],
     },
@@ -428,7 +435,7 @@ const CONFIG = {
         },
         {
           en: '<strong>Shader Development:</strong> Independently developed a streamlined cartoon graffiti-style shader to match the game\'s artistic vision.',
-          zh: '<strong>Shader 开发：</strong>独立开发符合游戏美术风格的简化卡通涂鸦风着色器，并完成集成保证视觉统一。',
+          zh: '<strong>着色器 开发：</strong>独立开发符合游戏美术风格的简化卡通涂鸦风着色器，并完成集成保证视觉统一。',
         },
       ],
     },
@@ -446,7 +453,7 @@ const CONFIG = {
         },
         {
           en: '<strong>Shaders:</strong> Designed custom shaders in Unity URP for character gameplay and core puzzle mechanics.',
-          zh: '<strong>Shader：</strong>在 Unity URP 中为角色玩法、环境美术和核心解谜机制设计自定义着色器。',
+          zh: '<strong>着色器：</strong>在 Unity URP 中为角色玩法、环境美术和核心解谜机制设计自定义着色器。',
         },
         {
           en: '<strong>Project Planning:</strong> Led timeline planning by breaking down technical pipelines into manageable sprints.',
@@ -476,7 +483,7 @@ const CONFIG = {
         },
         {
           en: '<strong>Visual Design & Shaders:</strong> Designed high-impact enemy visuals and implemented custom horror-themed shaders.',
-          zh: '<strong>视觉设计与 Shader：</strong>设计高冲击力的敌人外观，并实现自定义恐怖主题着色器。',
+          zh: '<strong>视觉设计与 着色器：</strong>设计高冲击力的敌人外观，并实现自定义恐怖主题着色器。',
         },
         {
           en: '<strong>Enemy Behavior Programming:</strong> Programmed enemy detection, pursuit, and ambush behaviors in Unity C#.',

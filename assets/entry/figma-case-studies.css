@@ -1,0 +1,114 @@
+/* ===== Case studies (PBR / Lycoris / Laputa-PCG / Tower of Fantasy) — compact layout 2026-10-13 ===== */
+.fc-studies{--fc-accent:#d6df79;--fc-line:#d7a85f40;--fc-h:170px;margin-block:32px 56px;scroll-margin-top:130px;color:var(--pv-paper,#f5d59d)}
+.fc-studies[data-theme="lycoris"]{--fc-accent:#f0ae93}.fc-studies[data-theme="work"]{--fc-accent:#a5def2}
+
+/* chapter index */
+.fc-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:24px}
+.fc-index a{display:flex;align-items:baseline;gap:10px;padding:12px 14px;border:1px solid var(--fc-line);text-decoration:none;color:inherit;font-size:14px;line-height:1.35;background:#140b08b3;transition:border-color .2s,background .2s}
+.fc-index a b{font:italic 600 15px Georgia,serif;color:var(--fc-accent)}
+@media(hover:hover){.fc-index a:hover{border-color:var(--fc-accent);background:#21110bcc}}
+
+/* chapter card */
+.fc-chapter{position:relative;scroll-margin-top:130px;padding:28px clamp(16px,3vw,40px) 32px;border:1px solid var(--fc-line);margin-bottom:22px;background:rgba(9,8,7,.94)}
+.fc-ornament{position:absolute;right:12px;top:12px;width:52px;height:52px;object-fit:contain;opacity:.5;pointer-events:none}.fc-ornament--1{top:auto;bottom:12px;transform:rotate(180deg)}
+.fc-head{display:flex;align-items:baseline;gap:16px;margin:0 0 18px;padding-right:56px}
+.fc-head span{font:italic 28px Georgia,serif;color:var(--fc-accent);opacity:.65}
+.fc-head h2{font:600 clamp(24px,3vw,34px)/1.2 Georgia,"Microsoft YaHei",serif;margin:0;color:var(--fc-accent)}
+.fc-links{display:flex;gap:10px;flex-wrap:wrap;margin:-4px 0 20px}
+.fc-links a{font-size:13px;color:var(--fc-accent);padding:8px 13px;border:1px solid var(--fc-line);text-decoration:none}
+@media(hover:hover){.fc-links a:hover{border-color:var(--fc-accent)}}
+
+/* wide cover image: a cinematic strip, click for the full picture */
+.fc-banner{margin:0 0 22px}
+.fc-studies .fc-banner img{display:block;width:100%;height:clamp(190px,30vw,420px);object-fit:cover;object-position:50% 45%}
+
+/* one column of the original slide = one part; parts follow each other */
+.fc-part+.fc-part{margin-top:26px;padding-top:26px;border-top:1px dashed var(--fc-line)}
+
+/* text */
+.fc-text{max-width:860px}
+.fc-text p{font-size:15px;line-height:1.8;color:var(--pv-dim,rgba(245,213,157,.8));white-space:pre-line;overflow-wrap:anywhere;margin:0 0 12px}
+.fc-text:last-child p:last-child{margin-bottom:0}
+.fc-h{font:600 20px/1.3 Georgia,"Microsoft YaHei",serif;color:var(--fc-accent);margin:22px 0 10px;overflow-wrap:anywhere}
+.fc-part>.fc-h:first-child,.fc-part>.fc-chips:first-child{margin-top:0}
+.fc-chips{display:flex;flex-wrap:wrap;gap:6px 8px;list-style:none;padding:0;margin:20px 0 12px}
+.fc-chips li{font-size:13px;line-height:1.3;padding:6px 11px;border:1px solid color-mix(in srgb,var(--fc-accent) 45%,transparent);color:var(--fc-accent);background:#ffffff08}
+
+/* justified image rows: every picture keeps its ratio, a row shares one height */
+.fc-gallery{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.fc-gallery::after{content:"";flex:999 1 0px}
+.fc-gallery--one{--fc-h:270px}.fc-gallery--two{--fc-h:220px}
+/* one or two pictures keep their natural size instead of stretching across the page */
+.fc-gallery--one .fc-shot,.fc-gallery--two .fc-shot{flex-grow:0}
+.fc-shot{margin:0;flex:var(--r) 1 calc(var(--r) * var(--fc-h));min-width:0;max-width:min(100%,calc(var(--r) * var(--fc-h) * var(--fc-grow,1.6)))}
+/* very wide strips (code snippets, panels) stay short instead of filling the page */
+.fc-shot--strip{max-width:min(100%,calc(var(--r) * 100px))}
+.fc-shot button,.fc-banner button{display:block;width:100%;padding:0;border:1px solid var(--fc-line);background:#080807;cursor:zoom-in;border-radius:3px;overflow:hidden}
+.fc-shot img{display:block;width:100%;height:auto;transition:transform .35s ease,opacity .2s}
+@media(hover:hover){.fc-shot button:hover img,.fc-banner button:hover img{transform:scale(1.03)}.fc-shot button:hover,.fc-banner button:hover{border-color:var(--fc-accent)}}
+
+/* text + 1–2 pictures side by side (stacks on phones) */
+.fc-pair{display:grid;gap:14px 32px;margin:14px 0 18px;align-items:start}
+.fc-pair>.fc-gallery{margin:0}
+@media(min-width:900px){
+  .fc-pair{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center}
+  .fc-pair--flip>.fc-text{order:2}
+  .fc-pair>.fc-gallery::after{display:none}
+  .fc-pair>.fc-gallery .fc-shot{flex:var(--r) 1 calc(var(--r) * 90px);max-width:100%}
+  .fc-pair>.fc-gallery .fc-shot img{max-height:320px;object-fit:contain;background:#080807}
+}
+
+/* collapsible extras + the original deck as a thumbnail grid */
+.fc-reference{margin-block:22px 0;padding:14px 16px;border:1px solid #d7a85f33;background:#12090799}
+.fc-reference summary{cursor:pointer;font-size:14px;color:var(--pv-dim,#e2bf94)}
+.fc-reference[open] summary{margin-bottom:16px}
+.fc-reference .pv-pages{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+
+.project-shell>.project-switcher{position:static!important;inset:auto!important;display:grid!important}
+.fc-index a:focus-visible,.fc-shot button:focus-visible,.fc-banner button:focus-visible,.fc-links a:focus-visible{outline:2px solid var(--fc-accent);outline-offset:3px}
+
+@media(max-width:760px){
+  .fc-studies{--fc-h:92px;--fc-grow:1.3}
+  .fc-gallery--one{--fc-h:200px}.fc-gallery--two{--fc-h:130px}
+  .fc-shot--strip{max-width:min(100%,calc(var(--r) * 70px))}
+  .fc-index{grid-template-columns:1fr 1fr}.fc-index a{font-size:13px;padding:10px}
+  .fc-chapter{padding:22px 14px 24px}
+  .fc-head{gap:10px;padding-right:36px}.fc-head span{font-size:22px}
+  .fc-text p{font-size:15.5px}
+  .fc-gallery{gap:6px}
+  .fc-ornament{width:30px;height:30px}
+}
+
+/* ===== Hand-arranged case studies: heading + text on the left, the pictures it talks about on the right ===== */
+.cs-kicker{margin:-8px 0 14px;font-size:13px;letter-spacing:.04em;color:var(--pv-dim,#e2bf94)}
+.cs-sec{display:grid;gap:14px 36px;padding:22px 0;border-top:1px solid var(--fc-line)}
+.cs-chapter .fc-banner+.cs-sec,.cs-chapter .fc-head+.cs-sec{border-top:0;padding-top:4px}
+.cs-copy{min-width:0}
+.cs-h{font:600 20px/1.3 Georgia,"Microsoft YaHei",serif;color:var(--fc-accent);margin:0 0 6px}
+.cs-sub{font-size:13px;line-height:1.5;color:var(--fc-accent);opacity:.75;margin:0 0 10px;font-style:italic}
+.cs-copy p:not(.cs-sub){font-size:15px;line-height:1.8;color:var(--pv-dim,rgba(245,213,157,.8));margin:0 0 10px;max-width:860px}
+.cs-media{display:grid;gap:12px;min-width:0}
+.cs-shots{display:flex;gap:10px;align-items:flex-start}
+/* second row: parameter panels / node graphs, kept smaller */
+.cs-shots--detail{max-width:78%}
+.cs-shots--detail .cs-shot:only-child{width:min(100%,calc(var(--r) * 170px))}
+/* all pictures of a section share one row at the same height: width follows each picture's ratio */
+.cs-shot{margin:0;flex:var(--r) 1 0;min-width:0}
+.cs-shot:only-child{flex:0 1 auto;width:min(100%,calc(var(--r) * 320px))}
+.cs-shot button{display:block;width:100%;padding:0;border:1px solid var(--fc-line);background:#080807;cursor:zoom-in;border-radius:3px;overflow:hidden}
+.cs-shot img{display:block;width:100%;height:auto;transition:transform .35s ease}
+.cs-shot figcaption{margin-top:6px;font-size:12px;line-height:1.4;color:var(--pv-dim,#e2bf94);opacity:.8}
+@media(hover:hover){.cs-shot button:hover{border-color:var(--fc-accent)}.cs-shot button:hover img{transform:scale(1.03)}}
+@media(min-width:960px){
+  .cs-sec{grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);align-items:start}
+  .cs-sec--stack{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  /* phones: two thumbnails per row, tap to see the full picture */
+  .cs-shots{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .cs-shots--detail{max-width:none}
+  .cs-shot,.cs-shot:only-child{width:auto}
+  .cs-shot:only-child{grid-column:1 / -1}
+  .cs-shot img{aspect-ratio:4 / 3;object-fit:cover}
+  .cs-shot:only-child img{aspect-ratio:auto}
+}

@@ -15,6 +15,7 @@
 
   /* ── helpers ── */
   function t(field, lang) {
+    if (window.SiteCopy) return SiteCopy.text(field,lang);
     if (!field) return '';
     if (typeof field === 'string') return field;
     return field[lang] || field['en'] || '';
@@ -30,22 +31,22 @@
       'nav.portfolio': lang === 'zh' ? '作品集' : 'Portfolio',
       'nav.resume':    lang === 'zh' ? '简历'  : 'Resume',
       'nav.contact':   lang === 'zh' ? '联系'  : 'Contact',
-      'nav.toggle':    lang === 'zh' ? 'EN'    : '中文',
+      'nav.toggle':    lang === 'zh' ? 'EN'    : 'ZH',
 
       /* ── Footer ── */
       'footer.portfolio': lang === 'zh' ? '作品集' : 'Portfolio',
       'footer.resume':    lang === 'zh' ? '简历'   : 'Resume',
       'footer.contact':   lang === 'zh' ? '联系'   : 'Contact',
-      'footer.copy':      C.copyright,
+      'footer.copy':      lang === 'zh' ? '© 2026 李涵清 · 保留所有权利' : C.copyright,
 
       /* ── Home ── */
       'index.eyebrow':       t(C.role, lang),
       'index.subtitle':      t(C.home.subtitle, lang),
       'index.btn.portfolio': lang === 'zh' ? '查看作品集' : 'View Portfolio',
       'index.btn.contact':   lang === 'zh' ? '联系我'    : 'Contact Me',
-      'index.scroll':        'Scroll',
+      'index.scroll':        lang === 'zh' ? '向下滚动' : 'Scroll',
 
-      'index.about.label':   'About',
+      'index.about.label':   lang === 'zh' ? '关于' : 'About',
       'index.about.title':   t(C.home.about.title, lang),
       'index.about.desc':    t(C.home.about.desc,  lang),
       'index.about.resume':  lang === 'zh' ? '查看简历' : 'View Resume',
@@ -59,7 +60,7 @@
       'index.stat4.num':   C.home.stats[3] ? C.home.stats[3].num : '',
       'index.stat4.label': C.home.stats[3] ? t(C.home.stats[3].label, lang) : '',
 
-      'index.featured.label':   'Featured Works',
+      'index.featured.label':   lang === 'zh' ? '精选作品' : 'Featured Works',
       'index.featured.title':   lang === 'zh' ? '精选作品' : 'Featured Works',
       'index.featured.viewall': lang === 'zh' ? '查看全部 →' : 'View All →',
 
@@ -70,7 +71,7 @@
       'index.feat3.tag':   CONFIG.works[2] ? (CONFIG.works[2].tags[0] || '') : '',
       'index.feat3.title': CONFIG.works[2] ? t(CONFIG.works[2].title, lang)  : '',
 
-      'index.skills.label': 'Skills',
+      'index.skills.label': lang === 'zh' ? '技能' : 'Skills',
       'index.skills.title': lang === 'zh' ? '技术栈' : 'Tech Stack',
 
       /* ── Portfolio ── */
@@ -103,8 +104,8 @@
       /* ── Resume ── */
       'resume.eyebrow': t(C.role, lang),
       'resume.name': t(C.name, lang),
-      'resume.tel':     'TEL: ' + C.contact.tel,
-      'resume.email':   'EMAIL: ' + C.contact.email,
+      'resume.tel':     (lang === 'zh' ? '电话：' : 'TEL: ') + C.contact.tel,
+      'resume.email':   (lang === 'zh' ? '邮箱：' : 'EMAIL: ') + C.contact.email,
       'resume.contact': lang === 'zh' ? '联系我' : 'Contact Me',
 
       'resume.education.title': lang === 'zh' ? '教育经历'     : 'Education',
@@ -128,14 +129,14 @@
       'resume.skills.davinci': lang === 'zh' ? 'DaVinci Resolve 调色' : 'DaVinci Resolve',
 
       /* ── About ── */
-      'about.label': 'About Me',
+      'about.label': lang === 'zh' ? '关于我' : 'About Me',
       'about.name':  nameDisplay,
       'about.role': t(C.role, lang),
       'about.bio':   t(C.about.bio, lang),
 
       'about.info.title':      lang === 'zh' ? '个人信息'  : 'Personal Info',
       'about.info.name.key':   lang === 'zh' ? '姓名'      : 'Name',
-      'about.info.name.val':   C.name.en + (C.name.zh ? ' · ' + C.name.zh : ''),
+      'about.info.name.val':   t(C.name, lang),
       'about.info.job.key':    lang === 'zh' ? '职业'      : 'Role',
       'about.info.job.val':    t(C.role, lang),
       'about.info.loc.key':    lang === 'zh' ? '所在地'    : 'Location',
@@ -176,7 +177,7 @@
         layout:   w.layout || {},
         cover:    cover,
         hasVideo: !!w.hasVideo,
-        tags:     w.tags,
+        tags:     (w.tags || []).map(function(tag){return t(tag,lang);}),
         title:    t(w.title, lang),
         desc:     t(w.desc,  lang),
         pdf:      w.pdf || '',
@@ -217,7 +218,7 @@
   function buildIndieProjects(lang) {
     return CONFIG.indieProjects.map(function (e) {
       return {
-        title:      e.title,
+        title:      t(e.title, lang),
         period:     t(e.period, lang),
         role:       t(e.role,   lang),
         projectUrl: e.projectUrl || '',

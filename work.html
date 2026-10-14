@@ -6,8 +6,12 @@
   <title>Work | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20261013a" />
   <link rel="stylesheet" href="assets/entry/pv.css?v=20261013a" />
+  <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=fdfa0b8fbb34" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
+    html { overflow-x: clip; }
+    body.pv-page { margin: 0; overflow-x: clip; }
+    .pv-card--mini { box-sizing: border-box; }
     .pv-progress { position: fixed; left: 0; top: 0; z-index: 60; height: 2px; width: 0; background: linear-gradient(90deg, var(--pv-gold), var(--pv-rose)); box-shadow: 0 0 8px var(--pv-gold); }
 
     /* ---------- Sticky sub-bar: back · position · prev / next ---------- */
@@ -22,11 +26,12 @@
     .pv-subbar__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--pv-dim); }
     .pv-subbar__title b { color: var(--pv-gold); margin-right: 8px; font-variant-numeric: tabular-nums; }
     .pv-subbar__nav { display: flex; gap: 6px; }
-    @media (max-width: 560px) { .pv-subbar__nav .txt { display: none; } }
+    @media (max-width: 560px) { .pv-subbar__nav .txt { display: none; } .pv-subbar { margin-inline: 0; } }
 
     /* ---------- Hero ---------- */
     .pv-hero { display: grid; gap: 24px; margin-bottom: 28px; }
-    @media (min-width: 1024px) { .pv-hero { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; gap: 40px; } }
+    /* top of the page: title only — the video lives in its own section below */
+    .pv-hero { max-width: 900px; padding-top: 8px; }
     .pv-hero .pv-media { border-radius: var(--pv-r); box-shadow: 0 30px 70px rgba(0, 0, 0, .45); border: 1px solid var(--pv-line); }
     .pv-htitle { margin: 8px 0 0; font: 700 clamp(30px, 4.4vw, 50px)/1.05 var(--pv-serif); color: var(--pv-paper); }
     .pv-hdesc { margin: 14px 0 0; font-size: 15px; line-height: 1.8; color: var(--pv-dim); }
@@ -78,7 +83,6 @@
     .pv-card--mini .pv-badge { display: none; }
     .pv-card--mini .pv-card__body { min-width: 0; padding: 6px 10px; }
     .pv-card--mini .pv-card__title { font-size: 18px; line-height: 1.2; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .pv-card--mini .pv-card__go { margin-top: 8px; }
     .pv-more__label { font-size: 11px; font-weight: 800; letter-spacing: .16em; color: var(--pv-dim); margin-bottom: 8px; }
 
     /* ---------- Zoom ---------- */
@@ -118,12 +122,16 @@
 
   <div class="pv-zoom" id="pvZoom" role="dialog" aria-modal="true"><img alt="" /></div>
 
-  <script src="config.js?v=20261013-singlelight"></script>
+  <script src="config.js?v=4e927dca14f3"></script>
+  <script src="js/site-translations.js?v=9adb83a9190d"></script>
   <script src="js/typography.js?v=20260726a"></script>
-  <script src="js/content.js?v=20260726a"></script>
-  <script src="js/i18n.js?v=20260726a"></script>
+  <script src="js/content.js?v=2bece7392724"></script>
+  <script src="js/i18n.js?v=b5e48c04f52f"></script>
   <script src="assets/entry/scene-background.js?v=20260711"></script>
-  <script src="js/pv.js?v=20261013a"></script>
+  <script src="js/pv.js?v=bd883637b15e"></script>
+  <script src="js/figma-case-studies.js?v=0f4d567b6609"></script>
+  <script src="js/case-study-curated.js?v=b29ded20b1d7"></script>
+  <script src="js/figma-case-study-renderer.js?v=e793d89089fc"></script>
   <script>
   (function () {
     'use strict';
@@ -141,6 +149,9 @@
       return /portfolio\.html/.test(ref) && ref.indexOf(location.host) !== -1 ? ref : 'portfolio.html';
     }
 
+    /* poster for a video: its own, else the work's preview still / cover */
+    function firstPoster(w, v) { var c = P.clip(w); return (v && v.poster) || (c && c.poster) || w.image || ''; }
+
     function render() {
       var zh = P.lang() === 'zh', L = function (a, b) { return zh ? a : b; };
       var w = W[id];
@@ -151,15 +162,17 @@
       }
       var prev = (id - 1 + W.length) % W.length, next = (id + 1) % W.length;
       var full = P.fullVideo(w), pages = P.pdfPages(w), d = w.detail || {};
+      var hasStudy = window.FigmaCaseStudy && FigmaCaseStudy.has(w);
       var vids = (w.links || []).filter(function (l) { return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(l.href || ''); });
       var images = (w.links || []).filter(function (l) { return l.type === 'image'; });
       var title = P.t(w.title);
-      document.title = title + ' | Hanqing Li - GiselleLi';
+      document.title = title + ' | ' + P.t(CONFIG.name) + ' · GiselleLi';
 
       var sections = [{ id: 'overview', name: L('概述', 'Overview') }];
       if (full) sections.push({ id: 'video', name: vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video') });
       if (images.length) sections.push({ id: 'gallery', name: L('图片', 'Images') });
-      if (pages) sections.push({ id: 'doc', name: L('项目演示', 'Presentation') });
+      if (hasStudy) sections.push({ id: 'case-study', name: L('项目详解', 'Case study') });
+      if (pages) sections.push({ id: 'doc', name: L('原始演示', 'Original presentation') });
       sections.push({ id: 'more', name: L('更多作品', 'More works') });
 
       var facts = [
@@ -188,16 +201,15 @@
         '</div>' +
 
         '<section class="pv-hero">' +
-          '<div class="pv-rise">' + P.mediaHTML(w, { autoplay: true }) + '</div>' +
           '<div class="pv-rise" style="--d:100ms">' +
             '<div class="pv-kicker">' + P.esc(GROUP[w.group] ? P.t(GROUP[w.group]) : '') + '</div>' +
             '<h1 class="pv-htitle">' + P.esc(title) + '</h1>' +
             '<p class="pv-hdesc">' + P.esc(P.t(w.desc)) + '</p>' +
-            '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(tg) + '</span>'; }).join('') + '</div>' +
+            '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(P.t(tg)) + '</span>'; }).join('') + '</div>' +
           '</div>' +
         '</section>' +
 
-        '<div class="pv-facts pv-rise">' + facts.slice(0, 4).map(function (f) { return '<div class="pv-fact"><small>' + P.esc(f[0]) + '</small><span>' + P.esc(f[1]) + '</span></div>'; }).join('') + '</div>' +
+        /* category / type / content / tags cards removed — title, description and tags above are enough */
 
         '<div class="pv-toc" id="pvToc" role="navigation" aria-label="' + L('本页目录', 'On this page') + '">' +
           sections.map(function (s) { return '<a href="#' + s.id + '">' + s.name + '</a>'; }).join('') +
@@ -215,18 +227,16 @@
         (full ? '<section class="pv-sec pv-rise" id="video"><h2>' + (vids.length > 1 ? L('视频', 'Videos') : L('完整视频', 'Full video')) + '</h2>' +
           '<div class="pv-vids">' + vids.map(function (v, k) {
             var label = vids.length > 1 ? '<div class="pv-vid__cap"><b>' + String(k + 1).padStart(2, '0') + '</b>' + P.esc(P.t(v.title) || P.t(v.label).replace(/[→↗]/g, '').trim()) + '</div>' : '';
-            return '<div class="pv-vid">' + label + '<div class="pv-player"><video controls playsinline preload="none"' + (v.poster || (k === 0 && w.image) ? ' poster="' + P.esc(v.poster || w.image) + '"' : '') + ' src="' + P.esc(v.href) + '"></video></div></div>';
+            return '<div class="pv-vid">' + label + '<div class="pv-player"><video controls playsinline preload="none"' + ((v.poster || k === 0) && firstPoster(w, v) ? ' poster="' + P.esc(firstPoster(w, v)) + '"' : '') + ' src="' + P.esc(v.href) + '"></video></div></div>';
           }).join('') + '</div></section>' : '') +
 
         (images.length ? '<section class="pv-sec pv-rise" id="gallery"><h2>' + L('图片', 'Images') + '</h2><div class="pv-pages">' +
           images.map(function (l) { return '<button class="pv-page-img" type="button"><img src="' + P.esc(l.href) + '" alt="' + P.esc(title) + '" loading="lazy"></button>'; }).join('') +
           '</div></section>' : '') +
 
-        (pages ? '<section class="pv-sec pv-rise" id="doc"><h2>' + L('项目演示', 'Presentation') + '</h2><div class="pv-pages">' +
-          Array.from({ length: pages[1] }, function (_, i) {
-            return '<button class="pv-page-img" type="button"><img src="assets/uploads/pdf-pages/' + pages[0] + '/page-' + (i + 1) + '.webp" alt="' + P.esc(title) + ' ' + (i + 1) + '" loading="lazy" decoding="async"></button>';
-          }).join('') +
-          '</div><div class="pv-doc-actions"><a class="pv-btn" href="' + P.esc(w.pdf) + '" target="_blank" rel="noopener">' + L('打开原始 PDF', 'Open original PDF') + ' <span class="pv-arrow">↗</span></a></div></section>' : '') +
+        (hasStudy ? FigmaCaseStudy.render(w, zh ? 'zh' : 'en') : '') +
+
+        (w.pdf ? '<section class="pv-sec pv-rise" id="doc"><a class="pv-btn" href="' + P.esc(w.pdf) + '" target="_blank" rel="noopener">' + L('打开原始 PDF', 'Open original PDF') + ' <span class="pv-arrow">↗</span></a></section>' : '') +
 
         '<section class="pv-sec" id="more"><h2>' + L('更多作品', 'More works') + '</h2><div class="pv-more">' +
           [[prev, L('上一个', 'PREVIOUS')], [next, L('下一个', 'NEXT')]].map(function (p) {
@@ -235,7 +245,7 @@
               '<a class="pv-card pv-card--mini" href="work.html?id=' + p[0] + '">' + P.mediaHTML(o) +
               '<div class="pv-card__body"><div class="pv-kicker">' + P.esc(GROUP[o.group] ? P.t(GROUP[o.group]) : '') + '</div>' +
               '<h3 class="pv-card__title">' + P.esc(P.t(o.title)) + '</h3>' +
-              '<div class="pv-card__go">' + L('查看详情 ', 'View details ') + '<i>→</i></div></div></a></div>';
+              '</div></a></div>';
           }).join('') +
           '</div><p style="margin-top:22px"><a class="pv-btn" href="portfolio.html">' + L('返回全部作品', 'All works') + '</a></p></section>';
 
@@ -260,7 +270,7 @@
     var zoom = document.getElementById('pvZoom');
     document.addEventListener('click', function (e) {
       var b = e.target.closest('.pv-page-img'); if (!b) return;
-      zoom.querySelector('img').src = b.querySelector('img').src; zoom.classList.add('is-open');
+      zoom.querySelector('img').src = b.dataset.fullImage || b.querySelector('img').src; zoom.classList.add('is-open');
     });
     zoom.addEventListener('click', function () { zoom.classList.remove('is-open'); });
 

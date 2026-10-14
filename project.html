@@ -6,8 +6,10 @@
   <meta name="description" content="GiselleLi project case study" />
   <title>Project | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20260726a" />
+  <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=fdfa0b8fbb34" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
   <style>
+    html { overflow-x: clip; }
 
     :root {
       --gold: #d7a85f;
@@ -103,39 +105,39 @@
   </nav>
   <main class="project-shell" id="projectContent" hidden>
     <section class="video-wrap" id="videoSection" aria-label="Project video">
-      <div class="video-label"><span id="videoLabel">Project Film</span><span>Hanqing Li · GiselleLi</span></div>
+      <div class="video-label"><span id="videoLabel">Project Film</span><span id="projectAuthor">GiselleLi</span></div>
       <div class="video-frame"><video id="projectVideo" controls muted playsinline preload="none"></video></div>
     </section>
     <header class="project-header">
       <div><p class="project-kicker" id="projectKicker">Project Case Study</p><h1 class="project-title" id="projectTitle"></h1></div>
       <div><p class="project-desc" id="projectDesc"></p><div class="tag-list" id="tagList"></div></div>
     </header>
+    <div id="figmaStudies"></div>
     <section class="content-section" id="documentSection">
+      <details class="fc-reference" id="originalPresentation"><summary id="originalSummary">查看原始演示</summary>
       <div class="section-head"><h2 id="documentTitle">Project Presentation</h2><p id="documentIntro">完整项目演示按原始版式连续呈现，点击任意页面可放大查看。</p></div>
       <div class="document-toolbar"><p class="document-note" id="documentNote">桌面端按原比例展示；手机端可左右滑动每一页。</p><a class="document-button" id="openPdf" href="#" target="_blank" rel="noopener">打开原始 PDF ↗</a></div>
-      <div class="pdf-pages" id="pdfPages"></div>
+      </details>
     </section>
     <div id="additionalVideos"></div>
     <nav class="project-switcher" id="projectSwitcher" aria-label="More projects"></nav>
   </main>
   <section class="project-error" id="projectError"><h1>Project not found</h1><p><a href="portfolio.html">Return to portfolio</a></p></section>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><button class="lightbox-close" id="lightboxClose" type="button">关闭 ×</button><img id="lightboxImage" alt="" /></div>
-  <script src="config.js?v=20261013-singlelight"></script>
+  <script src="config.js?v=4e927dca14f3"></script>
+  <script src="js/site-translations.js?v=9adb83a9190d"></script>
+  <script src="js/figma-case-studies.js?v=0f4d567b6609"></script>
+  <script src="js/figma-local-copy-content.js?v=0f4d567b6609"></script>
+  <script src="js/figma-case-study-renderer.js?v=e793d89089fc"></script>
   <script src="assets/entry/scene-background.js?v=20260711"></script>
   <script>
     (function(){
       'use strict';
-      var pageSets={
-        'assets/uploads/Project1_Compressed.pdf':['pbr',7],
-        'assets/uploads/Project2_Compressed.pdf':['lycoris',6],
-        'assets/uploads/Project3_Compressed.pdf':['pcg',5],
-        'assets/uploads/Project4_Compressed.pdf':['tof',5]
-      };
       var params=new URLSearchParams(location.search), projectId=Number(params.get('id')), saved='';
       try{saved=localStorage.getItem('lang')||'';}catch(e){}
       var lang=params.get('lang')==='en'||params.get('lang')==='zh'?params.get('lang'):(saved==='en'?'en':'zh');
       var works=typeof CONFIG!=='undefined'&&Array.isArray(CONFIG.works)?CONFIG.works:[], work=Number.isInteger(projectId)?works[projectId]:null;
-      function t(v){return typeof v==='string'?v:(v?(v[lang]||v.en||''):'');}
+      function t(v){return window.SiteCopy?SiteCopy.text(v,lang):(typeof v==='string'?v:(v?(v[lang]||v.en||''):''));}
       function esc(v){return String(v||'').replace(/[&<>\"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c];});}
       function findVideo(item){var links=item.links||[];for(var i=0;i<links.length;i++){if(/\.(mp4|webm|mov|m4v|ogv)(\?.*)?$/i.test(links[i].href||''))return links[i].href;}return'';}
       function renderAdditionalVideos(item){
@@ -143,19 +145,22 @@
         document.getElementById('additionalVideos').innerHTML=videos.map(function(link){return '<section class="content-section video-wrap"><div class="section-head"><h2>'+esc(t(link.label).replace(/\s*→$/,''))+'</h2><p>'+esc(t(link.description))+'</p></div><div class="video-frame"><video controls playsinline preload="none"'+(link.poster?' poster="'+esc(link.poster)+'"':'')+' src="'+esc(link.href)+'"></video></div></section>';}).join('');
       }
       function switchLink(index,label){return'<a class="switch-link" href="project.html?id='+index+'&lang='+lang+'"><span>'+label+'</span><strong>'+esc(t(works[index].title))+'</strong></a>';}
-      function setCopy(){var zh=lang==='zh';document.documentElement.lang=zh?'zh-CN':'en';document.getElementById('backLabel').textContent=zh?'作品集':'Portfolio';document.getElementById('projectKicker').textContent=zh?'作品详情':'Project Case Study';document.getElementById('videoLabel').textContent=zh?'项目视频':'Project Film';document.getElementById('documentTitle').textContent=zh?'项目演示':'Project Presentation';document.getElementById('documentIntro').textContent=zh?'完整项目演示按原始版式连续呈现，点击任意页面可放大查看。':'The complete presentation is shown in its original layout. Select any page to view it at full size.';document.getElementById('documentNote').textContent=zh?'桌面端按原比例展示；手机端可左右滑动每一页。':'Shown at the original ratio on desktop; swipe horizontally on mobile.';document.getElementById('openPdf').textContent=zh?'打开原始 PDF ↗':'Open original PDF ↗';document.getElementById('langButton').textContent=zh?'EN':'中文';document.getElementById('lightboxClose').textContent=zh?'关闭 ×':'Close ×';document.getElementById('backLink').href='portfolio.html?lang='+lang;}
+      function setCopy(){var zh=lang==='zh';document.documentElement.lang=zh?'zh-CN':'en';document.getElementById('backLabel').textContent=zh?'作品集':'Portfolio';document.getElementById('projectKicker').textContent=zh?'作品详情':'Project Case Study';document.getElementById('videoLabel').textContent=zh?'项目视频':'Project Film';document.getElementById('documentTitle').textContent=zh?'项目演示':'Project Presentation';document.getElementById('documentIntro').textContent=zh?'完整项目演示按原始版式连续呈现，点击任意页面可放大查看。':'The complete presentation is shown in its original layout. Select any page to view it at full size.';document.getElementById('documentNote').textContent=zh?'桌面端按原比例展示；手机端可左右滑动每一页。':'Shown at the original ratio on desktop; swipe horizontally on mobile.';document.getElementById('openPdf').textContent=zh?'打开原始 PDF ↗':'Open original PDF ↗';document.getElementById('langButton').textContent=zh?'EN':'ZH';document.getElementById('lightboxClose').textContent=zh?'关闭 ×':'Close ×';document.getElementById('backLink').href='portfolio.html?lang='+lang;}
       function render(){
         if(!work){document.getElementById('projectError').style.display='block';return;}
-        setCopy();var title=t(work.title),video=findVideo(work),set=pageSets[work.pdf],zh=lang==='zh';
-        document.title=title+' | Hanqing Li - GiselleLi';document.getElementById('projectTitle').textContent=title;document.getElementById('projectDesc').textContent=t(work.desc);
-        document.getElementById('tagList').innerHTML=(work.tags||[]).map(function(tag){return'<span class="tag">'+esc(tag)+'</span>';}).join('');
+        setCopy();document.querySelector('.top-nav').setAttribute('aria-label',lang==='zh'?'项目导航':'Project navigation');document.getElementById('videoSection').setAttribute('aria-label',lang==='zh'?'项目视频':'Project video');document.getElementById('projectSwitcher').setAttribute('aria-label',lang==='zh'?'更多项目':'More projects');document.getElementById('langButton').setAttribute('aria-label',lang==='zh'?'切换语言':'Switch language');document.getElementById('projectAuthor').textContent=t(CONFIG.name)+' · GiselleLi';var title=t(work.title),video=findVideo(work),zh=lang==='zh';
+        document.getElementById('figmaStudies').innerHTML=FigmaCaseStudy.render(work,lang);
+        document.getElementById('originalSummary').textContent=zh?'原始 PDF 文件':'Original PDF file';
+        document.getElementById('originalPresentation').open=!FigmaCaseStudy.has(work);
+        document.title=title+' | '+t(CONFIG.name)+' · GiselleLi';document.getElementById('projectTitle').textContent=title;document.getElementById('projectDesc').textContent=t(work.desc);
+        document.getElementById('tagList').innerHTML=(work.tags||[]).map(function(tag){return'<span class="tag">'+esc(t(tag))+'</span>';}).join('');
         if(video){var projectVideo=document.getElementById('projectVideo');projectVideo.src=video;if(work.image)projectVideo.poster=work.image;}else{document.getElementById('videoSection').hidden=true;}
-        if(set){document.getElementById('openPdf').href=work.pdf;document.getElementById('pdfPages').innerHTML=Array.from({length:set[1]},function(_,i){var p=i+1,src='assets/uploads/pdf-pages/'+set[0]+'/page-'+p+'.webp';return'<figure class="pdf-page"><div class="pdf-page-frame"><img src="'+src+'" alt="'+esc(title)+' - '+(zh?'第 '+p+' 页':'Page '+p)+'" '+'loading="lazy" decoding="async"'+' /></div><figcaption><span>Page '+String(p).padStart(2,'0')+'</span><span>Original presentation layout</span></figcaption></figure>';}).join('');}else{document.getElementById('documentSection').hidden=true;}
+        if(work.pdf){document.getElementById('openPdf').href=work.pdf;document.getElementById('documentIntro').textContent=zh?'项目的原始演示文件。':'The original project presentation file.';document.getElementById('documentNote').textContent=zh?'在新标签页打开 PDF。':'Open the PDF in a new tab.';}else{document.getElementById('documentSection').hidden=true;}
         renderAdditionalVideos(work);
         document.getElementById('projectSwitcher').innerHTML=switchLink((projectId-1+works.length)%works.length,zh?'上一个项目':'Previous project')+switchLink((projectId+1)%works.length,zh?'下一个项目':'Next project');document.getElementById('projectContent').hidden=false;
       }
       document.getElementById('langButton').addEventListener('click',function(){lang=lang==='zh'?'en':'zh';try{localStorage.setItem('lang',lang);}catch(e){}var url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url.pathname+url.search);render();});
-      document.addEventListener('click',function(e){var img=e.target.closest('.pdf-page img');if(img){document.getElementById('lightboxImage').src=img.src;document.getElementById('lightboxImage').alt=img.alt;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}});
+      document.addEventListener('click',function(e){var button=e.target.closest('.fc-studies button');var img=button?button.querySelector('img'):e.target.closest('.pdf-page img');if(img){document.getElementById('lightboxImage').src=button?button.dataset.fullImage||img.src:img.src;document.getElementById('lightboxImage').alt=img.alt;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}});
       function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
       document.getElementById('lightboxClose').addEventListener('click',closeLightbox);document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===e.currentTarget)closeLightbox();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
       addEventListener('scroll',function(){var d=document.documentElement,a=d.scrollHeight-d.clientHeight;document.getElementById('readProgress').style.width=(a?d.scrollTop/a*100:0)+'%';},{passive:true});render();

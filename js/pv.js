@@ -30,7 +30,7 @@
   function lang() {
     return (document.documentElement.lang || '').indexOf('en') === 0 ? 'en' : 'zh';
   }
-  function t(v) { return typeof v === 'string' ? v : (v ? (v[lang()] || v.en || v.zh || '') : ''); }
+  function t(v) { return window.SiteCopy ? SiteCopy.text(v,lang()) : (typeof v === 'string' ? v : (v ? (v[lang()] || v.en || v.zh || '') : '')); }
   function esc(v) {
     return String(v == null ? '' : v).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
@@ -44,7 +44,8 @@
     }
     return '';
   }
-  function clip(w) { var base = CLIPS[fullVideo(w)]; return base ? { src: base + '.mp4', poster: base + '.webp' } : null; }
+  /* a work's own `clip` in config.js wins; the table above is the fallback */
+  function clip(w) { var base = (w && w.clip) || CLIPS[fullVideo(w)]; return base ? { src: base + '.mp4', poster: base + '.webp' } : null; }
   function pdfPages(w) { return PDF_PAGES[w.pdf] || null; }
 
   /* media block: clip if we have one, else the cover image */

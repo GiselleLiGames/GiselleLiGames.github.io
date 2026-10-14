@@ -83,6 +83,7 @@
     var modal = document.getElementById('portfolioVideoModal');
     var player = document.getElementById('portfolioVideoPlayer');
     if (!modal || !player) return;
+    document.getElementById('portfolioVideoClose').textContent = document.documentElement.lang.indexOf('en') === 0 ? 'Close' : '关闭';
     player.src = url;
     modal.style.display = 'flex';
     var p = player.play();
@@ -140,6 +141,7 @@
     });
   }
   function _t(field, lang) {
+    if (window.SiteCopy) return SiteCopy.text(field,lang);
     if (!field) return '';
     if (typeof field === 'string') return field;
     return field[lang] || field.en || '';
@@ -212,7 +214,7 @@
         layout: w.layout || {},
         cover: cover,
         hasVideo: !!w.hasVideo,
-        tags: tags,
+        tags: tags.map(function(tag){return _t(tag,lang);}),
         title: _t(w.title, lang),
         desc: _t(w.desc, lang),
         pdf: w.pdf || '',
@@ -245,13 +247,18 @@
     // 2. Update the toggle button label & aria
     var btn = document.getElementById('langToggle');
     if (btn) {
-      btn.textContent = strings['nav.toggle'] || (lang === 'zh' ? 'EN' : '中文');
-      btn.setAttribute('aria-label', 'Switch language');
+      btn.textContent = strings['nav.toggle'] || (lang === 'zh' ? 'EN' : 'ZH');
+      btn.setAttribute('aria-label', lang === 'zh' ? '切换语言' : 'Switch language');
       btn.dataset.currentLang = lang;
     }
 
     // 3. Update <html lang> attribute
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    var page=(location.pathname.split('/').pop()||'index.html');
+    var pageNames={'index.html':['首页','Home'],'portfolio.html':['作品集','Portfolio'],'resume.html':['简历','Resume'],'contact.html':['联系','Contact']};
+    if(pageNames[page]) document.title=pageNames[page][lang==='zh'?0:1]+' | '+_t(CONFIG.name,lang)+' · GiselleLi';
+    var filters=document.getElementById('pvFilters');if(filters)filters.setAttribute('aria-label',lang==='zh'?'作品分类':'Portfolio categories');
+    var menu=document.querySelector('.nav-toggle');if(menu)menu.setAttribute('aria-label',lang==='zh'?'展开导航':'Toggle navigation');
 
     // 4. Persist
     try { localStorage.setItem('lang', lang); } catch (e) {}
@@ -524,7 +531,7 @@
     if (!entries) return;
     container.innerHTML = entries.map(function (e) {
       var projectLine = e.projectUrl
-        ? '<p class="text-[10px] font-sync text-slate-500 mb-6 uppercase tracking-widest italic border-b border-white/5 pb-2">Project: <a href="' + e.projectUrl + '" target="_blank" class="underline">' + e.projectUrl + '</a></p>'
+        ? '<p class="text-[10px] font-sync text-slate-500 mb-6 uppercase tracking-widest italic border-b border-white/5 pb-2">' + (lang === 'zh' ? '项目：' : 'Project: ') + '<a href="' + e.projectUrl + '" target="_blank" class="underline">' + e.projectUrl + '</a></p>'
         : '';
       var bullets = e.bullets.map(function (b) {
         return '<li>' + b + '</li>';
@@ -551,7 +558,7 @@
         ? '<p class="text-[10px] font-sync text-pink mb-4 uppercase tracking-widest italic border-b border-pink/10 pb-2">' + e.award + '</p>'
         : '';
       var projectLine = e.projectUrl
-        ? '<p class="text-[10px] font-sync text-slate-500 mb-6 uppercase tracking-widest italic border-b border-white/5 pb-2">Project: <a href="' + e.projectUrl + '" target="_blank" class="underline">' + e.projectUrl + '</a></p>'
+        ? '<p class="text-[10px] font-sync text-slate-500 mb-6 uppercase tracking-widest italic border-b border-white/5 pb-2">' + (lang === 'zh' ? '项目：' : 'Project: ') + '<a href="' + e.projectUrl + '" target="_blank" class="underline">' + e.projectUrl + '</a></p>'
         : '';
       var bullets = e.bullets.map(function (b) {
         return '<li>' + b + '</li>';
@@ -617,9 +624,9 @@
     });
   };
 
-  window.renderContactPage = function () {
+  window.renderContactPage = function (lang) {
     var contacts = (typeof CONFIG !== 'undefined' && CONFIG.contact) ? CONFIG.contact : {};
-    var name = (typeof CONFIG !== 'undefined' && CONFIG.name) ? CONFIG.name.en : '';
+    var name = (typeof CONFIG !== 'undefined' && CONFIG.name) ? _t(CONFIG.name,lang) : '';
     var values = {
       email: {
         href: contacts.email ? 'mailto:' + contacts.email : '',
