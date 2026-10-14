@@ -115,6 +115,7 @@
       <div class="document-toolbar"><p class="document-note" id="documentNote">桌面端按原比例展示；手机端可左右滑动每一页。</p><a class="document-button" id="openPdf" href="#" target="_blank" rel="noopener">打开原始 PDF ↗</a></div>
       <div class="pdf-pages" id="pdfPages"></div>
     </section>
+    <div id="additionalVideos"></div>
     <nav class="project-switcher" id="projectSwitcher" aria-label="More projects"></nav>
   </main>
   <section class="project-error" id="projectError"><h1>Project not found</h1><p><a href="portfolio.html">Return to portfolio</a></p></section>
@@ -137,6 +138,10 @@
       function t(v){return typeof v==='string'?v:(v?(v[lang]||v.en||''):'');}
       function esc(v){return String(v||'').replace(/[&<>\"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c];});}
       function findVideo(item){var links=item.links||[];for(var i=0;i<links.length;i++){if(/\.(mp4|webm|mov|m4v|ogv)(\?.*)?$/i.test(links[i].href||''))return links[i].href;}return'';}
+      function renderAdditionalVideos(item){
+        var videos=(item.links||[]).filter(function(link){return /\.(mp4|webm|mov|m4v|ogv)(\?.*)?$/i.test(link.href||'');}).slice(1);
+        document.getElementById('additionalVideos').innerHTML=videos.map(function(link){return '<section class="content-section video-wrap"><div class="section-head"><h2>'+esc(t(link.label).replace(/\s*→$/,''))+'</h2><p>'+esc(t(link.description))+'</p></div><div class="video-frame"><video controls playsinline preload="none"'+(link.poster?' poster="'+esc(link.poster)+'"':'')+' src="'+esc(link.href)+'"></video></div></section>';}).join('');
+      }
       function switchLink(index,label){return'<a class="switch-link" href="project.html?id='+index+'&lang='+lang+'"><span>'+label+'</span><strong>'+esc(t(works[index].title))+'</strong></a>';}
       function setCopy(){var zh=lang==='zh';document.documentElement.lang=zh?'zh-CN':'en';document.getElementById('backLabel').textContent=zh?'作品集':'Portfolio';document.getElementById('projectKicker').textContent=zh?'作品详情':'Project Case Study';document.getElementById('videoLabel').textContent=zh?'项目视频':'Project Film';document.getElementById('documentTitle').textContent=zh?'项目演示':'Project Presentation';document.getElementById('documentIntro').textContent=zh?'完整项目演示按原始版式连续呈现，点击任意页面可放大查看。':'The complete presentation is shown in its original layout. Select any page to view it at full size.';document.getElementById('documentNote').textContent=zh?'桌面端按原比例展示；手机端可左右滑动每一页。':'Shown at the original ratio on desktop; swipe horizontally on mobile.';document.getElementById('openPdf').textContent=zh?'打开原始 PDF ↗':'Open original PDF ↗';document.getElementById('langButton').textContent=zh?'EN':'中文';document.getElementById('lightboxClose').textContent=zh?'关闭 ×':'Close ×';document.getElementById('backLink').href='portfolio.html?lang='+lang;}
       function render(){
@@ -146,6 +151,7 @@
         document.getElementById('tagList').innerHTML=(work.tags||[]).map(function(tag){return'<span class="tag">'+esc(tag)+'</span>';}).join('');
         if(video){var projectVideo=document.getElementById('projectVideo');projectVideo.src=video;if(work.image)projectVideo.poster=work.image;}else{document.getElementById('videoSection').hidden=true;}
         if(set){document.getElementById('openPdf').href=work.pdf;document.getElementById('pdfPages').innerHTML=Array.from({length:set[1]},function(_,i){var p=i+1,src='assets/uploads/pdf-pages/'+set[0]+'/page-'+p+'.webp';return'<figure class="pdf-page"><div class="pdf-page-frame"><img src="'+src+'" alt="'+esc(title)+' - '+(zh?'第 '+p+' 页':'Page '+p)+'" '+'loading="lazy" decoding="async"'+' /></div><figcaption><span>Page '+String(p).padStart(2,'0')+'</span><span>Original presentation layout</span></figcaption></figure>';}).join('');}else{document.getElementById('documentSection').hidden=true;}
+        renderAdditionalVideos(work);
         document.getElementById('projectSwitcher').innerHTML=switchLink((projectId-1+works.length)%works.length,zh?'上一个项目':'Previous project')+switchLink((projectId+1)%works.length,zh?'下一个项目':'Next project');document.getElementById('projectContent').hidden=false;
       }
       document.getElementById('langButton').addEventListener('click',function(){lang=lang==='zh'?'en':'zh';try{localStorage.setItem('lang',lang);}catch(e){}var url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url.pathname+url.search);render();});
