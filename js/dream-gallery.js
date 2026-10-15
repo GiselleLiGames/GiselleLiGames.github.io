@@ -7,7 +7,7 @@
   if (!categories[cat] || (cat !== 'all' && !W.some(function(w){return w.category === cat;}))) cat = 'all';
   function render(){
     var zh = P.lang() === 'zh', count = 0;
-    document.getElementById('dreamNameSecondary').textContent = zh ? CONFIG.name.en : CONFIG.name.zh;
+    document.getElementById('dreamNameSecondary').textContent = P.t(CONFIG.name.subtitle);
     document.getElementById('dreamRole').textContent = zh ? 'technical artist · 技术美术师' : 'technical artist';
     var toggle = document.getElementById('langToggle'); if(toggle)toggle.textContent = zh ? '中 · EN' : 'ZH · EN';
     document.getElementById('dreamCollectionLabel').textContent = 'the collection';

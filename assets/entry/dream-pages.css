@@ -31,3 +31,7 @@ body.dream-pages > .top-nav .nav-links a.active::after { width: 100%; }
   body.dream-pages > .top-nav .nav-links a { font-size: 16px !important; }
   body.dream-pages > header, body.dream-pages .about-hero { padding-top: 150px !important; }
 }
+
+body.resume-scene.dream-pages #contact-linkedin { color: var(--scene-gold); font-family: var(--scene-font); font-size: 1rem; text-decoration: underline; text-underline-offset: .2em; }
+
+body.dream-pages .dream-identity-alias { display: block; margin: 10px 0 0; color: var(--scene-gold); font: italic 400 28px/1.2 'IM Fell English',serif; letter-spacing: 0; text-transform: none; }

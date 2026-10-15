@@ -2179,6 +2179,7 @@ const CONFIG = {
     en: ${q(s.name.en)},
     zh: ${q(s.name.zh)},
     alias: ${q(s.name.alias)},
+    subtitle: { en: ${q((s.name.subtitle || {}).en || 'Giselle')}, zh: ${q((s.name.subtitle || {}).zh || 'Giselle Li')} },
   },
 
   role: {
@@ -2212,6 +2213,7 @@ const CONFIG = {
     artstation: ${q(s.contact.artstation)},
     linkedin:   ${q(s.contact.linkedin)},
     tel:        ${q(s.contact.tel)},
+    telEn:      ${q(s.contact.telEn || '')},
   },
 
   copyright: ${q(s.copyright)},

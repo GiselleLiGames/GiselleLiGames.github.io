@@ -26,6 +26,7 @@
     var nameDisplay = t(C.name, lang);
 
     return {
+      'identity.subtitle': t(C.name.subtitle, lang),
       /* ── Nav ── */
       'nav.home':      lang === 'zh' ? '首页'  : 'Home',
       'nav.portfolio': lang === 'zh' ? '作品集' : 'Portfolio',
@@ -104,7 +105,7 @@
       /* ── Resume ── */
       'resume.eyebrow': t(C.role, lang),
       'resume.name': t(C.name, lang),
-      'resume.tel':     (lang === 'zh' ? '电话：' : 'TEL: ') + C.contact.tel,
+      'resume.tel':     (lang === 'zh' ? '电话：' : 'TEL: ') + (lang === 'en' ? (C.contact.telEn || C.contact.tel) : C.contact.tel),
       'resume.email':   (lang === 'zh' ? '邮箱：' : 'EMAIL: ') + C.contact.email,
       'resume.contact': lang === 'zh' ? '联系我' : 'Contact Me',
 

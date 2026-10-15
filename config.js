@@ -18,6 +18,7 @@ const CONFIG = {
     en: 'Hanqing Li',
     zh: '李涵清',
     alias: 'GiselleLi',
+    subtitle: { en: 'Giselle', zh: 'Giselle Li' },
   },
 
   role: {
@@ -50,7 +51,8 @@ const CONFIG = {
     github:     'https://GiselleLi.github.io/index.html',
     artstation: 'N/A',
     linkedin:   'https://www.linkedin.com/in/hanqing-li-000069223',
-    tel:        '13061878150',
+    tel:        '(86)13061878150',
+    telEn:      '(1)3852422322',
   },
 
   copyright: '© 2026 Hanqing Li · All rights reserved',
@@ -292,6 +294,17 @@ const CONFIG = {
 
   education: [
     {
+      school: { en: 'University of Utah', zh: '犹他大学' },
+      period: { en: 'Aug 2026 — Jun 2028 (Expected)', zh: '2026.08 — 2028.06（预计）' },
+      degree: { en: 'Master of Entertainment Arts and Engineering (MEAE), Technical Art Track',
+                zh: '娱乐艺术与工程硕士（MEAE）— 技术美术方向' },
+      detail: {
+        en: '<strong>Curriculum Focus:</strong> Art pipeline tools and automation with Maya, MEL and Python; motion capture and animation integration; C++, graphics mathematics and shader programming. Interdisciplinary studio courses cover rapid prototyping and collaborative game development.',
+        zh: '<strong>课程方向：</strong>Maya、MEL 与 Python 美术管线工具开发及自动化，动作捕捉与动画整合，C++、计算机图形学数学及着色器编程；通过快速原型和跨专业游戏工作室课程开展团队游戏开发。',
+      },
+      award: { en: '', zh: '' },
+    },
+    {
       school: { en: 'Shanghai University', zh: '上海大学' },
       period: { en: 'Sep 2019 — Aug 2023', zh: '2019.09 — 2023.08' },
       degree: { en: 'Bachelor of Fine Arts (Broadcasting and Television Playwright-director)',
@@ -323,7 +336,7 @@ const CONFIG = {
   workExp: [
     {
       company:    { en: 'Tencent', zh: '腾讯' },
-      period:     { en: 'Dec 2025 — Now', zh: '2025.12 — 至今' },
+      period:     { en: 'Dec 2025 — Aug 2026', zh: '2025.12 — 2026.08' },
       role:       { en: '(Intern) Technical Artist for Golden Spatula (Teamfight Tactics China Edition)',
                     zh: '（实习）技术美术师 — 金铲铲之战（自走棋中国版）' },
       projectUrl: '',
@@ -347,7 +360,7 @@ const CONFIG = {
       ],
     },
     {
-      company:    { en: 'Perfect World-Hotta Studio', zh: '完美世界-幻塔子公司' },
+      company:    { en: 'Perfect World-Hotta Studio', zh: '完美世界-幻塔工作室' },
       period:     { en: 'May 2024 — Oct 2025', zh: '2024.05 — 2025.10' },
       role:       { en: 'Level Designer for Tower Of Fantasy (UE4 Open-world MMORPG)',
                     zh: '关卡设计师 — 幻塔（UE4 开放世界 MMORPG）' },
