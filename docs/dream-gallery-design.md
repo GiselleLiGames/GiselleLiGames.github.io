@@ -15,8 +15,10 @@ The visual references are `Portfolio Dream Gallery.dc.html` and
   preferences. There is no added scroll dimming. The export references a separate
   arch-flower cutout that was not supplied, so the original backplate flower is
   retained as a static detail.
-- `js/dream-preview.js` restores the gallery preview dialog, clip playback,
-  previous / next switching, keyboard controls and links into full details.
+- `js/dream-preview.js` opens the complete case study directly in a native dialog.
+  There is no intermediate preview or second project-details click. The dialog
+  and direct `work.html` URLs both mount the shared `DreamWork` renderer.
+  The `work` query parameter supports refresh, browser Back/Forward and sharing.
   Opening it hides the underlying navigation, introduction and collection while
   keeping the scene visible. Closing restores the same filter and scroll position.
 - `js/dream-work.js` renders all seven works from the existing configuration.
@@ -24,6 +26,10 @@ The visual references are `Portfolio Dream Gallery.dc.html` and
   their captions and descriptions. Existing case-study chapters and PDF links
   remain available. Image dialogs support zoom, pan, keyboard controls and focus
   restoration.
+- `js/dream-navigation.js` groups the three navigation links and language switch
+  at the horizontal center on Gallery, Resume and Contact.
+- `assets/entry/dream-pages.css` styles Resume and Contact with the same animated
+  scene and cream / antique gold typography; their legacy scene styles are removed.
 - `index.html` opens the gallery directly. Legacy `project.html?id=…` links route
   to the corresponding `work.html?id=…` page, preserving query and hash values.
 
