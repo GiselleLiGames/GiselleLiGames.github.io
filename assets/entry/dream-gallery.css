@@ -94,10 +94,12 @@ body.pv-page footer { justify-content: space-between; text-transform: none; }
 .dream-name-secondary[lang=zh-CN] { font-family: 'Noto Serif SC',serif; font-style: normal; font-size: 28px; }
 .dream-card-secondary[lang=zh-CN] { font-family: 'Noto Serif SC',serif; font-style: normal; font-size: 13px; line-height: 1.5; }
 .dream-work .pv-shell { margin: 0 auto; max-width: none; width: min(1080px,100% - 2 * clamp(20px,5vw,48px)); padding: 24px 0 80px; display: flex; flex-direction: column; gap: clamp(56px,8vw,96px); }
-.dream-work > .pv-subbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; gap: 16px; align-items: center; margin: 0; padding: 18px var(--pv-gutter) !important; background: linear-gradient(#12080abf,#12080a00) !important; backdrop-filter: none; font: 600 15px/1 'Noto Serif SC',serif; }
+.dream-work > .pv-subbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; gap: 16px; align-items: center; width: min(1080px,100% - 2 * clamp(20px,5vw,48px)); margin: 0 auto; padding: 14px 0 !important; background: #12080ae6 !important; backdrop-filter: blur(10px); font: 600 15px/1 'Noto Serif SC',serif; }
 .dream-work .pv-subbar a { color: #fbf0da; text-decoration: none; padding: 0; }
-.pv-subbar__title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: italic 400 17px/1 'IM Fell English',serif; color: #f0c98a; }
+.dream-work .pv-subbar .dream-back { display: inline-flex; align-items: center; min-height: 44px; padding: 12px 18px; border-radius: 6px; background: #f0c98a; color: #281115; font: 600 16px/1.25 'Noto Serif SC',serif; box-shadow: 0 3px 14px #0004; }
+.dream-work .pv-subbar .dream-back:hover { background: #f6e7c8; }
 .pv-subbar__nav { display: flex; gap: 20px; }
+.dream-work .pv-subbar__nav a { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; min-height: 44px; }
 .dream-work .pv-hero { display: flex; flex-direction: column; gap: 28px; margin: 0; }
 .dream-work .pv-hero > div:first-child { display: flex; flex-direction: column; gap: 14px; }
 .dream-work .pv-kicker { font: 400 15px/1 'IM Fell English SC','Noto Serif SC',serif; letter-spacing: .24em; }
@@ -155,7 +157,7 @@ body.dream-preview-open > .top-nav, body.dream-preview-open > main, body.dream-p
   .dream-gallery .pv-filters { border-radius: 20px; top: 6px; gap: 2px; } .dream-gallery .pv-fbtn { padding: 10px 12px; font-size: 13px; }
   .dream-result { flex-wrap: wrap; border-radius: 18px; } .dream-result strong { font-size: 18px; }
   .dream-section { grid-template-columns: minmax(0,1fr); gap: 24px; } .dream-section-heading { display: flex; align-items: baseline; gap: 14px; }
-  .dream-section h2 { font-size: 25px; } .dream-work .pv-subbar { gap: 10px; font-size: 13px; } .pv-subbar__title { font-size: 15px; } .pv-subbar__nav { gap: 14px; } .pv-subbar .txt { display: none; }
+  .dream-section h2 { font-size: 25px; } .dream-work .pv-subbar { gap: 10px; font-size: 13px; } .pv-subbar__nav { gap: 14px; } .pv-subbar .txt { display: none; }
   .pv-facts { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 16px; }
   .dream-more { gap: 14px; } .dream-more a { flex-direction: column; align-items: start; } .dream-more a:last-child { flex-direction: column; align-items: end; } .dream-more img { width: 100%; }
   .dream-zoom-toolbar { padding: 12px; flex-wrap: wrap; } .dream-zoom-hint { font-size: 11px; }
