@@ -50,7 +50,7 @@
     });
     // Local preview refreshes after a source change, keeping the user on this route.
     if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){
-      var paths=[location.pathname,'/assets/entry/anime-theme.css','/js/anime-theme.js','/js/anime-gallery.js','/js/anime-motion.js','/js/dream-work.js'],signature=null;
+      var paths=[location.pathname,'/assets/entry/anime-theme.css','/js/anime-theme.js','/js/anime-gallery.js','/js/anime-motion.js','/js/dream-work.js','/assets/companion/oc-companion.css','/js/oc-companion.js','/js/oc-mesh.js'],signature=null;
       setInterval(function(){if(document.hidden)return;Promise.all(paths.map(function(path){return fetch(path,{cache:'no-store'}).then(function(r){return r.text();}).then(function(text){var h=0;for(var i=0;i<text.length;i++)h=(Math.imul(h,31)+text.charCodeAt(i))|0;return h;});})).then(function(values){var next=values.join('|');if(signature!==null && next!==signature)location.reload();signature=next;}).catch(function(){});},2000);
     }
   }

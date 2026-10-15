@@ -15,13 +15,6 @@
     });});
   }
   window.AnimeMotion={expand:expand};
-  function decode(el,target,duration){
-    if(!el || reduced.matches){if(el)el.textContent=target;return;}
-    var glyphs='ｱｶｻﾀﾅﾊﾏﾔﾗ涵清李#%&',start=performance.now();
-    el.setAttribute('aria-label',target);
-    function step(now){var k=(now-start)/duration,n=Math.floor(k*target.length);el.textContent=Array.from(target).map(function(c,i){return i<n?c:glyphs[Math.floor(Math.random()*glyphs.length)];}).join('');if(k<1)requestAnimationFrame(step);else{el.textContent=target;el.removeAttribute('aria-label');}}
-    requestAnimationFrame(step);
-  }
   function init(){
     var body=document.body,hero=document.querySelector('.anime-hero');
     // Cursor trails are in the foreground, like the reference's z-index 60 canvas.
@@ -35,18 +28,18 @@
     // Layer the cursor over a modal too, without intercepting its controls.
     var dialog=document.getElementById('dreamDetail');if(dialog)new MutationObserver(function(){if(dialog.open)dialog.appendChild(cursor);else body.appendChild(cursor);}).observe(dialog,{attributes:true,attributeFilter:['open']});
     if(!hero)return;
-    var title=document.getElementById('introTitle'),frame=document.createElement('div');frame.className='anime-heading-frame';title.before(frame);frame.appendChild(title);
+    var title=document.getElementById('introTitle');
     function name(){return document.documentElement.lang==='en'?CONFIG.name.en:CONFIG.name.zh;}
     // Reveal the works title one character at a time on entering the viewport.
     var collection=document.querySelector('.anime-collection'),worksTitle=document.querySelector('#animeWorksTitle > span');
     function letters(){if(!worksTitle)return;var text=worksTitle.textContent;worksTitle.innerHTML=Array.from(text).map(function(c,i){return '<span style="--letter-delay:'+i*60+'ms">'+(c===' '?'&nbsp;':c)+'</span>';}).join('');}
     letters();var visible=false;
     var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){visible=true;collection.classList.add('anime-works-in');io.disconnect();}},{threshold:.15});io.observe(collection);
-    new MutationObserver(function(){setTimeout(function(){decode(title,name(),480);letters();if(visible)collection.classList.add('anime-works-in');},0);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+    new MutationObserver(function(){setTimeout(function(){title.textContent=name();letters();if(visible)collection.classList.add('anime-works-in');},0);}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
     var seen=false;try{seen=sessionStorage.getItem('anime-intro')==='1';}catch(e){}
     if(reduced.matches){body.classList.add('anime-entered');return;}
     body.classList.add('anime-entering');
-    function reveal(){requestAnimationFrame(function(){body.classList.add('anime-entered');});setTimeout(function(){decode(title,name(),480);},260);setTimeout(function(){body.classList.remove('anime-entering');},1300);}
+    function reveal(){title.textContent=name();requestAnimationFrame(function(){body.classList.add('anime-entered');});setTimeout(function(){body.classList.remove('anime-entering');},1300);}
     if(seen){reveal();return;}
     var intro=document.createElement('button');intro.type='button';intro.className='anime-intro anime-intro-v4';intro.setAttribute('aria-label',document.documentElement.lang==='en'?'Skip intro':'跳过开场');
     intro.innerHTML='<span class="anime-intro-left"></span><span class="anime-intro-right"></span><span class="anime-intro-content"><span class="anime-intro-emblem"><i class="anime-intro-line"></i><i class="anime-intro-approach"></i><i class="anime-intro-disc"></i><i class="anime-intro-flash"></i></span><span class="anime-intro-text"><strong></strong><small>LOADING 000</small></span></span><span class="anime-intro-skip">'+(document.documentElement.lang==='en'?'Click or press any key to skip':'点击或按任意键跳过')+'</span>';
@@ -54,7 +47,7 @@
     function loading(now){if(finished)return;var pct=Math.min(100,Math.round((now-start)/7));label.textContent='LOADING '+String(pct).padStart(3,'0');if(pct<100)requestAnimationFrame(loading);}
     requestAnimationFrame(loading);
     timers.push(setTimeout(function(){intro.classList.add('is-ready');label.textContent='READY';},760));
-    timers.push(setTimeout(function(){intro.classList.add('is-hit');label.textContent='TECHNICAL ARTIST · PORTFOLIO';decode(word,'GiselleLi',520);},1400));
+    timers.push(setTimeout(function(){intro.classList.add('is-hit');label.textContent='TECHNICAL ARTIST · PORTFOLIO';word.textContent='GiselleLi';},1400));
     function finish(){if(finished)return;finished=true;timers.forEach(clearTimeout);intro.classList.add('is-opening');removeEventListener('keydown',skip,true);try{sessionStorage.setItem('anime-intro','1');}catch(e){}reveal();setTimeout(function(){intro.remove();},900);}
     function skip(e){e.preventDefault();e.stopImmediatePropagation();finish();}intro.addEventListener('click',finish);addEventListener('keydown',skip,true);timers.push(setTimeout(finish,2150));
     reduced.addEventListener('change',function(){if(reduced.matches)finish();});

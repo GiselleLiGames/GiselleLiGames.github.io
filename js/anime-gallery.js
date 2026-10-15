@@ -29,8 +29,8 @@
     var pct=categories.length>1?categories.indexOf(cat)/(categories.length-1)*100:0;
     document.querySelector('.anime-slider i').style.width=pct+'%';document.querySelector('.anime-slider b').style.left=pct+'%';
     grid.innerHTML=shown.map(function(item){var w=item.w,i=item.id;return '<li><a class="anime-work-row" href="work.html?id='+i+'" data-work="'+i+'"><span class="anime-work-no">'+number(i)+'</span><span class="anime-work-title"><strong>'+P.esc(P.t(w.title))+'</strong><small>'+P.esc(w.title[P.lang()==='zh'?'en':'zh'])+'</small></span><span class="anime-work-group">'+P.esc(P.t(CONFIG.workGroupNames[w.group]))+'</span><img class="anime-row-image" src="'+P.esc(w.image)+'" alt="" loading="lazy"></a></li>';}).join('');
-    var featured=document.getElementById('animeFeatured');stop(featured);featured.setAttribute('aria-label',L('打开精选作品：','Open featured work: ')+P.t(works[0].title));
-    featured.innerHTML='<span class="anime-featured-inner">'+media(works[0],false)+'<span class="anime-featured-label"><small>FEATURED</small>'+P.esc(P.t(works[0].title))+'</span></span>';
+    var featured=document.getElementById('animeFeatured');stop(featured);if(!featured.hasAttribute('data-companion'))featured.setAttribute('aria-label',L('打开精选作品：','Open featured work: ')+P.t(works[0].title));
+    if(!featured.hasAttribute('data-companion'))featured.innerHTML='<span class="anime-featured-inner">'+media(works[0],false)+'<span class="anime-featured-label"><small>FEATURED</small>'+P.esc(P.t(works[0].title))+'</span></span>';
     if(shown.length)select(shown.some(function(item){return item.id===selected;})?selected:shown[0].id);
     observeVisibility();
   }
