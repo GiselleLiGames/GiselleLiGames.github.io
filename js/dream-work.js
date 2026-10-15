@@ -15,7 +15,7 @@
   function caption(v){return P.esc(P.t(v.title || v.label).replace(/[→↗]/g,'').trim());}
   function poster(w,v){return v.poster || w.image || (P.clip(w)||{}).poster || '';}
   function player(w,v){return '<div class="pv-player"><video controls playsinline preload="none" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
-  function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><i>'+num+'.</i><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
+  function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><i>'+num+'</i><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
   function back(){try{var ref = new URL(document.referrer);if(ref.origin===location.origin && ref.pathname.endsWith('/portfolio.html'))return ref.pathname+ref.search;}catch(e){}return 'portfolio.html';}
   function render(){
     stop();
@@ -24,7 +24,7 @@
     var d = w.detail || {}, videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
     var images = (w.links||[]).filter(function(v){return v.type==='image';}), docs = (w.links||[]).filter(function(v){return v.type==='docs' || v.type==='github' || v.type==='external';});
     var prev=(id-1+W.length)%W.length,next=(id+1)%W.length, zh=P.lang()==='zh', group=P.t(CONFIG.workGroupNames[w.group]);
-    var facts = []; if(d.year)facts.push(['year',P.t(d.year)]);if(d.tools)facts.push(['tools',P.t(d.tools)]);if(d.platform)facts.push(['platform',P.t(d.platform)]);facts.push(['type',group]);if(d.role)facts.push(['role',P.t(d.role)]);
+    var facts = []; if(d.year)facts.push(['year',P.t(d.year)]);if(d.tools)facts.push(['tools',P.t(d.tools)]);if(d.platform)facts.push(['platform',P.t(d.platform)]);if(id!==0){facts.push(['type',group]);if(d.role)facts.push(['role',P.t(d.role)]);}
     document.title=P.t(w.title)+' | Hanqing Li · GiselleLi';
     root.querySelector('[data-i18n="footer.copy"]').textContent=L('© 2026 李涵清 · 保留所有权利',CONFIG.copyright);
     root.querySelector('[data-detail-lang]').textContent=P.lang()==='zh'?'中 · EN':'ZH · EN';
@@ -33,10 +33,10 @@
     if(d.results)overview+='<div class="pv-metrics">'+d.results.map(function(r){return '<p><strong>'+P.esc(r.value)+'</strong> '+P.esc(P.t(r.label))+'</p>';}).join('')+'</div>';
     var category={shader:['着色器','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
     var documentLinks=docs.map(function(v){return '<a class="dream-doc-link" href="'+P.esc(v.href)+'" target="_blank" rel="noopener">'+caption(v)+' →</a>';}).join(' · ');
-    var n=0, romans=['i','ii','iii','iv','v'];
-    root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'">← '+L('返回作品集','Back to portfolio')+'</a><div class="pv-subbar__nav"><a href="work.html?id='+prev+'" aria-label="'+L('上一个','Previous')+'">‹ <span class="txt">'+L('上一个','Previous')+'</span></a><a href="work.html?id='+next+'" aria-label="'+L('下一个','Next')+'"><span class="txt">'+L('下一个','Next')+'</span> ›</a></div>';
+    var n=0, romans=['01','02','03','04','05'];
+    root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'"><span class="anime-esc">ESC</span> '+L('返回作品集','Back to works')+'</a><span class="anime-work-count">'+String(id+1).padStart(2,'0')+'<span> / '+String(W.length).padStart(2,'0')+'</span></span>';
     main.innerHTML=
-      '<section class="pv-hero"><div><div class="pv-kicker">✦ '+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1><span class="dream-name-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div>'+(videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
+      '<section class="pv-hero"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1><span class="dream-name-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div>'+(videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
       '<div class="pv-facts">'+facts.map(function(f){return '<div class="pv-fact"><small>'+f[0]+'</small><span>'+P.esc(f[1])+'</span></div>';}).join('')+'</div></section>'+
       section(romans[n++],L('概述','Overview'),overview,'overview')+
       (videos.length>1?section(romans[n++],L('视频','Videos'),'<div class="dream-media-grid">'+videos.slice(1).map(function(v,k){return '<figure>'+player(w,v)+'<figcaption><b>'+String(k+1).padStart(2,'0')+'</b>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+'</div>','video'):'')+
@@ -44,7 +44,7 @@
       (docs.length && !images.length?'<p>'+documentLinks+'</p>':'')+
       (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'')+
       (w.pdf?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+
-      '<nav class="dream-more" aria-label="'+L('更多作品','More works')+'">'+[prev,next].map(function(j,k){var v=W[j];return '<a href="work.html?id='+j+'"><img src="'+P.esc(v.image)+'" alt="" loading="lazy"><div><i>'+ (k?'next ›':'‹ previous')+'</i><strong>'+P.esc(P.t(v.title))+'</strong></div></a>';}).join('')+'</nav>';
+      '<nav class="dream-more" aria-label="'+L('更多作品','More works')+'">'+[prev,next].map(function(j,k){var v=W[j];return '<a href="work.html?id='+j+'"><img src="'+P.esc(v.image)+'" alt="" loading="lazy"><div><i>'+ (k?'next ›':'‹ previous')+'</i><strong>'+P.esc(P.t(v.title))+'</strong></div></a>';}).join('')+'</nav><a class="anime-detail-back" href="'+P.esc(back())+'">« '+L('返回','Back')+'</a>';
     P.reveal(main);
     zoom.querySelector('[data-zoom="close"]').textContent=L('关闭 · Esc','Close · Esc');
     zoom.querySelector('.dream-zoom-hint').textContent=L('滚轮缩放 · 拖动平移 · 双击放大 / 还原','Scroll to zoom · Drag to pan · Double-click to reset / enlarge');
@@ -73,7 +73,7 @@
       if(target){e.preventDefault();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}
       return;
     }
-    if(options.close && a.closest('#dreamSubbar') && a===root.querySelector('#dreamSubbar a')){e.preventDefault();options.close();return;}
+    if(options.close && (a.classList.contains('anime-detail-back') || (a.closest('#dreamSubbar') && a===root.querySelector('#dreamSubbar a')))){e.preventDefault();options.close();return;}
     if(options.navigate && /work\.html\?id=/.test(a.getAttribute('href'))){e.preventDefault();navigate(Number(new URL(a.href).searchParams.get('id')));}
   });
   P.onLang(function(){if(!options.isActive || options.isActive())render();});

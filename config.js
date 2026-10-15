@@ -15,7 +15,7 @@ const CONFIG = {
      ============================================================ */
 
   name: {
-    en: 'Hanqing Li',
+    en: 'HanqingLi',
     zh: '李涵清',
     alias: 'GiselleLi',
     subtitle: { en: 'Giselle', zh: 'Giselle Li' },

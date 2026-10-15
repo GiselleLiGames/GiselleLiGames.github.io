@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Portfolio | Hanqing Li - GiselleLi</title>
   <link rel="stylesheet" href="assets/entry/pv.css?v=20261014a" />
-  <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
 
   <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=20261013h" />
-  <link rel="stylesheet" href="assets/entry/dream-gallery.css?v=20261015-back" />
+  <link rel="stylesheet" href="assets/entry/anime-theme.css?v=20261015a" />
 </head>
-<body class="portfolio-theater scene-page pv-page dream-gallery">
-  <div class="portfolio-bg-grade" aria-hidden="true"></div>
+<body class="portfolio-theater scene-page pv-page dream-gallery anime-site">
 
   <nav class="top-nav">
     <a href="index.html" class="nav-logo">GiselleLi</a>
@@ -23,28 +21,18 @@
     <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
   </nav>
 
-  <main class="pv-shell">
-    <section class="pv-intro" aria-labelledby="introTitle">
-      <div class="dream-intro-text">
-        <p class="pv-eyebrow" id="dreamRole">technical artist · 技术美术师</p>
-        <div class="dream-name-group">
-          <h1 class="pv-title page-name" id="introTitle" data-i18n="portfolio.intro.name">李涵清</h1>
-          <span class="dream-name-secondary" id="dreamNameSecondary" lang="en">Giselle Li</span>
-        </div>
-        <p class="pv-copy" data-i18n="portfolio.intro.copy">我是一名就读于犹他大学（University of Utah）的技术美术师，专注于 Shader、程序化内容生成、实时渲染与美术工具开发，在视觉表现与工程实现之间搭建可靠的制作流程。</p>
+  <main class="anime-shell">
+    <section class="anime-hero" aria-labelledby="introTitle">
+      <div class="anime-eyebrow"><b>TECHNICAL ARTIST</b><span id="animeUniversity">犹他大学 · UNIVERSITY OF UTAH</span></div>
+      <div><h1 id="introTitle" data-i18n="portfolio.intro.name">李涵清</h1><span class="anime-name-secondary" id="animeSecondary">Giselle Li</span></div>
+      <div class="anime-hero-bottom">
+        <div class="anime-intro-copy"><p data-i18n="portfolio.intro.copy">我是一名就读于犹他大学的技术美术师，专注于 Shader、程序化内容生成、实时渲染与美术工具开发。</p><div class="anime-actions"><a class="anime-button" href="#works" id="animeBrowse">浏览作品 ↓</a></div></div>
+        <a class="anime-featured" href="work.html?id=0" data-featured-work="0" aria-label="精选作品" id="animeFeatured"></a>
       </div>
     </section>
-
-    <section class="dream-collection-wrap" aria-label="Portfolio collection">
-    <div class="dream-collection">
-    <div class="dream-collection-heading">
-    <span class="dream-overline" id="dreamCollectionLabel">the collection</span>
-    <header class="pv-wh"><span data-i18n="portfolio.works">作品集</span></header>
-    </div>
-    <div class="pv-filters" id="pvFilters" role="group" aria-label="Portfolio categories"></div>
-    <div class="dream-result" id="dreamResult" aria-live="polite"></div>
-    <div class="pv-grid" id="pvGrid"></div>
-    </div>
+    <section class="anime-collection" id="works" aria-labelledby="animeWorksTitle">
+      <div class="anime-collection-bar"><h2 id="animeWorksTitle"><span data-i18n="portfolio.works">作品集</span> <small>WORKS</small></h2><div class="anime-filter-wrap"><div class="pv-filters" id="pvFilters" role="group" aria-label="作品分类"></div><div class="anime-slider" aria-hidden="true"><i></i><b></b></div></div></div>
+      <div class="anime-works-layout"><ol class="anime-work-list" id="pvGrid"></ol><aside class="anime-preview" id="animePreview" aria-label="作品预览"></aside></div>
     </section>
   </main>
 
@@ -63,15 +51,14 @@
   <script src="js/typography.js?v=20260726a"></script>
   <script src="js/content.js?v=20261015-alias"></script>
   <script src="js/i18n.js?v=b5e48c04f52f"></script>
-  <script src="assets/entry/scene-background.js?v=20260711"></script>
   <script src="js/pv.js?v=bd883637b15e"></script>
-  <script src="js/dream-scene.js?v=20261015c"></script>
-  <script src="js/dream-gallery.js?v=20261015-alias"></script>
+  <script src="js/anime-gallery.js?v=20261015a"></script>
   <script src="js/figma-case-studies.js?v=20261014-imagecorrections"></script>
   <script src="js/case-study-curated.js?v=20261013h"></script>
   <script src="js/figma-case-study-renderer.js?v=20261013h"></script>
   <script src="js/dream-work.js?v=20261015-back"></script>
   <script src="js/dream-preview.js?v=20261015-detail"></script>
-  <script src="js/dream-navigation.js?v=20261015-detail"></script>
+  <script src="js/anime-theme.js?v=20261015a"></script>
+  <script src="js/anime-motion.js?v=20261015a"></script>
 </body>
 </html>

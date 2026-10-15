@@ -39,7 +39,7 @@
   grid.addEventListener('click',function(e){
     var card=e.target.closest('[data-work]');
     if(!card || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button!==0)return;
-    e.preventDefault();var id=Number(card.dataset.work);route(id,false);pushed=true;show(id,card);
+    e.preventDefault();var id=Number(card.dataset.work);route(id,false);pushed=true;if(window.AnimeMotion)AnimeMotion.expand(card,function(){show(id,card);});else show(id,card);
   });
   dialog.addEventListener('cancel',function(e){e.preventDefault();requestClose();});
   addEventListener('popstate',function(){

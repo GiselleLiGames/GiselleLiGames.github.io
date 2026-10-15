@@ -24,9 +24,9 @@ const TYPOGRAPHY = {
      fontBody    : used on home / portfolio / about pages
      fontDisplay : used on resume page headings & nav logo
      fontResume  : used on resume page body text             */
-  fontBody:    "'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif",
-  fontDisplay: "'Cormorant Garamond', Georgia, serif",
-  fontResume:  "'Inter', sans-serif",
+  fontBody: "'Noto Sans SC', 'Microsoft YaHei', sans-serif",
+  fontDisplay: "'Noto Sans SC', 'Microsoft YaHei', sans-serif",
+  fontResume: "'Noto Sans SC', 'Microsoft YaHei', sans-serif",
 
   /* ── Base Body                                            */
   lineHeightBody: '1.6',
@@ -308,6 +308,7 @@ const TYPOGRAPHY = {
   }
 
   /* ── 4. Auto-run ── */
+  if (document.body.classList.contains('anime-site')) return;
   injectFonts();
 
   /* Run immediately if DOM is ready, otherwise wait */
