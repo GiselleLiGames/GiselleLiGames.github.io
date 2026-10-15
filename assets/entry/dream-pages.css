@@ -1,58 +1,33 @@
-/* Resume and contact share the gallery's scene, typography and quiet dividers. */
-.dream-pages { --pink: #f0c98a; line-height: 1.9; font-style: normal; }
-/* Information uses one family, including mixed Chinese / Latin text. */
-.dream-pages > main { font-family: var(--pv-sans); font-style: normal; }
-.dream-pages > header, .dream-pages > .about-hero {
-  padding: 150px var(--pv-gutter) 64px max(var(--pv-gutter),calc(22vw + 12px));
-  background: radial-gradient(ellipse at 35% 65%,#12080ac7,transparent 75%);
-  text-shadow: 0 2px 16px #000a;
+/* Preserve the original Resume / Contact layout; share only scene and navigation. */
+.dream-pages { --scene-gold: #f0c98a; --scene-paper: #fbf0da; --scene-muted: #e2d3b8; }
+body.resume-scene.dream-pages main a,
+body.resume-scene.dream-pages main a:visited {
+  color: var(--scene-gold);
+  text-decoration: underline;
+  text-decoration-color: #f0c98a80;
+  text-underline-offset: .2em;
+  overflow-wrap: anywhere;
 }
-.dream-pages h1 { margin: 14px 0 24px; color: #fbf0da; font: 900 clamp(52px,6vw,80px)/1.1 'Noto Serif SC',serif; letter-spacing: .04em; }
-html[lang=en] .dream-pages h1 { font-family: 'IM Fell English',serif; font-weight: 400; }
-.dream-pages header > p, .dream-pages .section-label { margin: 0; font: 600 24px/1.3 var(--pv-sans); color: #f0c98a; }
-.dream-pages header > div { display: flex; flex-wrap: wrap; gap: 12px 30px; color: #e2d3b8; font-size: 15px; }
-.dream-pages .hero-role { margin: 0 0 18px; font: 400 24px/1.4 var(--pv-sans); color: #f0c98a; }
-.dream-pages .hero-bio { max-width: 650px; margin: 0; font-size: 17px; line-height: 2; }
-.dream-pages > main { width: min(1080px,100% - 2 * var(--pv-gutter)); margin: 0 auto 80px; padding: clamp(24px,4vw,48px); background: #12080ac4; border-radius: 8px; backdrop-filter: blur(8px); }
-.dream-pages .btn-contact { display: inline-block; margin-top: 26px; border-bottom: 1px solid #f0c98a; padding: 0 0 5px; color: #fbf0da; font-size: 16px; }
-.dream-resume main > section { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 32px; margin: 0 0 64px; }
-.dream-resume main > section:last-child { margin-bottom: 0; }
-.dream-pages .section-title, .dream-pages .block-title { margin: 0; font: 600 27px/1.4 var(--pv-sans); color: #fbf0da; letter-spacing: .04em; }
-.dream-resume .glass-card { margin: 0; padding: 28px 0; border: 0; border-top: 1px solid #f0c98a40; background: transparent; }
-.dream-resume .glass-card:first-child { padding-top: 0; border-top: 0; }
-.dream-resume .glass-card:last-child { padding-bottom: 0; }
-.dream-resume .glass-card > div:first-child { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; }
-.dream-resume .glass-card h3 { margin: 0; font-size: 21px; font-weight: 600; line-height: 1.5; color: #fbf0da; }
-.dream-resume .glass-card > div:first-child span { font: 400 15px/1.6 var(--pv-sans); color: #d8c7a8; }
-.dream-resume .glass-card p { margin: 12px 0; font-size: 15px; color: #e2d3b8; }
-.dream-resume .glass-card p.text-pink { color: #f0c98a; font-weight: 600; }
-.dream-resume .glass-card ul { padding-left: 20px; margin: 16px 0 0; }
-.dream-resume .glass-card li { margin: 10px 0; font-size: 15px; line-height: 1.95; color: #e2d3b8; }
-.dream-resume .glass-card strong { color: #fbf0da; font-weight: 600; }
-.dream-resume .glass-card a { overflow-wrap: anywhere; border-bottom: 1px solid #f0c98a66; }
-.dream-resume .skill-overview { display: grid; gap: 24px; }
-.dream-resume .skill-overview h3 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
-.dream-resume .skill-stack { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-.dream-resume .skill-stack span { color: #f0c98a; font: 400 16px/1.8 var(--pv-sans); }
-.dream-contact .about-info { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 28px 56px; }
-.dream-contact .about-info > .block-title { grid-column: 1; }
-.dream-contact .info-list { grid-column: 1; margin: 0; padding: 0; list-style: none; }
-.dream-contact .info-list li { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid #f0c98a40; font-size: 15px; }
-.dream-contact .info-key { color: #d8c7a8; flex-shrink: 0; }
-.dream-contact .info-val { text-align: right; }
-.dream-contact .contact-side { grid-column: 2; grid-row: 1 / 3; min-width: 0; }
-.dream-contact .contact-side h2 { margin-bottom: 28px; }
-.dream-contact .contact-link { display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 1px solid #f0c98a40; }
-.dream-contact .contact-link:hover .contact-value { color: #f0c98a; }
-.dream-contact .contact-label { color: #d8c7a8; font: 400 15px/1.4 var(--pv-sans); letter-spacing: 0; }
-.dream-contact .contact-value { color: #fbf0da; font: 400 20px/1.6 var(--pv-sans); overflow-wrap: anywhere; }
-html[lang=en] .dream-pages header > p, html[lang=en] .dream-pages .section-label { font: 700 24px/1.3 'Caveat',cursive; }
-html[lang=en] .dream-pages .hero-role { font: italic 400 26px/1.3 'IM Fell English',serif; }
-.dream-pages footer p { margin: 0; }
+body.resume-scene.dream-pages main a:hover,
+body.resume-scene.dream-pages main a:focus-visible {
+  color: var(--scene-paper);
+  text-decoration-color: currentColor;
+}
+body.dream-pages::before, body.dream-pages::after { display: none; }
+body.dream-pages > .top-nav {
+  position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important;
+  display: grid !important; grid-template-columns: 1fr auto 1fr; gap: 28px;
+}
+body.dream-pages > .top-nav .nav-logo { justify-self: start; margin: 0; }
+body.dream-pages > .top-nav .nav-links { flex-direction: row !important; gap: 32px !important; position: static !important; width: auto !important; }
+body.dream-pages > .top-nav .nav-links a { font-size: 20px !important; }
+body.dream-pages > .top-nav .nav-toggle { display: none !important; }
+body.dream-pages > .top-nav .nav-links a.active { color: #f0c98a !important; }
+body.dream-pages > .top-nav .nav-links a.active::after { width: 100%; }
 @media(max-width:760px) {
-  .dream-pages > header, .dream-pages > .about-hero { padding: 180px var(--pv-gutter) 48px; }
-  .dream-resume main > section { grid-template-columns: minmax(0,1fr); gap: 28px; margin-bottom: 48px; }
-  .dream-contact .about-info { grid-template-columns: minmax(0,1fr); gap: 24px; }
-  .dream-contact .contact-side { grid-column: 1; grid-row: auto; margin-top: 24px; }
-  .dream-pages > main { padding: 24px 20px; }
+  body.dream-pages > .top-nav { grid-template-columns: 1fr; justify-items: center; gap: 22px; }
+  body.dream-pages > .top-nav .nav-logo { justify-self: center; }
+  body.dream-pages > .top-nav .nav-links { gap: 20px !important; }
+  body.dream-pages > .top-nav .nav-links a { font-size: 16px !important; }
+  body.dream-pages > header, body.dream-pages .about-hero { padding-top: 150px !important; }
 }

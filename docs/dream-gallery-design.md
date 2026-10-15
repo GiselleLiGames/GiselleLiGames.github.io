@@ -28,8 +28,9 @@ The visual references are `Portfolio Dream Gallery.dc.html` and
   restoration.
 - `js/dream-navigation.js` groups the three navigation links and language switch
   at the horizontal center on Gallery, Resume and Contact.
-- `assets/entry/dream-pages.css` styles Resume and Contact with the same animated
-  scene and cream / antique gold typography; their legacy scene styles are removed.
+- `assets/entry/dream-pages.css` keeps the original Resume and Contact layouts,
+  sharing only the animated scene, palette and centered navigation. The redundant
+  Resume contact CTA is removed; contact is available in the top navigation.
 - `index.html` opens the gallery directly. Legacy `project.html?id=…` links route
   to the corresponding `work.html?id=…` page, preserving query and hash values.
 
