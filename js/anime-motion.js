@@ -11,7 +11,7 @@
     document.body.appendChild(wipe);
     requestAnimationFrame(function(){requestAnimationFrame(function(){
       wipe.classList.add('is-expanding');Object.assign(wipe.style,{left:'0px',top:'0px',width:'100vw',height:'100vh'});
-      setTimeout(function(){done();var dialog=document.querySelector('dialog[open]');if(dialog)dialog.appendChild(wipe);wipe.classList.add('is-fading');setTimeout(function(){wipe.remove();busy=false;},280);},360);
+      setTimeout(function(){done();var dialog=document.querySelector('dialog[open]');if(dialog)dialog.appendChild(wipe);wipe.classList.add('is-fading');setTimeout(function(){wipe.remove();busy=false;},200);},240);
     });});
   }
   window.AnimeMotion={expand:expand};

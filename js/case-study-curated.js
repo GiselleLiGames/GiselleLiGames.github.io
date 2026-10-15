@@ -46,7 +46,7 @@ window.CURATED_CASE_STUDIES = {
               "cap": "Castle in the Sky"
             },
             {
-              "src": "assets/uploads/figma/source/98da3b738a047ec08a22d7ebbb2da4c95f3e7089.jpg",
+              "src": "assets/uploads/figma/source/98da3b738a047ec08a22d7ebbb2da4c95f3e7089.webp",
               "w": 480,
               "h": 288,
               "cap": "Reference"
