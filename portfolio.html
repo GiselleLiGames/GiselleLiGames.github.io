@@ -4,70 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Portfolio | Hanqing Li - GiselleLi</title>
-  <link rel="stylesheet" href="assets/entry/scene-pages.css?v=20261013a" />
   <link rel="stylesheet" href="assets/entry/pv.css?v=20261014a" />
   <link rel="preload" as="image" href="assets/entry/universal-bg-4k.webp" />
-  <style>
-    /* ---------- Intro (left-aligned, name size shared with résumé / contact) ---------- */
-    .pv-intro { max-width: 720px; margin-bottom: clamp(36px, 6vw, 64px); }
-    .pv-title { margin: 10px 0 0; font-family: var(--pv-serif); font-weight: 700; color: var(--pv-paper); text-shadow: 0 0 28px rgba(226, 176, 94, .24); }
-    .pv-copy { max-width: 600px; margin: 16px 0 0; font-size: clamp(14px, 1.6vw, 16px); line-height: 1.8; color: var(--pv-dim); }
 
-    /* ---------- Filters: original square form, larger ---------- */
-    .pv-filters { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 30px; }
-    .pv-fbtn {
-      min-width: 104px; min-height: 48px; padding: 0 22px; cursor: pointer;
-      border: 1px solid rgba(226, 176, 94, .45); border-radius: 0; background: rgba(21, 11, 8, .55);
-      color: rgba(245, 213, 157, .78); font: 700 15px/1 var(--pv-sans); letter-spacing: .12em; text-transform: uppercase;
-      transition: color 180ms, border-color 180ms, background 180ms, box-shadow 180ms, transform 280ms var(--pv-spring);
-    }
-    @media (hover: hover) { .pv-fbtn:hover { color: var(--pv-paper); border-color: rgba(255, 223, 160, .8); background: rgba(72, 35, 15, .56); } }
-    .pv-fbtn.is-on { color: var(--pv-paper); border-color: var(--pv-gold); background: rgba(90, 42, 16, .7); box-shadow: 0 0 20px rgba(226, 176, 94, .25), inset 0 0 0 1px rgba(255, 223, 160, .35); }
-    .pv-fbtn[hidden] { display: none; }
-    @media (max-width: 640px) {
-      .pv-filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 8px; margin-right: calc(-1 * var(--pv-gutter)); padding-right: 16px; }
-      .pv-filters::-webkit-scrollbar { display: none; }
-      .pv-fbtn { flex: none; min-width: 0; min-height: 44px; padding: 0 16px; font-size: 14px; }
-    }
-
-    /* ---------- Grid: phone 1 / iPad portrait 2 / iPad landscape+ 3 ---------- */
-    .pv-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
-    @media (min-width: 640px) { .pv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
-    @media (min-width: 1080px) { .pv-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; } }
-    .pv-empty { grid-column: 1 / -1; padding: 40px 0; text-align: center; color: var(--pv-dim); }
-  </style>
-  <script>
-    /* Opening curtain: shown when arriving from the home page (index.html → portfolio.html?intro),
-       or on the first visit of a browser session. Decided before first paint so nothing flashes. */
-    (function () {
-      var q = new URLSearchParams(location.search), seen = false;
-      try { seen = sessionStorage.getItem('pv-curtain') === '1'; } catch (e) {}
-      var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if ((q.has('intro') || !seen) && !reduced) document.documentElement.classList.add('pv-curtain-on');
-      try { sessionStorage.setItem('pv-curtain', '1'); } catch (e) {}
-      if (q.has('intro')) { q.delete('intro'); history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash); }
-    })();
-  </script>
+  <link rel="stylesheet" href="assets/entry/dream-gallery.css?v=20261015c" />
 </head>
-<body class="portfolio-theater scene-page pv-page">
-  <div id="pvCurtain" aria-hidden="true" hidden></div>
-  <script src="assets/entry/pv-curtain.js?v=20261014a"></script>
-  <script>
-    (function () {
-      var root = document.documentElement, c = document.getElementById('pvCurtain');
-      if (!root.classList.contains('pv-curtain-on') || !window.PVCurtain) { c.remove(); root.classList.remove('pv-curtain-on'); return; }
-      c.hidden = false;
-      PVCurtain.play(c, {
-        variant: 'drape',
-        subtitleHTML: '<small data-i18n="portfolio.intro.role">技术美术师</small>',
-        onOpen: function () { root.classList.add('pv-curtain-go'); },
-        onDone: function () {
-          c.remove();
-          setTimeout(function () { root.classList.remove('pv-curtain-on', 'pv-curtain-go'); }, 900);
-        }
-      });
-    })();
-  </script>
+<body class="portfolio-theater scene-page pv-page dream-gallery">
   <div class="portfolio-bg-grade" aria-hidden="true"></div>
 
   <nav class="top-nav">
@@ -82,118 +24,48 @@
 
   <main class="pv-shell">
     <section class="pv-intro" aria-labelledby="introTitle">
-      <p class="pv-eyebrow pv-rise" data-i18n="portfolio.intro.role">Technical Artist</p>
-      <h1 class="pv-title page-name pv-rise" style="--d:80ms" id="introTitle" data-i18n="portfolio.intro.name">Hanqing Li</h1>
-      <p class="pv-copy pv-rise" style="--d:160ms" data-i18n="portfolio.intro.copy">Shaders / Tools / Animation / PCG</p>
+      <div class="dream-intro-text">
+        <p class="pv-eyebrow" id="dreamRole">technical artist · 技术美术师</p>
+        <div class="dream-name-group">
+          <h1 class="pv-title page-name" id="introTitle" data-i18n="portfolio.intro.name">李涵清</h1>
+          <span class="dream-name-secondary" id="dreamNameSecondary">Hanqing Li</span>
+        </div>
+        <p class="pv-copy" data-i18n="portfolio.intro.copy">我是一名就读于犹他大学（University of Utah）的技术美术师，专注于 Shader、程序化内容生成、实时渲染与美术工具开发，在视觉表现与工程实现之间搭建可靠的制作流程。</p>
+      </div>
     </section>
 
-    <header class="pv-wh pv-rise"><span data-i18n="portfolio.works">作品集</span></header>
-    <div class="pv-filters pv-rise" id="pvFilters" role="tablist" aria-label="Portfolio categories">
-      <button type="button" class="pv-fbtn is-on" data-cat="all" data-i18n="filter.all">全部</button>
-      <button type="button" class="pv-fbtn" data-cat="shader" data-i18n="filter.shader">着色器</button>
-      <button type="button" class="pv-fbtn" data-cat="pcg" data-i18n="filter.pcg">程序化生成</button>
-      <button type="button" class="pv-fbtn" data-cat="render" data-i18n="filter.render">渲染</button>
-      <button type="button" class="pv-fbtn" data-cat="tool" data-i18n="filter.tool">工具</button>
-      <button type="button" class="pv-fbtn" data-cat="code" data-i18n="filter.code">代码</button>
+    <section class="dream-collection-wrap" aria-label="Portfolio collection">
+    <div class="dream-collection">
+    <div class="dream-collection-heading">
+    <span class="dream-overline" id="dreamCollectionLabel">the collection</span>
+    <header class="pv-wh"><span data-i18n="portfolio.works">作品集</span></header>
     </div>
+    <div class="pv-filters" id="pvFilters" role="group" aria-label="Portfolio categories"></div>
+    <div class="dream-result" id="dreamResult" aria-live="polite"></div>
     <div class="pv-grid" id="pvGrid"></div>
+    </div>
+    </section>
   </main>
 
   <footer>
-    <span class="footer-logo">GiselleLi</span>
     <div class="footer-links">
       <a href="portfolio.html" data-i18n="footer.portfolio">作品集</a>
       <a href="resume.html" data-i18n="footer.resume">简历</a>
       <a href="contact.html" data-i18n="footer.contact">联系</a>
     </div>
     <span data-i18n="footer.copy">© 2026 Hanqing Li - All rights reserved</span>
+    <a href="mailto:kyuandart@gmail.com">kyuandart@gmail.com</a>
   </footer>
 
-  <script src="config.js?v=20261014-fullgraphs"></script>
+  <script src="config.js?v=20261015-copy"></script>
   <script src="js/site-translations.js?v=9adb83a9190d"></script>
   <script src="js/typography.js?v=20260726a"></script>
   <script src="js/content.js?v=2bece7392724"></script>
   <script src="js/i18n.js?v=b5e48c04f52f"></script>
   <script src="assets/entry/scene-background.js?v=20260711"></script>
   <script src="js/pv.js?v=bd883637b15e"></script>
-  <script>
-  (function () {
-    'use strict';
-    var P = window.PV, W = P.works(), grid = document.getElementById('pvGrid'), filters = document.getElementById('pvFilters');
-    var GROUP = (typeof CONFIG !== 'undefined' && CONFIG.workGroupNames) || {};
-
-    /* Remember the chosen category in the URL, so "back" from a work page lands in the same place */
-    var params = new URLSearchParams(location.search);
-    var cat = params.get('cat') || 'all';
-
-    function cardHTML(w, i) {
-      var group = GROUP[w.group] ? P.t(GROUP[w.group]) : '';
-      return '<a class="pv-card pv-rise" href="work.html?id=' + i + '" data-cat="' + P.esc(w.category) + '" style="--d:' + (i % 3) * 70 + 'ms">' +
-        P.mediaHTML(w) +
-        '<div class="pv-card__body">' +
-          '<div class="pv-kicker">' + P.esc(group) + '</div>' +
-          '<h3 class="pv-card__title">' + P.esc(P.t(w.title)) + '</h3>' +
-          '<div class="pv-card__meta">' + P.esc(P.t(w.desc)) + '</div>' +
-          '<div class="pv-tags">' + (w.tags || []).map(function (tg) { return '<span class="pv-tag">' + P.esc(P.t(tg)) + '</span>'; }).join('') + '</div>' +
-        '</div></a>';
-    }
-
-    function render() {
-      grid.innerHTML = W.map(cardHTML).join('') +
-        '<div class="pv-empty" id="pvEmpty" hidden>' + (P.lang() === 'zh' ? '这个分类暂时还没有作品' : 'Nothing in this category yet') + '</div>';
-      // hide category buttons that have no works
-      filters.querySelectorAll('.pv-fbtn').forEach(function (b) {
-        var c = b.dataset.cat;
-        b.hidden = c !== 'all' && !W.some(function (w) { return w.category === c; });
-      });
-      apply(false);
-      P.observeMedia(grid); P.reveal(document);
-    }
-
-    function apply(animate) {
-      filters.querySelectorAll('.pv-fbtn').forEach(function (b) {
-        var on = b.dataset.cat === cat; b.classList.toggle('is-on', on); b.setAttribute('aria-selected', on);
-      });
-      var cards = Array.prototype.slice.call(grid.querySelectorAll('.pv-card'));
-      var show = function (el) { return cat === 'all' || el.dataset.cat === cat; };
-      var swap = function () {
-        var k = 0;
-        cards.forEach(function (el) {
-          el.classList.toggle('is-hidden', !show(el));
-          if (show(el) && animate) {
-            var d = k++ * 60; el.classList.add('is-out');
-            requestAnimationFrame(function () { setTimeout(function () { el.classList.remove('is-out'); }, d); });
-          }
-        });
-        document.getElementById('pvEmpty').hidden = cards.some(show);
-      };
-      if (animate) { cards.forEach(function (el) { if (!el.classList.contains('is-hidden')) el.classList.add('is-out'); }); setTimeout(swap, 200); }
-      else swap();
-    }
-
-    filters.addEventListener('click', function (e) {
-      var b = e.target.closest('.pv-fbtn'); if (!b || b.dataset.cat === cat) return;
-      cat = b.dataset.cat;
-      var url = new URL(location.href);
-      if (cat === 'all') url.searchParams.delete('cat'); else url.searchParams.set('cat', cat);
-      history.replaceState(null, '', url.pathname + url.search);
-      apply(true);
-    });
-
-    /* restore scroll position when coming back from a work page */
-    var KEY = 'pv-scroll';
-    addEventListener('pagehide', function () { try { sessionStorage.setItem(KEY, String(scrollY)); } catch (e) {} });
-
-    P.onLang(render);
-    render();
-    try {
-      var y = +sessionStorage.getItem(KEY);
-      if (y && document.referrer.indexOf('work.html') !== -1) {
-        grid.querySelectorAll('.pv-rise').forEach(function (el) { el.classList.add('is-in'); });
-        scrollTo(0, y);
-      }
-    } catch (e) {}
-  })();
-  </script>
+  <script src="js/dream-scene.js?v=20261015c"></script>
+  <script src="js/dream-gallery.js?v=20261015-copy"></script>
+  <script src="js/dream-preview.js?v=20261015c"></script>
 </body>
 </html>

@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GiselleLi | Technical Artist</title>
   <meta name="description" content="Hanqing Li (GiselleLi) — Technical Artist portfolio: shaders, tools, PCG and real-time rendering." />
-  <!-- The home page goes straight to the portfolio; the curtain intro plays there (no video). -->
+  <!-- Open the gallery directly, preserving language and category links. -->
   <script>
     (function () {
-      var q = new URLSearchParams(location.search); q.set('intro', '');
-      location.replace('portfolio.html?' + q.toString().replace(/intro=(&|$)/, 'intro$1'));
+      location.replace('portfolio.html' + location.search + location.hash);
     })();
   </script>
   <noscript><meta http-equiv="refresh" content="0; url=portfolio.html" /></noscript>

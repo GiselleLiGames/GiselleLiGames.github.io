@@ -86,6 +86,7 @@
   });
   document.addEventListener('click', function (e) {
     var el = e.target.closest(FX); if (!el) return;
+    if (document.body.matches('.dream-gallery, .dream-work')) return;
     var r = el.getBoundingClientRect();
     var x = e.clientX || r.left + r.width / 2, y = e.clientY || r.top + r.height / 2;
     var big = el.classList.contains('pv-card');
