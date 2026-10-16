@@ -23,16 +23,20 @@
     var backdrop=document.createElement('div');backdrop.className='anime-backdrop';backdrop.setAttribute('aria-hidden','true');
     backdrop.innerHTML='<img class="anime-bg-cover" alt="" src="assets/uploads/previews/casino-central-orbit.webp"><canvas></canvas>';body.prepend(backdrop);
     var bgImage=backdrop.querySelector('img');document.addEventListener('anime:preview',function(e){bgImage.src=e.detail.image;});
-    var canvas=backdrop.querySelector('canvas'),g=canvas.getContext('2d'),w=0,h=0,raf=0,lastFrame=0;
+    var canvas=backdrop.querySelector('canvas'),g=canvas.getContext('2d'),w=0,h=0,raf=0,lastFrame=0,levels=new Float32Array(64);
     var trail=[],mouse=null,triangles=Array.from({length:26},function(){return {x:Math.random(),y:Math.random(),s:40+Math.random()*140,v:.000015+Math.random()*.00002};});
     function resize(){var d=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*d;canvas.height=h*d;g.setTransform(d,0,0,d,0,0);if(motion.matches)draw(0);}
     function draw(now){
-      g.clearRect(0,0,w,h);var secs=now/1000,phase=(now%468.75)/468.75,pulse=motion.matches?0:Math.pow(1-phase,3),hz=h*.62;
-      for(var i=0;i<14;i++){var k=(i+(motion.matches?0:secs*128/60%1))/14,y=hz+(h-hz)*k*k;g.strokeStyle='rgba(255,140,200,'+(.05+k*.22)+')';g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();}
+      var music=window.SiteAudio?SiteAudio.motion():{},active=!motion.matches&&music.playing&&music.energy>0;
+      g.clearRect(0,0,w,h);var secs=now/1000,phase=active?music.phase:0,pulse=active?music.beat:0,hz=h*.62;
+      canvas.dataset.musicPhase=String(phase||0);canvas.dataset.musicTime=String(music.time||0);
+      for(var i=0;i<14;i++){var k=(i+(active?phase:0))/14,y=hz+(h-hz)*k*k;g.strokeStyle='rgba(255,140,200,'+(.05+k*.22)+')';g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();}
       for(var j=-12;j<=12;j++){g.strokeStyle='rgba(140,210,255,'+(.12-Math.abs(j)*.006)+')';g.beginPath();g.moveTo(w/2+j*14,hz);g.lineTo(w/2+j*w*.16,h);g.stroke();}
       var line=g.createLinearGradient(0,0,w,0);line.addColorStop(0,'#ff66aa00');line.addColorStop(.5,'rgba(255,220,240,'+(.55+pulse*.4)+')');line.addColorStop(1,'#66ccff00');g.fillStyle=line;g.fillRect(0,hz-1,w,2);
       triangles.forEach(function(t){var y=(t.y-(motion.matches?0:secs*t.v*1000)+100)%1;g.beginPath();g.moveTo(t.x*w,y*h-t.s*.58);g.lineTo(t.x*w+t.s/2,y*h+t.s*.29);g.lineTo(t.x*w-t.s/2,y*h+t.s*.29);g.closePath();g.strokeStyle='rgba(255,102,170,'+(.04+pulse*.04)+')';g.stroke();});
-      for(var b=0;b<64;b++){var n=Math.abs(Math.sin(b*1.7+secs*2.1)*Math.cos(b*.37+secs*1.3)),bh=(6+n*46)*(.6+pulse*.6);g.fillStyle='rgba('+Math.round(255-b/64*153)+','+Math.round(102+b/64*102)+','+Math.round(170+b/64*85)+',.32)';g.fillRect(b*w/64+1,h-bh,w/64-2,bh);}
+      var tallest=0;
+      for(var b=0;b<64;b++){var target=active&&music.bands?music.bands[b]:0;levels[b]+=(target-levels[b])*(target>levels[b]?.65:.18);var bh=4+Math.pow(levels[b],.85)*Math.min(240,h*.23)*2*(1+pulse*.18);tallest=Math.max(tallest,bh);g.fillStyle='rgba('+Math.round(255-b/64*153)+','+Math.round(102+b/64*102)+','+Math.round(170+b/64*85)+',.25)';g.fillRect(b*w/64+1,h-bh,w/64-2,bh);}
+      canvas.dataset.spectrumHeight=tallest.toFixed(1);
       if(!motion.matches && fine.matches){trail=trail.filter(function(p){return now-p.t<260;});trail.forEach(function(p){var k=1-(now-p.t)/260;g.beginPath();g.arc(p.x,p.y,2+6*k,0,Math.PI*2);g.fillStyle='rgba(255,102,170,'+(.45*k)+')';g.fill();});if(mouse){g.beginPath();g.arc(mouse.x,mouse.y,11,0,Math.PI*2);g.strokeStyle='#f2eef877';g.stroke();}}
     }
     function frame(now){if(now-lastFrame>30){draw(now);lastFrame=now;}raf=requestAnimationFrame(frame);}
@@ -50,7 +54,7 @@
     });
     // Local preview refreshes after a source change, keeping the user on this route.
     if(location.hostname==='localhost'||location.hostname==='127.0.0.1'){
-      var paths=[location.pathname,'/assets/entry/anime-theme.css','/js/anime-theme.js','/js/anime-gallery.js','/js/anime-motion.js','/js/dream-work.js','/assets/companion/oc-companion.css','/js/oc-companion.js','/js/oc-mesh.js'],signature=null;
+      var paths=[location.pathname,'/assets/entry/anime-theme.css','/js/anime-theme.js','/js/anime-gallery.js','/js/anime-motion.js','/js/dream-work.js','/assets/companion/oc-companion.css','/js/oc-companion.js','/js/oc-mesh.js','/js/site-audio.js','/assets/audio/audio-config.js','/assets/audio/site-audio.css','/config.js','/js/site-translations.js'],signature=null;
       setInterval(function(){if(document.hidden)return;Promise.all(paths.map(function(path){return fetch(path,{cache:'no-store'}).then(function(r){return r.text();}).then(function(text){var h=0;for(var i=0;i<text.length;i++)h=(Math.imul(h,31)+text.charCodeAt(i))|0;return h;});})).then(function(values){var next=values.join('|');if(signature!==null && next!==signature)location.reload();signature=next;}).catch(function(){});},2000);
     }
   }

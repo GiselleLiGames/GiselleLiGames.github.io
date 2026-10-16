@@ -5,15 +5,15 @@
 /* chapter index */
 .fc-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:24px}
 .fc-index a{display:flex;align-items:baseline;gap:10px;padding:12px 14px;border:1px solid var(--fc-line);text-decoration:none;color:inherit;font-size:14px;line-height:1.35;background:#140b08b3;transition:border-color .2s,background .2s}
-.fc-index a b{font:italic 600 15px Georgia,serif;color:var(--fc-accent)}
+.fc-index a b{font:800 13px/1 'Noto Sans SC',sans-serif;color:var(--fc-accent)}
 @media(hover:hover){.fc-index a:hover{border-color:var(--fc-accent);background:#21110bcc}}
 
 /* chapter card */
 .fc-chapter{position:relative;scroll-margin-top:130px;padding:28px clamp(16px,3vw,40px) 32px;border:1px solid var(--fc-line);margin-bottom:22px;background:rgba(9,8,7,.94)}
 .fc-ornament{position:absolute;right:12px;top:12px;width:52px;height:52px;object-fit:contain;opacity:.5;pointer-events:none}.fc-ornament--1{top:auto;bottom:12px;transform:rotate(180deg)}
 .fc-head{display:flex;align-items:baseline;gap:16px;margin:0 0 18px;padding-right:56px}
-.fc-head span{font:italic 28px Georgia,serif;color:var(--fc-accent);opacity:.65}
-.fc-head h2{font:600 clamp(24px,3vw,34px)/1.2 Georgia,"Microsoft YaHei",serif;margin:0;color:var(--fc-accent)}
+.fc-head span{font:900 32px/1 'Noto Sans SC',sans-serif;color:var(--fc-accent);opacity:.65}
+.fc-head h2{font:900 32px/1.2 'Noto Sans SC',sans-serif;margin:0;color:var(--fc-accent)}
 .fc-links{display:flex;gap:10px;flex-wrap:wrap;margin:-4px 0 20px}
 .fc-links a{font-size:13px;color:var(--fc-accent);padding:8px 13px;border:1px solid var(--fc-line);text-decoration:none}
 @media(hover:hover){.fc-links a:hover{border-color:var(--fc-accent)}}
@@ -29,7 +29,7 @@
 .fc-text{max-width:860px}
 .fc-text p{font-size:15px;line-height:1.8;color:var(--pv-dim,rgba(245,213,157,.8));white-space:pre-line;overflow-wrap:anywhere;margin:0 0 12px}
 .fc-text:last-child p:last-child{margin-bottom:0}
-.fc-h{font:600 20px/1.3 Georgia,"Microsoft YaHei",serif;color:var(--fc-accent);margin:22px 0 10px;overflow-wrap:anywhere}
+.fc-h{font:700 20px/1.3 'Noto Sans SC',sans-serif;color:var(--fc-accent);margin:22px 0 10px;overflow-wrap:anywhere}
 .fc-part>.fc-h:first-child,.fc-part>.fc-chips:first-child{margin-top:0}
 .fc-chips{display:flex;flex-wrap:wrap;gap:6px 8px;list-style:none;padding:0;margin:20px 0 12px}
 .fc-chips li{font-size:13px;line-height:1.3;padding:6px 11px;border:1px solid color-mix(in srgb,var(--fc-accent) 45%,transparent);color:var(--fc-accent);background:#ffffff08}
@@ -84,8 +84,8 @@
 .cs-sec{display:grid;gap:14px 36px;padding:22px 0;border-top:1px solid var(--fc-line)}
 .cs-chapter .fc-banner+.cs-sec,.cs-chapter .fc-head+.cs-sec{border-top:0;padding-top:4px}
 .cs-copy{min-width:0}
-.cs-h{font:600 20px/1.3 Georgia,"Microsoft YaHei",serif;color:var(--fc-accent);margin:0 0 6px}
-.cs-sub{font-size:13px;line-height:1.5;color:var(--fc-accent);opacity:.75;margin:0 0 10px;font-style:italic}
+.cs-h{font:700 20px/1.3 'Noto Sans SC',sans-serif;color:var(--fc-accent);margin:0 0 6px}
+.cs-sub{font-size:13px;line-height:1.5;color:var(--fc-accent);opacity:.75;margin:0 0 10px;font-style:normal}
 .cs-copy p:not(.cs-sub){font-size:15px;line-height:1.8;color:var(--pv-dim,rgba(245,213,157,.8));margin:0 0 10px;max-width:860px}
 .cs-media{display:grid;gap:12px;min-width:0}
 .cs-shots{display:flex;gap:10px;align-items:flex-start}

@@ -120,7 +120,11 @@
     if (!ready) return;
     var quiet = reduced || focused || document.body.classList.contains('dream-preview-open');
     var dt = clamp((now - lastFrame) / 1000 || .016, .001, .05); lastFrame = now;
-    var idle = !quiet && now - lastActivity > 16000;
+    var music = window.SiteAudio ? SiteAudio.motion() : { playing: false, energy: 0, beat: 0, sway: 0 };
+    var dancing = !quiet && music.playing && music.energy > .015;
+    var danceBeat = spring('danceBeat', dancing ? music.beat : 0, dt, 160, 17, quiet);
+    var danceSway = spring('danceSway', dancing ? music.sway : 0, dt, 75, 12, quiet);
+    var idle = !quiet && !dancing && now - lastActivity > 16000;
     var r = canvas.getBoundingClientRect(), dx = 0, dy = 0, near = 0;
     if (pointer && !quiet && !idle) {
       dx = clamp((pointer.x - (r.left + r.width * .5)) / 260, -1, 1);
@@ -146,10 +150,10 @@
     gaze.y += ((quiet ? 0 : dy * 9) - gaze.y) * smooth;
     var seconds = now / 1000 * 1.35;
     var breath = quiet ? 0 : Math.sin(seconds * 1.65);
-    var bodyAngle = spring('body', quiet ? 0 : dx * -.011 + Math.sin(seconds * .83) * .006 - shy * .019, dt, 38, 10, quiet);
-    var headAngle = spring('head', quiet ? 0 : dx * .039 + Math.sin(seconds * .94 + .8) * .014 + shy * .075 + gesture * gestureDir * .018, dt, 76, 11, quiet);
+    var bodyAngle = spring('body', quiet ? 0 : dx * -.011 + Math.sin(seconds * .83) * .006 - shy * .019 + danceSway * .045, dt, 38, 10, quiet);
+    var headAngle = spring('head', quiet ? 0 : dx * .039 + Math.sin(seconds * .94 + .8) * .014 + shy * .075 + gesture * gestureDir * .018 + danceSway * .075, dt, 76, 11, quiet);
     var headX = spring('headX', quiet ? 0 : dx * 12, dt, 60, 12, quiet);
-    var headY = spring('headY', quiet ? 0 : dy * 8 + nod * 19 + shy * 6 - hello * 10 + (idle ? 9 : 0), dt, 68, 12, quiet);
+    var headY = spring('headY', quiet ? 0 : dy * 8 + nod * 19 + shy * 6 - hello * 10 + (idle ? 9 : 0) - danceBeat * 14, dt, 68, 12, quiet);
     var headSpeed = springs.head.velocity;
     var hairL = spring('hairL', quiet ? 0 : clamp(-headAngle * .7 - headSpeed * .23 + Math.sin(seconds * 1.3) * .021 + shy * .05, -.13, .13), dt, 30, 5, quiet);
     var hairR = spring('hairR', quiet ? 0 : clamp(-headAngle * .7 - headSpeed * .21 + Math.sin(seconds * 1.3 + 1.3) * .022 - shy * .04, -.13, .13), dt, 26, 5, quiet);
@@ -183,12 +187,14 @@
       hairL: hairL, hairR: hairR, tuft: tuftAngle,
       yaw: quiet ? 0 : dx, pitch: quiet ? 0 : dy + nod * .5,
       faceWidth: quiet ? 1 : 1 - Math.abs(dx) * .025 - near * .014,
-      breath: breath, x: quiet ? 0 : Math.sin(seconds * .83) * 4,
-      y: quiet ? 0 : -hello * 9 - shy * 4,
-      pad: quiet ? 0 : Math.sin(seconds * 1.4 + .8) * .009 + nod * .018,
-      padY: quiet ? 0 : -breath * 4 + nod * 5, rise: rise,
-      stretch: entry < 1 ? Math.sin(entry * Math.PI * 2) * .028 : 0 });
-    root.dataset.state = quiet ? 'quiet' : entry < 1 ? 'enter' : shy > .03 ? 'shy' : pressing ? 'controller' : idle ? 'idle' : near > .1 ? 'curious' : 'watch';
+      breath: breath, x: quiet ? 0 : Math.sin(seconds * .83) * 4 + danceSway * 14,
+      y: quiet ? 0 : -hello * 9 - shy * 4 - danceBeat * 18,
+      pad: quiet ? 0 : Math.sin(seconds * 1.4 + .8) * .009 + nod * .018 - danceSway * .035,
+      padY: quiet ? 0 : -breath * 4 + nod * 5 - danceBeat * 7, rise: rise,
+      stretch: (entry < 1 ? Math.sin(entry * Math.PI * 2) * .028 : 0) - danceBeat * .01 });
+    root.dataset.state = quiet ? 'quiet' : entry < 1 ? 'enter' : shy > .03 ? 'shy' : pressing ? 'controller' : dancing ? 'dance' : idle ? 'idle' : near > .1 ? 'curious' : 'watch';
+    root.dataset.musicEnergy = music.energy.toFixed(3); root.dataset.musicBeat = danceBeat.toFixed(3);
+    root.dataset.musicPhase = String(music.phase || 0); root.dataset.musicTime = String(music.time || 0);
     root.dataset.gazeX = gaze.x.toFixed(2); root.dataset.gazeY = gaze.y.toFixed(2);
     root.dataset.headAngle = headAngle.toFixed(4); root.dataset.hairAngle = hairL.toFixed(4);
     root.dataset.entryRise = rise.toFixed(1);

@@ -31,7 +31,7 @@
     var overview='<p>'+P.esc(P.t(d.overview)||P.t(w.desc))+'</p>'+(d.overview?'<p>'+P.esc(P.t(w.desc))+'</p>':'')+'<div class="pv-tags">'+(w.tags||[]).map(function(t){return '<span class="pv-tag">'+P.esc(P.t(t))+'</span>';}).join('')+'</div>';
     ['goals','process'].forEach(function(key){if(d[key])overview+='<h3>'+ (key==='goals'?L('目标与挑战','Goals & challenges'):L('制作过程','Process'))+'</h3><ul>'+d[key].map(function(s){return '<li>'+P.esc(P.t(s))+'</li>';}).join('')+'</ul>';});
     if(d.results)overview+='<div class="pv-metrics">'+d.results.map(function(r){return '<p><strong>'+P.esc(r.value)+'</strong> '+P.esc(P.t(r.label))+'</p>';}).join('')+'</div>';
-    var category={shader:['着色器','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
+    var category={shader:['Shader','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
     var documentLinks=docs.map(function(v){return '<a class="dream-doc-link" href="'+P.esc(v.href)+'" target="_blank" rel="noopener">'+caption(v)+' →</a>';}).join(' · ');
     var n=0, romans=['01','02','03','04','05'];
     root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'"><span class="anime-esc">ESC</span> '+L('返回作品集','Back to works')+'</a><span class="anime-work-count">'+String(id+1).padStart(2,'0')+'<span> / '+String(W.length).padStart(2,'0')+'</span></span>';

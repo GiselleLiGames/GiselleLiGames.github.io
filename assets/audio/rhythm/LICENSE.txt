@@ -1,0 +1,11 @@
+Interface SFX Pack 1 by ObsydianX
+https://obsydianx.itch.io/interface-sfx-pack-1
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+Original pack README states: License: CC0.
+Edits: short excerpts, 8 ms edge fades, peak level 0.3.
+browse.wav <- Cursor_tones/cursor_style_4.ogg
+switch.wav <- Confirm_tones/style4/confirm_style_4_003.ogg
+confirm.wav <- Confirm_tones/style4/confirm_style_4_001.ogg
+back.wav <- Back_tones/style4/back_style_4_001.ogg
+pet.wav <- Cursor_tones/cursor_style_3.ogg
+ready.wav <- Confirm_tones/style4/confirm_style_4_007.ogg

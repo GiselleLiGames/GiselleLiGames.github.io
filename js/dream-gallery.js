@@ -2,7 +2,7 @@
   'use strict';
   var P = window.PV, W = P.works(), grid = document.getElementById('pvGrid');
   var filters = document.getElementById('pvFilters'), result = document.getElementById('dreamResult');
-  var categories = {all:['全部','All'],shader:['着色器','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']};
+  var categories = {all:['全部','All'],shader:['Shader','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']};
   var cat = new URLSearchParams(location.search).get('cat') || 'all';
   if (!categories[cat] || (cat !== 'all' && !W.some(function(w){return w.category === cat;}))) cat = 'all';
   function render(){

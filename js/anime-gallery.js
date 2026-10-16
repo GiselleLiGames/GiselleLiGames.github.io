@@ -2,7 +2,7 @@
   'use strict';
   var P = window.PV, works = P.works(), grid = document.getElementById('pvGrid');
   var filters = document.getElementById('pvFilters'), preview = document.getElementById('animePreview');
-  var labels = {all:['全部','All'],shader:['着色器','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']};
+  var labels = {all:['全部','All'],shader:['Shader','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']};
   var categories = Object.keys(labels).filter(function(c){return c==='all'||works.some(function(w){return w.category===c;});});
   var cat = new URLSearchParams(location.search).get('cat') || 'all', selected = 0, shown = [];
   if(categories.indexOf(cat)<0)cat='all';
@@ -35,12 +35,16 @@
     observeVisibility();
   }
   function choose(c,focus){
-    if(categories.indexOf(c)<0)return;cat=c;
+    if(categories.indexOf(c)<0)return;if(c!==cat)document.dispatchEvent(new CustomEvent('anime:category',{detail:{category:c}}));cat=c;
     var url=new URL(location.href);if(c==='all')url.searchParams.delete('cat');else url.searchParams.set('cat',c);
     history.replaceState(history.state,'',url.pathname+url.search+url.hash);var layout=document.querySelector('.anime-works-layout');clearTimeout(filterTimer);layout.classList.add('is-switching');filterTimer=setTimeout(function(){render();layout.classList.remove('is-switching');if(focus){var b=filters.querySelector('[data-cat="'+c+'"]');if(b){b.focus({preventScroll:true});b.classList.add('is-key-active');setTimeout(function(){b.classList.remove('is-key-active');},350);}}},reduce.matches?0:160);
   }
   filters.addEventListener('click',function(e){var b=e.target.closest('[data-cat]');if(b)choose(b.dataset.cat,true);});
   grid.addEventListener('pointerover',function(e){if(e.pointerType==='touch')return;var row=e.target.closest('[data-work]');if(row && Number(row.dataset.work)!==selected)select(Number(row.dataset.work));});
+  // Touch: first tap previews the work, a second tap on the same row opens it.
+  var lastPointer = '';
+  grid.addEventListener('pointerdown',function(e){lastPointer=e.pointerType;},true);
+  grid.addEventListener('click',function(e){var row=e.target.closest('[data-work]');if(!row)return;var id=Number(row.dataset.work);if(lastPointer==='touch'&&id!==selected){e.preventDefault();e.stopPropagation();select(id);}},true);
   grid.addEventListener('focusin',function(e){var row=e.target.closest('[data-work]');if(row && Number(row.dataset.work)!==selected)select(Number(row.dataset.work));});
   // Send every project entry through the existing shared detail view.
   document.addEventListener('click',function(e){var a=e.target.closest('[data-featured-work],[data-preview-work]');if(!a||e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;var id=Number(a.dataset.featuredWork || a.dataset.previewWork),row=grid.querySelector('[data-work="'+id+'"]');if(row){e.preventDefault();row.click();}},true);
