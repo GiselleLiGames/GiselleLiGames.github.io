@@ -102,8 +102,7 @@ let S = {
     interests: [],
   },
   workGroupNames: {
-    project: { en: 'Complete Projects', zh: '完整项目作品' },
-    tool: { en: 'Tools', zh: '工具作品' },
+    work: { en: 'Professional Work', zh: '工作内容' },
     art: { en: 'Independent Works', zh: '独立作品' },
     collab: { en: 'Collaborative Works', zh: '合作作品' },
   },
@@ -708,16 +707,14 @@ const WORK_LINK_TYPE_PRESETS = {
 let workLinkPresets = DEFAULT_WORK_LINK_PRESETS.map(x => ({ en: x.en, zh: x.zh }));
 const WORK_CATS = ['shader','pcg','vfx','tool','render','code'];
 const WORK_GROUPS = [
-  { id: 'project' },
   { id: 'collab' },
   { id: 'art' },
-  { id: 'tool' },
+  { id: 'work' },
 ];
 // The visual grid editor was retired with the portfolio redesign (the site now uses a fixed responsive grid).
 function renderVisualLayout() {}
 const WORK_GROUP_NAME_DEFAULTS = {
-  project: { en: 'Complete Projects', zh: '完整项目作品' },
-  tool: { en: 'Tools', zh: '工具作品' },
+  work: { en: 'Professional Work', zh: '工作内容' },
   art: { en: 'Independent Works', zh: '独立作品' },
   collab: { en: 'Collaborative Works', zh: '合作作品' },
 };
@@ -731,12 +728,13 @@ let workDragFromIndex = -1;
 let uploadedAssetsCache = [];
 
 function inferWorkGroupFromCategory(cat) {
-  if (cat === 'tool') return 'tool';
-  return (cat === 'code' || cat === 'pcg') ? 'project' : 'art';
+  return cat === 'tool' ? 'work' : 'art';
 }
 function normalizeWorkItem(w, workIndex) {
   if (!w || typeof w !== 'object') return;
   if (!w.group) w.group = inferWorkGroupFromCategory(w.category);
+  if (w.group === 'project') w.group = 'art';
+  if (w.group === 'tool') w.group = 'work';
   if (typeof w.assetKey !== 'string') w.assetKey = '';
   if (!w.layout || typeof w.layout !== 'object') w.layout = {};
   w.layout.span = [4, 6, 8, 12].includes(Number(w.layout.span)) ? Number(w.layout.span) : (workIndex === 0 ? 8 : 4);
@@ -1564,7 +1562,7 @@ function setWorkDetail(i, key, value, lang) {
   _s();
 }
 function addWork() {
-  S.works.push({group:'project',category:'shader',hasVideo:false,image:'',assetKey:'',layout:{span:4,aspect:'16/9',textAlign:'left'},cover:{x:50,y:50,zoom:100},title:{en:'',zh:''},desc:{en:'',zh:''},tags:[],links:[]});
+  S.works.push({group:'art',category:'shader',hasVideo:false,image:'',assetKey:'',layout:{span:4,aspect:'16/9',textAlign:'left'},cover:{x:50,y:50,zoom:100},title:{en:'',zh:''},desc:{en:'',zh:''},tags:[],links:[]});
   currentWorkIndex = S.works.length - 1;
   worksSearchKeyword = '';
   worksGroupFilter = 'all';

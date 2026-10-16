@@ -87,11 +87,11 @@
       'portfolio.desc':  lang === 'zh'
         ? 'Shader、特效、工具开发与渲染实验——技术与美学的交叉探索。'
         : 'Shaders, VFX, tools, and rendering experiments — exploring the intersection of technique and aesthetics.',
-      'portfolio.section.project': t((C.workGroupNames && C.workGroupNames.project) || { en: 'Complete Projects', zh: '完整项目作品' }, lang),
-      'portfolio.section.tool':    t((C.workGroupNames && C.workGroupNames.tool) || { en: 'Tools', zh: '工具作品' }, lang),
+      'portfolio.section.project': t((C.workGroupNames && C.workGroupNames.art) || { en: 'Independent Works', zh: '独立作品' }, lang),
+      'portfolio.section.tool':    t((C.workGroupNames && C.workGroupNames.work) || { en: 'Professional Work', zh: '工作内容' }, lang),
       'portfolio.section.art':     t((C.workGroupNames && C.workGroupNames.art) || { en: 'Independent Works', zh: '独立作品' }, lang),
-      'portfolio.empty.project':   lang === 'zh' ? '暂无完整项目作品' : 'No complete projects yet.',
-      'portfolio.empty.tool':      lang === 'zh' ? '暂无工具作品' : 'No tools yet.',
+      'portfolio.empty.project':   lang === 'zh' ? '暂无独立作品' : 'No independent works yet.',
+      'portfolio.empty.tool':      lang === 'zh' ? '暂无工作内容' : 'No professional work yet.',
       'portfolio.empty.art':       lang === 'zh' ? '暂无独立作品' : 'No independent works yet.',
       'filter.all': lang === 'zh' ? '全部' : 'All',
       'filter.shader': lang === 'zh' ? 'Shader' : 'Shader',
@@ -172,7 +172,7 @@
       return {
         category: w.category,
         id:       index,
-        group:    w.group || (w.category === 'tool' ? 'tool' : ((w.category === 'code' || w.category === 'pcg') ? 'project' : 'art')),
+        group:    w.group || (w.category === 'tool' ? 'work' : 'art'),
         image:    w.image || '',
         bgStyle:  bgStyle,
         layout:   w.layout || {},

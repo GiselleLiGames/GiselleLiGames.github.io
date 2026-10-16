@@ -176,7 +176,7 @@
   document.addEventListener('anime:category', function () { suppressed = performance.now() + 400; cue('switch'); });
   document.addEventListener('anime:preview', function (e) { var src = e.detail.image; if (src !== lastSelection && performance.now() > suppressed) cue('browse'); lastSelection = src; });
   document.addEventListener('click', function (e) {
-    if (!e.isTrusted || e.target.closest('.site-audio')) return;
+    if (!e.isTrusted || e.target.closest('.site-audio,.anime-intro')) return;
     if (e.target.closest('.oc-face')) cue('pet');
     else if (e.target.closest('[data-cat]')) return;
     else if (e.target.closest('[data-zoom="close"],.dream-back,.anime-detail-back')) cue('back');
@@ -196,10 +196,18 @@
     if (context && context.state !== 'closed') context.close().catch(function () {});
     music.remove(); ui.remove();
   }
-  window.SiteAudio = { motion: function () { return snapshot; }, cue: cue, destroy: destroy };
+  window.SiteAudio = {
+    motion: function () { return snapshot; }, cue: cue, destroy: destroy,
+    introNeedsGesture: function () { return (enabled || autoPending) && (!context || context.state !== 'running'); },
+    unlockIntro: async function () {
+      if (disposed || (!enabled && !autoPending)) return false;
+      await init(); if (disposed) return false; enable(true); return true;
+    },
+    finishIntro: function () { if (autoPending && !userPaused && !disposed) playMusic(true); }
+  };
   if (cfg.src) setSource(new URL(cfg.src, document.baseURI).href, false); else label();
   function unlock(e) {
-    if (!e.isTrusted || e.target.closest('.site-audio') || !autoPending || userPaused) return;
+    if (!e.isTrusted || e.target.closest('.site-audio,.anime-intro') || !autoPending || userPaused) return;
     playMusic(true);
   }
   document.addEventListener('pointerdown', unlock);

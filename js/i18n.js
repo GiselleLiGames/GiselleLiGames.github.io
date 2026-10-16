@@ -208,7 +208,7 @@
       return {
         category: w.category || '',
         id: index,
-        group: w.group || (w.category === 'tool' ? 'tool' : ((w.category === 'code' || w.category === 'pcg') ? 'project' : 'art')),
+        group: w.group || (w.category === 'tool' ? 'work' : 'art'),
         image: w.image || '',
         bgStyle: bgStyle,
         layout: w.layout || {},
@@ -459,7 +459,7 @@
         card.setAttribute('aria-label', w.title + (lang === 'zh' ? ' - 查看作品详情' : ' - View project details'));
       }
       card.dataset.category = w.category;
-      card.dataset.group = w.group || (w.category === 'tool' ? 'tool' : ((w.category === 'code' || w.category === 'pcg') ? 'project' : 'art'));
+      card.dataset.group = w.group || (w.category === 'tool' ? 'work' : 'art');
       var layout = w.layout || {};
       card.dataset.layoutSpan = String(layout.span || '');
       card.style.setProperty('--portfolio-span', String(layout.span || 4));
@@ -477,8 +477,8 @@
           '<div class="work-links">' + linksHtml + '</div>' +
         '</div>';
 
-      var targetGrid = card.dataset.group === 'tool' ? toolGrid : (card.dataset.group === 'project' ? projectGrid : artGrid);
-      var targetNo = card.dataset.group === 'tool' ? noResultsTool : (card.dataset.group === 'project' ? noResultsProject : noResultsArt);
+      var targetGrid = card.dataset.group === 'work' ? toolGrid : artGrid;
+      var targetNo = card.dataset.group === 'work' ? noResultsTool : noResultsArt;
       if (targetNo) targetGrid.insertBefore(card, targetNo);
       else targetGrid.appendChild(card);
     });

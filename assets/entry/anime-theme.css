@@ -29,9 +29,8 @@ body.anime-site .nav-logo { display: flex; align-items: center; gap: 12px; flex:
 .nav-logo::before { content: ''; width: 16px; height: 16px; border: 3px solid white; border-radius: 50%; background: var(--pink); }
 body.anime-site .nav-links { display: flex; align-items: stretch; gap: 0; padding: 0; margin: 0; list-style: none; }
 body.anime-site .nav-links a { position: relative; display: flex; align-items: center; gap: 9px; height: 100%; padding: 0 clamp(12px,2vw,28px); font-size: 15px; font-weight: 700; letter-spacing: .04em; white-space: nowrap; }
-.nav-links li { counter-increment: anime-nav; }
-.nav-links a::before { content: '0' counter(anime-nav); color: var(--pink); font-size: 12px; }
 .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 12px; right: 12px; height: 4px; background: var(--pink); }
+.anime-intro.is-waiting * { animation-play-state: paused !important; }
 body.anime-site .lang-toggle { align-self: center; flex: none; margin-right: var(--pv-gutter); padding: 5px 13px; border: 1.5px solid var(--line); border-radius: 16px; background: transparent; color: var(--paper); font-size: 12px; font-weight: 700; letter-spacing: .03em; }
 body.anime-site .nav-toggle { display: none; }
 .anime-progress { position: absolute; top: 64px; left: 0; right: 0; height: 3px; background: #f2eef80a; }
@@ -41,7 +40,6 @@ body.anime-site .nav-toggle { display: none; }
 .anime-eyebrow { display: flex; gap: 14px; align-items: center; font-size: 13px; font-weight: 700; letter-spacing: .12em; }
 .anime-eyebrow b,.anime-kicker { display: inline-block; width: fit-content; padding: 6px 18px 6px 12px; color: white; background: var(--pink); font-size: 13px; font-weight: 800; clip-path: polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%); }
 .anime-hero h1 { margin: 0; font-size: clamp(96px,17vw,248px); font-weight: 900; letter-spacing: -.01em; line-height: .98; padding-bottom: .04em; }
-html[lang=en] .anime-hero h1 { font-size: clamp(64px,11.5vw,166px); }
 .anime-name-secondary { display: block; margin-top: .04em; font-size: clamp(48px,8.5vw,124px); font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 2px var(--pink); letter-spacing: .04em; }
 .anime-hero-bottom { display: flex; flex-wrap: wrap-reverse; justify-content: space-between; align-items: flex-end; gap: 38px; }
 .anime-intro-copy { max-width: 460px; color: var(--muted); }
@@ -166,9 +164,9 @@ body.anime-site.dream-work > .pv-shell,.anime-site .dream-detail > .pv-shell { p
 .dream-zoom-hint { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); padding: 6px 12px; background: #15121ccc; font-size: 12px; white-space: nowrap; }
 /* Resume and contact use the same headings, horizontal rules and plain rows. */
 .anime-page-header,.anime-site .about-hero { width: min(100% - 2 * var(--pv-gutter),1180px); margin: auto; padding: 140px 0 56px; }
-.anime-page-header h1,.anime-site .hero-name { margin: 16px 0 0; font-size: clamp(52px,8vw,112px); font-weight: 900; line-height: 1.15; letter-spacing: -.035em; }
+.anime-page-header h1,.anime-site .hero-name,.anime-identity-header .anime-identity-name { margin: 16px 0 0; font-size: clamp(52px,8vw,112px); font-weight: 900; line-height: 1.15; letter-spacing: -.035em; }
 .dream-identity-alias { display: block; margin: 12px 0 24px; font-size: clamp(28px,4vw,48px); font-weight: 900; color: transparent; -webkit-text-stroke: 1px var(--pink); }
-.anime-page-header > p,.anime-site .section-label { margin: 0; color: var(--pink); font-size: 13px; font-weight: 800; letter-spacing: .1em; }
+.anime-page-header > p,.anime-site .section-label,.anime-identity-header .anime-identity-role { margin: 0; color: var(--pink); font-size: 13px; font-weight: 800; letter-spacing: .1em; }
 .anime-resume-contact { display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 13px; color: var(--muted); }
 .anime-resume,.anime-site .about-body { width: min(100% - 2 * var(--pv-gutter),1180px); margin: 0 auto; padding: 0 0 100px; }
 .anime-resume > section { margin-bottom: 64px; }
@@ -226,7 +224,6 @@ body.anime-site.dream-work > .pv-shell,.anime-site .dream-detail > .pv-shell { p
   .anime-progress { top: 104px; }
   .anime-hero { padding-top: 150px; gap: 22px; }
   .anime-hero h1 { font-size: clamp(72px,18vw,130px); }
-  html[lang=en] .anime-hero h1 { font-size: clamp(48px,12vw,86px); }
   .anime-name-secondary { font-size: clamp(35px,8vw,60px); }
   .anime-eyebrow { font-size: 10px; gap: 9px; letter-spacing: .02em; }
   .anime-eyebrow b { font-size: 10px; }

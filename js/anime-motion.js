@@ -43,13 +43,28 @@
     if(seen){reveal();return;}
     var intro=document.createElement('button');intro.type='button';intro.className='anime-intro anime-intro-v4';intro.setAttribute('aria-label',document.documentElement.lang==='en'?'Skip intro':'跳过开场');
     intro.innerHTML='<span class="anime-intro-left"></span><span class="anime-intro-right"></span><span class="anime-intro-content"><span class="anime-intro-emblem"><i class="anime-intro-line"></i><i class="anime-intro-approach"></i><i class="anime-intro-disc"></i><i class="anime-intro-flash"></i></span><span class="anime-intro-text"><strong></strong><small>LOADING 000</small></span></span><span class="anime-intro-skip">'+(document.documentElement.lang==='en'?'Click or press any key to skip':'点击或按任意键跳过')+'</span>';
-    body.appendChild(intro);var label=intro.querySelector('.anime-intro-text small'),word=intro.querySelector('strong'),start=performance.now(),finished=false,timers=[];
+    var waiting=!!(window.SiteAudio && SiteAudio.introNeedsGesture());
+    if(waiting)intro.classList.add('is-waiting');
+    body.appendChild(intro);var label=intro.querySelector('.anime-intro-text small'),word=intro.querySelector('strong'),start=0,finished=false,started=false,unlocking=false,timers=[];
+    function sound(key){if(window.SiteAudio)SiteAudio.cue(key);}
     function loading(now){if(finished)return;var pct=Math.min(100,Math.round((now-start)/7));label.textContent='LOADING '+String(pct).padStart(3,'0');if(pct<100)requestAnimationFrame(loading);}
-    requestAnimationFrame(loading);
-    timers.push(setTimeout(function(){intro.classList.add('is-ready');label.textContent='READY';},760));
-    timers.push(setTimeout(function(){intro.classList.add('is-hit');label.textContent='TECHNICAL ARTIST · PORTFOLIO';word.textContent='GiselleLi';},1400));
-    function finish(){if(finished)return;finished=true;timers.forEach(clearTimeout);intro.classList.add('is-opening');removeEventListener('keydown',skip,true);try{sessionStorage.setItem('anime-intro','1');}catch(e){}reveal();setTimeout(function(){intro.remove();},900);}
-    function skip(e){e.preventDefault();e.stopImmediatePropagation();finish();}intro.addEventListener('click',finish);addEventListener('keydown',skip,true);timers.push(setTimeout(finish,2150));
+    function begin(){
+      if(started || finished)return;started=true;waiting=false;start=performance.now();intro.classList.remove('is-waiting');
+      intro.querySelector('.anime-intro-skip').textContent=document.documentElement.lang==='en'?'Click or press any key to skip':'点击或按任意键跳过';
+      requestAnimationFrame(loading);sound('browse');
+      [160,320,480,640].forEach(function(ms){timers.push(setTimeout(function(){sound('browse');},ms));});
+      timers.push(setTimeout(function(){intro.classList.add('is-ready');label.textContent='READY';sound('ready');},760));
+      timers.push(setTimeout(function(){intro.classList.add('is-hit');label.textContent='TECHNICAL ARTIST · PORTFOLIO';word.textContent='GiselleLi';sound('confirm');},1400));
+      timers.push(setTimeout(finish,2150));
+    }
+    function finish(){if(finished)return;finished=true;timers.forEach(clearTimeout);sound('switch');intro.classList.add('is-opening');removeEventListener('keydown',skip,true);try{sessionStorage.setItem('anime-intro','1');}catch(e){}reveal();if(window.SiteAudio)SiteAudio.finishIntro();setTimeout(function(){intro.remove();},900);}
+    function activate(){
+      if(!waiting){finish();return;}if(unlocking)return;unlocking=true;
+      SiteAudio.unlockIntro().then(begin).catch(begin);
+    }
+    function skip(e){if(e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.key==='Tab')return;e.preventDefault();e.stopImmediatePropagation();activate();}
+    intro.addEventListener('click',activate);addEventListener('keydown',skip,true);
+    if(waiting){label.textContent=document.documentElement.lang==='en'?'CLICK TO START':'点击开始';intro.setAttribute('aria-label',document.documentElement.lang==='en'?'Start intro with sound':'开始开场动画与音效');intro.querySelector('.anime-intro-skip').textContent=document.documentElement.lang==='en'?'Click or press a key':'点击或按任意键开始';}else begin();
     reduced.addEventListener('change',function(){if(reduced.matches)finish();});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();

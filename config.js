@@ -151,8 +151,7 @@ const CONFIG = {
      ============================================================ */
 
   workGroupNames: {
-    project: { en: 'Complete Projects', zh: '完整项目作品' },
-    tool: { en: 'Tools', zh: '工具作品' },
+    work: { en: 'Professional Work', zh: '工作内容' },
     art: { en: 'Independent Works', zh: '独立作品' },
     collab: { en: 'Collaborative Works', zh: '合作作品' },
   },
@@ -162,7 +161,7 @@ const CONFIG = {
       group: 'collab',
       hasVideo: true,
       image: 'assets/uploads/previews/casino-central-orbit.webp',
-      title: { en: 'Art Deco Casino Shader', zh: '渲染-装饰艺术赌场' },
+      title: { en: 'Rendering-Art Deco Casino', zh: '渲染-装饰艺术赌场' },
       desc: {
         en: 'An Art Deco casino environment in Unreal Engine, shaded for standalone Meta Quest 3 — materials, lighting and reflections built to hold up on mobile VR hardware.',
         zh: '为 Meta Quest 3 一体机制作的装饰艺术风格赌场场景Shader，包含材质、光照与反射效果。',
@@ -189,16 +188,16 @@ const CONFIG = {
     },
     {
       category: 'shader',
-      group: 'project',
+      group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/pbr-shaders.webp',
-      title: { en: 'PBR Shaders', zh: '渲染-PBR场景' },
+      title: { en: 'Rendering-PBR Scene', zh: '渲染-PBR场景' },
       desc:  {
         en: 'Materials and shaders in real-time scenes.',
         zh: '实时场景中的材质与Shader展示。',
       },
       tags: ['Shader', 'Shading', 'Showreel'],
-      clip: 'assets/clips/pbr-shaders',
+      clip: 'assets/clips/pbr-shaders-last10s',
       pdf: 'assets/uploads/Project1_Compressed.pdf',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/ShadingShowreel.mp4' },
@@ -209,7 +208,7 @@ const CONFIG = {
       group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/lycorius-shader.webp',
-      title: { en: 'Lycorius Shader Iteration', zh: '渲染-风格化独立游戏' },
+      title: { en: 'Rendering-Stylized Indie Game', zh: '渲染-风格化独立游戏' },
       desc:  {
         en: 'Stylized shader development and iteration for Lycorius.',
         zh: '《彼岸花》的风格化Shader开发与迭代。',
@@ -226,7 +225,7 @@ const CONFIG = {
       group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/eye-shader.webp',
-      title: { en: 'Eye Shader Study', zh: '渲染-眼球怪物' },
+      title: { en: 'Rendering-Eyeball Monster', zh: '渲染-眼球怪物' },
       desc:  {
         en: 'A real-time eye material study covering iris depth and corneal highlights.',
         zh: '实时眼球材质研究，包含虹膜层次与角膜高光。',
@@ -242,7 +241,7 @@ const CONFIG = {
       group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/shadow-man.webp',
-      title: { en: 'Shadow Man', zh: '渲染-暗影人' },
+      title: { en: 'Rendering-Shadow Man', zh: '渲染-暗影人' },
       desc:  {
         en: 'A remaster and rendering showcase of Shadow Man.',
         zh: '《暗影人》的重制与渲染展示。',
@@ -255,10 +254,10 @@ const CONFIG = {
     },
     {
       category: 'pcg',
-      group: 'project',
+      group: 'art',
       hasVideo: true,
       image: 'assets/uploads/previews/pcg-showcase.webp',
-      title: { en: 'PCG Showcase', zh: 'PCG-程序化场景' },
+      title: { en: 'PCG-Procedural Scene', zh: 'PCG-程序化场景' },
       desc:  {
         en: 'Procedural scene generation and reusable scene-building workflows.',
         zh: '程序化场景生成与可复用的场景构建流程。',
@@ -272,10 +271,10 @@ const CONFIG = {
     },
     {
       category: 'tool',
-      group: 'tool',
+      group: 'work',
       hasVideo: false,
       image: 'assets/uploads/previews/tower-of-fantasy.webp',
-      title: { en: 'Tower Of Fantasy', zh: '玩法设计-幻塔' },
+      title: { en: 'Gameplay Design-Tower of Fantasy', zh: '玩法设计-幻塔' },
       desc:  {
         en: 'Unreal Engine level tools and gameplay systems for Tower of Fantasy.',
         zh: '《幻塔》项目中的 Unreal Engine 关卡工具与玩法系统。',
