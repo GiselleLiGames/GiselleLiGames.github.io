@@ -21,6 +21,13 @@
       var weighted = magnitude * Math.pow(Math.sqrt(low * high) / 180, .32) * 3.5;
       return energy ? Math.min(1, Math.pow(weighted, .72)) : 0;
     });
+    var original = bands.slice();
+    bands = bands.map(function (value, i) {
+      var neighborhood = original.slice(Math.max(0, i - 2), Math.min(64, i + 3));
+      var mean = neighborhood.reduce(function (a, b) { return a + b; }, 0) / neighborhood.length;
+      var contrast = mean ? Math.max(.4, Math.min(1.8, Math.pow(value / mean, 1.3))) : 0;
+      return Math.min(1, value * contrast);
+    });
     return { playing: true, energy: energy, beat: Math.exp(-phase * 6) * energy,
       sway: Math.sin(position * Math.PI) * energy, phase: phase, time: audioTime,
       bpm: bpm, bands: bands };

@@ -131,6 +131,7 @@
       if (disposed || userPaused) { music.pause(); return; }
       if (token !== playToken) return;
       autoPending = false;
+      startAnalysis();
       notice = ''; label();
     } catch (error) {
       if (disposed || token !== playToken || userPaused) return;
