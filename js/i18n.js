@@ -7,7 +7,7 @@
  *   window.applyLang(lang)   — apply 'zh' or 'en' immediately
  *   window.toggleLang()      — flip between zh/en
  *
- * Auto-init: reads localStorage on DOMContentLoaded, defaults to 'zh'.
+ * Auto-init: explicit URL / saved choice, then IP country, then browser language.
  */
 
 (function () {
@@ -232,7 +232,7 @@
   /* ================================================================
      Core: apply a language to the current page
      ================================================================ */
-  function applyLang(lang) {
+  function applyLang(lang, persist) {
     const strings = (typeof CONTENT !== 'undefined' && CONTENT && CONTENT[lang]) ? CONTENT[lang] : {};
 
     // 1. Swap all data-i18n text nodes / innerHTML
@@ -261,7 +261,10 @@
     var menu=document.querySelector('.nav-toggle');if(menu)menu.setAttribute('aria-label',lang==='zh'?'展开导航':'Toggle navigation');
 
     // 4. Persist
-    try { localStorage.setItem('lang', lang); } catch (e) {}
+    if (persist !== false) {
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+      document.documentElement.dataset.languageSource = 'manual';
+    }
 
     // 5. Render dynamic sections if helpers are registered
     if (typeof renderPortfolioCards === 'function') renderPortfolioCards(lang);
@@ -666,8 +669,16 @@
   document.addEventListener('DOMContentLoaded', function () {
     injectToggleButton();
     bindMobileNavigation();
-    var saved = _getUrlLang() || _getSavedLang() || 'zh';
-    applyLang(saved);
+    var detector = window.SiteLanguage;
+    var initial = detector ? detector.initial() : { lang: _getUrlLang() || _getSavedLang() || 'zh', source: 'fallback' };
+    applyLang(initial.lang, false);
+    document.documentElement.dataset.languageSource = initial.source;
+    if (detector) detector.detect().then(function (result) {
+      if (_getUrlLang() || _getSavedLang()) return;
+      document.documentElement.dataset.languageSource = result.source;
+      var current = document.documentElement.lang.indexOf('zh') === 0 ? 'zh' : 'en';
+      if (current !== result.lang) applyLang(result.lang, false);
+    });
   });
 
 }());

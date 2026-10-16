@@ -122,6 +122,11 @@ GiselleLi.github.io/
 
 ## 常见问题
 
+**首次访问如何自动选择语言？**
+作品集、作品详情、简历和联系页面共用 `js/language-detection.js`。优先级为：链接中的 `?lang=zh/en` → 已保存的手动选择 → IP 所在地区 → 浏览器首选语言。中国大陆、香港、澳门、台湾默认中文，其他地区默认英文。
+
+IP 地区由 [Country.is](https://country.is/) 查询，无需密钥；地区代码在浏览器缓存 24 小时，不保存返回的 IP。查询失败或超过 1.8 秒时使用浏览器语言。VPN 或代理可能影响判断，右上角仍可随时手动切换并记住选择。测试命令：`node --test tests/language-detection.test.cjs`。
+
 **编辑器打开后内容为空？**
 请双击 `local-editor/start-editor.bat`，或通过本地服务器访问 `local-editor/index.html`。
 
