@@ -12,6 +12,14 @@ for (const file of ['config.js','js/case-study-media.js','js/shadow-case-study.j
 const work = vm.runInContext('CONFIG.works[4]',context);
 const render = lang => context.window.ShadowCaseStudy.render(work,lang);
 
+test('detail entry loads the shadow timeline before rendering the work page', () => {
+  const html = fs.readFileSync(path.join(root,'work.html'),'utf8');
+  assert.match(html,/href="assets\/styles\/shadow-case-study\.css/);
+  assert.ok(html.indexOf('js/shadow-case-study.js')>=0);
+  assert.ok(html.indexOf('js/shadow-case-study.js')<html.indexOf('js/dream-work.js'));
+  assert.doesNotMatch(work.detail.overview.zh,/手部稍虚/);
+});
+
 test('shadow timeline retains chronological original media and original iteration video', () => {
   for (const lang of ['zh','en']) {
     const html = render(lang);
