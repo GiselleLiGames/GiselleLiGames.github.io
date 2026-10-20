@@ -386,16 +386,37 @@ const CONFIG = {
       category: 'render',
       group: 'art',
       hasVideo: true,
-      image: 'assets/uploads/previews/shadow-man.webp',
+      image: 'assets/clips/shadow-human-v7.webp',
       title: { en: 'Rendering-Shadow Man', zh: '渲染-暗影人' },
       desc:  {
-        en: 'A remaster and rendering showcase of Shadow Man.',
-        zh: '《暗影人》的重制与渲染展示。',
+        en: 'A shadow figure in UE5.6 Forward: masked dither, flickering fine grain, local Gaussian blur, and evaporating black particles.',
+        zh: 'UE5.6 Forward 暗影人迭代：Dither 虚实、细颗粒闪烁、局部高斯模糊，以及蒸发的黑色粒子。',
       },
-      tags: ['Render', 'Remaster'],
-      clip: 'assets/clips/shadow-man',
+      tags: ['Shader', 'Niagara', 'Forward'],
+      clip: 'assets/clips/shadow-human-v7',
+      detail: {
+        year: '2026',
+        tools: 'Unreal Engine 5.6 · Niagara · Blender · Hunyuan3D',
+        platform: { en: 'PC · Forward Shading', zh: 'PC · Forward Shading' },
+        role: { en: 'Character pipeline, shader & VFX', zh: '角色流程、Shader 与特效' },
+        overview: {
+          en: 'The latest iteration uses a rigid, featureless human silhouette with one palm reaching forward as if pressing against glass. The body stays black; a painted coverage map and temporal dither create subtle differences between solid and dissolving regions, with a more virtual hand.',
+          zh: '最新迭代采用方正、僵直、无明显肌肉的人形，一只手向前伸出，呈按住玻璃的姿态。身体保持黑色，通过区域覆盖率 Map 与 Dither 形成轻微虚实差异，手部稍虚。',
+        },
+        process: [
+          { en: 'AI concept → local Hunyuan3D reconstruction → automatic topology rebuilding → basic skeletal binding. The reaching palm was repaired separately to keep the fingers slender and separated.', zh: 'AI 概念图 → 本地混元重建 → 自动拓扑重建 → 基础骨骼绑定。前伸的手掌单独修整，让手指更细、指缝更清晰。' },
+          { en: 'Masked / Unlit material with two panning noises, Fresnel, vertical fade and subtle vertex motion. A current-frame stencil limits the Gaussian effect to the character.', zh: 'Masked / Unlit 材质结合两张流动噪声、Fresnel、纵向渐隐与轻微顶点位移；用当前帧 Stencil 限定高斯效果区域。' },
+          { en: 'Niagara samples the live skeletal surface for black dust. Sequencer is rendered to a 4K PNG sequence with resolution-aware Gaussian blur, then compressed for the web.', zh: 'Niagara 从实时骨骼表面发射黑色尘粒。Sequencer 使用分辨率补偿的高斯模糊输出 4K PNG 帧序列，再压缩为网页视频。' },
+        ],
+        results: [
+          { value: '4,998', label: { en: 'character triangles', zh: '角色三角面' } },
+          { value: '20', label: { en: 'bones', zh: '根骨骼' } },
+          { value: '4K', label: { en: 'source render', zh: '原始渲染' } },
+        ],
+      },
       links: [
-        { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/ShadowMan_Remaster.mp4' },
+        { type: 'video', label: { en: 'Latest iteration →', zh: '最新迭代 →' }, href: 'assets/clips/shadow-human-v7.mp4', poster: 'assets/clips/shadow-human-v7.webp' },
+        { type: 'video', label: { en: 'Earlier version →', zh: '早期版本 →' }, href: 'assets/uploads/ShadowMan_Remaster.mp4', poster: 'assets/uploads/previews/shadow-man.webp' },
       ],
     },
     {

@@ -1,0 +1,6 @@
+.pv-hero--timeline { grid-template-columns: 1fr; }
+.shadow-progress-media { margin: 24px 0 36px; }
+.shadow-progress-media button { display: block; width: fit-content; max-width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.shadow-progress-media img { display: block; width: auto; height: auto; max-width: min(100%, 440px); max-height: 360px; object-fit: contain; }
+.shadow-progress .pv-player { margin-top: 24px; }
+@media (max-width: 640px) { .shadow-progress-media img { max-height: 280px; } }

@@ -25,7 +25,7 @@
     if(sections.length<2)return;
     var layout=document.createElement('div'), aside=document.createElement('aside'), content=document.createElement('div');
     layout.className='dream-reading-layout';aside.className='dream-outline';content.className='dream-reading-content';
-    aside.innerHTML='<p class="dream-outline-title" aria-hidden="true">'+L('目录','Contents')+'</p><nav aria-label="'+L('作品目录','Contents')+'">'+sections.map(function(s){return '<a href="#'+P.esc(s.id)+'">'+P.esc(s.querySelector('h2').textContent)+'</a>';}).join('')+'</nav>';
+    aside.innerHTML='<p class="dream-outline-title" aria-hidden="true">'+L('目录','Contents')+'</p><nav aria-label="'+L('作品目录','Contents')+'">'+sections.map(function(s){return '<a href="#'+P.esc(s.id)+'">'+P.esc(s.getAttribute('data-outline-label')||s.querySelector('h2').textContent)+'</a>';}).join('')+'</nav>';
     while(main.firstChild)content.appendChild(main.firstChild);
     layout.appendChild(aside);layout.appendChild(content);main.appendChild(layout);
     var strip=aside.querySelector('nav'), links=Array.from(strip.querySelectorAll('a'));
@@ -44,7 +44,7 @@
     stop();
     var w = W[id];
     if(!w){main.innerHTML='<section class="pv-hero"><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+L('没有找到这个作品','Work not found')+'</h1><a class="dream-doc-link" href="portfolio.html">← '+L('返回作品集','Back to portfolio')+'</a></section>';return;}
-    var d = w.detail || {}, isPBR=w.pdf==='assets/uploads/Project1_Compressed.pdf', videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
+    var d = w.detail || {}, isPBR=w.pdf==='assets/uploads/Project1_Compressed.pdf', isShadow=window.ShadowCaseStudy && ShadowCaseStudy.has(w), videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
     if(isPBR) videos=[{href:'assets/clips/pbr-sections/final-scene-2x.mp4',poster:'assets/clips/pbr-sections/final-scene-2x.webp'}];
     var images = (w.links||[]).filter(function(v){return v.type==='image';}), docs = (w.links||[]).filter(function(v){return v.type==='docs' || v.type==='github' || v.type==='external';});
     var prev=(id-1+W.length)%W.length,next=(id+1)%W.length, zh=P.lang()==='zh', group=P.t(CONFIG.workGroupNames[w.group]);
@@ -60,13 +60,13 @@
     var n=0, romans=['','','','',''];
     root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'">« '+L('返回作品集','Back to portfolio')+'</a><div class="pv-subbar__nav"><a href="work.html?id='+prev+'" aria-label="'+L('上一个作品：','Previous work: ')+P.esc(P.t(W[prev].title))+'">‹ <span class="txt">'+L('上一个','Previous')+'</span></a><a href="work.html?id='+next+'" aria-label="'+L('下一个作品：','Next work: ')+P.esc(P.t(W[next].title))+'"><span class="txt">'+L('下一个','Next')+'</span> ›</a></div>';
     main.innerHTML=
-      '<section class="pv-hero"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1><span class="dream-name-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div>'+(videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
+      '<section class="pv-hero'+(isShadow?' pv-hero--timeline':'')+'"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1><span class="dream-name-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div>'+(isShadow?'<section class="pbr-section shadow-final" id="shadow-final"><header class="pbr-section-head"><div><h2>'+L('最终效果','Final result')+'</h2></div></header>'+player(w,videos[0])+'</section>':videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
       '<div class="pv-facts">'+facts.map(function(f){return '<div class="pv-fact"><small>'+f[0]+'</small><span>'+P.esc(f[1])+'</span></div>';}).join('')+'</div></section>'+
-      section(romans[n++],L('概述','Overview'),overview,'overview')+
+      (isShadow?ShadowCaseStudy.render(w,zh?'zh':'en'):section(romans[n++],L('概述','Overview'),overview,'overview')+
       (videos.length>1?section(romans[n++],L('视频','Videos'),'<div class="dream-media-grid">'+videos.slice(1).map(function(v,k){return '<figure>'+player(w,v)+'<figcaption>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+'</div>','video'):'')+
       (images.length?section(romans[n++],images.some(function(v){return /shader-graphs/.test(v.href);})?L('节点图','Node graphs'):L('图片','Images'),'<div class="dream-media-grid">'+images.map(function(v,k){return '<figure><button class="dream-graph pv-page-img" type="button" data-full-image="'+P.esc(v.href)+'" data-title="'+caption(v)+'" aria-label="'+L('放大：','Enlarge: ')+caption(v)+'"><img src="'+P.esc(v.href)+'" alt="'+caption(v)+'" loading="lazy"><span>⤢ '+L('放大','Enlarge')+'</span></button><figcaption>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+(documentLinks?'<div style="grid-column:1/-1;justify-self:start">'+documentLinks+'</div>':'')+'</div>','gallery'):'')+
       (docs.length && !images.length?'<p>'+documentLinks+'</p>':'')+
-      (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'')+
+      (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'') )+
       (w.pdf&&!isPBR?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+
       '<nav class="dream-more" aria-label="'+L('更多作品','More works')+'">'+[prev,next].map(function(j,k){var v=W[j];return '<a href="work.html?id='+j+'"><img src="'+P.esc(v.image)+'" alt="" loading="lazy"><div><i>'+ (k?'next ›':'‹ previous')+'</i><strong>'+P.esc(P.t(v.title))+'</strong></div></a>';}).join('')+'</nav>';
     readingLayout();
