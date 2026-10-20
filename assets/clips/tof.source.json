@@ -1,0 +1,27 @@
+{
+  "project": "Tower of Fantasy",
+  "sourceUrl": "https://www.youtube.com/watch?v=M6h2-ChHi1I",
+  "sourceTitle": "Kailo Puzzles Guide | Tower of Fantasy",
+  "sourceChannel": "ChampeNChamp",
+  "sourceContext": "Project video linked in js/figma-case-studies.js for Tower of Fantasy; channel ownership is not independently verified.",
+  "sourceVisibility": "public",
+  "sourceDurationSeconds": 387,
+  "sourceRangeSeconds": [32, 39],
+  "description": "Real in-game gravity orb puzzle interaction, taken from the portfolio-linked public video.",
+  "preview": {
+    "file": "tof.mp4",
+    "durationSeconds": 7,
+    "width": 960,
+    "height": 540,
+    "fps": 24,
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "audio": false,
+    "fastStart": true
+  },
+  "poster": {
+    "file": "tof.webp",
+    "previewTimeSeconds": 3
+  },
+  "retrieval": "Standard yt-dlp public extraction without cookies or account authentication; no access restrictions encountered."
+}

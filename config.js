@@ -421,6 +421,7 @@ const CONFIG = {
       hasVideo: false,
       image: 'assets/uploads/previews/tower-of-fantasy.webp',
       title: { en: 'Gameplay Design-Tower of Fantasy', zh: '玩法设计-幻塔' },
+      clip: 'assets/clips/tof',
       desc:  {
         en: 'Unreal Engine level tools and gameplay systems for Tower of Fantasy.',
         zh: '《幻塔》项目中的 Unreal Engine 关卡工具与玩法系统。',

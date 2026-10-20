@@ -1,0 +1,38 @@
+/* Each work keeps its own preview at every screen size. */
+.anime-inline-previews { display: block; }
+.anime-inline-previews .anime-work-row {
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1.3fr);
+  grid-template-rows: 1fr auto auto 1fr;
+  gap: 12px 24px;
+  padding: 28px 12px 28px 0;
+}
+.anime-inline-previews .anime-work-no { grid-column: 1; grid-row: 2; }
+.anime-inline-previews .anime-work-title { grid-column: 2; grid-row: 2; }
+.anime-inline-previews .anime-work-group { grid-column: 2; grid-row: 3; }
+.anime-row-media {
+  grid-column: 3; grid-row: 1 / -1;
+  position: relative; display: block; aspect-ratio: 16 / 9;
+  width: 100%; overflow: hidden; background: #0f0c16;
+}
+.anime-row-media :is(img, video) {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
+}
+.anime-row-media video { opacity: 0; }
+.anime-row-media.is-playing video { opacity: 1; }
+.anime-preview-toggle {
+  display: block; margin: 24px 0 0 auto; padding: 8px 12px;
+  border: 1px solid var(--line); color: var(--muted); background: transparent;
+  font: inherit; font-size: 13px; cursor: pointer;
+}
+.anime-preview-toggle:hover { color: var(--pink); }
+.anime-preview-toggle:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; }
+@media (max-width: 999px) {
+  .anime-inline-previews .anime-work-row {
+    grid-template-columns: 40px minmax(0, 1fr); grid-template-rows: auto auto auto;
+    gap: 10px 16px; padding: 24px 0;
+  }
+  .anime-inline-previews .anime-work-no { grid-row: 1; }
+  .anime-inline-previews .anime-work-title { grid-row: 1; }
+  .anime-inline-previews .anime-work-group { grid-row: 2; }
+  .anime-inline-previews .anime-row-media { grid-column: 1 / -1; grid-row: 3; margin-top: 8px; }
+}

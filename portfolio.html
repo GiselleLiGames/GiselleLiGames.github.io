@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/entry/figma-case-studies.css?v=20261020-crops2" />
   <link rel="stylesheet" href="assets/entry/dream-atlas.css?v=20261016-nodeatlas3" />
   <link rel="stylesheet" href="assets/entry/anime-theme.css?v=20261020-text2" />
+  <link rel="stylesheet" href="assets/entry/gallery-previews.css?v=20261020-previews1" />
   <link rel="stylesheet" href="assets/entry/pbr-case-study.css?v=20261020-shaders2" />
   <link rel="stylesheet" href="assets/entry/work-outline.css?v=20261020-outline2" />
   <link rel="stylesheet" href="assets/companion/oc-companion.css?v=20261015b" />
@@ -37,7 +38,8 @@
     </section>
     <section class="anime-collection" id="works" aria-labelledby="animeWorksTitle">
       <div class="anime-collection-bar"><h2 id="animeWorksTitle"><span data-i18n="portfolio.works">作品集</span> <small>WORKS</small></h2><div class="anime-filter-wrap"><div class="pv-filters" id="pvFilters" role="group" aria-label="作品分类"></div><div class="anime-slider" aria-hidden="true"><i></i><b></b></div></div></div>
-      <div class="anime-works-layout"><ol class="anime-work-list" id="pvGrid"></ol><aside class="anime-preview" id="animePreview" aria-label="作品预览"></aside></div>
+      <button type="button" class="anime-preview-toggle" id="animePreviewToggle" aria-pressed="true">暂停预览</button>
+      <div class="anime-works-layout anime-inline-previews"><ol class="anime-work-list" id="pvGrid"></ol></div>
     </section>
   </main>
 
@@ -51,14 +53,14 @@
     <a href="mailto:kyuandart@gmail.com">kyuandart@gmail.com</a>
   </footer>
 
-  <script src="config.js?v=20261020-shaders2"></script>
+  <script src="config.js?v=20261020-previews1"></script>
   <script src="js/site-translations.js?v=9adb83a9190d"></script>
   <script src="js/typography.js?v=20260726a"></script>
   <script src="js/content.js?v=20261015-work-groups"></script>
   <script src="js/language-detection.js?v=20261015-ip-language"></script>
   <script src="js/i18n.js?v=20261015-ip-language"></script>
   <script src="js/pv.js?v=bd883637b15e"></script>
-  <script src="js/anime-gallery.js?v=20261015a"></script>
+  <script src="js/anime-gallery.js?v=20261020-previews1"></script>
   <script src="js/figma-case-studies.js?v=20261015-cleanup"></script>
   <script src="js/case-study-curated.js?v=20261015-cleanup"></script>
   <script src="js/case-study-media.js?v=20261020-shaders2"></script>
