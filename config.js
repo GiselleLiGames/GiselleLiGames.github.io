@@ -386,14 +386,14 @@ const CONFIG = {
       category: 'render',
       group: 'art',
       hasVideo: true,
-      image: 'assets/clips/shadow-human-v7.webp',
+      image: 'assets/clips/shadow-human-v8.webp',
       title: { en: 'Rendering-Shadow Man', zh: '渲染-暗影人' },
       desc:  {
         en: 'A shadow figure in UE5.6: masked dither, flickering fine grain, local Gaussian blur, and evaporating black particles.',
         zh: 'UE5.6 暗影人迭代：Dither 虚实、细颗粒闪烁、局部高斯模糊，以及蒸发的黑色粒子。',
       },
       tags: ['Shader', 'Niagara', 'Rendering'],
-      clip: 'assets/clips/shadow-human-v7',
+      clip: 'assets/clips/shadow-human-v8',
       detail: {
         year: '2026',
         tools: 'Unreal Engine 5.6 · Niagara · Hunyuan3D',
@@ -415,7 +415,7 @@ const CONFIG = {
         ],
       },
       links: [
-        { type: 'video', label: { en: 'Latest iteration →', zh: '最新迭代 →' }, href: 'assets/clips/shadow-human-v7.mp4', poster: 'assets/clips/shadow-human-v7.webp' },
+        { type: 'video', label: { en: 'Latest iteration →', zh: '最新迭代 →' }, href: 'assets/clips/shadow-human-v8.mp4', poster: 'assets/clips/shadow-human-v8.webp' },
         { type: 'video', label: { en: 'Earlier version →', zh: '早期版本 →' }, href: 'assets/uploads/ShadowMan_Remaster.mp4', poster: 'assets/uploads/previews/shadow-man.webp' },
       ],
     },
