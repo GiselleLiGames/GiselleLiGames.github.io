@@ -45,7 +45,9 @@
     var w = W[id];
     if(!w){main.innerHTML='<section class="pv-hero"><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+L('没有找到这个作品','Work not found')+'</h1><a class="dream-doc-link" href="portfolio.html">← '+L('返回作品集','Back to portfolio')+'</a></section>';return;}
     var d = w.detail || {}, isPBR=w.pdf==='assets/uploads/Project1_Compressed.pdf', isShadow=window.ShadowCaseStudy && ShadowCaseStudy.has(w), videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
+    var isPCG=w.pdf==='assets/uploads/Project3_Compressed.pdf';
     if(isPBR) videos=[{href:'assets/clips/pbr-sections/final-scene-2x.mp4',poster:'assets/clips/pbr-sections/final-scene-2x.webp'}];
+    if(isPCG) videos=[{href:'assets/clips/pcg-sections/opening-preview.mp4',poster:'assets/clips/pcg-sections/opening-preview.webp'}];
     var images = (w.links||[]).filter(function(v){return v.type==='image';}), docs = (w.links||[]).filter(function(v){return v.type==='docs' || v.type==='github' || v.type==='external';});
     var prev=(id-1+W.length)%W.length,next=(id+1)%W.length, zh=P.lang()==='zh', group=P.t(CONFIG.workGroupNames[w.group]);
     var facts = []; if(d.year)facts.push(['year',P.t(d.year)]);if(d.tools)facts.push(['tools',P.t(d.tools)]);if(d.platform)facts.push(['platform',P.t(d.platform)]);if(id!==0){facts.push(['type',group]);if(d.role)facts.push(['role',P.t(d.role)]);}
@@ -53,6 +55,7 @@
     root.querySelector('[data-i18n="footer.copy"]').textContent=L('© 2026 李涵清 · 保留所有权利',CONFIG.copyright);
     root.querySelector('[data-detail-lang]').textContent=P.lang()==='zh'?'中 · EN':'ZH · EN';
     var overview='<p>'+P.esc(P.t(d.overview)||P.t(w.desc))+'</p>'+(d.overview&&!isPBR?'<p>'+P.esc(P.t(w.desc))+'</p>':'')+'<div class="pv-tags">'+(w.tags||[]).map(function(t){return '<span class="pv-tag">'+P.esc(P.t(t))+'</span>';}).join('')+'</div>';
+    if(isPCG) overview='<p>'+L('以 Houdini 程序化生成砖墙、样条石墙与山体，结合 Maya 建模、Substance Designer 材质和 UE 场景整合，完成风格化山谷房屋场景。','A stylized hillside scene built with Houdini brick walls, spline-based stone walls and procedural mountains, combined with Maya modeling, Substance Designer materials and UE scene integration.')+'</p>';
     ['goals','process'].forEach(function(key){if(d[key])overview+='<h3>'+ (key==='goals'?L('目标与挑战','Goals & challenges'):L('制作过程','Process'))+'</h3><ul>'+d[key].map(function(s){return '<li>'+P.esc(P.t(s))+'</li>';}).join('')+'</ul>';});
     if(d.results)overview+='<div class="pv-metrics">'+d.results.map(function(r){return '<p><strong>'+P.esc(r.value)+'</strong> '+P.esc(P.t(r.label))+'</p>';}).join('')+'</div>';
     var category={shader:['Shader','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
@@ -67,7 +70,7 @@
       (images.length?section(romans[n++],images.some(function(v){return /shader-graphs/.test(v.href);})?L('节点图','Node graphs'):L('图片','Images'),'<div class="dream-media-grid">'+images.map(function(v,k){return '<figure><button class="dream-graph pv-page-img" type="button" data-full-image="'+P.esc(v.href)+'" data-title="'+caption(v)+'" aria-label="'+L('放大：','Enlarge: ')+caption(v)+'"><img src="'+P.esc(v.href)+'" alt="'+caption(v)+'" loading="lazy"><span>⤢ '+L('放大','Enlarge')+'</span></button><figcaption>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+(documentLinks?'<div style="grid-column:1/-1;justify-self:start">'+documentLinks+'</div>':'')+'</div>','gallery'):'')+
       (docs.length && !images.length?'<p>'+documentLinks+'</p>':'')+
       (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'') )+
-      (w.pdf&&!isPBR?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+
+      (w.pdf&&!isPBR&&!isPCG?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+
       '<nav class="dream-more" aria-label="'+L('更多作品','More works')+'">'+[prev,next].map(function(j,k){var v=W[j];return '<a href="work.html?id='+j+'"><img src="'+P.esc(v.image)+'" alt="" loading="lazy"><div><i>'+ (k?'next ›':'‹ previous')+'</i><strong>'+P.esc(P.t(v.title))+'</strong></div></a>';}).join('')+'</nav>';
     readingLayout();
     P.reveal(main);

@@ -1,0 +1,70 @@
+{
+  "source": "assets/uploads/PCG.mp4",
+  "sourceDuration": 51.85,
+  "video": {
+    "width": 1600,
+    "height": 900,
+    "fps": 30,
+    "audio": false,
+    "codec": "h264",
+    "faststart": true
+  },
+  "clips": [
+    {
+      "id": "opening-preview",
+      "src": "assets/clips/pcg-sections/opening-preview.mp4",
+      "poster": "assets/clips/pcg-sections/opening-preview.webp",
+      "start": 0,
+      "end": 2.5,
+      "duration": 2.5,
+      "posterSourceTime": 0.25,
+      "description": "Opening scene preview, ending before the concept-art wipe.",
+      "bytes": 888664
+    },
+    {
+      "id": "materials",
+      "src": "assets/clips/pcg-sections/materials.mp4",
+      "poster": "assets/clips/pcg-sections/materials.webp",
+      "start": 9.1,
+      "end": 17.75,
+      "duration": 8.65,
+      "posterSourceTime": 16.5,
+      "description": "Maya house blockout, roof geometry and Substance Designer wood material.",
+      "bytes": 2219010
+    },
+    {
+      "id": "brick-wall",
+      "src": "assets/clips/pcg-sections/brick-wall.mp4",
+      "poster": "assets/clips/pcg-sections/brick-wall.webp",
+      "start": 24.05,
+      "end": 30.9,
+      "duration": 6.85,
+      "posterSourceTime": 29.0,
+      "description": "Height-map mesh generation, doorway adjustment and use in Unreal Engine.",
+      "bytes": 2723283
+    },
+    {
+      "id": "mountains",
+      "src": "assets/clips/pcg-sections/mountains.mp4",
+      "poster": "assets/clips/pcg-sections/mountains.webp",
+      "start": 33.45,
+      "end": 39.25,
+      "duration": 5.8,
+      "posterSourceTime": 37.0,
+      "description": "HeightField shaping, erosion, automatic terrain coloring and height map.",
+      "bytes": 754718
+    },
+    {
+      "id": "stone-wall",
+      "src": "assets/clips/pcg-sections/stone-wall.mp4",
+      "poster": "assets/clips/pcg-sections/stone-wall.webp",
+      "start": 41.35,
+      "end": 51.75,
+      "duration": 10.4,
+      "posterSourceTime": 49.0,
+      "description": "Spline wall, stone dimensions, weathering and spline editing in Unreal Engine.",
+      "bytes": 2816616
+    }
+  ],
+  "selectionNotes": "Original technical labels are retained; concept-art interludes and unrelated chapter transitions are excluded."
+}
