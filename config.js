@@ -573,10 +573,10 @@ const CONFIG = {
       ],
     },
     {
-      company:    { en: 'Neckom Games', zh: 'Neckom Games' },
+      company:    { en: 'Neckom Games', zh: '铃空游戏' },
       period:     { en: 'Dec 2023 — Feb 2024', zh: '2023.12 — 2024.02' },
       role:       { en: 'Level Designer for Showa American Story (Action RPG)',
-                    zh: '关卡策划 — Showa American Story（动作角色扮演游戏）' },
+                    zh: '关卡策划 —《昭和米国物语》（动作角色扮演游戏）' },
       projectUrl: '',
       bullets: [
         {
