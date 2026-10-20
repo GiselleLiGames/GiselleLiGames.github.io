@@ -335,7 +335,7 @@ const CONFIG = {
         zh: 'Unity URP 中的自研 PBR、冰、植物与水面 Shader。',
       },
       tags: ['Unity URP', 'HLSL', 'C#'],
-      clip: 'assets/clips/pbr-sections/final-scene',
+      clip: 'assets/clips/pbr-sections/final-scene-2x',
       detail: {
         tools: 'Unity URP · HLSL · C#',
         role: { en: 'Shaders · Materials · Lighting', zh: 'Shader · 材质 · 光照' },

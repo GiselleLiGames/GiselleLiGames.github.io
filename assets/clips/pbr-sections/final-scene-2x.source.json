@@ -1,0 +1,15 @@
+{
+  "source": "assets/uploads/ShadingShowreel.mp4",
+  "sourceStart": 68.4,
+  "sourceEnd": 88.2,
+  "speed": 2,
+  "src": "assets/clips/pbr-sections/final-scene-2x.mp4",
+  "poster": "assets/clips/pbr-sections/final-scene-2x.webp",
+  "posterSourceTime": 69.1,
+  "expectedDuration": 9.9,
+  "width": 1600,
+  "height": 900,
+  "fps": 30,
+  "audio": false,
+  "description": "Starts at Final Composition / Specular Lighting, continuing through the complete scene sequence. Preview encoded at twice the original speed."
+}
