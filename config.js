@@ -404,7 +404,7 @@ const CONFIG = {
           zh: '最新迭代采用方正、僵直、无明显肌肉的人形，一只手向前伸出，呈按住玻璃的姿态。灰度厚度 Map 与 Dither 控制身体虚实，手掌最实；局部高斯模糊与先慢后快、向上蒸发的粒子共同表现鬼影。',
         },
         process: [
-          { en: 'AI concept → local Hunyuan3D reconstruction → automatic topology rebuilding → basic skeletal binding. The reaching palm was repaired separately to keep the fingers slender and separated.', zh: 'AI 概念图 → 本地混元重建 → 自动拓扑重建 → 基础骨骼绑定。前伸的手掌单独修整，让手指更细、指缝更清晰。' },
+          { en: 'AI concept → local Hunyuan3D reconstruction → automatic topology rebuilding → basic skeletal binding.', zh: 'AI 概念图 → 本地混元重建 → 自动拓扑重建 → 基础骨骼绑定。' },
           { en: 'Masked / Unlit material with two panning noises, a UV-locked thickness map, vertical fade and subtle vertex motion. A current-frame stencil limits the Gaussian effect to the character, with less blur on the palm.', zh: 'Masked / Unlit 材质结合两张流动噪声、固定在模型 UV 上的厚度 Map、纵向渐隐与轻微顶点位移；当前帧 Stencil 限定高斯效果区域，手掌使用较小的模糊强度。' },
           { en: 'Niagara samples both the body and palm surfaces. Black beads cling briefly, pull free and accelerate upwards as they fade. Sequencer is rendered to a 4K PNG sequence, then compressed to a 1K video for the web.', zh: 'Niagara 分别采样身体和手掌表面，黑色颗粒先贴肤拖黏，再逐渐加速向上、收细淡出。Sequencer 输出 4K PNG 帧序列，再压缩为网页用的 1K 视频。' },
         ],
