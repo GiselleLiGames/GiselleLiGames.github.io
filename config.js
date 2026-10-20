@@ -517,12 +517,8 @@ const CONFIG = {
           zh: '<strong>美术资产沟通与迭代：</strong>与 CP 方沟通制作效果所需的美术资产，审核交付内容并提出打回修改意见，推动后续迭代。',
         },
         {
-          en: '<strong>Python TA Tool Development & Testing:</strong> Developed Python-based TA tools and established repeatable testing and verification workflows.',
-          zh: '<strong>Python TA 工具开发与测试：</strong>开发 Python TA 工具，并建立规范化的测试与验证流程。',
-        },
-        {
-          en: '<strong>Video-to-Character Animation Pipeline:</strong> Architected an end-to-end pipeline from source video to project-ready character animation; increased production efficiency by 80%.',
-          zh: '<strong>视频转角色动画流水线：</strong>构建从视频素材到可用角色动画的端到端流水线，自研重定向工具集，生产效率提升 80%。',
+          en: '<strong>AI Video-to-Character Animation Pipeline (Python):</strong> Built a pipeline from AI-generated video through Tencent\'s internal AI video motion capture system to character animation, evaluating its practical use in animation workflows. Developed a custom Python batch retargeting tool tailored to Riot character rigs with AI assistance, improving production efficiency by 80%.',
+          zh: '<strong>AI 视频生成与角色动画管线（Python）：</strong>构建从 AI 生成视频、内部 AI 视频动捕生成动画到角色动画的管线，测试公司内部 AI 视频动捕的落地应用；借助 AI 辅助开发基于 Riot 角色绑定定制的 Python 批量重定向工具，生产效率提升 80%。',
         },
       ],
     },
@@ -573,6 +569,19 @@ const CONFIG = {
         {
           en: '<strong>Shader Development:</strong> Developed custom shader solutions utilizing ASE, CG, and HLSL for stylized rendering.',
           zh: '<strong>Shader 开发：</strong>使用 ASE、CG 和 HLSL 开发风格化渲染的自定义Shader方案。',
+        },
+      ],
+    },
+    {
+      company:    { en: 'Neckom Games', zh: 'Neckom Games' },
+      period:     { en: 'Dec 2023 — Feb 2024', zh: '2023.12 — 2024.02' },
+      role:       { en: 'Level Designer for Showa American Story (Action RPG)',
+                    zh: '关卡策划 — Showa American Story（动作角色扮演游戏）' },
+      projectUrl: '',
+      bullets: [
+        {
+          en: '<strong>Level Layout & Mechanics:</strong> Created 2D level layouts, designed special gameplay mechanics, and planned architectural layouts for level whiteboxing.',
+          zh: '<strong>关卡布局与机制设计：</strong>绘制关卡二维布局，设计特殊玩法机制，并设计用于关卡白盒搭建的建筑布局。',
         },
       ],
     },
