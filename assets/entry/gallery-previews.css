@@ -1,68 +1,74 @@
-/* Works collection.
-   PC / iPad (761px+): song-select layout — a pinned stage on the left previews the
-   selected work, the right column is a compact list that stays quick to scan as the
-   collection grows. Phones: one row per work with its own inline preview. No numbering. */
+/* Works collection — one "song select" layout on every screen, no numbering.
+   A stage previews the selected work; the list stays compact so it is quick to scan
+   as the collection grows. PC / iPad: stage left, list right. Phone: stage pinned on
+   top, list below. First tap on a work previews it, tapping it again opens it. */
 
-.anime-works-layout.anime-stage-layout { display: block; }
-.anime-stage { display: none; }
-
-.anime-row-media { position: relative; display: block; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; background: #0f0c16; }
-.anime-row-media :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.anime-row-media video { opacity: 0; }
-.anime-row-media.is-playing video { opacity: 1; }
-
-.anime-preview-toggle { display: block; margin: 24px 0 0 auto; padding: 8px 12px; border: 1px solid var(--line); color: var(--muted); background: transparent; font: inherit; font-size: 13px; cursor: pointer; }
+/* Stage */
+.anime-stage { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.anime-stage-media { position: relative; width: 100%; aspect-ratio: 16 / 9; border: 1.5px solid var(--line); background: #0f0c16; overflow: hidden; }
+.anime-stage-media :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.anime-stage-media img { opacity: 0; transform: scale(1.04); }
+.anime-stage-media img.is-in { opacity: 1; transform: none; transition: opacity .32s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+.anime-stage-media video { opacity: 0; transition: opacity .3s; }
+.anime-stage-media.is-playing video { opacity: 1; }
+.anime-preview-toggle { position: absolute; right: 10px; bottom: 10px; z-index: 2; margin: 0; padding: 5px 11px; border: 1px solid var(--line); background: #15121ccc; color: var(--paper); font: inherit; font-size: 12px; cursor: pointer; backdrop-filter: blur(8px); }
 .anime-preview-toggle:hover { color: var(--pink); }
 .anime-preview-toggle:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; }
 
-/* Phone: title, group, then the preview underneath. */
-@media (max-width: 760px) {
-  .anime-stage-layout .anime-work-row { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 22px 0; min-height: 0; }
-  .anime-stage-layout .anime-work-group { grid-column: 1; }
-  .anime-stage-layout .anime-row-media { margin-top: 10px; }
-}
+.anime-stage-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
+.anime-stage-tag { display: inline-block; padding: 4px 16px 4px 10px; background: var(--pink); color: white; font-size: 12px; font-weight: 800; clip-path: polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%); }
+.anime-stage-copy h3 { margin: 6px 0 0; font-size: clamp(24px, 2.4vw, 36px); font-weight: 900; line-height: 1.15; overflow-wrap: anywhere; }
+.anime-stage-secondary { color: var(--pink); font-size: 15px; font-weight: 800; }
+.anime-stage-copy p { margin: 6px 0 0; max-width: 680px; color: var(--muted); font-size: 15px; line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.anime-stage-copy small { color: #a39db2; font-size: 13px; }
+.anime-site .anime-stage-open { min-height: 42px; margin-top: 10px; padding: 8px 30px 8px 20px; font-size: 15px; }
 
-/* PC / iPad: stage + list. */
+/* Compact list rows: thumbnail + names. The selected row slides toward the stage. */
+.anime-stage-layout .anime-work-list { border-bottom: 0; display: flex; flex-direction: column; gap: 6px; }
+.anime-stage-layout .anime-work-row { grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: auto auto; gap: 2px 14px; min-height: 0; padding: 8px 22px 8px 8px; border: 1px solid var(--line); background: #221d2dcc; clip-path: polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%); transition: transform .28s cubic-bezier(.3,1.4,.5,1), background .2s, border-color .2s; }
+.anime-stage-layout .anime-work-row::before { inset: 0; clip-path: none; }
+.anime-stage-layout .anime-work-row.is-selected { border-color: var(--pink); }
+.anime-stage-layout .anime-row-media { position: relative; display: block; grid-column: 1; grid-row: 1 / 3; width: 104px; aspect-ratio: 16 / 9; overflow: hidden; background: #0f0c16; }
+.anime-stage-layout .anime-row-media :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.anime-stage-layout .anime-row-media video { display: none; }
+.anime-stage-layout .anime-work-title { grid-column: 2; grid-row: 1; align-self: end; }
+.anime-stage-layout .anime-work-title strong { font-size: 16px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.anime-stage-layout .anime-work-title small { margin-top: 2px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.anime-stage-layout .anime-work-group { grid-column: 2; grid-row: 2; align-self: start; font-size: 11px; }
+.anime-stage-layout .anime-work-row.is-selected .anime-work-title { transform: none; }
+
+/* PC / iPad: side by side, stage pinned while the list scrolls. */
 @media (min-width: 761px) {
   .anime-works-layout.anime-stage-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, 1fr); gap: 0 clamp(28px, 3.4vw, 52px); align-items: start; margin-top: 28px; }
-
-  .anime-stage { position: sticky; top: 172px; display: flex; flex-direction: column; gap: 18px; }
-  .anime-stage-media { position: relative; width: min(100%, calc((100vh - 172px - 330px) * 16 / 9)); min-width: min(100%, 360px); aspect-ratio: 16 / 9; border: 1.5px solid var(--line); background: #0f0c16; overflow: hidden; }
-  .anime-stage-media :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .anime-stage-media img { opacity: 0; transform: scale(1.04); }
-  .anime-stage-media img.is-in { opacity: 1; transform: none; transition: opacity .32s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
-  .anime-stage-media video { opacity: 0; transition: opacity .3s; }
-  .anime-stage-media.is-playing video { opacity: 1; }
-  .anime-stage-media .anime-preview-toggle { position: absolute; right: 10px; bottom: 10px; z-index: 2; margin: 0; padding: 5px 11px; background: #15121ccc; color: var(--paper); font-size: 12px; backdrop-filter: blur(8px); }
-
-  .anime-stage-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0; }
-  .anime-stage-tag { display: inline-block; padding: 4px 16px 4px 10px; background: var(--pink); color: white; font-size: 12px; font-weight: 800; clip-path: polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%); }
-  .anime-stage-copy h3 { margin: 6px 0 0; font-size: clamp(24px, 2.4vw, 36px); font-weight: 900; line-height: 1.15; overflow-wrap: anywhere; }
-  .anime-stage-secondary { color: var(--pink); font-size: 15px; font-weight: 800; }
-  .anime-stage-copy p { margin: 6px 0 0; max-width: 680px; color: var(--muted); font-size: 15px; line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .anime-stage-copy small { color: #a39db2; font-size: 13px; }
-  .anime-site .anime-stage-open { min-height: 42px; margin-top: 10px; padding: 8px 30px 8px 20px; font-size: 15px; }
-
-  /* Compact list rows: thumbnail + names. Selected row slides toward the stage. */
-  .anime-stage-layout .anime-work-list { border-bottom: 0; display: flex; flex-direction: column; gap: 6px; padding-left: 22px; }
-  .anime-stage-layout .anime-work-row { grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: auto auto; gap: 2px 14px; min-height: 0; padding: 8px 22px 8px 8px; border: 1px solid var(--line); background: #221d2dcc; clip-path: polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%); transition: transform .28s cubic-bezier(.3,1.4,.5,1), background .2s, border-color .2s; }
-  .anime-stage-layout .anime-work-row::before { inset: 0; clip-path: none; }
-  .anime-stage-layout .anime-work-row.is-selected { transform: translateX(-22px); border-color: var(--pink); }
+  .anime-stage { position: sticky; top: 172px; }
+  .anime-stage-media { width: min(100%, calc((100vh - 172px - 330px) * 16 / 9)); min-width: min(100%, 360px); }
+  .anime-stage-layout .anime-work-list { padding-left: 22px; }
+  .anime-stage-layout .anime-work-row.is-selected { transform: translateX(-22px); }
   .anime-stage-layout .anime-work-row:hover:not(.is-selected) { transform: translateX(-8px); }
-  .anime-stage-layout .anime-row-media { grid-column: 1; grid-row: 1 / 3; width: 104px; }
-  .anime-stage-layout .anime-work-title { grid-column: 2; grid-row: 1; align-self: end; }
-  .anime-stage-layout .anime-work-title strong { font-size: 16px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .anime-stage-layout .anime-work-title small { margin-top: 2px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .anime-stage-layout .anime-work-group { grid-column: 2; grid-row: 2; align-self: start; font-size: 11px; }
-  .anime-stage-layout .anime-work-row.is-selected .anime-work-title { transform: none; }
 }
 
 @media (min-width: 761px) and (max-width: 1100px) {
   .anime-works-layout.anime-stage-layout { grid-template-columns: minmax(0, 1.15fr) minmax(280px, 1fr); }
+}
+@media (max-width: 1100px) {
   .anime-stage-layout .anime-work-row { grid-template-columns: 84px minmax(0, 1fr); }
   .anime-stage-layout .anime-row-media { width: 84px; }
   .anime-stage-layout .anime-work-title strong { font-size: 15px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .anime-stage-layout .anime-work-group { display: none; }
+}
+
+/* Phone: stage pinned under the site nav, list underneath. */
+@media (max-width: 760px) {
+  .anime-collection-bar { position: static; }
+  .anime-works-layout.anime-stage-layout { display: block; margin-top: 16px; }
+  .anime-stage { position: sticky; top: 104px; z-index: 12; gap: 10px; margin: 0 calc(-1 * var(--pv-gutter)) 14px; padding: 10px var(--pv-gutter) 12px; background: #15121cf0; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+  .anime-stage-copy { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2px 12px; }
+  .anime-stage-tag, .anime-stage-copy p, .anime-stage-copy small { display: none; }
+  .anime-stage-copy h3 { grid-column: 1; margin: 0; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .anime-stage-secondary { grid-column: 1; font-size: 12px; }
+  .anime-site .anime-stage-open { grid-column: 2; grid-row: 1 / 3; min-height: 38px; margin: 0; padding: 6px 22px 6px 14px; font-size: 13px; }
+  .anime-stage-layout .anime-work-row.is-selected { transform: translateX(6px); }
+  .anime-preview-toggle { right: 6px; bottom: 6px; padding: 3px 8px; font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

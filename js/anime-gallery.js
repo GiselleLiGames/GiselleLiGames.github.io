@@ -9,8 +9,8 @@
   var filterTimer, reduce = matchMedia('(prefers-reduced-motion: reduce)');
   var autoplayEnabled = !reduce.matches, visible = new Set();
   function L(zh,en){return P.lang()==='zh'?zh:en;}
-  // Wide screens (PC / iPad): song-select layout. A fixed stage on the left previews the
-  // selected work; the right column is a compact list. Phones keep inline previews per row.
+  // Song-select layout on every screen: a stage previews the selected work, the list stays
+  // compact. PC / iPad: stage left, list right. Phone: stage pinned on top, list below.
   var wide = matchMedia('(min-width: 761px)'), layoutEl = document.querySelector('.anime-works-layout');
   layoutEl.classList.add('anime-stage-layout');
   var stage = document.createElement('aside');stage.className='anime-stage';
@@ -42,11 +42,11 @@
   function stop(root){root.querySelectorAll('video').forEach(function(v){v.pause();v.removeAttribute('src');v.load();});}
   function syncPlayback(){
     var allowed=autoplayEnabled&&!document.hidden&&!document.body.classList.contains('dream-preview-open');
-    if(allowed&&wide.matches&&stageVisible&&stageVideo.dataset.src){if(stageVideo.getAttribute('src')!==stageVideo.dataset.src)stageVideo.src=stageVideo.dataset.src;stageVideo.play().catch(function(){stageMedia.classList.remove('is-playing');});}
+    if(allowed&&stageVisible&&stageVideo.dataset.src){if(stageVideo.getAttribute('src')!==stageVideo.dataset.src)stageVideo.src=stageVideo.dataset.src;stageVideo.play().catch(function(){stageMedia.classList.remove('is-playing');});}
     else stageVideo.pause();
     grid.querySelectorAll('.anime-row-media').forEach(function(root){
       var v=root.querySelector('video');if(!v)return;
-      if(allowed&&!wide.matches&&visible.has(root)){
+      if(false){
         if(!v.getAttribute('src'))v.src=v.dataset.src;
         v.muted=true;v.play().catch(function(){root.classList.remove('is-playing');});
       }else v.pause();
@@ -92,7 +92,16 @@
   toggle.addEventListener('click',function(){autoplayEnabled=!autoplayEnabled;updateToggle();syncPlayback();});
   filters.addEventListener('click',function(e){var b=e.target.closest('[data-cat]');if(b)choose(b.dataset.cat,true);});
   grid.addEventListener('pointerover',function(e){if(e.pointerType==='touch')return;var row=e.target.closest('[data-work]');if(row&&Number(row.dataset.work)!==selected)select(Number(row.dataset.work));});
-  grid.addEventListener('focusin',function(e){var row=e.target.closest('[data-work]');if(row&&Number(row.dataset.work)!==selected)select(Number(row.dataset.work));});
+  // Same rule everywhere, like picking a song: the first tap on a work selects and previews it,
+  // tapping the selected work (or the stage button) opens it. A mouse hover already selects.
+  grid.addEventListener('click',function(e){var row=e.target.closest('[data-work]');if(!row||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;var id=Number(row.dataset.work);
+    // Touch (iPad / phone): only a work already previewed by an earlier tap opens; the first tap
+    // always previews, even for the work that is selected by default. Mouse: hover already previews.
+    if(lastPointer==='touch'||lastPointer==='pen'){if(armed===id)return;armed=id;}else if(id===selected)return;
+    e.preventDefault();e.stopPropagation();select(id);if(!wide.matches)stage.scrollIntoView({block:'nearest',behavior:reduce.matches?'auto':'smooth'});},true);
+  // Focus from a tap/click must not pre-select, or the first tap would open instead of preview.
+  var pointerAt=0,lastPointer='mouse',armed=null;grid.addEventListener('pointerdown',function(e){pointerAt=performance.now();lastPointer=e.pointerType||'mouse';},true);
+  grid.addEventListener('focusin',function(e){if(performance.now()-pointerAt<800)return;var row=e.target.closest('[data-work]');if(row&&Number(row.dataset.work)!==selected)select(Number(row.dataset.work));});
   // All entries open the shared detail view on the first click or tap.
   document.addEventListener('click',function(e){var a=e.target.closest('[data-featured-work]');if(!a||e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;var row=grid.querySelector('[data-work="'+Number(a.dataset.featuredWork)+'"]');if(row){e.preventDefault();row.click();}},true);
   addEventListener('keydown',function(e){if(e.defaultPrevented||e.ctrlKey||e.metaKey||e.altKey||document.querySelector('dialog[open]')||/INPUT|TEXTAREA|SELECT|VIDEO/.test(e.target.tagName)||e.target.isContentEditable)return;if(wide.matches&&stageVisible&&(e.key==='ArrowDown'||e.key==='ArrowUp'||(e.key==='Enter'&&e.target===document.body))){var at=shown.map(function(x){return x.id;}).indexOf(selected);if(at<0)return;e.preventDefault();if(e.key==='Enter'){var open=grid.querySelector('[data-work="'+selected+'"]');if(open)open.click();return;}var nx=shown[Math.max(0,Math.min(shown.length-1,at+(e.key==='ArrowDown'?1:-1)))];if(nx&&nx.id!==selected){select(nx.id);var r=grid.querySelector('[data-work="'+nx.id+'"]');if(r)r.scrollIntoView({block:'nearest',behavior:reduce.matches?'auto':'smooth'});}return;}var n=Number(e.key);if(n>=1&&n<=categories.length){e.preventDefault();choose(categories[n-1],true);}else if(e.key.toLowerCase()==='q'||e.key.toLowerCase()==='e'){e.preventDefault();choose(categories[(categories.indexOf(cat)+(e.key.toLowerCase()==='q'?-1:1)+categories.length)%categories.length],true);}});
