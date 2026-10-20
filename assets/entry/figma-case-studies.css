@@ -44,7 +44,8 @@
 /* very wide strips (code snippets, panels) stay short instead of filling the page */
 .fc-shot--strip{max-width:min(100%,calc(var(--r) * 100px))}
 .fc-shot button,.fc-banner button{display:block;width:100%;padding:0;border:1px solid var(--fc-line);background:#080807;cursor:zoom-in;border-radius:3px;overflow:hidden}
-.fc-shot img{display:block;width:100%;height:auto;transition:transform .35s ease,opacity .2s}
+.fc-shot button{aspect-ratio:var(--r)}
+.fc-shot img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .35s ease,opacity .2s}
 @media(hover:hover){.fc-shot button:hover img,.fc-banner button:hover img{transform:scale(1.03)}.fc-shot button:hover,.fc-banner button:hover{border-color:var(--fc-accent)}}
 
 /* text + 1–2 pictures side by side (stacks on phones) */
@@ -96,7 +97,8 @@
 .cs-shot{margin:0;flex:var(--r) 1 0;min-width:0}
 .cs-shot:only-child{flex:0 1 auto;width:min(100%,calc(var(--r) * 320px))}
 .cs-shot button{display:block;width:100%;padding:0;border:1px solid var(--fc-line);background:#080807;cursor:zoom-in;border-radius:3px;overflow:hidden}
-.cs-shot img{display:block;width:100%;height:auto;transition:transform .35s ease}
+.cs-shot button{aspect-ratio:var(--r)}
+.cs-shot img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .35s ease}
 .cs-shot figcaption{margin-top:6px;font-size:12px;line-height:1.4;color:var(--pv-dim,#e2bf94);opacity:.8}
 @media(hover:hover){.cs-shot button:hover{border-color:var(--fc-accent)}.cs-shot button:hover img{transform:scale(1.03)}}
 @media(min-width:960px){
@@ -109,6 +111,7 @@
   .cs-shots--detail{max-width:none}
   .cs-shot,.cs-shot:only-child{width:auto}
   .cs-shot:only-child{grid-column:1 / -1}
-  .cs-shot img{aspect-ratio:4 / 3;object-fit:cover}
-  .cs-shot:only-child img{aspect-ratio:auto}
+  .cs-shot button{aspect-ratio:4 / 3}
+  .cs-shot img{aspect-ratio:auto;object-fit:contain}
+  .cs-shot:only-child button{aspect-ratio:var(--r)}
 }

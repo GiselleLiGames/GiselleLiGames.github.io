@@ -14,8 +14,35 @@
   function L(zh,en){return P.lang()==='zh'?zh:en;}
   function caption(v){return P.esc(P.t(v.title || v.label).replace(/[→↗]/g,'').trim());}
   function poster(w,v){return v.poster || w.image || (P.clip(w)||{}).poster || '';}
-  function player(w,v){return '<div class="pv-player"><video controls playsinline preload="none" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
+  function player(w,v){return '<div class="pv-player"><video controls playsinline preload="'+(w.pdf==='assets/uploads/Project1_Compressed.pdf'?'metadata':'none')+'" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
   function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><i>'+num+'</i><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
+  var outlineObserver=null;
+  function outlineOpen(aside,open){
+    if(!aside)return;
+    aside.classList.toggle('is-open',open);
+    aside.querySelector('button').setAttribute('aria-expanded',String(open));
+    aside.querySelector('nav').hidden=!open;
+  }
+  function readingLayout(){
+    if(outlineObserver){outlineObserver.disconnect();outlineObserver=null;}
+    var sections=Array.from(main.querySelectorAll('.dream-section[id],.fc-chapter[id],.pbr-section[id]')).filter(function(s){return s.querySelector('h2');});
+    main.classList.toggle('has-outline',sections.length>0);
+    if(!sections.length)return;
+    main.querySelectorAll('.fc-index,.pbr-index').forEach(function(nav){nav.remove();});
+    var layout=document.createElement('div'), aside=document.createElement('aside'), content=document.createElement('div');
+    layout.className='dream-reading-layout';aside.className='dream-outline';content.className='dream-reading-content';
+    var outlineId=root===document.body?'workOutline':'previewOutline';
+    aside.innerHTML='<button class="dream-outline-toggle" type="button" aria-expanded="false" aria-controls="'+outlineId+'"><span aria-hidden="true">☰</span><span class="dream-outline-label">'+L('目录','Contents')+'</span></button><nav id="'+outlineId+'" aria-label="'+L('作品目录','Contents')+'" hidden>'+sections.map(function(s){return '<a href="#'+P.esc(s.id)+'">'+P.esc(s.querySelector('h2').textContent)+'</a>';}).join('')+'</nav>';
+    aside.querySelector('button').addEventListener('click',function(){outlineOpen(aside,!aside.classList.contains('is-open'));});
+    aside.querySelector('nav').addEventListener('click',function(e){if(e.target.closest('a'))outlineOpen(aside,false);});
+    while(main.firstChild)content.appendChild(main.firstChild);
+    layout.appendChild(aside);layout.appendChild(content);main.appendChild(layout);
+    var links=Array.from(aside.querySelectorAll('a'));
+    function current(id){links.forEach(function(a){if(a.getAttribute('href')==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+    current(sections[0].id);
+    outlineObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)current(entry.target.id);});},{root:root===document.body?null:root,rootMargin:'-80px 0px -55% 0px',threshold:0});
+    sections.forEach(function(s){outlineObserver.observe(s);});
+  }
   function nodeAtlas(atlas){
     if(!atlas)return '';
     var count=atlas.groups.reduce(function(total,group){return total+group.nodes.length;},0);
@@ -31,20 +58,21 @@
     stop();
     var w = W[id];
     if(!w){main.innerHTML='<section class="pv-hero"><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+L('没有找到这个作品','Work not found')+'</h1><a class="dream-doc-link" href="portfolio.html">← '+L('返回作品集','Back to portfolio')+'</a></section>';return;}
-    var d = w.detail || {}, videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
+    var d = w.detail || {}, isPBR=w.pdf==='assets/uploads/Project1_Compressed.pdf', videos = (w.links||[]).filter(function(v){return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(v.href||'');});
+    if(isPBR) videos=[{href:'assets/clips/pbr-sections/final-scene.mp4',poster:'assets/clips/pbr-sections/final-scene.webp'}];
     var images = (w.links||[]).filter(function(v){return v.type==='image';}), docs = (w.links||[]).filter(function(v){return v.type==='docs' || v.type==='github' || v.type==='external';});
     var prev=(id-1+W.length)%W.length,next=(id+1)%W.length, zh=P.lang()==='zh', group=P.t(CONFIG.workGroupNames[w.group]);
     var facts = []; if(d.year)facts.push(['year',P.t(d.year)]);if(d.tools)facts.push(['tools',P.t(d.tools)]);if(d.platform)facts.push(['platform',P.t(d.platform)]);if(id!==0){facts.push(['type',group]);if(d.role)facts.push(['role',P.t(d.role)]);}
     document.title=P.t(w.title)+' | Hanqing Li · GiselleLi';
     root.querySelector('[data-i18n="footer.copy"]').textContent=L('© 2026 李涵清 · 保留所有权利',CONFIG.copyright);
     root.querySelector('[data-detail-lang]').textContent=P.lang()==='zh'?'中 · EN':'ZH · EN';
-    var overview='<p>'+P.esc(P.t(d.overview)||P.t(w.desc))+'</p>'+(d.overview?'<p>'+P.esc(P.t(w.desc))+'</p>':'')+'<div class="pv-tags">'+(w.tags||[]).map(function(t){return '<span class="pv-tag">'+P.esc(P.t(t))+'</span>';}).join('')+'</div>';
+    var overview='<p>'+P.esc(P.t(d.overview)||P.t(w.desc))+'</p>'+(d.overview&&!isPBR?'<p>'+P.esc(P.t(w.desc))+'</p>':'')+'<div class="pv-tags">'+(w.tags||[]).map(function(t){return '<span class="pv-tag">'+P.esc(P.t(t))+'</span>';}).join('')+'</div>';
     ['goals','process'].forEach(function(key){if(d[key])overview+='<h3>'+ (key==='goals'?L('目标与挑战','Goals & challenges'):L('制作过程','Process'))+'</h3><ul>'+d[key].map(function(s){return '<li>'+P.esc(P.t(s))+'</li>';}).join('')+'</ul>';});
     if(d.results)overview+='<div class="pv-metrics">'+d.results.map(function(r){return '<p><strong>'+P.esc(r.value)+'</strong> '+P.esc(P.t(r.label))+'</p>';}).join('')+'</div>';
     var category={shader:['Shader','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
     var documentLinks=docs.map(function(v){return '<a class="dream-doc-link" href="'+P.esc(v.href)+'" target="_blank" rel="noopener">'+caption(v)+' →</a>';}).join(' · ');
     var n=0, romans=['01','02','03','04','05'];
-    root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'"><span class="anime-esc">ESC</span> '+L('返回作品集','Back to works')+'</a><span class="anime-work-count">'+String(id+1).padStart(2,'0')+'<span> / '+String(W.length).padStart(2,'0')+'</span></span>';
+    root.querySelector('#dreamSubbar').innerHTML='<span class="anime-work-count">'+String(id+1).padStart(2,'0')+'<span> / '+String(W.length).padStart(2,'0')+'</span></span>';
     main.innerHTML=
       '<section class="pv-hero"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1><span class="dream-name-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div>'+(videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
       '<div class="pv-facts">'+facts.map(function(f){return '<div class="pv-fact"><small>'+f[0]+'</small><span>'+P.esc(f[1])+'</span></div>';}).join('')+'</div></section>'+
@@ -56,6 +84,7 @@
       (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'')+
       (w.pdf?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+
       '<nav class="dream-more" aria-label="'+L('更多作品','More works')+'">'+[prev,next].map(function(j,k){var v=W[j];return '<a href="work.html?id='+j+'"><img src="'+P.esc(v.image)+'" alt="" loading="lazy"><div><i>'+ (k?'next ›':'‹ previous')+'</i><strong>'+P.esc(P.t(v.title))+'</strong></div></a>';}).join('')+'</nav><a class="anime-detail-back" href="'+P.esc(back())+'">« '+L('返回','Back')+'</a>';
+    readingLayout();
     P.reveal(main);
     zoom.querySelector('[data-zoom="close"]').textContent=L('关闭 · Esc','Close · Esc');
     zoom.querySelector('.dream-zoom-hint').textContent=L('滚轮缩放 · 拖动平移 · 双击放大 / 还原','Scroll to zoom · Drag to pan · Double-click to reset / enlarge');
@@ -72,11 +101,13 @@
   ['pointerup','pointercancel','lostpointercapture'].forEach(function(type){stage.addEventListener(type,function(){drag=null;transform();});});
   stage.addEventListener('dblclick',function(e){if(scale>1)reset();else{var r=stage.getBoundingClientRect();zoomBy(3,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2);}});
   root.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && root.querySelector('.dream-outline.is-open')){e.preventDefault();e.stopPropagation();var aside=root.querySelector('.dream-outline');outlineOpen(aside,false);aside.querySelector('button').focus();return;}
     if(!zoom.hidden){if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}if(e.key==='+' || e.key==='=')zoomBy(1.4);if(e.key==='-')zoomBy(1/1.4);if(e.key==='Tab'){var bs=Array.from(zoom.querySelectorAll('button'));if(e.shiftKey && document.activeElement===bs[0]){e.preventDefault();bs[bs.length-1].focus();}else if(!e.shiftKey && document.activeElement===bs[bs.length-1]){e.preventDefault();bs[0].focus();}}return;}
     if(/INPUT|TEXTAREA|VIDEO|BUTTON/.test(document.activeElement.tagName) || document.activeElement.isContentEditable)return;
     if(id>=0 && id<W.length && (e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();navigate((id+(e.key==='ArrowRight'?1:-1)+W.length)%W.length);}
   });
   root.addEventListener('click',function(e){
+    var openOutline=root.querySelector('.dream-outline.is-open');if(openOutline && !e.target.closest('.dream-outline'))outlineOpen(openOutline,false);
     if(e.target.closest('[data-detail-lang]')){window.toggleLang();return;}
     var a=e.target.closest('a[href]');if(!a || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button!==0)return;
     if(options.navigate && a.getAttribute('href').charAt(0)==='#'){

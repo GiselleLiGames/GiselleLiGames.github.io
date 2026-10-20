@@ -1,0 +1,13 @@
+/* An overlay outline never reserves space or narrows the work itself. */
+.dream-reading-layout{display:block}
+.dream-reading-content{min-width:0;width:100%}
+.dream-outline{position:fixed;left:16px;top:10px;z-index:45;width:max-content;max-width:calc(100vw - 32px)}
+.anime-site .dream-work>.pv-subbar,body.anime-site.dream-work>.pv-subbar{justify-content:flex-end}
+.dream-outline-toggle{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:0;background:#221d2d;color:var(--paper);font-size:14px;font-weight:500;box-shadow:0 4px 16px #0003}
+.dream-outline-toggle span{font-size:17px;line-height:1}
+.dream-outline nav{position:fixed;left:16px;top:72px;width:252px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 96px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:12px;background:#1c1825;border:1px solid var(--line);box-shadow:0 12px 32px #0006}
+.dream-outline a{display:block;min-height:44px;padding:10px 12px;border-left:2px solid transparent;color:var(--muted);font-size:14px;font-weight:400;line-height:1.5;overflow-wrap:anywhere}
+.dream-outline a:hover,.dream-outline a[aria-current="location"]{color:var(--pink);border-left-color:var(--pink);background:#ffffff06}
+.dream-outline a:focus-visible{outline-offset:0}
+.dream-outline.is-open .dream-outline-toggle{border-color:var(--pink)}
+@media(max-width:767px){.dream-outline{left:12px;max-width:calc(100vw - 24px)}.dream-outline-toggle{width:44px;padding:10px;justify-content:center}.dream-outline-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.dream-outline nav{left:12px;max-width:calc(100vw - 24px)}}

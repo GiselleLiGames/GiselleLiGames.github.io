@@ -1,0 +1,101 @@
+{
+  "source": "assets/uploads/ShadingShowreel.mp4",
+  "sourceDuration": 88.25,
+  "video": {
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "width": 1600,
+    "height": 900,
+    "fps": 30,
+    "audio": false,
+    "faststart": true
+  },
+  "selectionNotes": "Content inspected across the entire source and at section boundaries. Intro scene map and transitions to unrelated shader sections are excluded. Original in-video explanatory labels and editor panels are retained. Volumetric fog and light demos are excluded from the authored-work presentation at the user’s request.",
+  "clips": [
+    {
+      "id": "pbr-nonmetal",
+      "title": "Opaque PBR · nonmetal",
+      "src": "assets/clips/pbr-sections/pbr-nonmetal.mp4",
+      "poster": "assets/clips/pbr-sections/pbr-nonmetal.webp",
+      "start": 5.05,
+      "end": 6.95,
+      "duration": 1.9,
+      "posterSourceTime": 6.25,
+      "description": "Side-by-side orange and cut-orange comparison: built-in URP PBR and custom PBR.",
+      "bytes": 142146
+    },
+    {
+      "id": "pbr-metal",
+      "title": "Opaque PBR · metal",
+      "src": "assets/clips/pbr-sections/pbr-metal.mp4",
+      "poster": "assets/clips/pbr-sections/pbr-metal.webp",
+      "start": 7.55,
+      "end": 20.1,
+      "duration": 12.57,
+      "posterSourceTime": 16.3,
+      "description": "Metallic compass comparison, moving-light support and ORM material parameter adjustments.",
+      "bytes": 1396964
+    },
+    {
+      "id": "foliage-scattering",
+      "title": "Foliage · scattering",
+      "src": "assets/clips/pbr-sections/foliage-scattering.mp4",
+      "poster": "assets/clips/pbr-sections/foliage-scattering.webp",
+      "start": 26.85,
+      "end": 30.1,
+      "duration": 3.27,
+      "posterSourceTime": 28.2,
+      "description": "Leaf scattering and backlighting response while material parameters change.",
+      "bytes": 622386
+    },
+    {
+      "id": "foliage-wind",
+      "title": "Foliage · wind",
+      "src": "assets/clips/pbr-sections/foliage-wind.mp4",
+      "poster": "assets/clips/pbr-sections/foliage-wind.webp",
+      "start": 31.1,
+      "end": 33.95,
+      "duration": 2.87,
+      "posterSourceTime": 32.1,
+      "description": "Main and detailed wind deformation on a palm foliage cluster.",
+      "bytes": 1480245
+    },
+    {
+      "id": "water",
+      "title": "Water · reflection and refraction",
+      "src": "assets/clips/pbr-sections/water.mp4",
+      "poster": "assets/clips/pbr-sections/water.webp",
+      "start": 45.15,
+      "end": 57.05,
+      "duration": 11.9,
+      "posterSourceTime": 50.65,
+      "description": "Water transparency gradient, planar reflection, submerged rocks, caustics and foam.",
+      "bytes": 3922810
+    },
+    {
+      "id": "ice",
+      "title": "Ice material",
+      "src": "assets/clips/pbr-sections/ice.mp4",
+      "poster": "assets/clips/pbr-sections/ice.webp",
+      "start": 57.55,
+      "end": 63.1,
+      "duration": 5.57,
+      "posterSourceTime": 60.3,
+      "description": "Ice material on spheres and statues in an interior lighting environment.",
+      "bytes": 663288
+    },
+    {
+      "id": "final-scene",
+      "title": "Final scene rendering",
+      "src": "assets/clips/pbr-sections/final-scene.mp4",
+      "poster": "assets/clips/pbr-sections/final-scene.webp",
+      "start": 81.15,
+      "end": 88.2,
+      "duration": 7.07,
+      "posterSourceTime": 85.25,
+      "description": "Completed courtyard camera move with ice statue, foliage, water, atmospheric lighting, post-processing and SSAO.",
+      "bytes": 3767755
+    }
+  ],
+  "absentRequestedDemonstrations": []
+}

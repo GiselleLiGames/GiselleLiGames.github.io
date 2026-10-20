@@ -1,0 +1,64 @@
+/* Shader-first technical portfolio. Source groupings follow the Figma material studies. */
+.pbr-study{margin-top:36px}
+.pbr-index{display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0 30px;border-top:1px solid var(--line,#ffffff2e)}
+.pbr-index a{color:var(--paper,#f2eef8);font-size:14px;text-decoration:none;line-height:1.8}
+.pbr-index a span{color:var(--pink,#ff66aa);font-size:12px;margin-right:8px}
+.pbr-index a:hover{text-decoration:underline;text-underline-offset:5px}
+.pbr-section{padding:36px 0 44px;border-top:1px solid var(--line,#ffffff2e);scroll-margin-top:90px}
+.pbr-section-head{display:flex;gap:18px;align-items:baseline;margin-bottom:24px}
+.pbr-section-head>span{font-size:25px;font-weight:900;color:var(--pink,#ff66aa)}
+.pbr-section-head h2{margin:0;font-size:clamp(23px,2.4vw,36px);line-height:1.2}
+.pbr-section-head p{font-size:12px;letter-spacing:.06em;color:#b8b2c4;margin:8px 0 0}
+.pbr-section-body{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start}
+.pbr-demo,.pbr-shot{margin:0;min-width:0}
+.pbr-demo video,.pbr-full-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#16131e}
+.pbr-demo{position:static}
+.pbr-demo figcaption,.pbr-shot figcaption{font-size:12px;line-height:1.5;color:#b8b2c4;margin-top:8px}
+.pbr-summary{font-size:16px;line-height:1.8;margin:0 0 22px;max-width:850px;color:#ddd8e7}
+.pbr-note{margin:20px 0}.pbr-note h3,.pbr-reference-title{font-size:15px;margin:0 0 8px}.pbr-note p{font-size:14px;line-height:1.7;margin:0;color:#b8b2c4}
+.pbr-shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0 22px;align-items:start}
+.pbr-shot button{display:flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;width:100%;aspect-ratio:4/3;cursor:zoom-in}
+.pbr-shot img{display:block;width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
+.pbr-shot button:focus-visible{outline:2px solid var(--pink,#ff66aa);outline-offset:5px}
+.pbr-shot button:hover img{filter:brightness(1.08)}
+.pbr-shots--maps{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pbr-shots--maps img{max-height:100%}
+.pbr-shots--references{grid-template-columns:1fr}
+.pbr-shots--references img{max-height:260px;width:auto;max-width:100%;background:#fff}
+.pbr-reference-title{margin-top:26px;color:var(--paper,#f2eef8)}
+.pbr-evidence{margin:20px 0;border-top:1px solid var(--line,#ffffff2e);padding-top:12px}
+.pbr-evidence summary,.pbr-context summary{cursor:pointer;color:#c8c0d6;font-size:14px;line-height:1.5}
+.pbr-evidence[open] summary{margin-bottom:16px}
+.pbr-evidence .pbr-shots{grid-template-columns:1fr}
+.pbr-evidence .pbr-shot img{max-height:500px}
+.pbr-evidence .pbr-shot button,.pbr-code .pbr-shot button,.pbr-shots--references .pbr-shot button{aspect-ratio:auto;display:block}
+.pbr-code .pbr-shot img,.pbr-evidence .pbr-shot img,.pbr-shots--references .pbr-shot img{height:auto;max-height:none;object-fit:contain}
+.pbr-technical{display:grid;grid-template-columns:minmax(140px,.85fr) minmax(0,2fr);gap:28px;align-items:start;grid-column:1/-1}
+.pbr-section-body:has(.pbr-technical)>.pbr-implementation{display:contents}
+.pbr-section-body:has(.pbr-technical)>.pbr-implementation>.pbr-summary{grid-column:2;grid-row:1}
+.pbr-section-body:has(.pbr-technical)>.pbr-demo{position:static}
+.pbr-technical h3{font-size:14px;margin:0 0 12px}
+.pbr-parameters>.pbr-shots{grid-template-columns:1fr;margin-top:0}
+.pbr-parameters .pbr-shot button{aspect-ratio:auto;display:block}
+.pbr-parameters .pbr-shot img{height:auto}
+.pbr-code>.pbr-shots{grid-template-columns:1fr;margin-top:0}
+.pbr-demos{display:grid;gap:22px;align-self:start}
+.pbr-demos .pbr-demo{position:static}
+.pbr-section-body:has(.pbr-demos){display:block}
+.pbr-section-body:has(.pbr-demos)>.pbr-implementation{display:block}
+.pbr-demos{grid-template-columns:1fr 1fr;margin-bottom:24px}
+.pbr-section-body--tools{display:block;max-width:1000px}
+.pbr-section-body--tools>.pbr-implementation>.pbr-shots{grid-template-columns:1fr 1fr}
+.pbr-breakdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 18px;margin:28px 0}
+.pbr-context{padding:24px 0;border-top:1px solid var(--line,#ffffff2e)}
+.pbr-context>summary{font-weight:700;font-size:17px;color:var(--paper,#f2eef8)}
+.pbr-context[open]>summary{margin-bottom:26px}
+.pbr-workflow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 20px;list-style:none;padding:0;margin:0;counter-reset:stage}
+.pbr-workflow li{position:relative;min-width:0}
+.pbr-workflow li>span{font-size:12px;color:var(--pink,#ff66aa)}
+.pbr-workflow h3{font-size:16px;margin:6px 0 14px}.pbr-workflow li>p{font-size:13px;line-height:1.7;color:#b8b2c4;margin:12px 0 0}
+.pbr-workflow .pbr-shot figcaption{display:none}.pbr-workflow .pbr-shot img{aspect-ratio:16/9;object-fit:cover}
+.pbr-hero-caption{font-size:13px;color:#b8b2c4;margin:10px 0 0}
+.pbr-demo video:focus-visible{outline:2px solid var(--pink,#ff66aa);outline-offset:4px}
+@media(max-width:900px){.pbr-section-body{grid-template-columns:1fr}.pbr-demo{position:static}.pbr-implementation{max-width:100%}.pbr-section-body:has(.pbr-technical)>.pbr-implementation>.pbr-summary{grid-column:auto;grid-row:auto}.pbr-shots--references{grid-template-columns:1fr 1fr}.pbr-shots--references img{width:100%}.pbr-breakdown{grid-template-columns:1fr 1fr}.pbr-workflow{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pbr-section{padding:28px 0 32px}.pbr-index{gap:6px 18px}.pbr-index a{font-size:13px}.pbr-section-head{gap:12px}.pbr-summary{font-size:16px}.pbr-shots--references{grid-template-columns:1fr}.pbr-breakdown,.pbr-workflow,.pbr-demos{grid-template-columns:1fr}.pbr-technical{grid-template-columns:1fr}.pbr-section-head p{line-height:1.7}}

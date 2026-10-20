@@ -1,4 +1,6 @@
 *.log
+__pycache__/
+*.pyc
 
 .figma-import/
 
@@ -6,5 +8,8 @@
 assets/uploads/figma/*
 !assets/uploads/figma/source/
 !assets/uploads/figma/import-manifest.json
+!assets/uploads/figma/cropped/
+!assets/uploads/figma/image-crops.json
+!assets/uploads/figma/cropped-manifest.json
 assets/uploads/figma/source/*.png
 assets/uploads/figma/source/*.jpg

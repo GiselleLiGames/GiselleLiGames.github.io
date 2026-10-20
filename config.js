@@ -331,11 +331,19 @@ const CONFIG = {
       image: 'assets/uploads/previews/pbr-shaders.webp',
       title: { en: 'Rendering-PBR Scene', zh: '渲染-PBR场景' },
       desc:  {
-        en: 'Materials and shaders in real-time scenes.',
-        zh: '实时场景中的材质与Shader展示。',
+        en: 'Custom PBR, ice, foliage and water shaders in Unity URP.',
+        zh: 'Unity URP 中的自研 PBR、冰、植物与水面 Shader。',
       },
-      tags: ['Shader', 'Shading', 'Showreel'],
-      clip: 'assets/clips/pbr-shaders-last10s',
+      tags: ['Unity URP', 'HLSL', 'C#'],
+      clip: 'assets/clips/pbr-sections/final-scene',
+      detail: {
+        tools: 'Unity URP · HLSL · C#',
+        role: { en: 'Shaders · Materials · Lighting', zh: 'Shader · 材质 · 光照' },
+        overview: {
+          en: 'I’ve always loved Fumito Ueda’s ICO, Shadow of the Colossus, and The Last Guardian, so I made this real-time temple scene. I wrote its shaders in HLSL for Unity URP.',
+          zh: '我一直很喜欢上田文人的《ICO》《旺达与巨像》和《最后的守护者》，所以做了这个实时神殿场景，并用 HLSL 编写了 Unity URP 中的 Shader。'
+        }
+      },
       pdf: 'assets/uploads/Project1_Compressed.pdf',
       links: [
         { type: 'video', label: { en: 'Watch Video →', zh: '观看视频 →' }, href: 'assets/uploads/ShadingShowreel.mp4' },

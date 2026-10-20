@@ -1,0 +1,5528 @@
+{
+  "356:77": {
+    "src": "assets/uploads/figma/cropped/9409e14a90-ca1357dc81be.webp",
+    "full": "assets/uploads/figma/cropped/9409e14a90-ca1357dc81be.webp",
+    "width": 1067,
+    "height": 594,
+    "original": "assets/uploads/figma/source/9409e14a902919d77423e40e5f2452445a0322c2.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1067,
+        594
+      ],
+      "sourceWidth": 1067,
+      "sourceHeight": 594,
+      "method": "original"
+    }
+  },
+  "356:85": {
+    "src": "assets/uploads/figma/cropped/3acc69f46f-c4a2352b6a0b.webp",
+    "full": "assets/uploads/figma/cropped/3acc69f46f-c4a2352b6a0b.webp",
+    "width": 1062,
+    "height": 585,
+    "original": "assets/uploads/figma/source/3acc69f46f88db373e92e36ba17139a32e6eb916.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1062,
+        585
+      ],
+      "sourceWidth": 1062,
+      "sourceHeight": 585,
+      "method": "original"
+    }
+  },
+  "611:28": {
+    "src": "assets/uploads/figma/cropped/b0d491e725-5106e82c6165.webp",
+    "full": "assets/uploads/figma/cropped/b0d491e725-5106e82c6165.webp",
+    "width": 864,
+    "height": 523,
+    "original": "assets/uploads/figma/source/b0d491e7259343f81d78718b648e4cb7dea99b4b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        864,
+        523
+      ],
+      "sourceWidth": 864,
+      "sourceHeight": 523,
+      "method": "original"
+    }
+  },
+  "611:29": {
+    "src": "assets/uploads/figma/cropped/7bde00b000-b1344023b278.webp",
+    "full": "assets/uploads/figma/cropped/7bde00b000-b1344023b278.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/7bde00b0009fcea3d6388d5030ce9a2f21c01973.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "611:30": {
+    "src": "assets/uploads/figma/cropped/0007c83818-02f16f8d8d51.webp",
+    "full": "assets/uploads/figma/cropped/0007c83818-02f16f8d8d51.webp",
+    "width": 1097,
+    "height": 428,
+    "original": "assets/uploads/figma/source/0007c838189830f1d1f8b8a12891f9df62163071.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1097,
+        428
+      ],
+      "sourceWidth": 1097,
+      "sourceHeight": 428,
+      "method": "original"
+    }
+  },
+  "611:31": {
+    "src": "assets/uploads/figma/cropped/928c7ddfaa-f342ca19f917.webp",
+    "full": "assets/uploads/figma/cropped/928c7ddfaa-f342ca19f917.webp",
+    "width": 640,
+    "height": 432,
+    "original": "assets/uploads/figma/source/928c7ddfaa27b8a3ed29b07117a4eb5668d58a33.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        640,
+        432
+      ],
+      "sourceWidth": 640,
+      "sourceHeight": 432,
+      "method": "original"
+    }
+  },
+  "611:32": {
+    "src": "assets/uploads/figma/cropped/1b2b6e3d19-ddd6d3d4034b.webp",
+    "full": "assets/uploads/figma/cropped/1b2b6e3d19-ddd6d3d4034b.webp",
+    "width": 800,
+    "height": 800,
+    "original": "assets/uploads/figma/source/1b2b6e3d19544c967ccfdffcee72f45b9e2e777e.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        800,
+        800
+      ],
+      "sourceWidth": 800,
+      "sourceHeight": 800,
+      "method": "original"
+    }
+  },
+  "611:40": {
+    "src": "assets/uploads/figma/cropped/c34ee0ff22-b781d5a5769d.webp",
+    "full": "assets/uploads/figma/cropped/c34ee0ff22-b781d5a5769d.full.webp",
+    "width": 1600,
+    "height": 975,
+    "original": "assets/uploads/figma/source/c34ee0ff22500182beefafee346b2df6468876a4.png",
+    "crop": {
+      "pixels": [
+        104,
+        0,
+        1824,
+        1048
+      ],
+      "sourceWidth": 1928,
+      "sourceHeight": 1048,
+      "method": "figma+editorial"
+    }
+  },
+  "611:45": {
+    "src": "assets/uploads/figma/cropped/3576efc9a6-a1782237f53c.webp",
+    "full": "assets/uploads/figma/cropped/3576efc9a6-a1782237f53c.webp",
+    "width": 1218,
+    "height": 1008,
+    "original": "assets/uploads/figma/source/3576efc9a61713a4b1d198925d302fc0218a57be.png",
+    "crop": {
+      "pixels": [
+        350,
+        0,
+        1568,
+        1008
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1008,
+      "method": "figma+editorial"
+    }
+  },
+  "611:49": {
+    "src": "assets/uploads/figma/cropped/1b79cd0a26-53ee1afffec5.webp",
+    "full": "assets/uploads/figma/cropped/1b79cd0a26-53ee1afffec5.webp",
+    "width": 342,
+    "height": 358,
+    "original": "assets/uploads/figma/source/1b79cd0a263b151c922d973731230cbc2470d73e.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        342,
+        358
+      ],
+      "sourceWidth": 342,
+      "sourceHeight": 358,
+      "method": "original"
+    }
+  },
+  "611:52": {
+    "src": "assets/uploads/figma/cropped/bedd7ef6da-ffefb60f90d1.webp",
+    "full": "assets/uploads/figma/cropped/bedd7ef6da-ffefb60f90d1.full.webp",
+    "width": 1600,
+    "height": 848,
+    "original": "assets/uploads/figma/source/bedd7ef6daad4b71c343556567ab454fa6ad2da6.png",
+    "crop": {
+      "pixels": [
+        0,
+        64,
+        3840,
+        2100
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2100,
+      "method": "figma+editorial"
+    }
+  },
+  "660:118": {
+    "src": "assets/uploads/figma/cropped/32fad73714-1f6bfd5d1b80.webp",
+    "full": "assets/uploads/figma/cropped/32fad73714-1f6bfd5d1b80.webp",
+    "width": 340,
+    "height": 202,
+    "original": "assets/uploads/figma/source/32fad73714980bb3179893f9730f7bf7c03c8d9d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        340,
+        202
+      ],
+      "sourceWidth": 340,
+      "sourceHeight": 202,
+      "method": "original"
+    }
+  },
+  "660:119": {
+    "src": "assets/uploads/figma/cropped/b2bd94249f-7704cf458211.webp",
+    "full": "assets/uploads/figma/cropped/b2bd94249f-7704cf458211.webp",
+    "width": 181,
+    "height": 90,
+    "original": "assets/uploads/figma/source/b2bd94249f42cb5456c3af265a9b2dff8143abeb.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        181,
+        90
+      ],
+      "sourceWidth": 181,
+      "sourceHeight": 90,
+      "method": "original"
+    }
+  },
+  "660:120": {
+    "src": "assets/uploads/figma/cropped/ea9a93beb9-02afd95908f2.webp",
+    "full": "assets/uploads/figma/cropped/ea9a93beb9-02afd95908f2.webp",
+    "width": 181,
+    "height": 90,
+    "original": "assets/uploads/figma/source/ea9a93beb910a08b8c0190d859c17baaef84235e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        181,
+        90
+      ],
+      "sourceWidth": 181,
+      "sourceHeight": 90,
+      "method": "original"
+    }
+  },
+  "660:121": {
+    "src": "assets/uploads/figma/cropped/f5a7bf562c-78b9ebcd6acd.webp",
+    "full": "assets/uploads/figma/cropped/f5a7bf562c-78b9ebcd6acd.webp",
+    "width": 181,
+    "height": 90,
+    "original": "assets/uploads/figma/source/f5a7bf562c5bff2f2fa3b1adcbecc31f3809cc61.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        181,
+        90
+      ],
+      "sourceWidth": 181,
+      "sourceHeight": 90,
+      "method": "original"
+    }
+  },
+  "660:122": {
+    "src": "assets/uploads/figma/cropped/7277a1ed8c-37251d5533d2.webp",
+    "full": "assets/uploads/figma/cropped/7277a1ed8c-37251d5533d2.webp",
+    "width": 674,
+    "height": 449,
+    "original": "assets/uploads/figma/source/7277a1ed8cfe937db9a2092ba1ade64ad6b1ab2e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        674,
+        449
+      ],
+      "sourceWidth": 674,
+      "sourceHeight": 449,
+      "method": "original"
+    }
+  },
+  "660:123": {
+    "src": "assets/uploads/figma/cropped/a1b89d89d1-51d91d81e141.webp",
+    "full": "assets/uploads/figma/cropped/a1b89d89d1-51d91d81e141.webp",
+    "width": 854,
+    "height": 373,
+    "original": "assets/uploads/figma/source/a1b89d89d1fbd74125e97815569d3061637fa0d7.png",
+    "crop": {
+      "pixels": [
+        57,
+        0,
+        911,
+        373
+      ],
+      "sourceWidth": 911,
+      "sourceHeight": 390,
+      "method": "figma"
+    }
+  },
+  "660:135": {
+    "src": "assets/uploads/figma/cropped/acff7e6071-01e8c969d59e.webp",
+    "full": "assets/uploads/figma/cropped/acff7e6071-01e8c969d59e.full.webp",
+    "width": 1600,
+    "height": 759,
+    "original": "assets/uploads/figma/source/acff7e607153c1113684f03d4f3cf771d555c696.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2517,
+        1194
+      ],
+      "sourceWidth": 2517,
+      "sourceHeight": 1194,
+      "method": "original"
+    }
+  },
+  "660:136": {
+    "src": "assets/uploads/figma/cropped/5382779e76-bee88fd211b1.webp",
+    "full": "assets/uploads/figma/cropped/5382779e76-bee88fd211b1.full.webp",
+    "width": 1600,
+    "height": 874,
+    "original": "assets/uploads/figma/source/5382779e76dc0c4b9396005c3ceb9921d6614e68.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2559,
+        1398
+      ],
+      "sourceWidth": 2559,
+      "sourceHeight": 1398,
+      "method": "original"
+    }
+  },
+  "660:138": {
+    "src": "assets/uploads/figma/cropped/c0794c3cde-6b1eb0da9da5.webp",
+    "full": "assets/uploads/figma/cropped/c0794c3cde-6b1eb0da9da5.webp",
+    "width": 480,
+    "height": 600,
+    "original": "assets/uploads/figma/source/c0794c3cde1e2aef2c7818bfacfd3bba2649e645.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        600
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 600,
+      "method": "original"
+    }
+  },
+  "660:139": {
+    "src": "assets/uploads/figma/cropped/7042dc05a7-92a6a3a46e85.webp",
+    "full": "assets/uploads/figma/cropped/7042dc05a7-92a6a3a46e85.webp",
+    "width": 382,
+    "height": 720,
+    "original": "assets/uploads/figma/source/7042dc05a75b956658c108fffab6c3063efd7e9e.png",
+    "crop": {
+      "pixels": [
+        66,
+        0,
+        448,
+        720
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 720,
+      "method": "figma"
+    }
+  },
+  "660:140": {
+    "src": "assets/uploads/figma/cropped/d35030524b-74f022fdcfc7.webp",
+    "full": "assets/uploads/figma/cropped/d35030524b-74f022fdcfc7.webp",
+    "width": 480,
+    "height": 640,
+    "original": "assets/uploads/figma/source/d35030524b8b11227419b537b4321724d3f713f6.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        640
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "method": "original"
+    }
+  },
+  "660:141": {
+    "src": "assets/uploads/figma/cropped/eaf7858c9e-83101d4df703.webp",
+    "full": "assets/uploads/figma/cropped/eaf7858c9e-83101d4df703.webp",
+    "width": 480,
+    "height": 678,
+    "original": "assets/uploads/figma/source/eaf7858c9eae9174c2e011292d796c3a6238113a.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        678
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 678,
+      "method": "original"
+    }
+  },
+  "660:144": {
+    "src": "assets/uploads/figma/cropped/90595abce0-779389645523.webp",
+    "full": "assets/uploads/figma/cropped/90595abce0-779389645523.webp",
+    "width": 480,
+    "height": 640,
+    "original": "assets/uploads/figma/source/90595abce06b212aa3906209d595b8a7c335fc0b.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        640
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "method": "original"
+    }
+  },
+  "660:147": {
+    "src": "assets/uploads/figma/cropped/9b38345842-55454321dfcd.webp",
+    "full": "assets/uploads/figma/cropped/9b38345842-55454321dfcd.full.webp",
+    "width": 1600,
+    "height": 816,
+    "original": "assets/uploads/figma/source/9b383458423724b2e0e0556a3c622e769a093425.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1882,
+        960
+      ],
+      "sourceWidth": 1882,
+      "sourceHeight": 960,
+      "method": "original"
+    }
+  },
+  "660:148": {
+    "src": "assets/uploads/figma/cropped/1727ddcfa0-557f6444655b.webp",
+    "full": "assets/uploads/figma/cropped/1727ddcfa0-557f6444655b.webp",
+    "width": 480,
+    "height": 480,
+    "original": "assets/uploads/figma/source/1727ddcfa06335f7673ae061f771f082a71401ef.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        480
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 480,
+      "method": "original"
+    }
+  },
+  "660:170": {
+    "src": "assets/uploads/figma/cropped/ffb59f8467-0813a86f9d52.webp",
+    "full": "assets/uploads/figma/cropped/ffb59f8467-0813a86f9d52.webp",
+    "width": 1073,
+    "height": 596,
+    "original": "assets/uploads/figma/source/ffb59f84678e8afeda4ba9b84be505ecad1b433d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1073,
+        596
+      ],
+      "sourceWidth": 1073,
+      "sourceHeight": 596,
+      "method": "original"
+    }
+  },
+  "660:172": {
+    "src": "assets/uploads/figma/cropped/1c180dadf7-954cd4d90d95.webp",
+    "full": "assets/uploads/figma/cropped/1c180dadf7-954cd4d90d95.webp",
+    "width": 1056,
+    "height": 595,
+    "original": "assets/uploads/figma/source/1c180dadf760d1ea4c3bb7506b00a03cfb930b45.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1056,
+        595
+      ],
+      "sourceWidth": 1056,
+      "sourceHeight": 595,
+      "method": "original"
+    }
+  },
+  "660:192": {
+    "src": "assets/uploads/figma/cropped/e30539775f-107210464d87.webp",
+    "full": "assets/uploads/figma/cropped/e30539775f-107210464d87.full.webp",
+    "width": 1600,
+    "height": 524,
+    "original": "assets/uploads/figma/source/e30539775f11aff751995ae1999e444a666c218f.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1965,
+        643
+      ],
+      "sourceWidth": 1965,
+      "sourceHeight": 643,
+      "method": "original"
+    }
+  },
+  "660:194": {
+    "src": "assets/uploads/figma/cropped/e53f69784b-fd063affbaba.webp",
+    "full": "assets/uploads/figma/cropped/e53f69784b-fd063affbaba.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/e53f69784b865140b990b009edd025427ae65887.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "660:195": {
+    "src": "assets/uploads/figma/cropped/ae234cc21e-32f984626533.webp",
+    "full": "assets/uploads/figma/cropped/ae234cc21e-32f984626533.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/ae234cc21e48050fe33bcbced90dc84f800e5f0d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "660:196": {
+    "src": "assets/uploads/figma/cropped/296e90a1cd-3e6c5cd9c6e9.webp",
+    "full": "assets/uploads/figma/cropped/296e90a1cd-3e6c5cd9c6e9.full.webp",
+    "width": 1600,
+    "height": 972,
+    "original": "assets/uploads/figma/source/296e90a1cdd09be205f8ced29dc16b494c465813.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3550,
+        2156
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "660:197": {
+    "src": "assets/uploads/figma/cropped/59aa3f79ec-3b6759733263.webp",
+    "full": "assets/uploads/figma/cropped/59aa3f79ec-3b6759733263.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/59aa3f79ec6c9524ad2985240c6b4f1ebaabf588.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "660:198": {
+    "src": "assets/uploads/figma/cropped/0af7491286-fdf5b1cce595.webp",
+    "full": "assets/uploads/figma/cropped/0af7491286-fdf5b1cce595.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/0af749128632eef4d8cfef27ec0079b42b4f611e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "660:202": {
+    "src": "assets/uploads/figma/cropped/c632a5480f-f686faca1610.webp",
+    "full": "assets/uploads/figma/cropped/c632a5480f-f686faca1610.full.webp",
+    "width": 1600,
+    "height": 1008,
+    "original": "assets/uploads/figma/source/c632a5480f7fe7dbe5f26a6f14a93cb20acf86b1.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3332,
+        2100
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2100,
+      "method": "figma"
+    }
+  },
+  "660:203": {
+    "src": "assets/uploads/figma/cropped/6c13195479-f663b145106a.webp",
+    "full": "assets/uploads/figma/cropped/6c13195479-f663b145106a.full.webp",
+    "width": 1600,
+    "height": 921,
+    "original": "assets/uploads/figma/source/6c13195479c7ff6d1285fdd0167675110fd673be.png",
+    "crop": {
+      "pixels": [
+        308,
+        114,
+        3679,
+        2055
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "660:225": {
+    "src": "assets/uploads/figma/cropped/515ee359d2-a4f8c449dbf3.webp",
+    "full": "assets/uploads/figma/cropped/515ee359d2-a4f8c449dbf3.webp",
+    "width": 312,
+    "height": 800,
+    "original": "assets/uploads/figma/source/515ee359d2902b0cb5b635e94812c41342fecf77.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        312,
+        800
+      ],
+      "sourceWidth": 312,
+      "sourceHeight": 800,
+      "method": "original"
+    }
+  },
+  "660:226": {
+    "src": "assets/uploads/figma/cropped/48075d7dc7-08642505ad1f.webp",
+    "full": "assets/uploads/figma/cropped/48075d7dc7-08642505ad1f.webp",
+    "width": 1192,
+    "height": 825,
+    "original": "assets/uploads/figma/source/48075d7dc7afbc0818d6da8f47b185bb8df8766e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1192,
+        825
+      ],
+      "sourceWidth": 1192,
+      "sourceHeight": 825,
+      "method": "original"
+    }
+  },
+  "660:227": {
+    "src": "assets/uploads/figma/cropped/ceb5ce0fda-f1ce57c53b81.webp",
+    "full": "assets/uploads/figma/cropped/ceb5ce0fda-f1ce57c53b81.webp",
+    "width": 763,
+    "height": 784,
+    "original": "assets/uploads/figma/source/ceb5ce0fdaf91bfbf6bc1fdd11b09443382a674a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        763,
+        784
+      ],
+      "sourceWidth": 763,
+      "sourceHeight": 784,
+      "method": "original"
+    }
+  },
+  "660:231": {
+    "src": "assets/uploads/figma/cropped/5e17a19647-08a9933b79b0.webp",
+    "full": "assets/uploads/figma/cropped/5e17a19647-08a9933b79b0.webp",
+    "width": 1166,
+    "height": 391,
+    "original": "assets/uploads/figma/source/5e17a1964748b7ab28cce80204ac77ed18564afb.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1166,
+        391
+      ],
+      "sourceWidth": 1191,
+      "sourceHeight": 391,
+      "method": "figma"
+    }
+  },
+  "660:232": {
+    "src": "assets/uploads/figma/cropped/4e49a89a5b-f78b257a8024.webp",
+    "full": "assets/uploads/figma/cropped/4e49a89a5b-f78b257a8024.full.webp",
+    "width": 1600,
+    "height": 680,
+    "original": "assets/uploads/figma/source/4e49a89a5b58f5c3ca3818af794f033dd0a815df.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1970,
+        837
+      ],
+      "sourceWidth": 2028,
+      "sourceHeight": 837,
+      "method": "figma"
+    }
+  },
+  "660:24": {
+    "src": "assets/uploads/figma/cropped/8ce3942df9-4bb2fc5055f1.webp",
+    "full": "assets/uploads/figma/cropped/8ce3942df9-4bb2fc5055f1.webp",
+    "width": 1098,
+    "height": 980,
+    "original": "assets/uploads/figma/source/8ce3942df9aa5c06c0b3b5bb093458c2ca33555c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1098,
+        980
+      ],
+      "sourceWidth": 1098,
+      "sourceHeight": 980,
+      "method": "original"
+    }
+  },
+  "660:240": {
+    "src": "assets/uploads/figma/cropped/1d79e88a17-54dbc2310f13.webp",
+    "full": "assets/uploads/figma/cropped/1d79e88a17-54dbc2310f13.full.webp",
+    "width": 1600,
+    "height": 786,
+    "original": "assets/uploads/figma/source/1d79e88a17b99aea8f4d7d5eba840f3b6e4d4d16.png",
+    "crop": {
+      "pixels": [
+        1,
+        404,
+        2978,
+        1866
+      ],
+      "sourceWidth": 3387,
+      "sourceHeight": 1880,
+      "method": "figma"
+    }
+  },
+  "660:241": {
+    "src": "assets/uploads/figma/cropped/2fd706887f-4e22bdaaf6d6.webp",
+    "full": "assets/uploads/figma/cropped/2fd706887f-4e22bdaaf6d6.full.webp",
+    "width": 1600,
+    "height": 671,
+    "original": "assets/uploads/figma/source/2fd706887f1eb92595464d879f4dfbdfcedae2cc.png",
+    "crop": {
+      "pixels": [
+        0,
+        300,
+        3403,
+        1728
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "660:242": {
+    "src": "assets/uploads/figma/cropped/917a017216-c4e6f9cfa088.webp",
+    "full": "assets/uploads/figma/cropped/917a017216-c4e6f9cfa088.webp",
+    "width": 1280,
+    "height": 1405,
+    "original": "assets/uploads/figma/source/917a0172162dafd8dd0b506ab5a9f1038a8f9449.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1280,
+        1405
+      ],
+      "sourceWidth": 1280,
+      "sourceHeight": 1550,
+      "method": "figma"
+    }
+  },
+  "660:246": {
+    "src": "assets/uploads/figma/cropped/2f03a88627-c327e300531a.webp",
+    "full": "assets/uploads/figma/cropped/2f03a88627-c327e300531a.webp",
+    "width": 1001,
+    "height": 1053,
+    "original": "assets/uploads/figma/source/2f03a88627fbda8738912f4a290d76b368a71a92.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1001,
+        1053
+      ],
+      "sourceWidth": 1001,
+      "sourceHeight": 1053,
+      "method": "original"
+    }
+  },
+  "660:29": {
+    "src": "assets/uploads/figma/cropped/1c180dadf7-921c03e3c275.webp",
+    "full": "assets/uploads/figma/cropped/1c180dadf7-921c03e3c275.webp",
+    "width": 610,
+    "height": 595,
+    "original": "assets/uploads/figma/source/1c180dadf760d1ea4c3bb7506b00a03cfb930b45.png",
+    "crop": {
+      "pixels": [
+        111,
+        0,
+        721,
+        595
+      ],
+      "sourceWidth": 1056,
+      "sourceHeight": 595,
+      "method": "figma"
+    }
+  },
+  "660:3": {
+    "src": "assets/uploads/figma/cropped/e53f69784b-fd063affbaba.webp",
+    "full": "assets/uploads/figma/cropped/e53f69784b-fd063affbaba.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/e53f69784b865140b990b009edd025427ae65887.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "660:30": {
+    "src": "assets/uploads/figma/cropped/adbc3a8fdb-4182cbd2cc11.webp",
+    "full": "assets/uploads/figma/cropped/adbc3a8fdb-4182cbd2cc11.webp",
+    "width": 281,
+    "height": 197,
+    "original": "assets/uploads/figma/source/adbc3a8fdb65cc0cba84ac1c3cdcf4536168ff93.png",
+    "crop": {
+      "pixels": [
+        76,
+        141,
+        357,
+        338
+      ],
+      "sourceWidth": 491,
+      "sourceHeight": 381,
+      "method": "figma"
+    }
+  },
+  "660:65": {
+    "src": "assets/uploads/figma/cropped/adbc3a8fdb-92caa3a08711.webp",
+    "full": "assets/uploads/figma/cropped/adbc3a8fdb-92caa3a08711.webp",
+    "width": 491,
+    "height": 381,
+    "original": "assets/uploads/figma/source/adbc3a8fdb65cc0cba84ac1c3cdcf4536168ff93.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        491,
+        381
+      ],
+      "sourceWidth": 491,
+      "sourceHeight": 381,
+      "method": "original"
+    }
+  },
+  "660:66": {
+    "src": "assets/uploads/figma/cropped/7299d5f8c0-b16b72d0d16d.webp",
+    "full": "assets/uploads/figma/cropped/7299d5f8c0-b16b72d0d16d.webp",
+    "width": 570,
+    "height": 441,
+    "original": "assets/uploads/figma/source/7299d5f8c0eadc8c3caff42f55df868c0b91312e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        570,
+        441
+      ],
+      "sourceWidth": 570,
+      "sourceHeight": 441,
+      "method": "original"
+    }
+  },
+  "660:67": {
+    "src": "assets/uploads/figma/cropped/bf928f5b4b-ea84458a540a.webp",
+    "full": "assets/uploads/figma/cropped/bf928f5b4b-ea84458a540a.webp",
+    "width": 736,
+    "height": 419,
+    "original": "assets/uploads/figma/source/bf928f5b4b986a52e4ac708898eac8fb2f94d20d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        736,
+        419
+      ],
+      "sourceWidth": 736,
+      "sourceHeight": 419,
+      "method": "original"
+    }
+  },
+  "660:68": {
+    "src": "assets/uploads/figma/cropped/f6968f8b90-fad53e529e69.webp",
+    "full": "assets/uploads/figma/cropped/f6968f8b90-fad53e529e69.webp",
+    "width": 261,
+    "height": 301,
+    "original": "assets/uploads/figma/source/f6968f8b90ed04ab6e320d7a99bdce77a5618da3.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        261,
+        301
+      ],
+      "sourceWidth": 261,
+      "sourceHeight": 301,
+      "method": "original"
+    }
+  },
+  "660:69": {
+    "src": "assets/uploads/figma/cropped/76b7d88206-3322c92257af.webp",
+    "full": "assets/uploads/figma/cropped/76b7d88206-3322c92257af.webp",
+    "width": 297,
+    "height": 301,
+    "original": "assets/uploads/figma/source/76b7d8820636c74e7a6a4102d79cbc980764c5d0.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        297,
+        301
+      ],
+      "sourceWidth": 297,
+      "sourceHeight": 301,
+      "method": "original"
+    }
+  },
+  "660:70": {
+    "src": "assets/uploads/figma/cropped/c6416c8fb3-629addbc9909.webp",
+    "full": "assets/uploads/figma/cropped/c6416c8fb3-629addbc9909.webp",
+    "width": 349,
+    "height": 200,
+    "original": "assets/uploads/figma/source/c6416c8fb3e46f3532b1b8a7d4d2e8f74eb247d3.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        349,
+        200
+      ],
+      "sourceWidth": 349,
+      "sourceHeight": 200,
+      "method": "original"
+    }
+  },
+  "660:98": {
+    "src": "assets/uploads/figma/cropped/866b0f7422-de1f62660c7a.webp",
+    "full": "assets/uploads/figma/cropped/866b0f7422-de1f62660c7a.webp",
+    "width": 480,
+    "height": 851,
+    "original": "assets/uploads/figma/source/866b0f7422b346dc70f9c60a86b36a1c6ca1084a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        851
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 851,
+      "method": "original"
+    }
+  },
+  "691:283": {
+    "src": "assets/uploads/figma/cropped/92905f6015-7c6e7198129a.webp",
+    "full": "assets/uploads/figma/cropped/92905f6015-7c6e7198129a.webp",
+    "width": 1353,
+    "height": 655,
+    "original": "assets/uploads/figma/source/92905f601532592215da45d3e78d1654b2852d75.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1353,
+        655
+      ],
+      "sourceWidth": 1353,
+      "sourceHeight": 861,
+      "method": "figma"
+    }
+  },
+  "691:284": {
+    "src": "assets/uploads/figma/cropped/011103d4ea-09280c36ea25.webp",
+    "full": "assets/uploads/figma/cropped/011103d4ea-09280c36ea25.webp",
+    "width": 1350,
+    "height": 662,
+    "original": "assets/uploads/figma/source/011103d4ea538e249fbe46cf0747d4fff40848fb.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1350,
+        662
+      ],
+      "sourceWidth": 1350,
+      "sourceHeight": 852,
+      "method": "figma"
+    }
+  },
+  "691:285": {
+    "src": "assets/uploads/figma/cropped/2310956274-5af964971d64.webp",
+    "full": "assets/uploads/figma/cropped/2310956274-5af964971d64.webp",
+    "width": 1459,
+    "height": 711,
+    "original": "assets/uploads/figma/source/231095627484e60eb69e5f723f4588c9237d4d13.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1459,
+        711
+      ],
+      "sourceWidth": 1459,
+      "sourceHeight": 943,
+      "method": "figma"
+    }
+  },
+  "691:286": {
+    "src": "assets/uploads/figma/cropped/31dfa473f4-488a9e447178.webp",
+    "full": "assets/uploads/figma/cropped/31dfa473f4-488a9e447178.webp",
+    "width": 1363,
+    "height": 657,
+    "original": "assets/uploads/figma/source/31dfa473f48ddefe762f3a9f1a58c6d42b2892d4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1363,
+        657
+      ],
+      "sourceWidth": 1363,
+      "sourceHeight": 889,
+      "method": "figma"
+    }
+  },
+  "691:297": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "691:306": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "692:359": {
+    "src": "assets/uploads/figma/cropped/922ea3332a-265c262cc160.webp",
+    "full": "assets/uploads/figma/cropped/922ea3332a-265c262cc160.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/922ea3332ad8df9173f30e2d9beea398766d4de7.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        4096,
+        2300
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 2300,
+      "method": "original"
+    }
+  },
+  "706:381": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "706:441": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "706:501": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "711:572": {
+    "src": "assets/uploads/figma/cropped/bf9cbf94b9-b59a26bc899e.webp",
+    "full": "assets/uploads/figma/cropped/bf9cbf94b9-b59a26bc899e.webp",
+    "width": 1181,
+    "height": 901,
+    "original": "assets/uploads/figma/source/bf9cbf94b93032a2663287c3a60e4ce88ebb9a93.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1181,
+        901
+      ],
+      "sourceWidth": 1181,
+      "sourceHeight": 901,
+      "method": "original"
+    }
+  },
+  "711:573": {
+    "src": "assets/uploads/figma/cropped/bd8bc81648-9164e2ac9e78.webp",
+    "full": "assets/uploads/figma/cropped/bd8bc81648-9164e2ac9e78.webp",
+    "width": 491,
+    "height": 366,
+    "original": "assets/uploads/figma/source/bd8bc816483c747f73e2890c5bda10164f595c96.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        491,
+        366
+      ],
+      "sourceWidth": 491,
+      "sourceHeight": 366,
+      "method": "original"
+    }
+  },
+  "711:574": {
+    "src": "assets/uploads/figma/cropped/c384fda12e-dc51b7fc8884.webp",
+    "full": "assets/uploads/figma/cropped/c384fda12e-dc51b7fc8884.webp",
+    "width": 549,
+    "height": 362,
+    "original": "assets/uploads/figma/source/c384fda12ee9c3c36401ccb6f2e921dbe987f0c8.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        549,
+        362
+      ],
+      "sourceWidth": 549,
+      "sourceHeight": 362,
+      "method": "original"
+    }
+  },
+  "711:579": {
+    "src": "assets/uploads/figma/cropped/0ae7f2ebeb-48444176e2c6.webp",
+    "full": "assets/uploads/figma/cropped/0ae7f2ebeb-48444176e2c6.full.webp",
+    "width": 1600,
+    "height": 1067,
+    "original": "assets/uploads/figma/source/0ae7f2ebeb6c3524f25d5647db37485a695dd316.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2508,
+        1672
+      ],
+      "sourceWidth": 2508,
+      "sourceHeight": 1672,
+      "method": "original"
+    }
+  },
+  "711:584": {
+    "src": "assets/uploads/figma/cropped/b4a03e4ba0-17ec0b7cf88f.webp",
+    "full": "assets/uploads/figma/cropped/b4a03e4ba0-17ec0b7cf88f.full.webp",
+    "width": 1600,
+    "height": 819,
+    "original": "assets/uploads/figma/source/b4a03e4ba01fca61fd8f272444173d0d0a082233.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2392,
+        1225
+      ],
+      "sourceWidth": 2392,
+      "sourceHeight": 1225,
+      "method": "original"
+    }
+  },
+  "711:585": {
+    "src": "assets/uploads/figma/cropped/e548475aca-e5afa571d4f1.webp",
+    "full": "assets/uploads/figma/cropped/e548475aca-e5afa571d4f1.full.webp",
+    "width": 1600,
+    "height": 823,
+    "original": "assets/uploads/figma/source/e548475acaf3f0422a0e7b6a646c3324d9282834.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2416,
+        1243
+      ],
+      "sourceWidth": 2416,
+      "sourceHeight": 1243,
+      "method": "original"
+    }
+  },
+  "716:614": {
+    "src": "assets/uploads/figma/cropped/46047d2750-5a034b0c6923.webp",
+    "full": "assets/uploads/figma/cropped/46047d2750-5a034b0c6923.webp",
+    "width": 1513,
+    "height": 1353,
+    "original": "assets/uploads/figma/source/46047d2750f101ea5039b92d1f87dc5c2a854a3e.png",
+    "crop": {
+      "pixels": [
+        1380,
+        0,
+        2893,
+        1353
+      ],
+      "sourceWidth": 3150,
+      "sourceHeight": 1353,
+      "method": "figma"
+    }
+  },
+  "717:739": {
+    "src": "assets/uploads/figma/cropped/854d9299d9-2bf1213b9fbb.webp",
+    "full": "assets/uploads/figma/cropped/854d9299d9-2bf1213b9fbb.webp",
+    "width": 487,
+    "height": 282,
+    "original": "assets/uploads/figma/source/854d9299d9647dbb3732c6da9ca12116a23d3cf3.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        487,
+        282
+      ],
+      "sourceWidth": 487,
+      "sourceHeight": 282,
+      "method": "original"
+    }
+  },
+  "717:741": {
+    "src": "assets/uploads/figma/cropped/32d2d80123-3e2d8f411508.webp",
+    "full": "assets/uploads/figma/cropped/32d2d80123-3e2d8f411508.webp",
+    "width": 935,
+    "height": 666,
+    "original": "assets/uploads/figma/source/32d2d80123f37499d5aa8ca54f44136bb3ae7b71.png",
+    "crop": {
+      "pixels": [
+        531,
+        204,
+        1466,
+        870
+      ],
+      "sourceWidth": 1972,
+      "sourceHeight": 1146,
+      "method": "figma"
+    }
+  },
+  "717:745": {
+    "src": "assets/uploads/figma/cropped/0e903b1187-511139408b5d.webp",
+    "full": "assets/uploads/figma/cropped/0e903b1187-511139408b5d.webp",
+    "width": 924,
+    "height": 336,
+    "original": "assets/uploads/figma/source/0e903b1187ec805b9e1a5a80bbe905daa0388a5b.png",
+    "crop": {
+      "pixels": [
+        0,
+        55,
+        924,
+        391
+      ],
+      "sourceWidth": 924,
+      "sourceHeight": 444,
+      "method": "figma"
+    }
+  },
+  "717:746": {
+    "src": "assets/uploads/figma/cropped/d42896f852-57701c3cf292.webp",
+    "full": "assets/uploads/figma/cropped/d42896f852-57701c3cf292.webp",
+    "width": 151,
+    "height": 132,
+    "original": "assets/uploads/figma/source/d42896f852beb165a52ba55281ce6b9cff9319e5.png",
+    "crop": {
+      "pixels": [
+        0,
+        3,
+        151,
+        135
+      ],
+      "sourceWidth": 151,
+      "sourceHeight": 151,
+      "method": "figma"
+    }
+  },
+  "717:747": {
+    "src": "assets/uploads/figma/cropped/97127b516d-4ac87dde4c7a.webp",
+    "full": "assets/uploads/figma/cropped/97127b516d-4ac87dde4c7a.webp",
+    "width": 229,
+    "height": 171,
+    "original": "assets/uploads/figma/source/97127b516dbc24c361b0c4f8fd0f8486432dfa34.png",
+    "crop": {
+      "pixels": [
+        0,
+        14,
+        229,
+        185
+      ],
+      "sourceWidth": 229,
+      "sourceHeight": 185,
+      "method": "figma"
+    }
+  },
+  "717:748": {
+    "src": "assets/uploads/figma/cropped/a9c3d1334d-09ef235848b7.webp",
+    "full": "assets/uploads/figma/cropped/a9c3d1334d-09ef235848b7.webp",
+    "width": 527,
+    "height": 370,
+    "original": "assets/uploads/figma/source/a9c3d1334d27573474ea8dfa641d80b00694c649.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        527,
+        370
+      ],
+      "sourceWidth": 527,
+      "sourceHeight": 425,
+      "method": "figma"
+    }
+  },
+  "717:751": {
+    "src": "assets/uploads/figma/cropped/981310f657-3f21d5f74feb.webp",
+    "full": "assets/uploads/figma/cropped/981310f657-3f21d5f74feb.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/981310f657a08dc9f9e703f3ca5de1191c6f66d9.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2560,
+        1440
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "method": "original"
+    }
+  },
+  "717:753": {
+    "src": "assets/uploads/figma/cropped/748b1bfe4b-cec8edaaa55c.webp",
+    "full": "assets/uploads/figma/cropped/748b1bfe4b-cec8edaaa55c.webp",
+    "width": 1274,
+    "height": 720,
+    "original": "assets/uploads/figma/source/748b1bfe4b810b9770cc073b01bbea018c3acbed.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1274,
+        720
+      ],
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "method": "figma"
+    }
+  },
+  "728:3": {
+    "src": "assets/uploads/figma/cropped/f9408edd67-0a8a4fad3074.webp",
+    "full": "assets/uploads/figma/cropped/f9408edd67-0a8a4fad3074.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/f9408edd67bdeb623e24baca8e308d590dca85b3.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        4096,
+        2300
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 2300,
+      "method": "original"
+    }
+  },
+  "728:30": {
+    "src": "assets/uploads/figma/cropped/51e95c6ca8-ad92b0ce229a.webp",
+    "full": "assets/uploads/figma/cropped/51e95c6ca8-ad92b0ce229a.webp",
+    "width": 707,
+    "height": 988,
+    "original": "assets/uploads/figma/source/51e95c6ca871fc8bee94da62e0cc88cff716eb00.png",
+    "crop": {
+      "pixels": [
+        336,
+        312,
+        1043,
+        1300
+      ],
+      "sourceWidth": 2559,
+      "sourceHeight": 1550,
+      "method": "figma"
+    }
+  },
+  "728:9": {
+    "src": "assets/uploads/figma/cropped/379877483f-63ffab9bc3ed.webp",
+    "full": "assets/uploads/figma/cropped/379877483f-63ffab9bc3ed.full.webp",
+    "width": 1600,
+    "height": 1033,
+    "original": "assets/uploads/figma/source/379877483fd81b0983d6033c89fa555271363d5b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2202,
+        1422
+      ],
+      "sourceWidth": 2202,
+      "sourceHeight": 1629,
+      "method": "figma"
+    }
+  },
+  "729:123": {
+    "src": "assets/uploads/figma/cropped/e0974e1dc1-7a44c77ab740.webp",
+    "full": "assets/uploads/figma/cropped/e0974e1dc1-7a44c77ab740.full.webp",
+    "width": 1600,
+    "height": 891,
+    "original": "assets/uploads/figma/source/e0974e1dc1085ef31d7b02bc02385e5ef51dd68f.png",
+    "crop": {
+      "pixels": [
+        591,
+        223,
+        3126,
+        1634
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2100,
+      "method": "figma"
+    }
+  },
+  "729:128": {
+    "src": "assets/uploads/figma/cropped/6215d0a6e6-f8b42f7a9570.webp",
+    "full": "assets/uploads/figma/cropped/6215d0a6e6-f8b42f7a9570.webp",
+    "width": 1239,
+    "height": 1209,
+    "original": "assets/uploads/figma/source/6215d0a6e67c46353b933e66cb4cf4f3713d4a5e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1239,
+        1209
+      ],
+      "sourceWidth": 1239,
+      "sourceHeight": 1209,
+      "method": "original"
+    }
+  },
+  "729:130": {
+    "src": "assets/uploads/figma/cropped/52bd72b57d-765971f50c2e.webp",
+    "full": "assets/uploads/figma/cropped/52bd72b57d-765971f50c2e.webp",
+    "width": 522,
+    "height": 426,
+    "original": "assets/uploads/figma/source/52bd72b57dcc985cd28d601211dc7fb9ef5c062a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        522,
+        426
+      ],
+      "sourceWidth": 522,
+      "sourceHeight": 426,
+      "method": "original"
+    }
+  },
+  "729:133": {
+    "src": "assets/uploads/figma/cropped/57368f9cf9-1b0a17b7232b.webp",
+    "full": "assets/uploads/figma/cropped/57368f9cf9-1b0a17b7232b.full.webp",
+    "width": 1600,
+    "height": 894,
+    "original": "assets/uploads/figma/source/57368f9cf9516be0522ebadc0b303d9f8b78a20f.png",
+    "crop": {
+      "pixels": [
+        194,
+        0,
+        3627,
+        1919
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 1919,
+      "method": "figma"
+    }
+  },
+  "729:149": {
+    "src": "assets/uploads/figma/cropped/f88290f321-c945bd734a81.webp",
+    "full": "assets/uploads/figma/cropped/f88290f321-c945bd734a81.webp",
+    "width": 719,
+    "height": 714,
+    "original": "assets/uploads/figma/source/f88290f321c822f615d6c8a422d878ee9bb4e8f5.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        719,
+        714
+      ],
+      "sourceWidth": 719,
+      "sourceHeight": 714,
+      "method": "original"
+    }
+  },
+  "729:151": {
+    "src": "assets/uploads/figma/cropped/2a69de2a64-c97d6b0a06a4.webp",
+    "full": "assets/uploads/figma/cropped/2a69de2a64-c97d6b0a06a4.webp",
+    "width": 640,
+    "height": 432,
+    "original": "assets/uploads/figma/source/2a69de2a64d9a11e5ba2a43c76f4b7b50456f7a1.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        640,
+        432
+      ],
+      "sourceWidth": 640,
+      "sourceHeight": 432,
+      "method": "original"
+    }
+  },
+  "729:159": {
+    "src": "assets/uploads/figma/cropped/b4eca120cb-27fa6fc97d10.webp",
+    "full": "assets/uploads/figma/cropped/b4eca120cb-27fa6fc97d10.webp",
+    "width": 599,
+    "height": 584,
+    "original": "assets/uploads/figma/source/b4eca120cba4c1b11804d0028ea0a78a4ac19972.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        599,
+        584
+      ],
+      "sourceWidth": 599,
+      "sourceHeight": 584,
+      "method": "original"
+    }
+  },
+  "729:167": {
+    "src": "assets/uploads/figma/cropped/6cb59f1f5b-667b7b489e91.webp",
+    "full": "assets/uploads/figma/cropped/6cb59f1f5b-667b7b489e91.full.webp",
+    "width": 1600,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/6cb59f1f5b7d42ce19d79d5f65b0dd0de144fd87.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2048,
+        2048
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 2048,
+      "method": "original"
+    }
+  },
+  "729:184": {
+    "src": "assets/uploads/figma/cropped/2fd14489db-2efe282b3c5c.webp",
+    "full": "assets/uploads/figma/cropped/2fd14489db-2efe282b3c5c.full.webp",
+    "width": 1600,
+    "height": 1175,
+    "original": "assets/uploads/figma/source/2fd14489dbcf6c296dabff1800756d9deea7d695.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3109,
+        2284
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 2284,
+      "method": "figma"
+    }
+  },
+  "736:202": {
+    "src": "assets/uploads/figma/cropped/5531e72b41-e543783d00a5.webp",
+    "full": "assets/uploads/figma/cropped/5531e72b41-e543783d00a5.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/5531e72b4134ffa1cb1e42ac3f73af6697ca8b51.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "739:213": {
+    "src": "assets/uploads/figma/cropped/e3f06d8926-0a575a18e6d0.webp",
+    "full": "assets/uploads/figma/cropped/e3f06d8926-0a575a18e6d0.full.webp",
+    "width": 1600,
+    "height": 1169,
+    "original": "assets/uploads/figma/source/e3f06d8926766c6fddc29934aeae49b633c1769b.png",
+    "crop": {
+      "pixels": [
+        173,
+        0,
+        2080,
+        1393
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "method": "figma"
+    }
+  },
+  "739:219": {
+    "src": "assets/uploads/figma/cropped/4d4e014728-30d34e4776c5.webp",
+    "full": "assets/uploads/figma/cropped/4d4e014728-30d34e4776c5.full.webp",
+    "width": 1600,
+    "height": 1333,
+    "original": "assets/uploads/figma/source/4d4e0147285e85061b3e3605408d135fa91695dc.png",
+    "crop": {
+      "pixels": [
+        457,
+        0,
+        2088,
+        1359
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "method": "figma"
+    }
+  },
+  "739:221": {
+    "src": "assets/uploads/figma/cropped/11e157b353-53dbdbf7e79d.webp",
+    "full": "assets/uploads/figma/cropped/11e157b353-53dbdbf7e79d.full.webp",
+    "width": 1600,
+    "height": 1058,
+    "original": "assets/uploads/figma/source/11e157b3532614d6dc07234a9d0c0ab356a11260.png",
+    "crop": {
+      "pixels": [
+        1,
+        0,
+        2189,
+        1447
+      ],
+      "sourceWidth": 2190,
+      "sourceHeight": 1482,
+      "method": "figma"
+    }
+  },
+  "739:222": {
+    "src": "assets/uploads/figma/cropped/665af77f9d-630237b0b20e.webp",
+    "full": "assets/uploads/figma/cropped/665af77f9d-630237b0b20e.full.webp",
+    "width": 1600,
+    "height": 1029,
+    "original": "assets/uploads/figma/source/665af77f9d477af2467278c56f38c78cb3e192b6.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2169,
+        1395
+      ],
+      "sourceWidth": 2169,
+      "sourceHeight": 1395,
+      "method": "original"
+    }
+  },
+  "739:223": {
+    "src": "assets/uploads/figma/cropped/8af3416202-3437c22b9912.webp",
+    "full": "assets/uploads/figma/cropped/8af3416202-3437c22b9912.full.webp",
+    "width": 1600,
+    "height": 1037,
+    "original": "assets/uploads/figma/source/8af3416202f98b83c3f0948d26dd5f3e95f88f11.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2151,
+        1394
+      ],
+      "sourceWidth": 2151,
+      "sourceHeight": 1394,
+      "method": "figma"
+    }
+  },
+  "742:242": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "743:292": {
+    "src": "assets/uploads/figma/cropped/f2ff7b0447-fbe1eb750296.webp",
+    "full": "assets/uploads/figma/cropped/f2ff7b0447-fbe1eb750296.webp",
+    "width": 1441,
+    "height": 931,
+    "original": "assets/uploads/figma/source/f2ff7b0447db307c6b1114489c4d61fe0987d9a2.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1441,
+        931
+      ],
+      "sourceWidth": 1441,
+      "sourceHeight": 931,
+      "method": "original"
+    }
+  },
+  "743:293": {
+    "src": "assets/uploads/figma/cropped/976c637122-536196e7dccd.webp",
+    "full": "assets/uploads/figma/cropped/976c637122-536196e7dccd.full.webp",
+    "width": 1600,
+    "height": 840,
+    "original": "assets/uploads/figma/source/976c637122ee3c42aed6224e94e5ec9510cdcaae.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1905,
+        1000
+      ],
+      "sourceWidth": 1905,
+      "sourceHeight": 1000,
+      "method": "original"
+    }
+  },
+  "743:295": {
+    "src": "assets/uploads/figma/cropped/2a69a0caaa-50fc07287b23.webp",
+    "full": "assets/uploads/figma/cropped/2a69a0caaa-50fc07287b23.webp",
+    "width": 612,
+    "height": 411,
+    "original": "assets/uploads/figma/source/2a69a0caaa765539dbfd377e861e344183a909a1.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        612,
+        411
+      ],
+      "sourceWidth": 612,
+      "sourceHeight": 411,
+      "method": "original"
+    }
+  },
+  "743:297": {
+    "src": "assets/uploads/figma/cropped/4c30ce2171-9dc3db8d6eb6.webp",
+    "full": "assets/uploads/figma/cropped/4c30ce2171-9dc3db8d6eb6.full.webp",
+    "width": 1600,
+    "height": 798,
+    "original": "assets/uploads/figma/source/4c30ce2171e15eff44625f9a2cce716bf3bb496b.png",
+    "crop": {
+      "pixels": [
+        0,
+        97,
+        1914,
+        1052
+      ],
+      "sourceWidth": 1914,
+      "sourceHeight": 1053,
+      "method": "figma"
+    }
+  },
+  "743:298": {
+    "src": "assets/uploads/figma/cropped/22b814fed5-83b40f147549.webp",
+    "full": "assets/uploads/figma/cropped/22b814fed5-83b40f147549.webp",
+    "width": 1537,
+    "height": 1233,
+    "original": "assets/uploads/figma/source/22b814fed537d30d45e598be07899053d81911f4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1537,
+        1233
+      ],
+      "sourceWidth": 1537,
+      "sourceHeight": 1233,
+      "method": "original"
+    }
+  },
+  "744:115": {
+    "src": "assets/uploads/figma/cropped/121e068310-10c882ed14ae.webp",
+    "full": "assets/uploads/figma/cropped/121e068310-10c882ed14ae.full.webp",
+    "width": 1600,
+    "height": 836,
+    "original": "assets/uploads/figma/source/121e068310361f2c3a4b343a142a783c397fab8b.png",
+    "crop": {
+      "pixels": [
+        184,
+        136,
+        3325,
+        1778
+      ],
+      "sourceWidth": 3785,
+      "sourceHeight": 1934,
+      "method": "figma"
+    }
+  },
+  "744:120": {
+    "src": "assets/uploads/figma/cropped/571c764278-8b590ad7802f.webp",
+    "full": "assets/uploads/figma/cropped/571c764278-8b590ad7802f.webp",
+    "width": 1229,
+    "height": 711,
+    "original": "assets/uploads/figma/source/571c764278075bd22d874faf9d66eb5bbe9f0e41.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1229,
+        711
+      ],
+      "sourceWidth": 1229,
+      "sourceHeight": 711,
+      "method": "original"
+    }
+  },
+  "744:121": {
+    "src": "assets/uploads/figma/cropped/a82a1fd389-5f463053f053.webp",
+    "full": "assets/uploads/figma/cropped/a82a1fd389-5f463053f053.full.webp",
+    "width": 1600,
+    "height": 795,
+    "original": "assets/uploads/figma/source/a82a1fd3899af1baa3b6694895ba960c8eca816d.png",
+    "crop": {
+      "pixels": [
+        0,
+        179,
+        2531,
+        1437
+      ],
+      "sourceWidth": 2531,
+      "sourceHeight": 1659,
+      "method": "figma"
+    }
+  },
+  "744:122": {
+    "src": "assets/uploads/figma/cropped/a0b582fd85-476da1235b83.webp",
+    "full": "assets/uploads/figma/cropped/a0b582fd85-476da1235b83.webp",
+    "width": 1185,
+    "height": 834,
+    "original": "assets/uploads/figma/source/a0b582fd8566f85dee9f5e6a20a7d8d1744a4035.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1185,
+        834
+      ],
+      "sourceWidth": 1185,
+      "sourceHeight": 1737,
+      "method": "figma"
+    }
+  },
+  "744:125": {
+    "src": "assets/uploads/figma/cropped/54ae6d4957-ab2ad18e21e2.webp",
+    "full": "assets/uploads/figma/cropped/54ae6d4957-ab2ad18e21e2.full.webp",
+    "width": 1600,
+    "height": 1102,
+    "original": "assets/uploads/figma/source/54ae6d4957170e067f40c121360422ec4e5c1915.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2339,
+        1611
+      ],
+      "sourceWidth": 2339,
+      "sourceHeight": 1659,
+      "method": "figma"
+    }
+  },
+  "744:126": {
+    "src": "assets/uploads/figma/cropped/7caba5d8d0-05043a436903.webp",
+    "full": "assets/uploads/figma/cropped/7caba5d8d0-05043a436903.webp",
+    "width": 1356,
+    "height": 1272,
+    "original": "assets/uploads/figma/source/7caba5d8d0b0df55104df61614b9dd8cbe161a82.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1356,
+        1272
+      ],
+      "sourceWidth": 1356,
+      "sourceHeight": 1272,
+      "method": "original"
+    }
+  },
+  "744:127": {
+    "src": "assets/uploads/figma/cropped/dd1df28a06-9f90191ec858.webp",
+    "full": "assets/uploads/figma/cropped/dd1df28a06-9f90191ec858.webp",
+    "width": 1234,
+    "height": 592,
+    "original": "assets/uploads/figma/source/dd1df28a060715e2d7b46633a4e112ee03de7aa3.png",
+    "crop": {
+      "pixels": [
+        302,
+        94,
+        1536,
+        686
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "method": "figma+editorial"
+    }
+  },
+  "744:128": {
+    "src": "assets/uploads/figma/cropped/5e4404fbaf-54384571b4bb.webp",
+    "full": "assets/uploads/figma/cropped/5e4404fbaf-54384571b4bb.webp",
+    "width": 1050,
+    "height": 554,
+    "original": "assets/uploads/figma/source/5e4404fbaf50b386a26bb96ce3a434d016ba66e9.png",
+    "crop": {
+      "pixels": [
+        0,
+        30,
+        1050,
+        584
+      ],
+      "sourceWidth": 1449,
+      "sourceHeight": 864,
+      "method": "figma+editorial"
+    }
+  },
+  "744:129": {
+    "src": "assets/uploads/figma/cropped/4d9b5a7bf9-f391e50e6af9.webp",
+    "full": "assets/uploads/figma/cropped/4d9b5a7bf9-f391e50e6af9.webp",
+    "width": 1029,
+    "height": 532,
+    "original": "assets/uploads/figma/source/4d9b5a7bf9f4839f98b2836b1155a54462ca6b75.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1029,
+        532
+      ],
+      "sourceWidth": 1029,
+      "sourceHeight": 565,
+      "method": "figma"
+    }
+  },
+  "744:137": {
+    "src": "assets/uploads/figma/cropped/353614b033-d322cf3cfac7.webp",
+    "full": "assets/uploads/figma/cropped/353614b033-d322cf3cfac7.full.webp",
+    "width": 1600,
+    "height": 662,
+    "original": "assets/uploads/figma/source/353614b033b20d8b99d9f37440552055b2b1c004.png",
+    "crop": {
+      "pixels": [
+        0,
+        417,
+        2461,
+        1436
+      ],
+      "sourceWidth": 2462,
+      "sourceHeight": 1497,
+      "method": "figma"
+    }
+  },
+  "744:138": {
+    "src": "assets/uploads/figma/cropped/483a93e850-ed9ce850a3d5.webp",
+    "full": "assets/uploads/figma/cropped/483a93e850-ed9ce850a3d5.full.webp",
+    "width": 1600,
+    "height": 733,
+    "original": "assets/uploads/figma/source/483a93e850af430b5a829324e38bac481eda6897.png",
+    "crop": {
+      "pixels": [
+        0,
+        129,
+        3087,
+        1543
+      ],
+      "sourceWidth": 3087,
+      "sourceHeight": 1986,
+      "method": "figma"
+    }
+  },
+  "744:140": {
+    "src": "assets/uploads/figma/cropped/398e8c01a8-dff2d1626266.webp",
+    "full": "assets/uploads/figma/cropped/398e8c01a8-dff2d1626266.full.webp",
+    "width": 1600,
+    "height": 745,
+    "original": "assets/uploads/figma/source/398e8c01a8a304095781b6f48e9b22f53982df63.png",
+    "crop": {
+      "pixels": [
+        0,
+        52,
+        1859,
+        918
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 918,
+      "method": "figma+editorial"
+    }
+  },
+  "744:141": {
+    "src": "assets/uploads/figma/cropped/65d13cbada-753f930eaffd.webp",
+    "full": "assets/uploads/figma/cropped/65d13cbada-753f930eaffd.full.webp",
+    "width": 1600,
+    "height": 780,
+    "original": "assets/uploads/figma/source/65d13cbada6e829574b1a7257dddd69b8ae9bd9e.png",
+    "crop": {
+      "pixels": [
+        188,
+        139,
+        2815,
+        1420
+      ],
+      "sourceWidth": 3285,
+      "sourceHeight": 1619,
+      "method": "figma"
+    }
+  },
+  "744:142": {
+    "src": "assets/uploads/figma/cropped/bebda05619-16480c512de9.webp",
+    "full": "assets/uploads/figma/cropped/bebda05619-16480c512de9.webp",
+    "width": 1168,
+    "height": 738,
+    "original": "assets/uploads/figma/source/bebda0561917e0f78ddba80d56be08654d248306.png",
+    "crop": {
+      "pixels": [
+        2,
+        164,
+        1170,
+        902
+      ],
+      "sourceWidth": 1170,
+      "sourceHeight": 1071,
+      "method": "figma"
+    }
+  },
+  "744:143": {
+    "src": "assets/uploads/figma/cropped/78737ddae5-341fac2b075d.webp",
+    "full": "assets/uploads/figma/cropped/78737ddae5-341fac2b075d.full.webp",
+    "width": 1600,
+    "height": 811,
+    "original": "assets/uploads/figma/source/78737ddae5ee8b5f47b271974a578f851a7a4198.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1818,
+        922
+      ],
+      "sourceWidth": 1818,
+      "sourceHeight": 1332,
+      "method": "figma"
+    }
+  },
+  "744:144": {
+    "src": "assets/uploads/figma/cropped/d332a5bf2b-98f3e86f952e.webp",
+    "full": "assets/uploads/figma/cropped/d332a5bf2b-98f3e86f952e.full.webp",
+    "width": 1600,
+    "height": 1007,
+    "original": "assets/uploads/figma/source/d332a5bf2b0d6cc500b5f88beefc4ffabb7b2026.png",
+    "crop": {
+      "pixels": [
+        124,
+        156,
+        2267,
+        1505
+      ],
+      "sourceWidth": 2466,
+      "sourceHeight": 1505,
+      "method": "figma"
+    }
+  },
+  "744:146": {
+    "src": "assets/uploads/figma/cropped/008408f7ce-472da36f8d74.webp",
+    "full": "assets/uploads/figma/cropped/008408f7ce-472da36f8d74.webp",
+    "width": 1274,
+    "height": 1118,
+    "original": "assets/uploads/figma/source/008408f7ceb2bcda1791877e48924a5e09394c0b.png",
+    "crop": {
+      "pixels": [
+        326,
+        37,
+        1600,
+        1155
+      ],
+      "sourceWidth": 3399,
+      "sourceHeight": 1326,
+      "method": "figma"
+    }
+  },
+  "744:148": {
+    "src": "assets/uploads/figma/cropped/6f8341d504-bb98f217d23b.webp",
+    "full": "assets/uploads/figma/cropped/6f8341d504-bb98f217d23b.full.webp",
+    "width": 1326,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/6f8341d5048e364e2227f979a53a893d69aab9d4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1697,
+        2048
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 2048,
+      "method": "figma"
+    }
+  },
+  "744:151": {
+    "src": "assets/uploads/figma/cropped/63e6e6a8aa-3503ac8c27f4.webp",
+    "full": "assets/uploads/figma/cropped/63e6e6a8aa-3503ac8c27f4.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/63e6e6a8aa9ef2451d6d0050a1110bcc7396ed78.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "744:174": {
+    "src": "assets/uploads/figma/cropped/d5d748f47c-72e1b03ad1dd.webp",
+    "full": "assets/uploads/figma/cropped/d5d748f47c-72e1b03ad1dd.full.webp",
+    "width": 1600,
+    "height": 783,
+    "original": "assets/uploads/figma/source/d5d748f47c6928a749c98c7fbe2688126ba84f6b.png",
+    "crop": {
+      "pixels": [
+        664,
+        218,
+        3506,
+        1608
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2066,
+      "method": "figma"
+    }
+  },
+  "744:179": {
+    "src": "assets/uploads/figma/cropped/df2d580ca9-026fe030723d.webp",
+    "full": "assets/uploads/figma/cropped/df2d580ca9-026fe030723d.webp",
+    "width": 1268,
+    "height": 704,
+    "original": "assets/uploads/figma/source/df2d580ca97557543d083e1b64f61913503e17c4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1268,
+        704
+      ],
+      "sourceWidth": 1268,
+      "sourceHeight": 741,
+      "method": "figma"
+    }
+  },
+  "744:180": {
+    "src": "assets/uploads/figma/cropped/ee8f072312-20f391c45fc6.webp",
+    "full": "assets/uploads/figma/cropped/ee8f072312-20f391c45fc6.webp",
+    "width": 733,
+    "height": 428,
+    "original": "assets/uploads/figma/source/ee8f072312aaf0a2404439b25e4803d89ac32544.png",
+    "crop": {
+      "pixels": [
+        134,
+        0,
+        867,
+        428
+      ],
+      "sourceWidth": 867,
+      "sourceHeight": 428,
+      "method": "figma"
+    }
+  },
+  "744:181": {
+    "src": "assets/uploads/figma/cropped/fd855b7e8f-62608a860e31.webp",
+    "full": "assets/uploads/figma/cropped/fd855b7e8f-62608a860e31.webp",
+    "width": 843,
+    "height": 779,
+    "original": "assets/uploads/figma/source/fd855b7e8f834fabf60fd155c9d750dcb7d29ece.png",
+    "crop": {
+      "pixels": [
+        0,
+        57,
+        843,
+        836
+      ],
+      "sourceWidth": 843,
+      "sourceHeight": 885,
+      "method": "figma"
+    }
+  },
+  "744:182": {
+    "src": "assets/uploads/figma/cropped/73923e4b41-a517db54f170.webp",
+    "full": "assets/uploads/figma/cropped/73923e4b41-a517db54f170.full.webp",
+    "width": 1600,
+    "height": 522,
+    "original": "assets/uploads/figma/source/73923e4b410f5f747c9c7022c0d1b5f20316ddae.png",
+    "crop": {
+      "pixels": [
+        0,
+        279,
+        3848,
+        1534
+      ],
+      "sourceWidth": 3848,
+      "sourceHeight": 2108,
+      "method": "figma"
+    }
+  },
+  "744:183": {
+    "src": "assets/uploads/figma/cropped/915daa3d37-577ad608a6ca.webp",
+    "full": "assets/uploads/figma/cropped/915daa3d37-577ad608a6ca.webp",
+    "width": 364,
+    "height": 145,
+    "original": "assets/uploads/figma/source/915daa3d37203eb75ab7ad3de894e1277ff17430.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        364,
+        145
+      ],
+      "sourceWidth": 364,
+      "sourceHeight": 145,
+      "method": "original"
+    }
+  },
+  "744:184": {
+    "src": "assets/uploads/figma/cropped/843696a3a2-c349a0ed609a.webp",
+    "full": "assets/uploads/figma/cropped/843696a3a2-c349a0ed609a.full.webp",
+    "width": 1600,
+    "height": 708,
+    "original": "assets/uploads/figma/source/843696a3a2b494e99b7cf9775cfec322c327fbc4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2385,
+        1055
+      ],
+      "sourceWidth": 2385,
+      "sourceHeight": 1055,
+      "method": "original"
+    }
+  },
+  "744:185": {
+    "src": "assets/uploads/figma/cropped/bffbd2b337-0eb5434a6613.webp",
+    "full": "assets/uploads/figma/cropped/bffbd2b337-0eb5434a6613.full.webp",
+    "width": 1600,
+    "height": 1511,
+    "original": "assets/uploads/figma/source/bffbd2b3379566a5e4956ad4654d56213b0e055f.png",
+    "crop": {
+      "pixels": [
+        60,
+        0,
+        2007,
+        1839
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 2048,
+      "method": "figma"
+    }
+  },
+  "744:186": {
+    "src": "assets/uploads/figma/cropped/a5787ef728-d0393ddc3599.webp",
+    "full": "assets/uploads/figma/cropped/a5787ef728-d0393ddc3599.webp",
+    "width": 1195,
+    "height": 881,
+    "original": "assets/uploads/figma/source/a5787ef72813e01b1305984e13b7bfd51f490568.png",
+    "crop": {
+      "pixels": [
+        782,
+        0,
+        1977,
+        881
+      ],
+      "sourceWidth": 1977,
+      "sourceHeight": 1024,
+      "method": "figma"
+    }
+  },
+  "744:187": {
+    "src": "assets/uploads/figma/cropped/f80371ef6f-419cac6269d6.webp",
+    "full": "assets/uploads/figma/cropped/f80371ef6f-419cac6269d6.full.webp",
+    "width": 1600,
+    "height": 846,
+    "original": "assets/uploads/figma/source/f80371ef6f2c58fbabad057ad9e95e690ae79a29.png",
+    "crop": {
+      "pixels": [
+        901,
+        416,
+        2882,
+        1464
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "744:188": {
+    "src": "assets/uploads/figma/cropped/d0c37ce527-5295e2e1f679.webp",
+    "full": "assets/uploads/figma/cropped/d0c37ce527-5295e2e1f679.webp",
+    "width": 893,
+    "height": 555,
+    "original": "assets/uploads/figma/source/d0c37ce527167cc98b2eeab88bf55b4a27714135.png",
+    "crop": {
+      "pixels": [
+        178,
+        0,
+        1071,
+        555
+      ],
+      "sourceWidth": 1071,
+      "sourceHeight": 555,
+      "method": "figma"
+    }
+  },
+  "744:189": {
+    "src": "assets/uploads/figma/cropped/1165f793e4-db8008def943.webp",
+    "full": "assets/uploads/figma/cropped/1165f793e4-db8008def943.full.webp",
+    "width": 1600,
+    "height": 844,
+    "original": "assets/uploads/figma/source/1165f793e4ad7aae0c7d9142a55531273cde9ee8.png",
+    "crop": {
+      "pixels": [
+        58,
+        166,
+        2170,
+        1280
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1400,
+      "method": "figma+editorial"
+    }
+  },
+  "744:190": {
+    "src": "assets/uploads/figma/cropped/4ba427fcb2-f33cfd5b3411.webp",
+    "full": "assets/uploads/figma/cropped/4ba427fcb2-f33cfd5b3411.full.webp",
+    "width": 1600,
+    "height": 982,
+    "original": "assets/uploads/figma/source/4ba427fcb2af7e1ef77650220713c2477adfb90b.png",
+    "crop": {
+      "pixels": [
+        454,
+        0,
+        3592,
+        1926
+      ],
+      "sourceWidth": 3594,
+      "sourceHeight": 1926,
+      "method": "figma"
+    }
+  },
+  "744:193": {
+    "src": "assets/uploads/figma/cropped/34283f9c9a-ae8b4a08718c.webp",
+    "full": "assets/uploads/figma/cropped/34283f9c9a-ae8b4a08718c.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/34283f9c9a5d75f7215bd873871b4c66c16bfd71.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2730,
+        1535
+      ],
+      "sourceWidth": 2730,
+      "sourceHeight": 1535,
+      "method": "original"
+    }
+  },
+  "744:199": {
+    "src": "assets/uploads/figma/cropped/dca8f60c52-b1e213cbdd09.webp",
+    "full": "assets/uploads/figma/cropped/dca8f60c52-b1e213cbdd09.webp",
+    "width": 480,
+    "height": 480,
+    "original": "assets/uploads/figma/source/dca8f60c52c1b25a110bcd63a96c304d34fa1163.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        480
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 480,
+      "method": "original"
+    }
+  },
+  "744:25": {
+    "src": "assets/uploads/figma/cropped/86a6040587-5bbcc5685719.webp",
+    "full": "assets/uploads/figma/cropped/86a6040587-5bbcc5685719.full.webp",
+    "width": 1600,
+    "height": 824,
+    "original": "assets/uploads/figma/source/86a604058781cf2252e1822ab927e1aff0f623e8.png",
+    "crop": {
+      "pixels": [
+        0,
+        88,
+        3840,
+        2066
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2066,
+      "method": "figma+editorial"
+    }
+  },
+  "744:26": {
+    "src": "assets/uploads/figma/cropped/656a023094-5d4066d348a9.webp",
+    "full": "assets/uploads/figma/cropped/656a023094-5d4066d348a9.full.webp",
+    "width": 1600,
+    "height": 1359,
+    "original": "assets/uploads/figma/source/656a0230940e395610f24be6195ebba9a84bf01e.png",
+    "crop": {
+      "pixels": [
+        733,
+        0,
+        3166,
+        2066
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "744:27": {
+    "src": "assets/uploads/figma/cropped/7995910e6b-6f2d3eef9314.webp",
+    "full": "assets/uploads/figma/cropped/7995910e6b-6f2d3eef9314.webp",
+    "width": 539,
+    "height": 309,
+    "original": "assets/uploads/figma/source/7995910e6b4d85285ca38c793dddc3d57c00a032.png",
+    "crop": {
+      "pixels": [
+        6,
+        5,
+        545,
+        314
+      ],
+      "sourceWidth": 603,
+      "sourceHeight": 314,
+      "method": "figma"
+    }
+  },
+  "744:33": {
+    "src": "assets/uploads/figma/cropped/0265dc6c2c-015a6cdabb85.webp",
+    "full": "assets/uploads/figma/cropped/0265dc6c2c-015a6cdabb85.full.webp",
+    "width": 1600,
+    "height": 824,
+    "original": "assets/uploads/figma/source/0265dc6c2c938f29e38cfd26dc5bb04d9848ca17.png",
+    "crop": {
+      "pixels": [
+        0,
+        88,
+        3840,
+        2066
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2066,
+      "method": "figma+editorial"
+    }
+  },
+  "744:34": {
+    "src": "assets/uploads/figma/cropped/e051fc1ba0-1026f139c1d7.webp",
+    "full": "assets/uploads/figma/cropped/e051fc1ba0-1026f139c1d7.full.webp",
+    "width": 1600,
+    "height": 1505,
+    "original": "assets/uploads/figma/source/e051fc1ba081aecb3f179cf3ab59b7ad5da377b8.png",
+    "crop": {
+      "pixels": [
+        823,
+        0,
+        3070,
+        2114
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "744:35": {
+    "src": "assets/uploads/figma/cropped/c64aed6e9d-9fff11c8431b.webp",
+    "full": "assets/uploads/figma/cropped/c64aed6e9d-9fff11c8431b.webp",
+    "width": 720,
+    "height": 350,
+    "original": "assets/uploads/figma/source/c64aed6e9de9c0fc44989c8c732dc68b241099a5.png",
+    "crop": {
+      "pixels": [
+        11,
+        7,
+        731,
+        357
+      ],
+      "sourceWidth": 731,
+      "sourceHeight": 380,
+      "method": "figma"
+    }
+  },
+  "744:36": {
+    "src": "assets/uploads/figma/cropped/e212d52a43-996dc4caa0ee.webp",
+    "full": "assets/uploads/figma/cropped/e212d52a43-996dc4caa0ee.webp",
+    "width": 532,
+    "height": 274,
+    "original": "assets/uploads/figma/source/e212d52a431beb925dda7043c424ea1f0f2dc001.png",
+    "crop": {
+      "pixels": [
+        11,
+        8,
+        543,
+        282
+      ],
+      "sourceWidth": 543,
+      "sourceHeight": 282,
+      "method": "figma"
+    }
+  },
+  "744:37": {
+    "src": "assets/uploads/figma/cropped/1ab405c35f-e572f05b351e.webp",
+    "full": "assets/uploads/figma/cropped/1ab405c35f-e572f05b351e.full.webp",
+    "width": 1600,
+    "height": 808,
+    "original": "assets/uploads/figma/source/1ab405c35fa4c05485677fdce445686fa896085a.png",
+    "crop": {
+      "pixels": [
+        0,
+        88,
+        3840,
+        2028
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2066,
+      "method": "figma+editorial"
+    }
+  },
+  "744:38": {
+    "src": "assets/uploads/figma/cropped/9fe6b1d533-3e7a9d721a4c.webp",
+    "full": "assets/uploads/figma/cropped/9fe6b1d533-3e7a9d721a4c.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/9fe6b1d533e666b398e7d2258414fce3492415cf.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "744:39": {
+    "src": "assets/uploads/figma/cropped/53609f97e6-dcc77a74f622.webp",
+    "full": "assets/uploads/figma/cropped/53609f97e6-dcc77a74f622.webp",
+    "width": 1041,
+    "height": 453,
+    "original": "assets/uploads/figma/source/53609f97e6d468981c45543034d0006c3d408da6.png",
+    "crop": {
+      "pixels": [
+        0,
+        46,
+        1041,
+        499
+      ],
+      "sourceWidth": 1041,
+      "sourceHeight": 576,
+      "method": "figma"
+    }
+  },
+  "744:40": {
+    "src": "assets/uploads/figma/cropped/507046b7df-4f2b9028b7a0.webp",
+    "full": "assets/uploads/figma/cropped/507046b7df-4f2b9028b7a0.full.webp",
+    "width": 1600,
+    "height": 1145,
+    "original": "assets/uploads/figma/source/507046b7df23e2c4090605a135e7dcb108a4ee09.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1644,
+        1176
+      ],
+      "sourceWidth": 1644,
+      "sourceHeight": 1338,
+      "method": "figma"
+    }
+  },
+  "744:42": {
+    "src": "assets/uploads/figma/cropped/8c99b21934-45362f665457.webp",
+    "full": "assets/uploads/figma/cropped/8c99b21934-45362f665457.full.webp",
+    "width": 1600,
+    "height": 1224,
+    "original": "assets/uploads/figma/source/8c99b219348bd43a43b8562ca7d2a09cd615ec25.png",
+    "crop": {
+      "pixels": [
+        72,
+        0,
+        1697,
+        1243
+      ],
+      "sourceWidth": 1728,
+      "sourceHeight": 1730,
+      "method": "figma"
+    }
+  },
+  "744:43": {
+    "src": "assets/uploads/figma/cropped/5ad5d0c733-c2d3f681bcc0.webp",
+    "full": "assets/uploads/figma/cropped/5ad5d0c733-c2d3f681bcc0.full.webp",
+    "width": 1600,
+    "height": 1141,
+    "original": "assets/uploads/figma/source/5ad5d0c7332b9e71e9bb633f0b4fa15810e1945a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3308,
+        2358
+      ],
+      "sourceWidth": 3308,
+      "sourceHeight": 2358,
+      "method": "original"
+    }
+  },
+  "744:44": {
+    "src": "assets/uploads/figma/cropped/f2b3b70043-c360f1a8a547.webp",
+    "full": "assets/uploads/figma/cropped/f2b3b70043-c360f1a8a547.full.webp",
+    "width": 1600,
+    "height": 1109,
+    "original": "assets/uploads/figma/source/f2b3b700432f23ef7a84f97b78fc9f08e18fb2a8.png",
+    "crop": {
+      "pixels": [
+        445,
+        0,
+        3559,
+        2158
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "744:47": {
+    "src": "assets/uploads/figma/cropped/d0c37ce527-8f80a1435345.webp",
+    "full": "assets/uploads/figma/cropped/d0c37ce527-8f80a1435345.webp",
+    "width": 828,
+    "height": 555,
+    "original": "assets/uploads/figma/source/d0c37ce527167cc98b2eeab88bf55b4a27714135.png",
+    "crop": {
+      "pixels": [
+        243,
+        0,
+        1071,
+        555
+      ],
+      "sourceWidth": 1071,
+      "sourceHeight": 555,
+      "method": "figma"
+    }
+  },
+  "744:71": {
+    "src": "assets/uploads/figma/cropped/eb7f19e7d4-25e4d54de915.webp",
+    "full": "assets/uploads/figma/cropped/eb7f19e7d4-25e4d54de915.full.webp",
+    "width": 1600,
+    "height": 699,
+    "original": "assets/uploads/figma/source/eb7f19e7d45e90dba253b3338293b06fdc54c76e.png",
+    "crop": {
+      "pixels": [
+        0,
+        180,
+        2880,
+        1439
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "744:72": {
+    "src": "assets/uploads/figma/cropped/917ed68d3d-8a4c55c1738f.webp",
+    "full": "assets/uploads/figma/cropped/917ed68d3d-8a4c55c1738f.full.webp",
+    "width": 1529,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/917ed68d3d2146560cca052a958608feec872c52.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1821,
+        1905
+      ],
+      "sourceWidth": 1821,
+      "sourceHeight": 1905,
+      "method": "original"
+    }
+  },
+  "744:81": {
+    "src": "assets/uploads/figma/cropped/ba1aa70465-b4a7b1f6416e.webp",
+    "full": "assets/uploads/figma/cropped/ba1aa70465-b4a7b1f6416e.webp",
+    "width": 751,
+    "height": 737,
+    "original": "assets/uploads/figma/source/ba1aa7046535502fcf0427b275950a15d00b6f48.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        751,
+        737
+      ],
+      "sourceWidth": 752,
+      "sourceHeight": 807,
+      "method": "figma"
+    }
+  },
+  "744:82": {
+    "src": "assets/uploads/figma/cropped/1571bd99bb-a2f7ea49e9ca.webp",
+    "full": "assets/uploads/figma/cropped/1571bd99bb-a2f7ea49e9ca.webp",
+    "width": 752,
+    "height": 484,
+    "original": "assets/uploads/figma/source/1571bd99bbb5ac3896cdfecf31d5bfcda4de6325.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        752,
+        484
+      ],
+      "sourceWidth": 752,
+      "sourceHeight": 807,
+      "method": "figma"
+    }
+  },
+  "744:83": {
+    "src": "assets/uploads/figma/cropped/913b5bbd72-ae8d29dc4e46.webp",
+    "full": "assets/uploads/figma/cropped/913b5bbd72-ae8d29dc4e46.webp",
+    "width": 752,
+    "height": 221,
+    "original": "assets/uploads/figma/source/913b5bbd72419d60b3a248e1c2ef4fa4d3e51962.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        752,
+        221
+      ],
+      "sourceWidth": 752,
+      "sourceHeight": 807,
+      "method": "figma"
+    }
+  },
+  "744:84": {
+    "src": "assets/uploads/figma/cropped/8fff1abcbc-2ee229654d04.webp",
+    "full": "assets/uploads/figma/cropped/8fff1abcbc-2ee229654d04.full.webp",
+    "width": 1600,
+    "height": 637,
+    "original": "assets/uploads/figma/source/8fff1abcbc6cfb997d452dc50c383c85807a92a4.png",
+    "crop": {
+      "pixels": [
+        0,
+        53,
+        1920,
+        817
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1040,
+      "method": "figma+editorial"
+    }
+  },
+  "744:85": {
+    "src": "assets/uploads/figma/cropped/381487cf63-e27a63c1da39.webp",
+    "full": "assets/uploads/figma/cropped/381487cf63-e27a63c1da39.full.webp",
+    "width": 1600,
+    "height": 634,
+    "original": "assets/uploads/figma/source/381487cf63b5963c450bed030ffc2c86f37c879c.png",
+    "crop": {
+      "pixels": [
+        0,
+        52,
+        1920,
+        813
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1040,
+      "method": "figma+editorial"
+    }
+  },
+  "744:87": {
+    "src": "assets/uploads/figma/cropped/9279286791-60fcb16ccf88.webp",
+    "full": "assets/uploads/figma/cropped/9279286791-60fcb16ccf88.webp",
+    "width": 747,
+    "height": 754,
+    "original": "assets/uploads/figma/source/9279286791c6a94182f4fed432375bddc5f7d25f.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        747,
+        754
+      ],
+      "sourceWidth": 852,
+      "sourceHeight": 768,
+      "method": "figma"
+    }
+  },
+  "744:88": {
+    "src": "assets/uploads/figma/cropped/42393161f2-0e7a5ba52a70.webp",
+    "full": "assets/uploads/figma/cropped/42393161f2-0e7a5ba52a70.full.webp",
+    "width": 1600,
+    "height": 915,
+    "original": "assets/uploads/figma/source/42393161f211c073c164f3109766eecc77962cd7.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2880,
+        1647
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "original"
+    }
+  },
+  "744:89": {
+    "src": "assets/uploads/figma/cropped/ec2433f567-389c439bdd7e.webp",
+    "full": "assets/uploads/figma/cropped/ec2433f567-389c439bdd7e.full.webp",
+    "width": 1600,
+    "height": 1194,
+    "original": "assets/uploads/figma/source/ec2433f56740f182e2dfc38fe714767fd8c88cdf.png",
+    "crop": {
+      "pixels": [
+        448,
+        0,
+        2654,
+        1646
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "744:90": {
+    "src": "assets/uploads/figma/cropped/55ccfee778-d4cdb0ecdf53.webp",
+    "full": "assets/uploads/figma/cropped/55ccfee778-d4cdb0ecdf53.full.webp",
+    "width": 1188,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/55ccfee778af87bee7f561d728fd3f58607bb6d0.png",
+    "crop": {
+      "pixels": [
+        807,
+        0,
+        2030,
+        1647
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "744:91": {
+    "src": "assets/uploads/figma/cropped/40eaf24973-810c97ddfe39.webp",
+    "full": "assets/uploads/figma/cropped/40eaf24973-810c97ddfe39.full.webp",
+    "width": 1072,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/40eaf24973592924a377c15f9383dc58843d53dc.png",
+    "crop": {
+      "pixels": [
+        936,
+        0,
+        2039,
+        1646
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "744:92": {
+    "src": "assets/uploads/figma/cropped/d2302bfdfd-ac3b8e1cf4a5.webp",
+    "full": "assets/uploads/figma/cropped/d2302bfdfd-ac3b8e1cf4a5.webp",
+    "width": 814,
+    "height": 969,
+    "original": "assets/uploads/figma/source/d2302bfdfddd29d20104ffb24859a5181739c34e.png",
+    "crop": {
+      "pixels": [
+        119,
+        0,
+        933,
+        969
+      ],
+      "sourceWidth": 1026,
+      "sourceHeight": 969,
+      "method": "figma"
+    }
+  },
+  "744:93": {
+    "src": "assets/uploads/figma/cropped/b0a52b4fe2-addc632875b9.webp",
+    "full": "assets/uploads/figma/cropped/b0a52b4fe2-addc632875b9.full.webp",
+    "width": 1600,
+    "height": 757,
+    "original": "assets/uploads/figma/source/b0a52b4fe2ae6c7703f56cf51e587da05c99e12c.png",
+    "crop": {
+      "pixels": [
+        0,
+        170,
+        2880,
+        1533
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "744:94": {
+    "src": "assets/uploads/figma/cropped/a7611f25e5-bf0ce2fed543.webp",
+    "full": "assets/uploads/figma/cropped/a7611f25e5-bf0ce2fed543.full.webp",
+    "width": 1600,
+    "height": 757,
+    "original": "assets/uploads/figma/source/a7611f25e5b03b59e5829abb8c9997bfcac65ce2.png",
+    "crop": {
+      "pixels": [
+        0,
+        170,
+        2880,
+        1533
+      ],
+      "sourceWidth": 2880,
+      "sourceHeight": 1647,
+      "method": "figma"
+    }
+  },
+  "752:336": {
+    "src": "assets/uploads/figma/cropped/3503cbc32d-9326dda99b20.webp",
+    "full": "assets/uploads/figma/cropped/3503cbc32d-9326dda99b20.webp",
+    "width": 452,
+    "height": 678,
+    "original": "assets/uploads/figma/source/3503cbc32de68626522929d35aa6bcfbe4e02752.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        452,
+        678
+      ],
+      "sourceWidth": 452,
+      "sourceHeight": 678,
+      "method": "original"
+    }
+  },
+  "752:344": {
+    "src": "assets/uploads/figma/cropped/407243de98-d8a904f27a24.webp",
+    "full": "assets/uploads/figma/cropped/407243de98-d8a904f27a24.webp",
+    "width": 740,
+    "height": 416,
+    "original": "assets/uploads/figma/source/407243de981c41c3d508a6fe8439ce72320f2f34.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        740,
+        416
+      ],
+      "sourceWidth": 740,
+      "sourceHeight": 416,
+      "method": "original"
+    }
+  },
+  "753:348": {
+    "src": "assets/uploads/figma/cropped/4f54b5f286-eab4604d8428.webp",
+    "full": "assets/uploads/figma/cropped/4f54b5f286-eab4604d8428.full.webp",
+    "width": 1600,
+    "height": 868,
+    "original": "assets/uploads/figma/source/4f54b5f2868261bb0db358275b693144082f6eba.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2560,
+        1389
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1389,
+      "method": "original"
+    }
+  },
+  "755:353": {
+    "src": "assets/uploads/figma/cropped/78c2b09706-f080dad66ecf.webp",
+    "full": "assets/uploads/figma/cropped/78c2b09706-f080dad66ecf.webp",
+    "width": 1413,
+    "height": 1020,
+    "original": "assets/uploads/figma/source/78c2b09706bd969a0d19f89cb8c79a483c6ad492.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1413,
+        1020
+      ],
+      "sourceWidth": 1413,
+      "sourceHeight": 1020,
+      "method": "original"
+    }
+  },
+  "756:360": {
+    "src": "assets/uploads/figma/cropped/9c32e01649-0bf3e6c7c9df.webp",
+    "full": "assets/uploads/figma/cropped/9c32e01649-0bf3e6c7c9df.full.webp",
+    "width": 1600,
+    "height": 914,
+    "original": "assets/uploads/figma/source/9c32e016490c8d2bcc61b4973c6b2d77b2eb0a3b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2529,
+        1444
+      ],
+      "sourceWidth": 2529,
+      "sourceHeight": 1444,
+      "method": "original"
+    }
+  },
+  "756:362": {
+    "src": "assets/uploads/figma/cropped/0ae7f2ebeb-48444176e2c6.webp",
+    "full": "assets/uploads/figma/cropped/0ae7f2ebeb-48444176e2c6.full.webp",
+    "width": 1600,
+    "height": 1067,
+    "original": "assets/uploads/figma/source/0ae7f2ebeb6c3524f25d5647db37485a695dd316.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2508,
+        1672
+      ],
+      "sourceWidth": 2508,
+      "sourceHeight": 1672,
+      "method": "original"
+    }
+  },
+  "767:432": {
+    "src": "assets/uploads/figma/cropped/4adc676987-57bc3e368c5d.webp",
+    "full": "assets/uploads/figma/cropped/4adc676987-57bc3e368c5d.webp",
+    "width": 467,
+    "height": 600,
+    "original": "assets/uploads/figma/source/4adc676987ab292ee9915eecfea2503a08478ca0.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        467,
+        600
+      ],
+      "sourceWidth": 1173,
+      "sourceHeight": 600,
+      "method": "figma"
+    }
+  },
+  "771:460": {
+    "src": "assets/uploads/figma/cropped/b06b9d3edc-0b8bb4c9f2d1.webp",
+    "full": "assets/uploads/figma/cropped/b06b9d3edc-0b8bb4c9f2d1.webp",
+    "width": 850,
+    "height": 765,
+    "original": "assets/uploads/figma/source/b06b9d3edc31de7773b37c73637bfe294458245d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        850,
+        765
+      ],
+      "sourceWidth": 850,
+      "sourceHeight": 765,
+      "method": "original"
+    }
+  },
+  "771:465": {
+    "src": "assets/uploads/figma/cropped/f15911e194-d7c81835f4fc.webp",
+    "full": "assets/uploads/figma/cropped/f15911e194-d7c81835f4fc.webp",
+    "width": 1283,
+    "height": 570,
+    "original": "assets/uploads/figma/source/f15911e1949bfda23791e94921cf762ac401e059.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1283,
+        570
+      ],
+      "sourceWidth": 1283,
+      "sourceHeight": 570,
+      "method": "original"
+    }
+  },
+  "771:468": {
+    "src": "assets/uploads/figma/cropped/9b607a28ad-96541d5f8316.webp",
+    "full": "assets/uploads/figma/cropped/9b607a28ad-96541d5f8316.full.webp",
+    "width": 1600,
+    "height": 969,
+    "original": "assets/uploads/figma/source/9b607a28ad42848fdca31fdf2ab4b9d0d43dcf0b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2065,
+        1251
+      ],
+      "sourceWidth": 2065,
+      "sourceHeight": 1251,
+      "method": "original"
+    }
+  },
+  "771:470": {
+    "src": "assets/uploads/figma/cropped/577f0bdd5a-87763572d35e.webp",
+    "full": "assets/uploads/figma/cropped/577f0bdd5a-87763572d35e.full.webp",
+    "width": 1600,
+    "height": 903,
+    "original": "assets/uploads/figma/source/577f0bdd5af4230a7c40427c5c2240a53f34f067.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2233,
+        1260
+      ],
+      "sourceWidth": 2233,
+      "sourceHeight": 1260,
+      "method": "original"
+    }
+  },
+  "771:474": {
+    "src": "assets/uploads/figma/cropped/a3f5a757d1-fafb8986d9f3.webp",
+    "full": "assets/uploads/figma/cropped/a3f5a757d1-fafb8986d9f3.full.webp",
+    "width": 1600,
+    "height": 873,
+    "original": "assets/uploads/figma/source/a3f5a757d1475cf00054896db171bfd6dbc86cd2.png",
+    "crop": {
+      "pixels": [
+        343,
+        175,
+        2004,
+        1081
+      ],
+      "sourceWidth": 2403,
+      "sourceHeight": 1323,
+      "method": "figma"
+    }
+  },
+  "776:494": {
+    "src": "assets/uploads/figma/cropped/808f70aa27-c8d12b9c1ce2.webp",
+    "full": "assets/uploads/figma/cropped/808f70aa27-c8d12b9c1ce2.webp",
+    "width": 1076,
+    "height": 720,
+    "original": "assets/uploads/figma/source/808f70aa27f6fcb7bf3f903e8cde4053ee3dea32.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1076,
+        720
+      ],
+      "sourceWidth": 1280,
+      "sourceHeight": 720,
+      "method": "figma"
+    }
+  },
+  "780:518": {
+    "src": "assets/uploads/figma/cropped/201efba66b-e68bc349587b.webp",
+    "full": "assets/uploads/figma/cropped/201efba66b-e68bc349587b.webp",
+    "width": 434,
+    "height": 255,
+    "original": "assets/uploads/figma/source/201efba66b73bd764be380cbd323b472e7c427b0.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        434,
+        255
+      ],
+      "sourceWidth": 434,
+      "sourceHeight": 255,
+      "method": "original"
+    }
+  },
+  "780:522": {
+    "src": "assets/uploads/figma/cropped/eb8d2add6a-97b214045b59.webp",
+    "full": "assets/uploads/figma/cropped/eb8d2add6a-97b214045b59.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/eb8d2add6a580771cf3d2ecc1e5fdd1725cdd81d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "method": "original"
+    }
+  },
+  "796:533": {
+    "src": "assets/uploads/figma/cropped/e9e30a750b-0716ccf8be7e.webp",
+    "full": "assets/uploads/figma/cropped/e9e30a750b-0716ccf8be7e.full.webp",
+    "width": 1600,
+    "height": 1034,
+    "original": "assets/uploads/figma/source/e9e30a750b4f969764b83aeb0a64095bd6d93ec7.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2154,
+        1392
+      ],
+      "sourceWidth": 2154,
+      "sourceHeight": 1392,
+      "method": "original"
+    }
+  },
+  "796:535": {
+    "src": "assets/uploads/figma/cropped/821eb81601-1d01f0a257d6.webp",
+    "full": "assets/uploads/figma/cropped/821eb81601-1d01f0a257d6.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/821eb81601766d1134f03a6b2b05a91c2fc06967.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "original"
+    }
+  },
+  "800:3": {
+    "src": "assets/uploads/figma/cropped/7b601a5ac5-18118f3e4a9e.webp",
+    "full": "assets/uploads/figma/cropped/7b601a5ac5-18118f3e4a9e.full.webp",
+    "width": 1600,
+    "height": 870,
+    "original": "assets/uploads/figma/source/7b601a5ac55017e3ba3745c6bc5a18dd0a021687.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "original"
+    }
+  },
+  "800:31": {
+    "src": "assets/uploads/figma/cropped/c04ef4a6ce-7a2bdc2ac022.webp",
+    "full": "assets/uploads/figma/cropped/c04ef4a6ce-7a2bdc2ac022.full.webp",
+    "width": 1600,
+    "height": 892,
+    "original": "assets/uploads/figma/source/c04ef4a6cedbed3de9788531171d763f87c983ad.png",
+    "crop": {
+      "pixels": [
+        120,
+        78,
+        3720,
+        2086
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "800:4": {
+    "src": "assets/uploads/figma/cropped/7b601a5ac5-18118f3e4a9e.webp",
+    "full": "assets/uploads/figma/cropped/7b601a5ac5-18118f3e4a9e.full.webp",
+    "width": 1600,
+    "height": 870,
+    "original": "assets/uploads/figma/source/7b601a5ac55017e3ba3745c6bc5a18dd0a021687.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3840,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "original"
+    }
+  },
+  "804:37": {
+    "src": "assets/uploads/figma/cropped/cb73e61804-445aaa77c024.webp",
+    "full": "assets/uploads/figma/cropped/cb73e61804-445aaa77c024.full.webp",
+    "width": 1600,
+    "height": 900,
+    "original": "assets/uploads/figma/source/cb73e61804a9f20bf2d4cfa46012f78e1a78c6a4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2730,
+        1535
+      ],
+      "sourceWidth": 2730,
+      "sourceHeight": 1535,
+      "method": "original"
+    }
+  },
+  "805:41": {
+    "src": "assets/uploads/figma/cropped/8ce3942df9-4bb2fc5055f1.webp",
+    "full": "assets/uploads/figma/cropped/8ce3942df9-4bb2fc5055f1.webp",
+    "width": 1098,
+    "height": 980,
+    "original": "assets/uploads/figma/source/8ce3942df9aa5c06c0b3b5bb093458c2ca33555c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1098,
+        980
+      ],
+      "sourceWidth": 1098,
+      "sourceHeight": 980,
+      "method": "original"
+    }
+  },
+  "805:43": {
+    "src": "assets/uploads/figma/cropped/4f54b5f286-389071e2e9f6.webp",
+    "full": "assets/uploads/figma/cropped/4f54b5f286-389071e2e9f6.full.webp",
+    "width": 1600,
+    "height": 881,
+    "original": "assets/uploads/figma/source/4f54b5f2868261bb0db358275b693144082f6eba.png",
+    "crop": {
+      "pixels": [
+        100,
+        90,
+        2460,
+        1389
+      ],
+      "sourceWidth": 2560,
+      "sourceHeight": 1389,
+      "method": "figma+editorial"
+    }
+  },
+  "805:45": {
+    "src": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "full": "assets/uploads/figma/cropped/423dd3104d-ef0977fe9c95.webp",
+    "width": 1080,
+    "height": 607,
+    "original": "assets/uploads/figma/source/423dd3104daf17f8e2108d24326e5de9e69f485c.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1080,
+        607
+      ],
+      "sourceWidth": 1080,
+      "sourceHeight": 607,
+      "method": "original"
+    }
+  },
+  "920:103": {
+    "src": "assets/uploads/figma/cropped/c04ef4a6ce-a2c0b2fb9f00.webp",
+    "full": "assets/uploads/figma/cropped/c04ef4a6ce-a2c0b2fb9f00.full.webp",
+    "width": 1600,
+    "height": 893,
+    "original": "assets/uploads/figma/source/c04ef4a6cedbed3de9788531171d763f87c983ad.png",
+    "crop": {
+      "pixels": [
+        120,
+        78,
+        3719,
+        2086
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "920:105": {
+    "src": "assets/uploads/figma/cropped/965ad4889c-c7eb18265af1.webp",
+    "full": "assets/uploads/figma/cropped/965ad4889c-c7eb18265af1.full.webp",
+    "width": 1600,
+    "height": 897,
+    "original": "assets/uploads/figma/source/965ad4889cb3f1d2a042067ac968e3dc51bed67f.png",
+    "crop": {
+      "pixels": [
+        120,
+        69,
+        3720,
+        2087
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:106": {
+    "src": "assets/uploads/figma/cropped/c2b815be40-bae89fcbf064.webp",
+    "full": "assets/uploads/figma/cropped/c2b815be40-bae89fcbf064.full.webp",
+    "width": 1600,
+    "height": 926,
+    "original": "assets/uploads/figma/source/c2b815be40a12e58816e7e11482a15cced34856e.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3610,
+        2087
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:108": {
+    "src": "assets/uploads/figma/cropped/f28bf52e35-9b21f55e5ab3.webp",
+    "full": "assets/uploads/figma/cropped/f28bf52e35-9b21f55e5ab3.webp",
+    "width": 480,
+    "height": 960,
+    "original": "assets/uploads/figma/source/f28bf52e359a6b88f5d35a2b06f9cfb682de5a9f.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        960
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 960,
+      "method": "original"
+    }
+  },
+  "920:129": {
+    "src": "assets/uploads/figma/cropped/5c05ed6ee2-885556115fad.webp",
+    "full": "assets/uploads/figma/cropped/5c05ed6ee2-885556115fad.webp",
+    "width": 480,
+    "height": 319,
+    "original": "assets/uploads/figma/source/5c05ed6ee2bf5174c1c099446e7b7157794fe060.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        319
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 319,
+      "method": "original"
+    }
+  },
+  "920:130": {
+    "src": "assets/uploads/figma/cropped/1cb1b3669a-3423f6c23cf0.webp",
+    "full": "assets/uploads/figma/cropped/1cb1b3669a-3423f6c23cf0.webp",
+    "width": 480,
+    "height": 632,
+    "original": "assets/uploads/figma/source/1cb1b3669a87578a364089087de3b3f7bed1488a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        632
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 632,
+      "method": "original"
+    }
+  },
+  "920:131": {
+    "src": "assets/uploads/figma/cropped/3c12c6ecd6-af9a425e4c2a.webp",
+    "full": "assets/uploads/figma/cropped/3c12c6ecd6-af9a425e4c2a.webp",
+    "width": 480,
+    "height": 1097,
+    "original": "assets/uploads/figma/source/3c12c6ecd6067a181ef099444b2b252bcf6bb4d7.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        1097
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 1097,
+      "method": "original"
+    }
+  },
+  "920:132": {
+    "src": "assets/uploads/figma/cropped/967a81140d-80d840aa3788.webp",
+    "full": "assets/uploads/figma/cropped/967a81140d-80d840aa3788.webp",
+    "width": 480,
+    "height": 722,
+    "original": "assets/uploads/figma/source/967a81140dee1d0380fcd27641b5d267e4b0aab8.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        722
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 722,
+      "method": "original"
+    }
+  },
+  "920:133": {
+    "src": "assets/uploads/figma/cropped/1fdf6a6f32-172baeeec717.webp",
+    "full": "assets/uploads/figma/cropped/1fdf6a6f32-172baeeec717.webp",
+    "width": 480,
+    "height": 853,
+    "original": "assets/uploads/figma/source/1fdf6a6f3266319375970e4fecbfdc3e30a57660.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        853
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 853,
+      "method": "original"
+    }
+  },
+  "920:134": {
+    "src": "assets/uploads/figma/cropped/3d7b8bacab-1d211f732c86.webp",
+    "full": "assets/uploads/figma/cropped/3d7b8bacab-1d211f732c86.webp",
+    "width": 243,
+    "height": 428,
+    "original": "assets/uploads/figma/source/3d7b8bacab55cfa6fa8d3d2019afb5984d17c170.png",
+    "crop": {
+      "pixels": [
+        103,
+        0,
+        346,
+        428
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 480,
+      "method": "figma"
+    }
+  },
+  "920:135": {
+    "src": "assets/uploads/figma/cropped/c9d1684b88-6030ab44dce8.webp",
+    "full": "assets/uploads/figma/cropped/c9d1684b88-6030ab44dce8.webp",
+    "width": 406,
+    "height": 615,
+    "original": "assets/uploads/figma/source/c9d1684b8890e51c93cc5e922f0357d9048c200f.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        406,
+        615
+      ],
+      "sourceWidth": 406,
+      "sourceHeight": 615,
+      "method": "original"
+    }
+  },
+  "920:136": {
+    "src": "assets/uploads/figma/cropped/af6ac27a2d-0f9864503097.webp",
+    "full": "assets/uploads/figma/cropped/af6ac27a2d-0f9864503097.webp",
+    "width": 462,
+    "height": 500,
+    "original": "assets/uploads/figma/source/af6ac27a2d595046ffe36c0750d9010a95a6c337.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        462,
+        500
+      ],
+      "sourceWidth": 462,
+      "sourceHeight": 500,
+      "method": "original"
+    }
+  },
+  "920:137": {
+    "src": "assets/uploads/figma/cropped/299a1a0632-7e3b43580052.webp",
+    "full": "assets/uploads/figma/cropped/299a1a0632-7e3b43580052.webp",
+    "width": 480,
+    "height": 562,
+    "original": "assets/uploads/figma/source/299a1a063253e4b1e861d7e6912e852c3f06c75d.png",
+    "crop": {
+      "pixels": [
+        0,
+        291,
+        480,
+        853
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 853,
+      "method": "figma"
+    }
+  },
+  "920:138": {
+    "src": "assets/uploads/figma/cropped/fb3eba50bf-a12950843aad.webp",
+    "full": "assets/uploads/figma/cropped/fb3eba50bf-a12950843aad.webp",
+    "width": 480,
+    "height": 853,
+    "original": "assets/uploads/figma/source/fb3eba50bfad0f0fb88e91f1a20a74cb1037925b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        853
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 853,
+      "method": "original"
+    }
+  },
+  "920:139": {
+    "src": "assets/uploads/figma/cropped/31f99f6363-53329f013d46.webp",
+    "full": "assets/uploads/figma/cropped/31f99f6363-53329f013d46.webp",
+    "width": 480,
+    "height": 362,
+    "original": "assets/uploads/figma/source/31f99f63634732669de4d7164f5a1be32cbc8f23.png",
+    "crop": {
+      "pixels": [
+        0,
+        47,
+        480,
+        409
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 480,
+      "method": "figma"
+    }
+  },
+  "920:172": {
+    "src": "assets/uploads/figma/cropped/6f5b81d338-ea72c6659f8c.webp",
+    "full": "assets/uploads/figma/cropped/6f5b81d338-ea72c6659f8c.full.webp",
+    "width": 1600,
+    "height": 988,
+    "original": "assets/uploads/figma/source/6f5b81d3384b74cfc12623f01a56c11fc800ad05.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1920,
+        1185
+      ],
+      "sourceWidth": 1920,
+      "sourceHeight": 1185,
+      "method": "original"
+    }
+  },
+  "920:173": {
+    "src": "assets/uploads/figma/cropped/14e294b4ee-9c4ccccc681a.webp",
+    "full": "assets/uploads/figma/cropped/14e294b4ee-9c4ccccc681a.full.webp",
+    "width": 1600,
+    "height": 837,
+    "original": "assets/uploads/figma/source/14e294b4eefaf9dc88b5de5b8a3349cbaca38520.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        71,
+        2505,
+        1382
+      ],
+      "sourceWidth": 2505,
+      "sourceHeight": 1541,
+      "method": "figma"
+    }
+  },
+  "920:174": {
+    "src": "assets/uploads/figma/cropped/d26ea387c6-742c68703c4d.webp",
+    "full": "assets/uploads/figma/cropped/d26ea387c6-742c68703c4d.full.webp",
+    "width": 1600,
+    "height": 902,
+    "original": "assets/uploads/figma/source/d26ea387c6f1f6acc17694071ff80cfd0edff301.png",
+    "crop": {
+      "pixels": [
+        209,
+        153,
+        3468,
+        1991
+      ],
+      "sourceWidth": 3849,
+      "sourceHeight": 2099,
+      "method": "figma"
+    }
+  },
+  "920:175": {
+    "src": "assets/uploads/figma/cropped/280d1b315f-f4e6f58cc310.webp",
+    "full": "assets/uploads/figma/cropped/280d1b315f-f4e6f58cc310.full.webp",
+    "width": 1600,
+    "height": 965,
+    "original": "assets/uploads/figma/source/280d1b315f5d4349a822d2ace5f79f174922e6c7.png",
+    "crop": {
+      "pixels": [
+        51,
+        0,
+        3514,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:176": {
+    "src": "assets/uploads/figma/cropped/9079dbf1cc-34b51fc504db.webp",
+    "full": "assets/uploads/figma/cropped/9079dbf1cc-34b51fc504db.full.webp",
+    "width": 1600,
+    "height": 864,
+    "original": "assets/uploads/figma/source/9079dbf1cca53c87390f4cdd711db7df5031e85b.png",
+    "crop": {
+      "pixels": [
+        308,
+        112,
+        2340,
+        1209
+      ],
+      "sourceWidth": 2559,
+      "sourceHeight": 1380,
+      "method": "figma"
+    }
+  },
+  "920:195": {
+    "src": "assets/uploads/figma/cropped/f798183b5e-1536f5322fa6.webp",
+    "full": "assets/uploads/figma/cropped/f798183b5e-1536f5322fa6.full.webp",
+    "width": 1600,
+    "height": 866,
+    "original": "assets/uploads/figma/source/f798183b5e96bcb13a6dcd688ab900d5aac90230.png",
+    "crop": {
+      "pixels": [
+        0,
+        54,
+        2451,
+        1380
+      ],
+      "sourceWidth": 2559,
+      "sourceHeight": 1380,
+      "method": "figma+editorial"
+    }
+  },
+  "920:196": {
+    "src": "assets/uploads/figma/cropped/f7e8b2d008-efe6b1605b2b.webp",
+    "full": "assets/uploads/figma/cropped/f7e8b2d008-efe6b1605b2b.full.webp",
+    "width": 1600,
+    "height": 925,
+    "original": "assets/uploads/figma/source/f7e8b2d0083125f4b9665fd0cc8475399aef80bc.png",
+    "crop": {
+      "pixels": [
+        90,
+        54,
+        2382,
+        1379
+      ],
+      "sourceWidth": 2559,
+      "sourceHeight": 1380,
+      "method": "figma+editorial"
+    }
+  },
+  "920:197": {
+    "src": "assets/uploads/figma/cropped/c04ef4a6ce-b26484a84e50.webp",
+    "full": "assets/uploads/figma/cropped/c04ef4a6ce-b26484a84e50.full.webp",
+    "width": 1600,
+    "height": 851,
+    "original": "assets/uploads/figma/source/c04ef4a6cedbed3de9788531171d763f87c983ad.png",
+    "crop": {
+      "pixels": [
+        120,
+        78,
+        3707,
+        1985
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "920:204": {
+    "src": "assets/uploads/figma/cropped/f7b508c701-7535a8aa32c1.webp",
+    "full": "assets/uploads/figma/cropped/f7b508c701-7535a8aa32c1.full.webp",
+    "width": 1600,
+    "height": 903,
+    "original": "assets/uploads/figma/source/f7b508c701220a78a7fc5bdf0bc03db06ea6bd6c.png",
+    "crop": {
+      "pixels": [
+        142,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:207": {
+    "src": "assets/uploads/figma/cropped/d231ca7751-6e0fbc025aec.webp",
+    "full": "assets/uploads/figma/cropped/d231ca7751-6e0fbc025aec.webp",
+    "width": 480,
+    "height": 319,
+    "original": "assets/uploads/figma/source/d231ca7751de3d8391e5466f18333da746edd372.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        480,
+        319
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 319,
+      "method": "original"
+    }
+  },
+  "920:229": {
+    "src": "assets/uploads/figma/cropped/5260b7da8b-6d753e40d66a.webp",
+    "full": "assets/uploads/figma/cropped/5260b7da8b-6d753e40d66a.webp",
+    "width": 230,
+    "height": 394,
+    "original": "assets/uploads/figma/source/5260b7da8b17c93d5bb33b3d6c980a2d466ed908.png",
+    "crop": {
+      "pixels": [
+        132,
+        57,
+        362,
+        451
+      ],
+      "sourceWidth": 500,
+      "sourceHeight": 500,
+      "method": "figma"
+    }
+  },
+  "920:230": {
+    "src": "assets/uploads/figma/cropped/de3917d61f-6022dee91895.webp",
+    "full": "assets/uploads/figma/cropped/de3917d61f-6022dee91895.webp",
+    "width": 233,
+    "height": 395,
+    "original": "assets/uploads/figma/source/de3917d61f040e8976cfcfea20780aefc979f43a.png",
+    "crop": {
+      "pixels": [
+        133,
+        54,
+        366,
+        449
+      ],
+      "sourceWidth": 500,
+      "sourceHeight": 500,
+      "method": "figma"
+    }
+  },
+  "920:231": {
+    "src": "assets/uploads/figma/cropped/cb0ac5f1b6-0ef27c4b99d0.webp",
+    "full": "assets/uploads/figma/cropped/cb0ac5f1b6-0ef27c4b99d0.webp",
+    "width": 244,
+    "height": 430,
+    "original": "assets/uploads/figma/source/cb0ac5f1b60f219169bfdcd7a19298412c292080.png",
+    "crop": {
+      "pixels": [
+        138,
+        39,
+        382,
+        469
+      ],
+      "sourceWidth": 500,
+      "sourceHeight": 500,
+      "method": "figma"
+    }
+  },
+  "920:232": {
+    "src": "assets/uploads/figma/cropped/05354fda1d-6c732304970a.webp",
+    "full": "assets/uploads/figma/cropped/05354fda1d-6c732304970a.webp",
+    "width": 257,
+    "height": 430,
+    "original": "assets/uploads/figma/source/05354fda1d6fa971284a868ebf400393be7348fb.png",
+    "crop": {
+      "pixels": [
+        131,
+        39,
+        388,
+        469
+      ],
+      "sourceWidth": 500,
+      "sourceHeight": 500,
+      "method": "figma"
+    }
+  },
+  "920:234": {
+    "src": "assets/uploads/figma/cropped/add331fce3-85fa715a04d9.webp",
+    "full": "assets/uploads/figma/cropped/add331fce3-85fa715a04d9.webp",
+    "width": 480,
+    "height": 323,
+    "original": "assets/uploads/figma/source/add331fce3b92d9ea2ad2dc0e2a49e29f4c3d298.png",
+    "crop": {
+      "pixels": [
+        0,
+        99,
+        480,
+        422
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 480,
+      "method": "figma"
+    }
+  },
+  "920:235": {
+    "src": "assets/uploads/figma/cropped/c8ab5c8ef8-5b6df1ba8761.webp",
+    "full": "assets/uploads/figma/cropped/c8ab5c8ef8-5b6df1ba8761.webp",
+    "width": 399,
+    "height": 594,
+    "original": "assets/uploads/figma/source/c8ab5c8ef8e7198bb8e5da9d07378e65f464cae7.png",
+    "crop": {
+      "pixels": [
+        42,
+        29,
+        441,
+        623
+      ],
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "method": "figma"
+    }
+  },
+  "920:236": {
+    "src": "assets/uploads/figma/cropped/f6dc537202-73f1fd336b10.webp",
+    "full": "assets/uploads/figma/cropped/f6dc537202-73f1fd336b10.webp",
+    "width": 375,
+    "height": 666,
+    "original": "assets/uploads/figma/source/f6dc5372027de752c241d2a9b78e38d725a5e192.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        375,
+        666
+      ],
+      "sourceWidth": 375,
+      "sourceHeight": 666,
+      "method": "original"
+    }
+  },
+  "920:237": {
+    "src": "assets/uploads/figma/cropped/efc617b156-cc87415ebb08.webp",
+    "full": "assets/uploads/figma/cropped/efc617b156-cc87415ebb08.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/efc617b156a747eb5eaa9b615f46325d214dfeec.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:238": {
+    "src": "assets/uploads/figma/cropped/016ea073ea-ae1c1a5af48e.webp",
+    "full": "assets/uploads/figma/cropped/016ea073ea-ae1c1a5af48e.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/016ea073ea9af1c78da38949884a92393080ca9d.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:243": {
+    "src": "assets/uploads/figma/cropped/c23af2d4d0-749247420ac4.webp",
+    "full": "assets/uploads/figma/cropped/c23af2d4d0-749247420ac4.full.webp",
+    "width": 1600,
+    "height": 952,
+    "original": "assets/uploads/figma/source/c23af2d4d0779610cfbda389546d2f5c850a86e0.png",
+    "crop": {
+      "pixels": [
+        140,
+        68,
+        3536,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:244": {
+    "src": "assets/uploads/figma/cropped/703eda2194-7fe1e0087a90.webp",
+    "full": "assets/uploads/figma/cropped/703eda2194-7fe1e0087a90.webp",
+    "width": 908,
+    "height": 1404,
+    "original": "assets/uploads/figma/source/703eda2194b9b8ec5fbdaae6df394b7816cc197a.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        908,
+        1404
+      ],
+      "sourceWidth": 908,
+      "sourceHeight": 1404,
+      "method": "original"
+    }
+  },
+  "920:245": {
+    "src": "assets/uploads/figma/cropped/69922299a0-e582a8bd49b0.webp",
+    "full": "assets/uploads/figma/cropped/69922299a0-e582a8bd49b0.full.webp",
+    "width": 1414,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/69922299a01b9935cde8d7a0880e4d17365ee012.png",
+    "crop": {
+      "pixels": [
+        585,
+        0,
+        2046,
+        1653
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 1653,
+      "method": "figma"
+    }
+  },
+  "920:246": {
+    "src": "assets/uploads/figma/cropped/3eb20f8db3-ab319b025795.webp",
+    "full": "assets/uploads/figma/cropped/3eb20f8db3-ab319b025795.full.webp",
+    "width": 1416,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/3eb20f8db3a3f2e16eb01758e7c96d100af08348.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3624,
+        4096
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 4096,
+      "method": "figma"
+    }
+  },
+  "920:249": {
+    "src": "assets/uploads/figma/cropped/11393a1f32-2b03ac7b8a9a.webp",
+    "full": "assets/uploads/figma/cropped/11393a1f32-2b03ac7b8a9a.full.webp",
+    "width": 1600,
+    "height": 841,
+    "original": "assets/uploads/figma/source/11393a1f32ccbbca5d1b8fbb7513211a5a6e8f2c.png",
+    "crop": {
+      "pixels": [
+        287,
+        106,
+        3840,
+        1973
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:272": {
+    "src": "assets/uploads/figma/cropped/ca3eeff2b1-3aeaa9714f85.webp",
+    "full": "assets/uploads/figma/cropped/ca3eeff2b1-3aeaa9714f85.full.webp",
+    "width": 1600,
+    "height": 1004,
+    "original": "assets/uploads/figma/source/ca3eeff2b1d0d19f2d5104e3545ac2046aa0fd7b.png",
+    "crop": {
+      "pixels": [
+        545,
+        258,
+        3317,
+        1997
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:290": {
+    "src": "assets/uploads/figma/cropped/9616c70262-c63ac86e42d8.webp",
+    "full": "assets/uploads/figma/cropped/9616c70262-c63ac86e42d8.full.webp",
+    "width": 1600,
+    "height": 849,
+    "original": "assets/uploads/figma/source/9616c70262fa6e195b90d20aa7b72526b375fe9d.png",
+    "crop": {
+      "pixels": [
+        52,
+        82,
+        3828,
+        2086
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "920:291": {
+    "src": "assets/uploads/figma/cropped/fef30dd957-eae609d19e09.webp",
+    "full": "assets/uploads/figma/cropped/fef30dd957-eae609d19e09.full.webp",
+    "width": 1600,
+    "height": 891,
+    "original": "assets/uploads/figma/source/fef30dd9573bb3a017dec4cd56afc86d239f9488.png",
+    "crop": {
+      "pixels": [
+        120,
+        82,
+        3720,
+        2086
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "920:292": {
+    "src": "assets/uploads/figma/cropped/4404416cc4-10bf141e9783.webp",
+    "full": "assets/uploads/figma/cropped/4404416cc4-10bf141e9783.full.webp",
+    "width": 1600,
+    "height": 454,
+    "original": "assets/uploads/figma/source/4404416cc400b4c89588399566197f59c1c61c44.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1607,
+        456
+      ],
+      "sourceWidth": 1607,
+      "sourceHeight": 456,
+      "method": "original"
+    }
+  },
+  "920:294": {
+    "src": "assets/uploads/figma/cropped/4d3a3d8295-21f053f2a6ae.webp",
+    "full": "assets/uploads/figma/cropped/4d3a3d8295-21f053f2a6ae.full.webp",
+    "width": 1600,
+    "height": 1392,
+    "original": "assets/uploads/figma/source/4d3a3d8295a7486037f56b508a21342dc70ff3f4.png",
+    "crop": {
+      "pixels": [
+        0,
+        81,
+        1622,
+        1492
+      ],
+      "sourceWidth": 1622,
+      "sourceHeight": 1626,
+      "method": "figma"
+    }
+  },
+  "920:295": {
+    "src": "assets/uploads/figma/cropped/76584b8822-360f7faecc9e.webp",
+    "full": "assets/uploads/figma/cropped/76584b8822-360f7faecc9e.full.webp",
+    "width": 1600,
+    "height": 1396,
+    "original": "assets/uploads/figma/source/76584b882266e56ae33faf04dad880a8afabd886.png",
+    "crop": {
+      "pixels": [
+        0,
+        101,
+        2046,
+        1886
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 2048,
+      "method": "figma"
+    }
+  },
+  "920:296": {
+    "src": "assets/uploads/figma/cropped/1e0305e5f3-4dcd5de4ffee.webp",
+    "full": "assets/uploads/figma/cropped/1e0305e5f3-4dcd5de4ffee.full.webp",
+    "width": 1600,
+    "height": 1395,
+    "original": "assets/uploads/figma/source/1e0305e5f351ab34bf00c1754d44b3f5f49c09fd.png",
+    "crop": {
+      "pixels": [
+        0,
+        111,
+        2048,
+        1897
+      ],
+      "sourceWidth": 2048,
+      "sourceHeight": 2048,
+      "method": "figma"
+    }
+  },
+  "920:299": {
+    "src": "assets/uploads/figma/cropped/957c2a9a93-c0e974f4c69c.webp",
+    "full": "assets/uploads/figma/cropped/957c2a9a93-c0e974f4c69c.webp",
+    "width": 1040,
+    "height": 1274,
+    "original": "assets/uploads/figma/source/957c2a9a93300fcdeda51c440af096e1709f5e99.png",
+    "crop": {
+      "pixels": [
+        673,
+        405,
+        1713,
+        1679
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma"
+    }
+  },
+  "920:301": {
+    "src": "assets/uploads/figma/cropped/c3fd733f68-433e77f3ef8c.webp",
+    "full": "assets/uploads/figma/cropped/c3fd733f68-433e77f3ef8c.webp",
+    "width": 900,
+    "height": 906,
+    "original": "assets/uploads/figma/source/c3fd733f68a9d4a69410ef7492cc268122e97805.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        900,
+        906
+      ],
+      "sourceWidth": 900,
+      "sourceHeight": 906,
+      "method": "original"
+    }
+  },
+  "920:302": {
+    "src": "assets/uploads/figma/cropped/766f99ac53-9e93d8bc1a28.webp",
+    "full": "assets/uploads/figma/cropped/766f99ac53-9e93d8bc1a28.full.webp",
+    "width": 1600,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/766f99ac53a911fabdf6108d8a1c1a48be43e2bc.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        4096,
+        4096
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 4096,
+      "method": "original"
+    }
+  },
+  "920:303": {
+    "src": "assets/uploads/figma/cropped/3540e516da-3f14322e6e51.webp",
+    "full": "assets/uploads/figma/cropped/3540e516da-3f14322e6e51.full.webp",
+    "width": 1600,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/3540e516dad9530f8ea7973645b1719be8c18a70.jpg",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        4096,
+        4096
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 4096,
+      "method": "original"
+    }
+  },
+  "920:304": {
+    "src": "assets/uploads/figma/cropped/a15c74fc14-6832b19353dc.webp",
+    "full": "assets/uploads/figma/cropped/a15c74fc14-6832b19353dc.full.webp",
+    "width": 1436,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/a15c74fc14ee64121796e66aabf53955e7bfd064.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        3677,
+        4096
+      ],
+      "sourceWidth": 4096,
+      "sourceHeight": 4096,
+      "method": "figma"
+    }
+  },
+  "920:305": {
+    "src": "assets/uploads/figma/cropped/d4a75dd867-8db4def7befc.webp",
+    "full": "assets/uploads/figma/cropped/d4a75dd867-8db4def7befc.full.webp",
+    "width": 777,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/d4a75dd86795c43152227814a6fac29bc52037ea.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        921,
+        1896
+      ],
+      "sourceWidth": 921,
+      "sourceHeight": 1896,
+      "method": "original"
+    }
+  },
+  "920:306": {
+    "src": "assets/uploads/figma/cropped/e0e02d62e9-d72442d58437.webp",
+    "full": "assets/uploads/figma/cropped/e0e02d62e9-d72442d58437.webp",
+    "width": 1400,
+    "height": 183,
+    "original": "assets/uploads/figma/source/e0e02d62e9d4ddcc975be223aae0545f51417c12.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1400,
+        183
+      ],
+      "sourceWidth": 1400,
+      "sourceHeight": 183,
+      "method": "original"
+    }
+  },
+  "920:307": {
+    "src": "assets/uploads/figma/cropped/012f909bc8-4ea7e312caf5.webp",
+    "full": "assets/uploads/figma/cropped/012f909bc8-4ea7e312caf5.webp",
+    "width": 1518,
+    "height": 462,
+    "original": "assets/uploads/figma/source/012f909bc87939bdd7893478186e9ac93ac31154.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1518,
+        462
+      ],
+      "sourceWidth": 1518,
+      "sourceHeight": 462,
+      "method": "original"
+    }
+  },
+  "920:308": {
+    "src": "assets/uploads/figma/cropped/9843cce772-7a230e266d78.webp",
+    "full": "assets/uploads/figma/cropped/9843cce772-7a230e266d78.full.webp",
+    "width": 1313,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/9843cce77294d32e69f0c5180e1d5a464aa9119b.png",
+    "crop": {
+      "pixels": [
+        369,
+        148,
+        1857,
+        1961
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:310": {
+    "src": "assets/uploads/figma/cropped/f96ed479e4-b3270493748c.webp",
+    "full": "assets/uploads/figma/cropped/f96ed479e4-b3270493748c.webp",
+    "width": 1455,
+    "height": 1529,
+    "original": "assets/uploads/figma/source/f96ed479e47fc23603070dcd3eb79293ae6b9124.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1455,
+        1529
+      ],
+      "sourceWidth": 1455,
+      "sourceHeight": 1593,
+      "method": "figma"
+    }
+  },
+  "920:313": {
+    "src": "assets/uploads/figma/cropped/2f469e3d6c-64e4d631998e.webp",
+    "full": "assets/uploads/figma/cropped/2f469e3d6c-64e4d631998e.full.webp",
+    "width": 1600,
+    "height": 682,
+    "original": "assets/uploads/figma/source/2f469e3d6cd442b2df1449f58c01aca15837e7df.png",
+    "crop": {
+      "pixels": [
+        0,
+        56,
+        3287,
+        1458
+      ],
+      "sourceWidth": 3287,
+      "sourceHeight": 1458,
+      "method": "figma+editorial"
+    }
+  },
+  "920:314": {
+    "src": "assets/uploads/figma/cropped/6f400fc824-8efb41a2b9b9.webp",
+    "full": "assets/uploads/figma/cropped/6f400fc824-8efb41a2b9b9.webp",
+    "width": 1441,
+    "height": 1054,
+    "original": "assets/uploads/figma/source/6f400fc8241d6585313e3d678b104fc25ac0c1e4.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1441,
+        1054
+      ],
+      "sourceWidth": 1441,
+      "sourceHeight": 1054,
+      "method": "original"
+    }
+  },
+  "920:315": {
+    "src": "assets/uploads/figma/cropped/cfae251870-1cfdd0e8b234.webp",
+    "full": "assets/uploads/figma/cropped/cfae251870-1cfdd0e8b234.full.webp",
+    "width": 1600,
+    "height": 203,
+    "original": "assets/uploads/figma/source/cfae2518702d90839ac6de85d802ba623cfa933d.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1746,
+        222
+      ],
+      "sourceWidth": 1746,
+      "sourceHeight": 222,
+      "method": "original"
+    }
+  },
+  "920:316": {
+    "src": "assets/uploads/figma/cropped/2d74a4efa7-010c9191f10a.webp",
+    "full": "assets/uploads/figma/cropped/2d74a4efa7-010c9191f10a.webp",
+    "width": 804,
+    "height": 299,
+    "original": "assets/uploads/figma/source/2d74a4efa7baa317f779b4c6f55d7e06ed17ab3e.png",
+    "crop": {
+      "pixels": [
+        25,
+        309,
+        829,
+        608
+      ],
+      "sourceWidth": 1359,
+      "sourceHeight": 608,
+      "method": "figma"
+    }
+  },
+  "920:318": {
+    "src": "assets/uploads/figma/cropped/db52b3cc55-a21acefbc56f.webp",
+    "full": "assets/uploads/figma/cropped/db52b3cc55-a21acefbc56f.full.webp",
+    "width": 1590,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/db52b3cc55a17070bd4c566d3d8205bf14edcf16.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1839,
+        1850
+      ],
+      "sourceWidth": 1839,
+      "sourceHeight": 1850,
+      "method": "figma"
+    }
+  },
+  "920:319": {
+    "src": "assets/uploads/figma/cropped/9b67523e2f-44bef2b47dad.webp",
+    "full": "assets/uploads/figma/cropped/9b67523e2f-44bef2b47dad.full.webp",
+    "width": 1582,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/9b67523e2fda2a3273c79b3b2c84db6301525009.png",
+    "crop": {
+      "pixels": [
+        0,
+        127,
+        1647,
+        1793
+      ],
+      "sourceWidth": 1647,
+      "sourceHeight": 1926,
+      "method": "figma"
+    }
+  },
+  "920:321": {
+    "src": "assets/uploads/figma/cropped/ed3c614df5-691774db830c.webp",
+    "full": "assets/uploads/figma/cropped/ed3c614df5-691774db830c.webp",
+    "width": 573,
+    "height": 339,
+    "original": "assets/uploads/figma/source/ed3c614df50c0b17c22315c85c9666cd2388b8ba.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        573,
+        339
+      ],
+      "sourceWidth": 573,
+      "sourceHeight": 339,
+      "method": "original"
+    }
+  },
+  "920:322": {
+    "src": "assets/uploads/figma/cropped/dcbdaa9188-d6886f1eee51.webp",
+    "full": "assets/uploads/figma/cropped/dcbdaa9188-d6886f1eee51.full.webp",
+    "width": 1600,
+    "height": 211,
+    "original": "assets/uploads/figma/source/dcbdaa9188b9be6a1ce7d857d9cac31c594b1361.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1728,
+        228
+      ],
+      "sourceWidth": 1728,
+      "sourceHeight": 228,
+      "method": "original"
+    }
+  },
+  "920:323": {
+    "src": "assets/uploads/figma/cropped/ee2ea2a59f-4b01323d546f.webp",
+    "full": "assets/uploads/figma/cropped/ee2ea2a59f-4b01323d546f.webp",
+    "width": 832,
+    "height": 111,
+    "original": "assets/uploads/figma/source/ee2ea2a59f11afb0041fdc9ca41ac22e300e5d7f.png",
+    "crop": {
+      "pixels": [
+        43,
+        62,
+        875,
+        173
+      ],
+      "sourceWidth": 1088,
+      "sourceHeight": 173,
+      "method": "figma"
+    }
+  },
+  "920:324": {
+    "src": "assets/uploads/figma/cropped/9b49ffa39d-016fc03881b0.webp",
+    "full": "assets/uploads/figma/cropped/9b49ffa39d-016fc03881b0.full.webp",
+    "width": 1600,
+    "height": 1003,
+    "original": "assets/uploads/figma/source/9b49ffa39d580277161849325677049dff83f640.png",
+    "crop": {
+      "pixels": [
+        473,
+        58,
+        3706,
+        2085
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:325": {
+    "src": "assets/uploads/figma/cropped/7934461fd6-541e8084c853.webp",
+    "full": "assets/uploads/figma/cropped/7934461fd6-541e8084c853.full.webp",
+    "width": 776,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/7934461fd62cfbe879fd9f450afd108af4d685e2.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        945,
+        1949
+      ],
+      "sourceWidth": 945,
+      "sourceHeight": 1949,
+      "method": "original"
+    }
+  },
+  "920:326": {
+    "src": "assets/uploads/figma/cropped/74104f9c62-cc518d335b25.webp",
+    "full": "assets/uploads/figma/cropped/74104f9c62-cc518d335b25.full.webp",
+    "width": 1600,
+    "height": 795,
+    "original": "assets/uploads/figma/source/74104f9c62ea87f5147995d001698cb3435c17ba.png",
+    "crop": {
+      "pixels": [
+        48,
+        70,
+        3840,
+        1953
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:327": {
+    "src": "assets/uploads/figma/cropped/fd3d50fb99-16dc6b066122.webp",
+    "full": "assets/uploads/figma/cropped/fd3d50fb99-16dc6b066122.full.webp",
+    "width": 917,
+    "height": 1600,
+    "original": "assets/uploads/figma/source/fd3d50fb99a2fe0ca42edf242232d6a287bef562.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1071,
+        1869
+      ],
+      "sourceWidth": 1071,
+      "sourceHeight": 1869,
+      "method": "original"
+    }
+  },
+  "920:328": {
+    "src": "assets/uploads/figma/cropped/5c5d1d1775-e092611ecfa2.webp",
+    "full": "assets/uploads/figma/cropped/5c5d1d1775-e092611ecfa2.webp",
+    "width": 400,
+    "height": 173,
+    "original": "assets/uploads/figma/source/5c5d1d177509a55dd13ddba1146df23676d9f3cd.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        400,
+        173
+      ],
+      "sourceWidth": 400,
+      "sourceHeight": 173,
+      "method": "original"
+    }
+  },
+  "920:352": {
+    "src": "assets/uploads/figma/cropped/8a8a6f4bc0-34e38fdfcadf.webp",
+    "full": "assets/uploads/figma/cropped/8a8a6f4bc0-34e38fdfcadf.full.webp",
+    "width": 1600,
+    "height": 604,
+    "original": "assets/uploads/figma/source/8a8a6f4bc0c475729809f208bb0df2122097584e.png",
+    "crop": {
+      "pixels": [
+        0,
+        365,
+        3840,
+        1815
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:353": {
+    "src": "assets/uploads/figma/cropped/24b3b510c7-10541899423c.webp",
+    "full": "assets/uploads/figma/cropped/24b3b510c7-10541899423c.full.webp",
+    "width": 1600,
+    "height": 660,
+    "original": "assets/uploads/figma/source/24b3b510c72b8c7e2526135858ecda5f6c24b8d7.png",
+    "crop": {
+      "pixels": [
+        0,
+        505,
+        3840,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:354": {
+    "src": "assets/uploads/figma/cropped/56028becff-d12b173cac26.webp",
+    "full": "assets/uploads/figma/cropped/56028becff-d12b173cac26.full.webp",
+    "width": 1600,
+    "height": 618,
+    "original": "assets/uploads/figma/source/56028becffceab86ee1a8bb46684186712349dd7.png",
+    "crop": {
+      "pixels": [
+        0,
+        264,
+        3840,
+        1747
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:355": {
+    "src": "assets/uploads/figma/cropped/2d617ced20-53cbdc8d29cd.webp",
+    "full": "assets/uploads/figma/cropped/2d617ced20-53cbdc8d29cd.full.webp",
+    "width": 1600,
+    "height": 661,
+    "original": "assets/uploads/figma/source/2d617ced20abc27b6c5d22c25cc0b6b4db50b8dc.png",
+    "crop": {
+      "pixels": [
+        2,
+        502,
+        3840,
+        2087
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  },
+  "920:356": {
+    "src": "assets/uploads/figma/cropped/82af77cdbf-26a7bd903920.webp",
+    "full": "assets/uploads/figma/cropped/82af77cdbf-26a7bd903920.full.webp",
+    "width": 1600,
+    "height": 768,
+    "original": "assets/uploads/figma/source/82af77cdbfb78daaef65cacdb88593a29bc7204b.png",
+    "crop": {
+      "pixels": [
+        0,
+        78,
+        3840,
+        1921
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2054,
+      "method": "figma+editorial"
+    }
+  },
+  "920:357": {
+    "src": "assets/uploads/figma/cropped/ebf71a3326-454b02004745.webp",
+    "full": "assets/uploads/figma/cropped/ebf71a3326-454b02004745.full.webp",
+    "width": 1600,
+    "height": 768,
+    "original": "assets/uploads/figma/source/ebf71a33261e5fe8e8f3f94aa5d52abcaa4284ca.png",
+    "crop": {
+      "pixels": [
+        0,
+        78,
+        3840,
+        1921
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2054,
+      "method": "figma+editorial"
+    }
+  },
+  "920:358": {
+    "src": "assets/uploads/figma/cropped/40c6f3e964-ae828368d34b.webp",
+    "full": "assets/uploads/figma/cropped/40c6f3e964-ae828368d34b.full.webp",
+    "width": 1600,
+    "height": 367,
+    "original": "assets/uploads/figma/source/40c6f3e9645e28823a0c720ec23ebf2e3e4102c5.png",
+    "crop": {
+      "pixels": [
+        0,
+        63,
+        2192,
+        566
+      ],
+      "sourceWidth": 2192,
+      "sourceHeight": 876,
+      "method": "figma"
+    }
+  },
+  "920:371": {
+    "src": "assets/uploads/figma/cropped/79ff540c06-0568774baf4d.webp",
+    "full": "assets/uploads/figma/cropped/79ff540c06-0568774baf4d.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/79ff540c06231b05355f33a3d147d04251d79c1a.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:372": {
+    "src": "assets/uploads/figma/cropped/b381256700-152d6f68c215.webp",
+    "full": "assets/uploads/figma/cropped/b381256700-152d6f68c215.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/b381256700b21b23cf49efe807d801459eec89c8.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:376": {
+    "src": "assets/uploads/figma/cropped/ea9b9be8ca-0e02bcaaece1.webp",
+    "full": "assets/uploads/figma/cropped/ea9b9be8ca-0e02bcaaece1.full.webp",
+    "width": 1600,
+    "height": 92,
+    "original": "assets/uploads/figma/source/ea9b9be8ca3c29931c3b298620315cefd1d6a27e.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1818,
+        105
+      ],
+      "sourceWidth": 1818,
+      "sourceHeight": 324,
+      "method": "figma"
+    }
+  },
+  "920:379": {
+    "src": "assets/uploads/figma/cropped/7aa63c9892-13ceff3c6fb0.webp",
+    "full": "assets/uploads/figma/cropped/7aa63c9892-13ceff3c6fb0.full.webp",
+    "width": 1600,
+    "height": 988,
+    "original": "assets/uploads/figma/source/7aa63c9892c29f699952c18988fd3596b3dfb8ff.png",
+    "crop": {
+      "pixels": [
+        125,
+        68,
+        3397,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:380": {
+    "src": "assets/uploads/figma/cropped/90b055976b-0962a7edd0eb.webp",
+    "full": "assets/uploads/figma/cropped/90b055976b-0962a7edd0eb.full.webp",
+    "width": 1600,
+    "height": 908,
+    "original": "assets/uploads/figma/source/90b055976b1e44f8d82041aa0e833fce3483a988.png",
+    "crop": {
+      "pixels": [
+        146,
+        68,
+        3704,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:381": {
+    "src": "assets/uploads/figma/cropped/a3c2c88092-f6d37f8c21b7.webp",
+    "full": "assets/uploads/figma/cropped/a3c2c88092-f6d37f8c21b7.webp",
+    "width": 894,
+    "height": 293,
+    "original": "assets/uploads/figma/source/a3c2c88092a17077dcc9800fbba2f62f46cf4970.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        894,
+        293
+      ],
+      "sourceWidth": 894,
+      "sourceHeight": 318,
+      "method": "figma"
+    }
+  },
+  "920:382": {
+    "src": "assets/uploads/figma/cropped/949c541cc1-ba0800f17c0b.webp",
+    "full": "assets/uploads/figma/cropped/949c541cc1-ba0800f17c0b.full.webp",
+    "width": 1600,
+    "height": 569,
+    "original": "assets/uploads/figma/source/949c541cc1b457478eccea9df0bde02bee72ff97.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1938,
+        689
+      ],
+      "sourceWidth": 1938,
+      "sourceHeight": 689,
+      "method": "original"
+    }
+  },
+  "920:383": {
+    "src": "assets/uploads/figma/cropped/8c8bd6e401-6a06753a579c.webp",
+    "full": "assets/uploads/figma/cropped/8c8bd6e401-6a06753a579c.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/8c8bd6e401e1e5ff1fffbac02a9cb46ca19a7184.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:384": {
+    "src": "assets/uploads/figma/cropped/eaaf48ac9a-0781c5cc9081.webp",
+    "full": "assets/uploads/figma/cropped/eaaf48ac9a-0781c5cc9081.webp",
+    "width": 918,
+    "height": 786,
+    "original": "assets/uploads/figma/source/eaaf48ac9a142026f47502139d2f29bc6350a4e2.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        918,
+        786
+      ],
+      "sourceWidth": 918,
+      "sourceHeight": 786,
+      "method": "original"
+    }
+  },
+  "920:385": {
+    "src": "assets/uploads/figma/cropped/a635344390-8e7d65f01d24.webp",
+    "full": "assets/uploads/figma/cropped/a635344390-8e7d65f01d24.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/a63534439020454b6da718fb7cd2253e17d4017f.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3716,
+        2087
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:386": {
+    "src": "assets/uploads/figma/cropped/ac88c78b65-fb889bf5be81.webp",
+    "full": "assets/uploads/figma/cropped/ac88c78b65-fb889bf5be81.full.webp",
+    "width": 1600,
+    "height": 270,
+    "original": "assets/uploads/figma/source/ac88c78b655183848ecde8836c7fac7877ad62a0.png",
+    "crop": {
+      "pixels": [
+        328,
+        21,
+        2487,
+        386
+      ],
+      "sourceWidth": 2487,
+      "sourceHeight": 801,
+      "method": "figma"
+    }
+  },
+  "920:390": {
+    "src": "assets/uploads/figma/cropped/b79601ce5f-f48e174341fc.webp",
+    "full": "assets/uploads/figma/cropped/b79601ce5f-f48e174341fc.webp",
+    "width": 909,
+    "height": 438,
+    "original": "assets/uploads/figma/source/b79601ce5f280dc4bf64183251f3203c43750785.png",
+    "crop": {
+      "pixels": [
+        0,
+        901,
+        909,
+        1339
+      ],
+      "sourceWidth": 909,
+      "sourceHeight": 1511,
+      "method": "figma"
+    }
+  },
+  "920:391": {
+    "src": "assets/uploads/figma/cropped/b826b9f01c-37e86c5cacc6.webp",
+    "full": "assets/uploads/figma/cropped/b826b9f01c-37e86c5cacc6.webp",
+    "width": 906,
+    "height": 318,
+    "original": "assets/uploads/figma/source/b826b9f01cc85cafb04cebf68ea0073b5017c81c.png",
+    "crop": {
+      "pixels": [
+        0,
+        637,
+        906,
+        955
+      ],
+      "sourceWidth": 906,
+      "sourceHeight": 1949,
+      "method": "figma"
+    }
+  },
+  "920:393": {
+    "src": "assets/uploads/figma/cropped/74fc2bd4f2-17c86683b68e.webp",
+    "full": "assets/uploads/figma/cropped/74fc2bd4f2-17c86683b68e.webp",
+    "width": 1332,
+    "height": 387,
+    "original": "assets/uploads/figma/source/74fc2bd4f28ab555a2080977b309e9813fdccc85.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1332,
+        387
+      ],
+      "sourceWidth": 1332,
+      "sourceHeight": 387,
+      "method": "original"
+    }
+  },
+  "920:394": {
+    "src": "assets/uploads/figma/cropped/85b8635c2e-66310380c241.webp",
+    "full": "assets/uploads/figma/cropped/85b8635c2e-66310380c241.webp",
+    "width": 1032,
+    "height": 264,
+    "original": "assets/uploads/figma/source/85b8635c2eb84f7bf6b2e50b5a97f2e300343da8.png",
+    "crop": {
+      "pixels": [
+        0,
+        35,
+        1032,
+        299
+      ],
+      "sourceWidth": 1032,
+      "sourceHeight": 333,
+      "method": "figma"
+    }
+  },
+  "920:395": {
+    "src": "assets/uploads/figma/cropped/74d0f7f624-b621ccfcfef4.webp",
+    "full": "assets/uploads/figma/cropped/74d0f7f624-b621ccfcfef4.webp",
+    "width": 1497,
+    "height": 792,
+    "original": "assets/uploads/figma/source/74d0f7f624d234baff89c2adaa120c230d5e5dd6.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1497,
+        792
+      ],
+      "sourceWidth": 1497,
+      "sourceHeight": 792,
+      "method": "original"
+    }
+  },
+  "920:396": {
+    "src": "assets/uploads/figma/cropped/481dad4010-2fb62463edcd.webp",
+    "full": "assets/uploads/figma/cropped/481dad4010-2fb62463edcd.full.webp",
+    "width": 1600,
+    "height": 790,
+    "original": "assets/uploads/figma/source/481dad4010600192c63b2ff43d9f4f9ad11257cd.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1671,
+        825
+      ],
+      "sourceWidth": 1671,
+      "sourceHeight": 825,
+      "method": "original"
+    }
+  },
+  "920:402": {
+    "src": "assets/uploads/figma/cropped/c04ef4a6ce-2a3ba2df6d2b.webp",
+    "full": "assets/uploads/figma/cropped/c04ef4a6ce-2a3ba2df6d2b.full.webp",
+    "width": 1600,
+    "height": 855,
+    "original": "assets/uploads/figma/source/c04ef4a6cedbed3de9788531171d763f87c983ad.png",
+    "crop": {
+      "pixels": [
+        120,
+        150,
+        3718,
+        2073
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2160,
+      "method": "figma+editorial"
+    }
+  },
+  "920:440": {
+    "src": "assets/uploads/figma/cropped/e3b2dd162f-05b61ac74295.webp",
+    "full": "assets/uploads/figma/cropped/e3b2dd162f-05b61ac74295.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/e3b2dd162f347afc49eb4511a3c5e2fe0daeabbd.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:441": {
+    "src": "assets/uploads/figma/cropped/b76dbc8dda-2556fb31a5ca.webp",
+    "full": "assets/uploads/figma/cropped/b76dbc8dda-2556fb31a5ca.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/b76dbc8ddab140c2994b20856f9a0304e5933d24.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:442": {
+    "src": "assets/uploads/figma/cropped/c8fa2f6502-bf96587e1972.webp",
+    "full": "assets/uploads/figma/cropped/c8fa2f6502-bf96587e1972.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/c8fa2f6502c6ecb695fba831ce97b697b0dcc407.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:443": {
+    "src": "assets/uploads/figma/cropped/209a03feed-b4bebb62627d.webp",
+    "full": "assets/uploads/figma/cropped/209a03feed-b4bebb62627d.webp",
+    "width": 912,
+    "height": 63,
+    "original": "assets/uploads/figma/source/209a03feedbdf81a25b30b1c561267ed2b8445c8.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        912,
+        63
+      ],
+      "sourceWidth": 912,
+      "sourceHeight": 63,
+      "method": "original"
+    }
+  },
+  "920:444": {
+    "src": "assets/uploads/figma/cropped/41b74cfc92-b5a8eec8d78b.webp",
+    "full": "assets/uploads/figma/cropped/41b74cfc92-b5a8eec8d78b.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/41b74cfc926dec54780fc560340a57f23080c073.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:445": {
+    "src": "assets/uploads/figma/cropped/8ab4701062-20bb43d06be0.webp",
+    "full": "assets/uploads/figma/cropped/8ab4701062-20bb43d06be0.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/8ab470106240243dd7187de8c3f7530ae16de0c8.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:446": {
+    "src": "assets/uploads/figma/cropped/7c0f2eab97-c29fa03ca631.webp",
+    "full": "assets/uploads/figma/cropped/7c0f2eab97-c29fa03ca631.webp",
+    "width": 975,
+    "height": 57,
+    "original": "assets/uploads/figma/source/7c0f2eab97b2f75f55c7fe04003b8dd8113a011b.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        975,
+        57
+      ],
+      "sourceWidth": 975,
+      "sourceHeight": 57,
+      "method": "original"
+    }
+  },
+  "920:447": {
+    "src": "assets/uploads/figma/cropped/96b3401487-f265a40a3278.webp",
+    "full": "assets/uploads/figma/cropped/96b3401487-f265a40a3278.webp",
+    "width": 909,
+    "height": 63,
+    "original": "assets/uploads/figma/source/96b34014872832c5d38997436855d1e4ea75b6fb.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        909,
+        63
+      ],
+      "sourceWidth": 909,
+      "sourceHeight": 63,
+      "method": "original"
+    }
+  },
+  "920:448": {
+    "src": "assets/uploads/figma/cropped/770d7a2627-f8b623a82278.webp",
+    "full": "assets/uploads/figma/cropped/770d7a2627-f8b623a82278.webp",
+    "width": 834,
+    "height": 69,
+    "original": "assets/uploads/figma/source/770d7a2627321aeb2a2daf3ccb1bb5a6f8670d28.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        834,
+        69
+      ],
+      "sourceWidth": 834,
+      "sourceHeight": 69,
+      "method": "original"
+    }
+  },
+  "920:449": {
+    "src": "assets/uploads/figma/cropped/4f02b535dd-ca4f860a0bc9.webp",
+    "full": "assets/uploads/figma/cropped/4f02b535dd-ca4f860a0bc9.full.webp",
+    "width": 1600,
+    "height": 959,
+    "original": "assets/uploads/figma/source/4f02b535ddced3dd1e30705df73051ca46a1eeb8.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2832,
+        1698
+      ],
+      "sourceWidth": 2832,
+      "sourceHeight": 1698,
+      "method": "original"
+    }
+  },
+  "920:450": {
+    "src": "assets/uploads/figma/cropped/9c5793ca76-bf80a8d32582.webp",
+    "full": "assets/uploads/figma/cropped/9c5793ca76-bf80a8d32582.full.webp",
+    "width": 1600,
+    "height": 1253,
+    "original": "assets/uploads/figma/source/9c5793ca76ffb81d2ba306c21633c7618d8b0463.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        2103,
+        1647
+      ],
+      "sourceWidth": 2103,
+      "sourceHeight": 1647,
+      "method": "original"
+    }
+  },
+  "920:451": {
+    "src": "assets/uploads/figma/cropped/0fa9362367-cd121abbaca4.webp",
+    "full": "assets/uploads/figma/cropped/0fa9362367-cd121abbaca4.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/0fa9362367c98426238399fc003105b06e69b2e3.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:452": {
+    "src": "assets/uploads/figma/cropped/f6bddd216e-02ade546414f.webp",
+    "full": "assets/uploads/figma/cropped/f6bddd216e-02ade546414f.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/f6bddd216e3fc2c4219b4894014b63707aa70e8f.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:453": {
+    "src": "assets/uploads/figma/cropped/d9d5bbb43f-feb58430b869.webp",
+    "full": "assets/uploads/figma/cropped/d9d5bbb43f-feb58430b869.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/d9d5bbb43f0f031bbc4621e8d69379e56f579faf.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:455": {
+    "src": "assets/uploads/figma/cropped/b3078a70ad-af60f822c4c3.webp",
+    "full": "assets/uploads/figma/cropped/b3078a70ad-af60f822c4c3.full.webp",
+    "width": 1600,
+    "height": 898,
+    "original": "assets/uploads/figma/source/b3078a70ad258ea4c81c8f062c8cc603d40b9a1f.png",
+    "crop": {
+      "pixels": [
+        120,
+        68,
+        3720,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:457": {
+    "src": "assets/uploads/figma/cropped/de8b236d45-a6a8b4cfa9b4.webp",
+    "full": "assets/uploads/figma/cropped/de8b236d45-a6a8b4cfa9b4.webp",
+    "width": 756,
+    "height": 189,
+    "original": "assets/uploads/figma/source/de8b236d45bdb4fbbaafba591f74afc344bd88be.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        756,
+        189
+      ],
+      "sourceWidth": 756,
+      "sourceHeight": 189,
+      "method": "original"
+    }
+  },
+  "920:459": {
+    "src": "assets/uploads/figma/cropped/f879fa5ac3-00193551eda8.webp",
+    "full": "assets/uploads/figma/cropped/f879fa5ac3-00193551eda8.webp",
+    "width": 1107,
+    "height": 291,
+    "original": "assets/uploads/figma/source/f879fa5ac30a0b3be7910739c167f4aa22e82b09.png",
+    "crop": {
+      "pixels": [
+        0,
+        0,
+        1107,
+        291
+      ],
+      "sourceWidth": 1107,
+      "sourceHeight": 303,
+      "method": "figma"
+    }
+  },
+  "920:76": {
+    "src": "assets/uploads/figma/cropped/7b601a5ac5-7a055f38db38.webp",
+    "full": "assets/uploads/figma/cropped/7b601a5ac5-7a055f38db38.full.webp",
+    "width": 1600,
+    "height": 842,
+    "original": "assets/uploads/figma/source/7b601a5ac55017e3ba3745c6bc5a18dd0a021687.png",
+    "crop": {
+      "pixels": [
+        0,
+        68,
+        3840,
+        2088
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma+editorial"
+    }
+  },
+  "920:77": {
+    "src": "assets/uploads/figma/cropped/7b601a5ac5-93b40a1e7676.webp",
+    "full": "assets/uploads/figma/cropped/7b601a5ac5-93b40a1e7676.full.webp",
+    "width": 1600,
+    "height": 529,
+    "original": "assets/uploads/figma/source/7b601a5ac55017e3ba3745c6bc5a18dd0a021687.png",
+    "crop": {
+      "pixels": [
+        0,
+        231,
+        3825,
+        1495
+      ],
+      "sourceWidth": 3840,
+      "sourceHeight": 2088,
+      "method": "figma"
+    }
+  }
+}
