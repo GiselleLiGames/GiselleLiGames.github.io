@@ -16,6 +16,16 @@
   function poster(w,v){return v.poster || w.image || (P.clip(w)||{}).poster || '';}
   function player(w,v){return '<div class="pv-player"><video controls playsinline preload="none" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
   function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><i>'+num+'</i><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
+  function nodeAtlas(atlas){
+    if(!atlas)return '';
+    var count=atlas.groups.reduce(function(total,group){return total+group.nodes.length;},0);
+    return '<div class="dream-atlas-intro"><span>M_Floor</span><p>'+L('材质分为支持金属反射的 M_Floor 和去除金属反射的 M_Toon，按需使用以降低渲染开销。点击分区可放大查看。','Two material variants reduce rendering cost: M_Floor supports metallic reflections, while M_Toon omits them. Select a region to inspect the graph.')+'</p><small>'+count+' '+L('分区 · 点击放大','regions · Click to enlarge')+'</small></div><div class="dream-atlas">'+atlas.groups.map(function(group,i){
+      return '<section class="dream-atlas-group"><header><span>0'+(i+1)+'</span><h3>'+P.esc(P.t(group.title))+'</h3><small>'+group.nodes.length+' '+L('图','views')+'</small></header><div class="dream-atlas-tiles">'+group.nodes.map(function(node){
+        var label=P.esc(P.t(node.label)), revision=node.revision?'?v='+encodeURIComponent(node.revision):'', full=P.esc(atlas.base+node.file+revision), thumb=P.esc(atlas.base+node.file.replace(/\.png$/,'.webp')+revision);
+        return '<button class="dream-atlas-tile pv-page-img" type="button" data-full-image="'+full+'" data-title="M_Floor · '+label+'" aria-label="'+L('放大：','Enlarge: ')+label+'"><img src="'+thumb+'" alt="'+label+'" loading="lazy" decoding="async" width="560" height="400"><span>'+label+'</span></button>';
+      }).join('')+'</div></section>';
+    }).join('')+'</div>';
+  }
   function back(){try{var ref = new URL(document.referrer);if(ref.origin===location.origin && ref.pathname.endsWith('/portfolio.html'))return ref.pathname+ref.search;}catch(e){}return 'portfolio.html';}
   function render(){
     stop();
@@ -41,6 +51,7 @@
       section(romans[n++],L('概述','Overview'),overview,'overview')+
       (videos.length>1?section(romans[n++],L('视频','Videos'),'<div class="dream-media-grid">'+videos.slice(1).map(function(v,k){return '<figure>'+player(w,v)+'<figcaption><b>'+String(k+1).padStart(2,'0')+'</b>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+'</div>','video'):'')+
       (images.length?section(romans[n++],images.some(function(v){return /shader-graphs/.test(v.href);})?L('节点图','Node graphs'):L('图片','Images'),'<div class="dream-media-grid">'+images.map(function(v,k){return '<figure><button class="dream-graph pv-page-img" type="button" data-full-image="'+P.esc(v.href)+'" data-title="'+caption(v)+'" aria-label="'+L('放大：','Enlarge: ')+caption(v)+'"><img src="'+P.esc(v.href)+'" alt="'+caption(v)+'" loading="lazy"><span>⤢ '+L('放大','Enlarge')+'</span></button><figcaption><b>'+String(k+1).padStart(2,'0')+'</b>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+(documentLinks?'<div style="grid-column:1/-1;justify-self:start">'+documentLinks+'</div>':'')+'</div>','gallery'):'')+
+      (d.nodeAtlas?section(romans[n++],L('材质拆解','Material breakdown'),nodeAtlas(d.nodeAtlas),'material-atlas'):'')+
       (docs.length && !images.length?'<p>'+documentLinks+'</p>':'')+
       (window.FigmaCaseStudy && FigmaCaseStudy.has(w)?FigmaCaseStudy.render(w,zh?'zh':'en'):'')+
       (w.pdf?'<p style="margin-block:40px"><a class="dream-doc-link" href="'+P.esc(w.pdf)+'" target="_blank" rel="noopener">'+L('打开原始 PDF','Open original PDF')+' ↗</a></p>':'')+

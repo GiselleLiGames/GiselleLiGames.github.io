@@ -1,0 +1,23 @@
+/* A compact contact sheet; full-resolution graphs load only in the zoom viewer. */
+.dream-atlas-intro{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dream-atlas-intro>span{flex:none;padding:5px 9px;border:1px solid #f0c98a50;color:#f0c98a;font:600 13px/1.3 monospace}
+.dream-prose .dream-atlas-intro p{flex:1;min-width:180px;font-size:13px;line-height:1.7}
+.dream-atlas-intro>small{color:#bba98d;font-size:11px;white-space:nowrap}
+.dream-atlas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.dream-atlas-group{min-width:0;overflow:hidden;border:1px solid #f0c98a30;background:#110d11d9;border-radius:6px}
+.dream-atlas-group>header{display:flex;align-items:baseline;gap:8px;padding:10px 12px;border-bottom:1px solid #f0c98a25}
+.dream-atlas-group>header>span{color:#bc945e;font:italic 14px Georgia,serif}
+.dream-atlas-group>header h3{margin:0;color:#f3dfbc;font:600 13px/1.5 'Noto Serif SC',serif}
+.dream-atlas-group>header small{margin-left:auto;color:#bba98d;font:11px/1.3 sans-serif}
+.dream-atlas-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:8px}
+.dream-atlas-tile{display:flex;flex-direction:column;min-width:0;gap:0;padding:0;overflow:hidden;border:1px solid #ffffff12;border-radius:3px;background:#232026;color:#d8c7a8;cursor:zoom-in;transition:border-color .18s,background .18s}
+.dream-atlas-tile img{display:block;width:100%;height:64px;object-fit:contain;background:#29272c}
+.dream-atlas-tile>span{display:block;max-width:100%;padding:5px 3px;font:10px/1.35 'Microsoft YaHei',sans-serif;text-align:center;overflow-wrap:anywhere}
+.dream-atlas-group:first-child .dream-atlas-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dream-atlas-group:first-child .dream-atlas-tile:first-child{grid-column:span 2}
+.dream-atlas-group:nth-child(2) .dream-atlas-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+.dream-atlas-group:last-child{grid-column:1/-1}
+.dream-atlas-group:last-child .dream-atlas-tiles{grid-template-columns:repeat(6,minmax(0,1fr))}
+.dream-atlas-group:last-child .dream-atlas-tile img{height:64px}
+.dream-atlas-tile:hover,.dream-atlas-tile:focus-visible{border-color:#f0c98a;background:#463426;outline:2px solid #f0c98a;outline-offset:1px}
+@media(max-width:600px){.dream-atlas{grid-template-columns:1fr;gap:10px}.dream-atlas-tile img{height:72px}.dream-atlas-tile>span{font-size:11px}.dream-atlas-intro>small{width:100%}.dream-atlas-group:last-child .dream-atlas-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}

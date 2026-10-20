@@ -172,6 +172,147 @@ const CONFIG = {
         year: '2026',
         tools: 'Unreal Engine',
         platform: 'Meta Quest 3',
+        nodeAtlas: {
+          "base": "assets/uploads/shader-graphs/m-floor-regions/",
+          "groups": [
+            {
+              "title": {
+                "zh": "卡渲基础",
+                "en": "Toon foundation"
+              },
+              "nodes": [
+                {
+                  "file": "01_Light_Combination.png",
+                  "label": {
+                    "zh": "灯光组合",
+                    "en": "Light combination"
+                  },
+                  "revision": "hq2"
+                },
+                {
+                  "file": "02_Active_Palette.png",
+                  "label": {
+                    "zh": "基础调色",
+                    "en": "Active palette"
+                  },
+                  "revision": "hq1"
+                },
+                {
+                  "file": "03_Brush.png",
+                  "label": {
+                    "zh": "笔刷与偏移",
+                    "en": "Brush & offset"
+                  }
+                },
+                {
+                  "file": "04_Thresholds.png",
+                  "label": {
+                    "zh": "点光阈值",
+                    "en": "Point thresholds"
+                  }
+                },
+                {
+                  "file": "15_Character_Palette.png",
+                  "label": {
+                    "zh": "角色调色",
+                    "en": "Character palette"
+                  }
+                }
+              ]
+            },
+            {
+              "title": {
+                "zh": "光照与输出",
+                "en": "Lighting & output"
+              },
+              "nodes": [
+                {
+                  "file": "08_Point_3.png",
+                  "label": {
+                    "zh": "Point Light",
+                    "en": "Point Light"
+                  }
+                },
+                {
+                  "file": "13_Point_Reception_0_3.png",
+                  "label": {
+                    "zh": "接光开关",
+                    "en": "Light reception"
+                  }
+                },
+                {
+                  "file": "16_Surface_Upper.png",
+                  "label": {
+                    "zh": "表面与灯光判断",
+                    "en": "Surface & light flags"
+                  }
+                },
+                {
+                  "file": "25_Final_Output.png",
+                  "label": {
+                    "zh": "材质输出",
+                    "en": "Material output"
+                  },
+                  "revision": "hq1"
+                }
+              ]
+            },
+            {
+              "title": {
+                "zh": "金属与反射",
+                "en": "Metal & reflections"
+              },
+              "nodes": [
+                {
+                  "file": "17_Surface_Lower.png",
+                  "label": {
+                    "zh": "粗糙度",
+                    "en": "Roughness"
+                  }
+                },
+                {
+                  "file": "18_Metal_Room.png",
+                  "label": {
+                    "zh": "房间反射",
+                    "en": "Room reflection"
+                  },
+                  "revision": "hq1"
+                },
+                {
+                  "file": "19_Highlights_Inputs_0_3.png",
+                  "label": {
+                    "zh": "高光输入",
+                    "en": "Highlight inputs"
+                  },
+                  "revision": "hq1"
+                },
+                {
+                  "file": "21_Highlights_Common_Full.png",
+                  "label": {
+                    "zh": "公共输入",
+                    "en": "Shared inputs"
+                  }
+                },
+                {
+                  "file": "22_Highlights_Custom.png",
+                  "label": {
+                    "zh": "高光计算与输出",
+                    "en": "Highlights & output"
+                  },
+                  "revision": "hq1"
+                },
+                {
+                  "file": "24_Metal_Final.png",
+                  "label": {
+                    "zh": "金属颜色合成",
+                    "en": "Final metal color"
+                  },
+                  "revision": "hq1"
+                }
+              ]
+            }
+          ]
+        },
         overview: {
           en: 'A stylized toon shader for an Art Deco casino environment, featuring custom metallic reflections and support for multiple lights.',
           zh: '装饰艺术风格的卡渲Shader，支持多光源与自定义金属反射。',
@@ -181,9 +322,6 @@ const CONFIG = {
         { type: 'video', label: { en: 'Watch 2K Video →', zh: '观看 2K 视频 →' }, href: 'assets/uploads/Casino_CentralOrbit_2K_30fps.mp4' },
         { type: 'video', label: { en: 'Material Study · 2K →', zh: '材质球展示 · 2K →' }, href: 'assets/uploads/Toon_MaterialStudy_SingleLight_2K_30fps.mp4', poster: 'assets/uploads/previews/toon-material-study-single-light.webp', description: { en: 'The same shader on three surfaces: untextured, slot machine and floor, each lit by a rotating light.', zh: '同一Shader在无颜色贴图、老虎机和地板三种表面上的表现，使用旋转光源展示受光变化。' } },
         { type: 'video', label: { en: 'Live Lighting Adjustment · 2× →', zh: '实时光照调节 · 2 倍速 →' }, href: 'assets/uploads/Casino_LightAdjustment_2x_NoCursor_Web_30fps.mp4', poster: 'assets/uploads/previews/casino-light-adjustment.webp', description: { en: 'Moving a light vertically in Unreal Engine to show the lighting response on walls, floors and characters.', zh: '在 Unreal Engine 中上下移动光源，展示墙面、地板和人物的受光变化。' } },
-        { type: 'image', label: { en: 'M_Toon · Complete Graph', zh: 'M_Toon · 完整节点图' }, href: 'assets/uploads/shader-graphs/M_Toon_FullGraph.png', description: { en: 'Unlit toon shading: light data from MPC_Toon drives the custom lighting and palette bands. The composed surface color feeds Emissive.', zh: 'Unlit 卡渲：从 MPC_Toon 读取光源数据，自行计算受光与明暗色带，组合后的表面颜色通过 Emissive 输出。' } },
-        { type: 'image', label: { en: 'M_Floor · Complete Graph', zh: 'M_Floor · 完整节点图' }, href: 'assets/uploads/shader-graphs/M_Floor_FullGraph.png', description: { en: 'Unlit metal: box-projected room Cubemap reflections and custom light highlights are combined with the toon color. Metal_FinalUnlitColor feeds Emissive.', zh: 'Unlit 金属：把房间包围盒修正的 Cubemap 反射、各光源高光与卡渲颜色组合，Metal_FinalUnlitColor 输出到 Emissive。' } },
-        { type: 'docs', label: { en: 'Shader Breakdown →', zh: 'Shader 实现说明 →' }, href: 'assets/uploads/shader-graphs/Shader_Breakdown.md' },
       ],
     },
     {
