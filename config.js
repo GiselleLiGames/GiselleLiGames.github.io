@@ -389,15 +389,15 @@ const CONFIG = {
       image: 'assets/clips/shadow-human-v7.webp',
       title: { en: 'Rendering-Shadow Man', zh: '渲染-暗影人' },
       desc:  {
-        en: 'A shadow figure in UE5.6 Forward: masked dither, flickering fine grain, local Gaussian blur, and evaporating black particles.',
-        zh: 'UE5.6 Forward 暗影人迭代：Dither 虚实、细颗粒闪烁、局部高斯模糊，以及蒸发的黑色粒子。',
+        en: 'A shadow figure in UE5.6: masked dither, flickering fine grain, local Gaussian blur, and evaporating black particles.',
+        zh: 'UE5.6 暗影人迭代：Dither 虚实、细颗粒闪烁、局部高斯模糊，以及蒸发的黑色粒子。',
       },
-      tags: ['Shader', 'Niagara', 'Forward'],
+      tags: ['Shader', 'Niagara', 'Rendering'],
       clip: 'assets/clips/shadow-human-v7',
       detail: {
         year: '2026',
-        tools: 'Unreal Engine 5.6 · Niagara · Blender · Hunyuan3D',
-        platform: { en: 'PC · Forward Shading', zh: 'PC · Forward Shading' },
+        tools: 'Unreal Engine 5.6 · Niagara · Hunyuan3D',
+        platform: { en: 'PC', zh: 'PC' },
         role: { en: 'Character pipeline, shader & VFX', zh: '角色流程、Shader 与特效' },
         overview: {
           en: 'The latest iteration uses a rigid, featureless human silhouette with one palm reaching forward as if pressing against glass. The body stays black; a painted coverage map and temporal dither create subtle differences between solid and dissolving regions, with a more virtual hand.',
