@@ -10,7 +10,7 @@
     }
     var toggle=document.getElementById('langToggle');
     if(!toggle){toggle=document.createElement('button');toggle.id='langToggle';toggle.type='button';toggle.className='lang-toggle';toggle.addEventListener('click',function(){window.toggleLang();});}
-    if(!body.classList.contains('dream-work'))nav.appendChild(toggle);toggle.classList.add('lang-toggle');
+    nav.appendChild(toggle);toggle.classList.add('lang-toggle');
     nav.setAttribute('aria-label','Main navigation');
     var current=location.pathname.split('/').pop();
     nav.querySelectorAll('.nav-links a').forEach(function(a){var active=a.getAttribute('href')===current||(current==='work.html'&&a.getAttribute('href')==='portfolio.html');a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');});

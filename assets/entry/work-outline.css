@@ -1,13 +1,61 @@
-/* An overlay outline never reserves space or narrows the work itself. */
-.dream-reading-layout{display:block}
-.dream-reading-content{min-width:0;width:100%}
-.dream-outline{position:fixed;left:16px;top:10px;z-index:45;width:max-content;max-width:calc(100vw - 32px)}
-.anime-site .dream-work>.pv-subbar,body.anime-site.dream-work>.pv-subbar{justify-content:flex-end}
-.dream-outline-toggle{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid var(--line);border-radius:0;background:#221d2d;color:var(--paper);font-size:14px;font-weight:500;box-shadow:0 4px 16px #0003}
-.dream-outline-toggle span{font-size:17px;line-height:1}
-.dream-outline nav{position:fixed;left:16px;top:72px;width:252px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 96px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:12px;background:#1c1825;border:1px solid var(--line);box-shadow:0 12px 32px #0006}
-.dream-outline a{display:block;min-height:44px;padding:10px 12px;border-left:2px solid transparent;color:var(--muted);font-size:14px;font-weight:400;line-height:1.5;overflow-wrap:anywhere}
-.dream-outline a:hover,.dream-outline a[aria-current="location"]{color:var(--pink);border-left-color:var(--pink);background:#ffffff06}
-.dream-outline a:focus-visible{outline-offset:0}
-.dream-outline.is-open .dream-outline-toggle{border-color:var(--pink)}
-@media(max-width:767px){.dream-outline{left:12px;max-width:calc(100vw - 24px)}.dream-outline-toggle{width:44px;padding:10px;justify-content:center}.dream-outline-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.dream-outline nav{left:12px;max-width:calc(100vw - 24px)}}
+/* Work detail: same top nav as the rest of the site, a project bar under it,
+   and a chapter outline that is always visible (side column on wide screens,
+   sideways strip on phone/tablet). No numbering anywhere. */
+body.anime-site.dream-work { --dw-nav: 64px; }
+.anime-site .dream-detail { --dw-nav: 0px; }
+
+/* Project bar: back to portfolio on the left, previous / next on the right. */
+body.anime-site.dream-work > .pv-subbar,
+.anime-site .dream-detail > .pv-subbar { position: sticky; top: var(--dw-nav); z-index: 40; display: flex; justify-content: space-between; align-items: stretch; height: 56px; margin: var(--dw-nav) 0 0; padding: 0 var(--pv-gutter) 0 0; background: #15121cf5; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.anime-site .pv-subbar .dream-back { display: flex; align-items: center; height: 100%; padding: 0 34px 0 var(--pv-gutter); background: #2c2538; color: var(--paper); clip-path: polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); font-size: 15px; font-weight: 700; transition: background .18s, color .18s; }
+.anime-site .pv-subbar .dream-back:hover { background: var(--pink); color: white; }
+.anime-site .pv-subbar__nav { display: flex; align-items: center; gap: 6px; }
+.anime-site .pv-subbar__nav a { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 18px 0 12px; color: var(--muted); font-size: 14px; font-weight: 700; clip-path: polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%); transition: background .18s, color .18s; }
+.anime-site .pv-subbar__nav a:hover { background: #2c2538; color: var(--pink); }
+
+/* Outline, shared parts. */
+.dream-reading-content { min-width: 0; }
+.dream-outline-title { margin: 0 0 10px 14px; color: #a39db2; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.dream-outline nav { display: flex; }
+.dream-outline a { position: relative; display: block; padding: 9px 26px 9px 14px; color: var(--muted); font-size: 14px; font-weight: 600; line-height: 1.45; transition: background .2s, color .2s; }
+.dream-outline a:hover { color: var(--pink); background: #ffffff0d; }
+.dream-outline a { text-shadow: 0 1px 6px #0009; }
+.anime-site .dream-outline a[aria-current="location"] { background: var(--pink); color: white; clip-path: polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%); }
+.dream-outline a:focus-visible { outline-offset: -3px; }
+
+/* Wide screens: outline lives in the empty left column and stays in view. */
+@media (min-width: 1200px) {
+  html:has(> body.dream-work) { scroll-padding-top: 144px; }
+  .anime-site .dream-detail { scroll-padding-top: 80px; }
+  .anime-site .pv-shell.has-outline { width: min(100% - 2 * var(--pv-gutter), 1320px); }
+  .has-outline > .dream-reading-layout { display: grid; grid-template-columns: 196px minmax(0,1fr); gap: 0 64px; align-items: start; }
+  .dream-outline { position: sticky; top: calc(var(--dw-nav) + 56px + 40px); padding: 16px 12px 14px 0; background: #221d2d73; border: 1px solid #f2eef81f; backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 12px 32px #0000004d; }
+  .dream-outline-title { margin-left: 16px; }
+  .dream-outline a { padding-left: 16px; }
+  .dream-outline nav { flex-direction: column; gap: 2px; }
+}
+
+/* Phone / tablet: a sideways chapter strip pinned under the project bar. */
+@media (max-width: 1199px) {
+  html:has(> body.dream-work) { scroll-padding-top: 192px; }
+  .anime-site .dream-detail { scroll-padding-top: 128px; }
+  body.anime-site.dream-work > .pv-shell.has-outline,
+  .anime-site .dream-detail > .pv-shell.has-outline { margin-top: 0; }
+  .dream-outline { position: sticky; top: calc(var(--dw-nav) + 56px); z-index: 35; margin: 0 calc(-1 * var(--pv-gutter)) 36px; padding: 0 var(--pv-gutter); background: #15121c80; border-bottom: 1px solid #f2eef81f; backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); }
+  .dream-outline-title { display: none; }
+  .dream-outline nav { gap: 4px; padding: 8px 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .dream-outline nav::-webkit-scrollbar { display: none; }
+  .dream-outline a { flex: none; white-space: nowrap; min-height: 40px; padding: 8px 22px 8px 12px; }
+}
+
+@media (max-width: 760px) {
+  body.anime-site.dream-work { --dw-nav: 104px; }
+  html:has(> body.dream-work) { scroll-padding-top: 232px; }
+  .anime-site .pv-subbar .dream-back { padding-right: 26px; font-size: 14px; }
+  .anime-site .pv-subbar__nav a { padding: 0 14px 0 10px; font-size: 18px; }
+  .anime-site .pv-subbar .txt { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dream-outline a, .anime-site .pv-subbar .dream-back, .anime-site .pv-subbar__nav a { transition: none; }
+}

@@ -94,10 +94,10 @@
   function renderCurated(list, work, lang) {
     var theme=keys[work.pdf]===2?'lycoris':keys[work.pdf]===6?'work':'pbr';
     return '<section class="fc-studies cs" id="case-study" data-theme="'+theme+'" aria-label="'+(lang==='zh'?'项目详解':'Case study')+'">'+
-      '<div class="fc-index" role="navigation" aria-label="'+(lang==='zh'?'项目章节':'Chapters')+'">'+list.map(function(c,i){return '<a href="#cs-'+c.id+'"><b>'+String(i+1).padStart(2,'0')+'</b>'+esc(t(c.title,lang))+'</a>';}).join('')+'</div>'+
+      '<div class="fc-index" role="navigation" aria-label="'+(lang==='zh'?'项目章节':'Chapters')+'">'+list.map(function(c,i){return '<a href="#cs-'+c.id+'">'+esc(t(c.title,lang))+'</a>';}).join('')+'</div>'+
       list.map(function(c,i){
         return '<article class="fc-chapter cs-chapter" id="cs-'+c.id+'">'+
-          '<header class="fc-head"><span>'+String(i+1).padStart(2,'0')+'</span><h2>'+esc(t(c.title,lang))+'</h2></header>'+
+          '<header class="fc-head"><h2>'+esc(t(c.title,lang))+'</h2></header>'+
           (c.kicker?'<p class="cs-kicker">'+esc(t(c.kicker,lang))+'</p>':'')+
           ((c.links||[]).length?'<div class="fc-links">'+c.links.map(function(l){return '<a href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(t(l.title,lang))+' ↗</a>';}).join('')+'</div>':'')+
           (c.cover?'<figure class="fc-banner"><button class="pv-page-img" type="button" data-full-image="'+esc(full(c.cover))+'"><img src="'+esc(c.cover)+'" alt="'+esc(t(c.title,lang))+'" loading="lazy" decoding="async"></button></figure>':'')+
@@ -127,7 +127,7 @@
     function fresh(item){ if(/Fw48\d*\.\w+$/.test(item.src)) return false; /* downloaded frame ornaments */ if(seen['orn:'+item.src.split('/').pop().replace(/\.\w+$/,'')]) return false; var k=sig(item); if(seen[k]) return false; seen[k]=1; return true; }
 
     return '<section class="fc-studies" id="case-study" data-theme="'+theme+'" aria-label="'+(lang==='zh'?'项目详解':'Case study')+'">'+
-      '<div class="fc-index" role="navigation" aria-label="'+(lang==='zh'?'项目章节':'Chapters')+'">'+list.map(function(c,i){return '<a href="#fc-'+c.id.replace(':','-')+'"><b>'+String(i+1).padStart(2,'0')+'</b>'+esc(t(c.title,lang))+'</a>';}).join('')+'</div>'+
+      '<div class="fc-index" role="navigation" aria-label="'+(lang==='zh'?'项目章节':'Chapters')+'">'+list.map(function(c,i){return '<a href="#fc-'+c.id.replace(':','-')+'">'+esc(t(c.title,lang))+'</a>';}).join('')+'</div>'+
       list.map(function(c,i){
         var title=t(c.title,lang);
         var bg=c.background && fresh({src:c.background}) ? banner(c.background,title) : '';
@@ -138,7 +138,7 @@
         var links=(c.links||[]).filter(function(link){return /^https:\/\//.test(link.href);});
         return '<article class="fc-chapter" id="fc-'+c.id.replace(':','-')+'">'+
           (c.ornaments||[]).map(function(src,k){return '<img class="fc-ornament fc-ornament--'+k+'" src="'+esc(preview(src))+'" alt="" aria-hidden="true" loading="lazy">';}).join('')+
-          '<header class="fc-head"><span>'+String(i+1).padStart(2,'0')+'</span><h2>'+esc(title)+'</h2></header>'+
+          '<header class="fc-head"><h2>'+esc(title)+'</h2></header>'+
           (links.length?'<div class="fc-links">'+links.map(function(link){return '<a href="'+esc(link.href)+'" target="_blank" rel="noopener">'+esc(t(link.title,lang))+' ↗</a>';}).join('')+'</div>':'')+
           bg+
           parts.map(function(col){ return '<div class="fc-part">'+flow(col,lang)+'</div>'; }).join('')+
