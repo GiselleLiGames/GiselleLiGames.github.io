@@ -22,7 +22,7 @@
       var group = CONFIG.workGroupNames[w.group];
       var clip = P.clip(w), sigil={shader:'✦',pcg:'❋',render:'☾',tool:'⚜',code:'✧'}[w.category] || '✦';
       var media = '<div class="dream-cover"><div class="pv-media"><img src="'+P.esc(w.image)+'" alt="" loading="lazy" decoding="async">'+(clip?'<video src="'+P.esc(clip.src)+'" muted loop playsinline preload="none" poster="'+P.esc(w.image)+'"></video>':'')+'</div>'+Array(4).fill('<i class="dream-cover-corner"></i>').join('')+'</div>';
-      return '<a class="pv-card pv-rise" href="work.html?id='+i+'" data-work="'+i+'" data-cat="'+P.esc(w.category)+'" style="--d:'+((count-1)%3)*70+'ms">'+media+'<div class="pv-card__body"><div><h3 class="pv-card__title">'+P.esc(P.t(w.title))+'</h3><span class="dream-card-secondary" lang="'+(zh?'en':'zh-CN')+'">'+P.esc(w.title[zh?'en':'zh'])+'</span></div><span class="dream-card-type">'+sigil+' '+P.esc(P.t(group))+'</span></div></a>';
+      return '<a class="pv-card pv-rise" href="work.html?id='+i+'" data-work="'+i+'" data-cat="'+P.esc(w.category)+'" style="--d:'+((count-1)%3)*70+'ms">'+media+'<div class="pv-card__body"><div><h3 class="pv-card__title">'+P.esc(P.t(w.title))+'</h3>'+(zh?'<span class="dream-card-secondary" lang="en">'+P.esc(w.title.en)+'</span>':'')+'</div><span class="dream-card-type">'+sigil+' '+P.esc(P.t(group))+'</span></div></a>';
     }).join('');
     grid.dataset.count = cat === 'all' ? '' : count;
     result.innerHTML = '<strong>'+(cat === 'all' ? (zh ? '全部作品' : 'All works') : categories[cat][zh?0:1])+'</strong><span>'+count+' '+(count===1?'work':'works')+'</span>'+(cat !== 'all'?'<button type="button">'+(zh?'显示全部 ✕':'Show all ✕')+'</button>':'');

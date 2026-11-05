@@ -28,7 +28,7 @@
     stageVideo.dataset.src=clip?clip.src:'';stageVideo.poster=clip?clip.poster:w.image;
     stageImg.classList.remove('is-in');void stageImg.offsetWidth;stageImg.src=clip?clip.poster:w.image;stageImg.classList.add('is-in');
     stageCopy.innerHTML='<span class="anime-stage-tag">'+P.esc(category)+' · '+P.esc(P.t(CONFIG.workGroupNames[w.group]))+'</span>'+
-      '<h3>'+P.esc(P.t(w.title))+'</h3><span class="anime-stage-secondary">'+P.esc(w.title[zh?'en':'zh'])+'</span>'+
+      '<h3>'+P.esc(P.t(w.title))+'</h3>'+(zh?'<span class="anime-stage-secondary" lang="en">'+P.esc(w.title.en)+'</span>':'')+
       '<p>'+P.esc(P.t(d.overview)||P.t(w.desc))+'</p>'+(meta?'<small>'+meta+'</small>':'')+
       '<a class="anime-button anime-stage-open" href="work.html?id='+id+'" data-featured-work="'+id+'">'+L('查看作品 →','View project →')+'</a>';
     syncPlayback();
@@ -76,7 +76,7 @@
     filters.innerHTML=categories.map(function(c,i){return '<button type="button" class="pv-fbtn'+(cat===c?' is-on':'')+'" data-cat="'+c+'" aria-pressed="'+(cat===c)+'">'+labels[c][P.lang()==='zh'?0:1]+'</button>';}).join('');
     var pct=categories.length>1?categories.indexOf(cat)/(categories.length-1)*100:0;
     document.querySelector('.anime-slider i').style.width=pct+'%';document.querySelector('.anime-slider b').style.left=pct+'%';
-    grid.innerHTML=shown.map(function(item){var w=item.w,i=item.id;return '<li><a class="anime-work-row" href="work.html?id='+i+'" data-work="'+i+'"><span class="anime-work-title"><strong>'+P.esc(P.t(w.title))+'</strong><small>'+P.esc(w.title[P.lang()==='zh'?'en':'zh'])+'</small></span><span class="anime-work-group">'+P.esc(P.t(CONFIG.workGroupNames[w.group]))+'</span>'+media(w)+'</a></li>';}).join('');
+    grid.innerHTML=shown.map(function(item){var w=item.w,i=item.id;return '<li><a class="anime-work-row" href="work.html?id='+i+'" data-work="'+i+'"><span class="anime-work-title"><strong>'+P.esc(P.t(w.title))+'</strong>'+(P.lang()==='zh'?'<small lang="en">'+P.esc(w.title.en)+'</small>':'')+'</span><span class="anime-work-group">'+P.esc(P.t(CONFIG.workGroupNames[w.group]))+'</span>'+media(w)+'</a></li>';}).join('');
     grid.querySelectorAll('.anime-row-media').forEach(function(root){
       var v=root.querySelector('video');if(v){v.addEventListener('playing',function(){root.classList.add('is-playing');});v.addEventListener('error',function(){root.classList.remove('is-playing');});}
       observer.observe(root);
