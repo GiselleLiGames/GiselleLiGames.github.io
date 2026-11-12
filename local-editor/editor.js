@@ -705,7 +705,7 @@ const WORK_LINK_TYPE_PRESETS = {
   custom: { en: '',              zh: '' },
 };
 let workLinkPresets = DEFAULT_WORK_LINK_PRESETS.map(x => ({ en: x.en, zh: x.zh }));
-const WORK_CATS = ['shader','pcg','vfx','tool','render','code'];
+const WORK_CATS = ['shader','pcg','vfx','tool','render','code','design'];
 const WORK_GROUPS = [
   { id: 'collab' },
   { id: 'art' },

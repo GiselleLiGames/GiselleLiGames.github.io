@@ -622,3 +622,225 @@ window.CURATED_CASE_STUDIES = {
     }
   ]
 };
+
+(function () {
+  'use strict';
+
+  function shot(name, w, h, zh, en) {
+    return { src: 'assets/uploads/level-design/' + name + '.webp', w: w, h: h, cap: { zh: zh, en: en } };
+  }
+
+  Object.assign(window.CURATED_CASE_STUDIES, {
+    'uncharted-blockout': [
+      {
+        id: 'route-plan',
+        title: { zh: '峡谷动线', en: 'Canyon Route' },
+        sections: [
+          {
+            text: {
+              zh: '这份《神秘海域4》风格的关卡白盒以悬崖、桥梁和多层平台组织路线。总平面图标出了起点、终点、主路线和备选路线，也记录了演出点、敌人位置及可攀爬表面，便于检查玩家何时进入下一段挑战。',
+              en: 'I organized the blockout around cliff faces, bridges and platforms at different elevations. The plan marks the start, finish, critical path and alternate routes, alongside cinematic beats, enemy positions and climbable surfaces.'
+            },
+            images: [shot('uncharted-route', 947, 634, '总平面图与路线图例', 'Overhead route plan and legend')]
+          }
+        ]
+      },
+      {
+        id: 'bridges-and-companion',
+        title: { zh: '桥梁与 NPC 配合', en: 'Bridges and Companion Interaction' },
+        sections: [
+          {
+            text: {
+              zh: '我把桥梁和 NPC 配合作为主要设计练习。白盒标注了跨桥路线、岩壁上的替代攀爬路线和演出触发位置，并用第三个演出点的两张示意图区分等待与继续前进时的走法。',
+              en: 'Bridges and companion interaction were the focus of the study. The blockout marks the bridge crossing, alternate climbs along the cliff, and cinematic triggers. Two diagrams for the third cinematic beat show the routes for waiting and moving on.'
+            },
+            images: [
+              shot('uncharted-bridge-route', 1109, 863, '桥面与下方岩壁的路线', 'Bridge crossing and lower cliff route'),
+              shot('uncharted-traversal', 909, 837, '岩壁攀爬段', 'Cliff traversal segment'),
+              shot('uncharted-cinematic-point', 733, 232, '第三个演出点的两种走法', 'Two routes at cinematic point 3')
+            ]
+          }
+        ]
+      },
+      {
+        id: 'cliffside-encounter',
+        title: { zh: '崖间战斗与攀爬', en: 'Cliffside Combat and Climbing' },
+        sections: [
+          {
+            text: {
+              zh: '后段用桥连接高处建筑，把敌人和玩家的通行路线分布在不同层级。局部图标出了建筑内外的移动方式，以及攀爬点和跨崖跳跃之间的距离。',
+              en: 'In the final stretch, bridges connect elevated buildings, with enemy positions and traversal routes spread across different heights. The detail drawings mark movement through and around the structures, including ledge spacing and jumps across the ravine.'
+            },
+            images: [
+              shot('uncharted-encounter', 1320, 770, '建筑、桥梁与终点路线', 'Structures, bridges and the route to the finish'),
+              shot('uncharted-climbing', 1319, 843, '攀爬点与跳跃距离', 'Climbable ledges and jump distances')
+            ]
+          }
+        ]
+      }
+    ],
+    'mall-blockout': [
+      {
+        id: 'mall-flow',
+        title: { zh: '关卡流程与叙事', en: 'Level Flow and Story' },
+        links: [
+          {
+            href: 'https://u0273se2y4k.feishu.cn/docx/DaY0dPvedojpnqxrRiOcPrbgnGc',
+            title: { zh: '关卡设计文档（飞书）', en: 'Level design document (Feishu)' }
+          },
+          {
+            href: 'https://pan.baidu.com/s/17btrUjqlHCjAY8U5Wd0z7A?pwd=jy7t',
+            title: { zh: '关卡解说视频（百度网盘，提取码 jy7t）', en: 'Level walkthrough (Baidu Netdisk, code jy7t)' }
+          }
+        ],
+        sections: [
+          {
+            text: {
+              zh: '白盒用不同高度的平台、楼梯和连接通道搭出商场内部。设计文档和解说视频记录了各区域的进入顺序，以及故事如何随关卡流程展开。',
+              en: 'The blockout uses platforms, stairs and connecting passages to define the mall interior. The design document and walkthrough explain the order in which players visit its spaces and how the story unfolds along that route.'
+            }
+          }
+        ]
+      }
+    ],
+    'screaming-chicken': [
+      {
+        id: 'sticky-party',
+        title: { zh: '黏黏派对', en: 'Sticky Party' },
+        sections: [
+          {
+            text: {
+              zh: '一张兼容 2v2 和自由混战的圣诞追逃地图。弹簧与升降台让玩家可以迅速改变高度。最低层有安全掩体，但无法直接把炸弹扔到最高层。',
+              en: 'A Christmas chase map for both 2v2 and free-for-all. Springs and lifts let players change elevation quickly. The lowest level offers cover and sits beyond throwing range of the highest platform.'
+            },
+            images: [
+              shot('chicken-sticky-overview', 800, 450, '黏黏派对地图全景', 'Sticky Party map overview'),
+              shot('chicken-sticky-elevation', 1523, 511, '高差与最低层掩体', 'Elevation changes and cover on the lowest level')
+            ]
+          },
+          {
+            h: { zh: '冰面与延迟拳套', en: 'Ice and the Delayed Punch' },
+            text: {
+              zh: '踩按钮后拳套会延迟弹出。被追的玩家可以先踩按钮再闪开，让跟上来的对手滑进拳套的范围。黏上炸弹后玩家质量增加，在冰上更难及时停下或转向。',
+              en: 'The boxing glove fires a moment after someone steps on its button. A fleeing player can trigger it, dodge, and let the pursuer slide into its path. A player carrying a sticky bomb gains mass and has a harder time stopping or turning on the ice.'
+            },
+            images: [shot('chicken-sticky-punch', 1540, 966, '冰面旁的拳套机关', 'Boxing glove trap beside the ice')]
+          }
+        ]
+      },
+      {
+        id: 'magnet-map',
+        title: { zh: '步步惊心', en: 'Step by Step' },
+        sections: [
+          {
+            text: {
+              zh: '这张 2v2 地图以黏性炸弹和队友配合为核心。按钮与磁力机按颜色配对，队友可以按按钮，让刚拿到炸弹的对手被黏住。冰面能捡到炸弹并借传送门投掷，但玩家也会暴露在磁力机前。',
+              en: 'This 2v2 map revolves around sticky bombs and coordination. Color-matched buttons activate magnets that can pin an opponent who has just picked up a bomb. On the ice, players can grab a bomb and throw it through a portal while exposed to the magnets.'
+            },
+            images: [
+              shot('chicken-magnets-overview', 1920, 1080, '步步惊心地图全景', 'Step by Step map overview'),
+              shot('chicken-magnets-button', 1320, 441, '按钮与磁力机的颜色对应', 'Color-coded buttons and magnets'),
+              shot('chicken-magnets-risk', 1745, 543, '冰面上的炸弹与磁力机', 'Bomb and magnet positions around the ice')
+            ]
+          },
+          {
+            h: { zh: '传送门与中期配合', en: 'Portals and Mid-Match Team Play' },
+            text: {
+              zh: '中间高、两端低，传送门把两侧接成可追逃的路线。中期中央刷新心灵控制枪后，队友可以按对手是否携带炸弹选择配合。对手没带炸弹时，一人控制对手，另一人拾取炸弹并投向绿色传送门。对手带着炸弹时，可利用心灵控制让敌方队友穿过绿色传送门并踩下绿色按钮。',
+              en: 'The center sits above both ends, and portals connect the lower areas into chase routes. When the mind-control gun spawns in the middle, teammates can choose a play based on whether the target has a bomb. Against an unarmed target, one player holds the target while the other picks up a bomb and throws it through the green portal. When the target is carrying a bomb, the team can use mind control to send the target’s teammate through the green portal and onto the green button.'
+            },
+            images: [shot('chicken-magnets-routes', 1920, 1002, '中央高台、传送门与两侧路线', 'Raised center, portals and routes on both sides')]
+          }
+        ]
+      },
+      {
+        id: 'christmas-escape',
+        title: { zh: '圣诞逃亡', en: 'Christmas Escape' },
+        sections: [
+          {
+            text: {
+              zh: '玩家在四条赛道间换道，躲避电锯。障碍在两种组合之间轮换，一种配对为 1 与 3、2 与 4，另一种为 1 与 4、2 与 3。外侧栏杆升起前，报警器先抬起，给玩家留出换到安全赛道的时间。',
+              en: 'Players switch between four lanes to avoid saws. Hazards alternate between two patterns, pairing lanes 1 and 3 with 2 and 4, then 1 and 4 with 2 and 3. An alarm rises before the outer barriers, giving players time to switch to a safer lane.'
+            },
+            images: [
+              shot('chicken-escape-overview', 1920, 1080, '圣诞逃亡的四条赛道', 'The four lanes of Christmas Escape'),
+              shot('chicken-escape-hazard-table', 1031, 463, '各赛道的障碍配置表', 'Obstacle placement table by lane')
+            ]
+          },
+          {
+            h: { zh: '道具布局与时机', en: 'Item Placement and Timing' },
+            text: {
+              zh: '两侧道具更强，但外侧栏杆升起时更容易被封住。中间也有较弱的道具，鼓励玩家持续换道。音响会让范围内的所有玩家停下，可以等自己处在安全位置、对手面临障碍时再使用。',
+              en: 'The outer lanes offer stronger items at the risk of getting trapped by rising barriers. Weaker items in the middle give players a reason to switch lanes. The speaker stops everyone in range, so a player can time it for when they are safe and an opponent is exposed to a hazard.'
+            },
+            images: [
+              shot('chicken-escape-items', 1364, 978, '两侧与中间的道具点', 'Outer and middle item positions'),
+              shot('chicken-escape-speaker', 989, 579, '音响生效范围', 'Speaker area of effect')
+            ]
+          }
+        ]
+      }
+    ]
+  });
+
+  window.FIGMA_CASE_STUDY_ADDITIONS = {
+    '706:380': {
+      sections: [
+        {
+          h: { zh: '信号塔的状态与复用', en: 'Signal Tower States and Reuse' },
+          text: {
+            zh: '5.0 的太空地图缺少分层小地图，扫描仪的寻人和藏宝图玩法均按单人流程设计。靠近未知信号塔后，它会转为已知信号塔。瞄准正在发射的信号可读到发射者姓名和距离，部分信号还会附带简讯。事件完成后关闭信号，同一座塔可以再次发射，作为后续任务的固定发出点。',
+            en: 'The version 5.0 space map had no layered minimap. I designed both scanner activities for solo play. An unknown tower becomes known when the player gets close. Aiming at an active signal reveals its sender and distance, and some signals carry a short message. The signal shuts off when the event ends, so the tower can be reused as a fixed starting point for later missions.'
+          }
+        }
+      ]
+    },
+    '742:241': {
+      sections: [
+        {
+          h: { zh: '杰里事件的收尾', en: 'The End of Jerry’s Story' },
+          text: {
+            zh: '击败伪装成杰里的拟态虫后，玩家需要再次扫描，才能发现漂到更远处的遗体。生命记录仪留下了他临终前挂念女儿的片段。回档案处领奖时，玩家会遇到还不知道父亲死讯的女儿，听她说起父亲为了自己辛苦工作。',
+            en: 'After defeating the mimic disguised as Jerry, the player scans again to find his body farther away. His life recorder reveals that he was thinking of his daughter in his final moments. Back at the archive, the player can hear his daughter talk about how hard he works for her. She still has no news of his death.'
+          }
+        },
+        {
+          h: { zh: '地图布局与玩家路线', en: 'Placement and Player Routes' },
+          text: {
+            zh: '我用高差给同类事件做空间区分，例如被矿坑事件炸飞的失踪者位于矿坑顶部。部分藏宝点需要完成前置任务，作为主航线外大片空区的隐藏探索目标。配置草图标出了目击点与实际事件点。上方的玩家攻略图可以对照玩家实际采用的路线。',
+            en: 'I used elevation to distinguish similar events. For example, one missing person was thrown to the top of a mine by an explosion. Some treasure sites require a prerequisite quest and serve as hidden destinations in empty stretches off the main route. The placement sketch marks the sighting and event locations. The player guide above shows how a player traced those routes.'
+          },
+          images: [shot('tof-placement-plan', 1617, 1008, '失踪人员目击点与实际事件点的配置草图', 'Placement sketch of last sightings and event locations')]
+        }
+      ]
+    },
+    '706:440': {
+      sections: [
+        {
+          h: { zh: '其他开放世界探索点', en: 'More Open-World Activities' },
+          images: [
+            shot('tof-power-authentication', 1437, 684, '电力认证', 'Power authentication'),
+            shot('tof-overclocked-machine', 1447, 690, '超阈智械', 'Overclocked machine'),
+            shot('tof-overclocked-eye', 1441, 688, '超阈之眼', 'Overclocked eye'),
+            shot('tof-overclocked-station', 1441, 681, '超阈基站', 'Overclocked station')
+          ]
+        },
+        {
+          images: [
+            shot('tof-timed-crate', 1441, 691, '薛定谔箱', 'Schrödinger’s crate'),
+            shot('tof-mech-power', 1438, 685, '机甲赋能', 'Mech empowerment'),
+            shot('tof-gravity-mushroom', 1446, 694, '重力石蕾', 'Gravity stone bud'),
+            shot('tof-combat-simulator', 1446, 682, '战斗模拟器', 'Combat simulator')
+          ]
+        },
+        {
+          h: { zh: '刷新点批量配置', en: 'Batch Spawn Point Setup' },
+          text: {
+            zh: '随机刷新工具可以批量重命名场景里的 Target，再统一赋值给随机刷新器。我用这一步把生成好的点位接到玩法配置中。',
+            en: 'The random spawn tool can rename existing Target actors in bulk before assigning them to a random spawner. This connects the generated points to the gameplay setup.'
+          }
+        }
+      ]
+    }
+  };
+})();

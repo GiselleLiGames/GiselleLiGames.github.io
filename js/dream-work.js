@@ -58,7 +58,7 @@
     if(isPCG) overview='<p>'+L('以 Houdini 程序化生成砖墙、样条石墙与山体，结合 Maya 建模、Substance Designer 材质和 UE 场景整合，完成风格化山谷房屋场景。','A stylized hillside scene built with Houdini brick walls, spline-based stone walls and procedural mountains, combined with Maya modeling, Substance Designer materials and UE scene integration.')+'</p>';
     ['goals','process'].forEach(function(key){if(d[key])overview+='<h3>'+ (key==='goals'?L('目标与挑战','Goals & challenges'):L('制作过程','Process'))+'</h3><ul>'+d[key].map(function(s){return '<li>'+P.esc(P.t(s))+'</li>';}).join('')+'</ul>';});
     if(d.results)overview+='<div class="pv-metrics">'+d.results.map(function(r){return '<p><strong>'+P.esc(r.value)+'</strong> '+P.esc(P.t(r.label))+'</p>';}).join('')+'</div>';
-    var category={shader:['Shader','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']}[w.category] || ['', ''];
+    var category={shader:['Shader','Shader'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],design:['关卡设计','Level Design'],code:['代码','Code']}[w.category] || ['', ''];
     var documentLinks=docs.map(function(v){return '<a class="dream-doc-link" href="'+P.esc(v.href)+'" target="_blank" rel="noopener">'+caption(v)+' →</a>';}).join(' · ');
     var n=0, romans=['','','','',''];
     root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'">« '+L('返回作品集','Back to portfolio')+'</a><div class="pv-subbar__nav"><a href="work.html?id='+prev+'" aria-label="'+L('上一个作品：','Previous work: ')+P.esc(P.t(W[prev].title))+'">‹ <span class="txt">'+L('上一个','Previous')+'</span></a><a href="work.html?id='+next+'" aria-label="'+L('下一个作品：','Next work: ')+P.esc(P.t(W[next].title))+'"><span class="txt">'+L('下一个','Next')+'</span> ›</a></div>';

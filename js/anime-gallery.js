@@ -2,7 +2,7 @@
   'use strict';
   var P = window.PV, works = P.works(), grid = document.getElementById('pvGrid');
   var filters = document.getElementById('pvFilters'), toggle = document.getElementById('animePreviewToggle');
-  var labels = {all:['全部','All'],shader:['Shader','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],code:['代码','Code']};
+  var labels = {all:['全部','All'],shader:['Shader','Shaders'],pcg:['程序化生成','PCG'],render:['渲染','Rendering'],tool:['工具','Tools'],design:['关卡设计','Level Design'],code:['代码','Code']};
   var categories = Object.keys(labels).filter(function(c){return c==='all'||works.some(function(w){return w.category===c;});});
   var cat = new URLSearchParams(location.search).get('cat') || 'all', selected = 0, shown = [];
   if(categories.indexOf(cat)<0)cat='all';

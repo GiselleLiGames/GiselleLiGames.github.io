@@ -351,13 +351,16 @@ const CONFIG = {
     },
     {
       category: 'shader',
-      group: 'art',
+      group: 'collab',
       hasVideo: true,
       image: 'assets/uploads/previews/lycorius-shader.webp',
-      title: { en: 'Rendering-Stylized Indie Game', zh: '渲染-风格化独立游戏' },
-      desc:  {
-        en: 'Stylized shader development and iteration for Lycorius.',
-        zh: '《彼岸花》的风格化Shader开发与迭代。',
+      title: { en: 'Lycoris · Stylized Rendering', zh: '《彼岸花》风格化渲染' },
+      desc: {
+        en: 'Technical art and project management for Lycoris. Our level designer built the blockouts, and I worked on character shaders, environment lighting, gameplay VFX and animation integration.',
+        zh: '我在《彼岸花》中负责技术美术和项目管理。团队的关卡策划搭建白盒，我负责角色 Shader、场景光照、玩法特效与动画整合。',
+      },
+      detail: {
+        role: { en: 'Technical Artist / Project Manager', zh: '技术美术／项目管理' },
       },
       tags: ['Shader', 'Iteration'],
       clip: 'assets/clips/lycoris',
@@ -449,8 +452,49 @@ const CONFIG = {
       },
       tags: ['Tool', 'Unreal Engine'],
       pdf: 'assets/uploads/Project4_Compressed.pdf',
-      links: [
-      ],
+      links: [],
+    },
+    {
+      category: 'design',
+      group: 'art',
+      assetKey: 'uncharted-blockout',
+      hasVideo: false,
+      image: 'assets/uploads/level-design/uncharted-blockout.webp',
+      title: { en: 'Uncharted 4-Inspired Level Blockout', zh: '《神秘海域4》风格关卡白盒' },
+      desc: {
+        en: 'An individual level design study about crossing a canyon using bridges, climbing routes and companion interactions.',
+        zh: '以桥梁通行和 NPC 配合为核心的个人关卡练习，围绕峡谷高差组织攀爬路线、演出点与战斗空间。',
+      },
+      tags: ['Blockout', 'Traversal'],
+      links: [],
+    },
+    {
+      category: 'design',
+      group: 'art',
+      assetKey: 'mall-blockout',
+      hasVideo: false,
+      image: 'assets/uploads/level-design/mall-blockout.webp',
+      title: { en: 'Shopping Mall ARPG Blockout', zh: 'ARPG 商场箱庭关卡白盒' },
+      desc: {
+        en: 'An original action RPG level set in a shopping mall. I used the order in which players move through the space to tell the story.',
+        zh: '个人制作的动作角色扮演关卡。以商场为箱庭空间，通过玩家经过不同区域的顺序来呈现故事。',
+      },
+      tags: ['Blockout', 'Environmental Storytelling'],
+      links: [],
+    },
+    {
+      category: 'design',
+      group: 'work',
+      assetKey: 'screaming-chicken',
+      hasVideo: false,
+      image: 'assets/uploads/level-design/chicken-magnets-isometric.webp',
+      title: { en: 'Screaming Chicken: Ultimate Showdown', zh: '《炸鸡派对》多人关卡设计' },
+      desc: {
+        en: 'Three maps from my level design internship for a physics-based, isometric party game supporting two to four players locally or online.',
+        zh: '在腾云摘星实习期间制作的三张地图案例。游戏采用等轴视角和物理交互，支持 2 至 4 人本地或在线对战。',
+      },
+      tags: ['Multiplayer', '2v2', 'Free-for-all'],
+      links: [],
     },
   ],
 

@@ -82,7 +82,8 @@
   function curated(work) {
     var key=keys[work.pdf], mediaKeys=window.FIGMA_MEDIA_KEYS || {};
     if(key == null) (work.links || []).some(function(link){if(mediaKeys[link.href] != null){key=mediaKeys[link.href];return true;}return false;});
-    return (window.CURATED_CASE_STUDIES || {})[key] || null;
+    var studies=window.CURATED_CASE_STUDIES || {};
+    return studies[work.assetKey] || studies[key] || null;
   }
   function shot(img,lang) {
     img=Object.assign({},img,{cap:t(img.cap||'',lang)});
@@ -91,8 +92,18 @@
       '<img src="'+esc(m?m.src:img.src)+'" alt="'+esc(img.cap||'')+'" width="'+w+'" height="'+h+'" loading="lazy" decoding="async"></button>'+
       (img.cap?'<figcaption>'+esc(img.cap)+'</figcaption>':'')+'</figure>';
   }
+  function renderSection(s,lang) {
+    var heading=t(s.h||'',lang);
+    var copy=(heading && !/^inspiration(?:\s*[—–-]\s*why\??)?$/i.test(t(s.h||'','en').trim())?'<h3 class="cs-h">'+esc(heading)+'</h3>':'')+(s.sub?'<p class="cs-sub">'+esc(t(s.sub,lang))+'</p>':'')+
+      (s.text?t(s.text,lang).split('\n').map(function(p){return '<p>'+esc(p)+'</p>';}).join(''):'');
+    var main=(s.images||[]).filter(function(m){return !m.detail;}), det=(s.images||[]).filter(function(m){return m.detail;});
+    /* main pictures in one big row; parameter panels / node graphs in a smaller second row */
+    var pics=(main.length||det.length)?'<div class="cs-media">'+(main.length?'<div class="cs-shots">'+main.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+(det.length?'<div class="cs-shots cs-shots--detail">'+det.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+'</div>':'';
+    var wide=!s.text || !pics;
+    return '<section class="cs-sec'+(wide?' cs-sec--stack':'')+'"><div class="cs-copy">'+copy+'</div>'+pics+'</section>';
+  }
   function renderCurated(list, work, lang) {
-    var theme=keys[work.pdf]===2?'lycoris':keys[work.pdf]===6?'work':'pbr';
+    var theme=keys[work.pdf]===2?'lycoris':(keys[work.pdf]===6||work.category==='design')?'work':'pbr';
     return '<section class="fc-studies cs" id="case-study" data-theme="'+theme+'" aria-label="'+(lang==='zh'?'项目详解':'Case study')+'">'+
       '<div class="fc-index" role="navigation" aria-label="'+(lang==='zh'?'项目章节':'Chapters')+'">'+list.map(function(c,i){return '<a href="#cs-'+c.id+'">'+esc(t(c.title,lang))+'</a>';}).join('')+'</div>'+
       list.map(function(c,i){
@@ -101,15 +112,7 @@
           (c.kicker?'<p class="cs-kicker">'+esc(t(c.kicker,lang))+'</p>':'')+
           ((c.links||[]).length?'<div class="fc-links">'+c.links.map(function(l){return '<a href="'+esc(l.href)+'" target="_blank" rel="noopener">'+esc(t(l.title,lang))+' ↗</a>';}).join('')+'</div>':'')+
           (c.cover?'<figure class="fc-banner"><button class="pv-page-img" type="button" data-full-image="'+esc(full(c.cover))+'"><img src="'+esc(c.cover)+'" alt="'+esc(t(c.title,lang))+'" loading="lazy" decoding="async"></button></figure>':'')+
-          c.sections.map(function(s){
-            var copy=(s.h && !/^inspiration(?:\s*[—–-]\s*why\??)?$/i.test(s.h.trim())?'<h3 class="cs-h">'+esc(t(s.h,lang))+'</h3>':'')+(s.sub?'<p class="cs-sub">'+esc(t(s.sub,lang))+'</p>':'')+
-              (s.text?t(s.text,lang).split('\n').map(function(p){return '<p>'+esc(p)+'</p>';}).join(''):'');
-            var main=(s.images||[]).filter(function(m){return !m.detail;}), det=(s.images||[]).filter(function(m){return m.detail;});
-            /* main pictures in one big row; parameter panels / node graphs in a smaller second row */
-            var pics=(main.length||det.length)?'<div class="cs-media">'+(main.length?'<div class="cs-shots">'+main.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+(det.length?'<div class="cs-shots cs-shots--detail">'+det.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+'</div>':'';
-            var wide=!s.text || !pics;
-            return '<section class="cs-sec'+(wide?' cs-sec--stack':'')+'"><div class="cs-copy">'+copy+'</div>'+pics+'</section>';
-          }).join('')+
+          c.sections.map(function(s){return renderSection(s,lang);}).join('')+
         '</article>';
       }).join('')+'</section>';
   }
@@ -120,6 +123,7 @@
     var cu=curated(work); if(cu) return renderCurated(cu, work, lang);
     var list=chapters(work); if(!list.length)return '';
     var theme=keys[work.pdf]===2?'lycoris':keys[work.pdf]===6?'work':'pbr';
+    var additions=window.FIGMA_CASE_STUDY_ADDITIONS || {};
     var seen={};
     /* decorative corner ornaments sometimes also come through as content images — skip them */
     list.forEach(function(c){ (c.ornaments||[]).forEach(function(src){ seen['orn:'+src.split('/').pop().replace(/\.\w+$/,'')]=1; }); });
@@ -136,6 +140,7 @@
           return col.filter(function(b){ return b.kind!=='image' || fresh(b); });
         }).filter(function(col){ return col.length; });
         var supp=(c.supplementary||[]).filter(fresh);
+        var extra=additions[c.id] || {};
         var links=(c.links||[]).filter(function(link){return /^https:\/\//.test(link.href);});
         return '<article class="fc-chapter" id="fc-'+c.id.replace(':','-')+'">'+
           (c.ornaments||[]).map(function(src,k){return '<img class="fc-ornament fc-ornament--'+k+'" src="'+esc(preview(src))+'" alt="" aria-hidden="true" loading="lazy">';}).join('')+
@@ -143,6 +148,7 @@
           (links.length?'<div class="fc-links">'+links.map(function(link){return '<a href="'+esc(link.href)+'" target="_blank" rel="noopener">'+esc(t(link.title,lang))+' ↗</a>';}).join('')+'</div>':'')+
           bg+
           parts.map(function(col){ return '<div class="fc-part">'+flow(col,lang)+'</div>'; }).join('')+
+          (extra.sections||[]).map(function(s){return renderSection(s,lang);}).join('')+
           (supp.length?'<details class="fc-reference"><summary>'+(lang==='zh'?'更多场景视图':'Additional scene views')+'</summary>'+gallery(supp.map(function(img){return Object.assign({},img,{alt:t(img.alt,lang)});}))+'</details>':'')+
         '</article>';
       }).join('')+'</section>';
