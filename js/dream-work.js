@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   // One detail view shared by the gallery dialog and direct project URLs.
-  var shell="  <nav class=\"pv-subbar\" id=\"dreamSubbar\" aria-label=\"Project navigation\"></nav>\n  <main class=\"pv-shell\" id=\"pvMain\"></main>\n  <footer><button type=\"button\" class=\"lang-toggle\" data-detail-lang aria-label=\"切换语言\">中 · EN</button><span data-i18n=\"footer.copy\">© 2026 Hanqing Li · All rights reserved</span><a href=\"mailto:kyuandart@gmail.com\">kyuandart@gmail.com</a></footer>\n  <div class=\"dream-zoom\" id=\"dreamZoom\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"dreamZoomTitle\" hidden>\n    <div class=\"dream-zoom-toolbar\"><span id=\"dreamZoomTitle\"></span><div><button data-zoom=\"out\" aria-label=\"Zoom out\">−</button><button data-zoom=\"reset\" aria-label=\"Reset zoom\">100%</button><button data-zoom=\"in\" aria-label=\"Zoom in\">+</button><button data-zoom=\"close\">关闭 · Esc</button></div></div>\n    <div class=\"dream-zoom-stage\"><img alt=\"\" draggable=\"false\"><span class=\"dream-zoom-hint\"></span></div>\n  </div>\n";
+  var shell="  <nav class=\"pv-subbar\" id=\"dreamSubbar\" aria-label=\"Project navigation\"></nav>\n  <main class=\"pv-shell\" id=\"pvMain\"></main>\n  <footer><button type=\"button\" class=\"lang-toggle\" data-detail-lang aria-label=\"切换语言\">中 · EN</button><span data-i18n=\"footer.copy\">© 2026 Hanqing Li · All rights reserved</span><a href=\"mailto:kyuandart@gmail.com\">kyuandart@gmail.com</a></footer>\n  <div class=\"dream-zoom\" id=\"dreamZoom\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"dreamZoomTitle\" hidden>\n    <div class=\"dream-zoom-toolbar\"><span id=\"dreamZoomTitle\"></span><div><button type=\"button\" data-zoom=\"original\" aria-pressed=\"false\" hidden>原图</button><button data-zoom=\"out\" aria-label=\"Zoom out\">−</button><button data-zoom=\"reset\" aria-label=\"Reset zoom\">100%</button><button data-zoom=\"in\" aria-label=\"Zoom in\">+</button><button data-zoom=\"close\">关闭 · Esc</button></div></div>\n    <div class=\"dream-zoom-stage\"><img alt=\"\" draggable=\"false\"><span class=\"dream-zoom-hint\"></span></div>\n  </div>\n";
   function mount(root, initialId, options){
   options=options || {};
   root.insertAdjacentHTML('beforeend', shell);
@@ -10,6 +10,7 @@
   function stop(){main.querySelectorAll('video').forEach(function(v){v.pause();v.removeAttribute('src');v.load();});}
   function navigate(next){if(options.navigate)options.navigate(next);else location.href='work.html?id='+next+'&lang='+P.lang();}
   var zoom = root.querySelector('#dreamZoom'), stage = zoom.querySelector('.dream-zoom-stage'), image = stage.querySelector('img');
+  var versionButton=zoom.querySelector('[data-zoom="original"]'), showOriginal=false;
   var scale = 1, tx = 0, ty = 0, drag = null, returnFocus = null, previousOverflow = '';
   function L(zh,en){return P.lang()==='zh'?zh:en;}
   function caption(v){return P.esc(P.t(v.title || v.label).replace(/[→↗]/g,'').trim());}
@@ -17,9 +18,9 @@
   function player(w,v){return '<div class="pv-player"><video controls playsinline preload="'+(w.pdf==='assets/uploads/Project1_Compressed.pdf'?'metadata':'none')+'" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
   function cover(w){
     var title=P.esc(P.t(w.title));
-    var img='<img src="'+P.esc(w.image)+'" alt="'+title+'" style="display:block;width:100%">';
-    var original=window.FigmaCaseStudy && FigmaCaseStudy.originalImage(w.image);
-    if(original)img='<button type="button" class="pv-page-img pv-cover-zoom" data-full-image="'+P.esc(original)+'" aria-label="'+L('放大原图：','Enlarge original: ')+title+'">'+img+'</button>';
+    var versions=window.FigmaCaseStudy && FigmaCaseStudy.levelDesignImages(w.image);
+    var img='<img src="'+P.esc(versions?versions.clear:w.image)+'" alt="'+title+'" style="display:block;width:100%">';
+    if(versions)img='<button type="button" class="pv-page-img pv-cover-zoom" data-full-image="'+P.esc(versions.clear)+'" data-original-image="'+P.esc(versions.original)+'" aria-label="'+L('放大：','Enlarge: ')+title+'">'+img+'</button>';
     return '<div class="pv-player">'+img+'</div>';
   }
   function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
@@ -88,15 +89,42 @@
   function reset(){scale=1;tx=ty=0;transform();}
   function zoomBy(f,x,y){var s=Math.max(1,Math.min(10,scale*f)),k=s/scale;tx=(x||0)-((x||0)-tx)*k;ty=(y||0)-((y||0)-ty)*k;scale=s;if(scale===1){tx=ty=0;}transform();}
   function close(){zoom.hidden=true;document.documentElement.style.overflow=previousOverflow;image.removeAttribute('src');main.inert=false;root.querySelector('#dreamSubbar').inert=false;if(returnFocus && returnFocus.isConnected)returnFocus.focus({preventScroll:true});}
-  root.addEventListener('click',function(e){var b=e.target.closest('.pv-page-img');if(!b)return;returnFocus=b;image.src=b.dataset.fullImage || b.querySelector('img').src;image.alt=b.dataset.title || b.querySelector('img').alt;root.querySelector('#dreamZoomTitle').textContent=image.alt;previousOverflow=document.documentElement.style.overflow;zoom.hidden=false;main.inert=true;root.querySelector('#dreamSubbar').inert=true;document.documentElement.style.overflow='hidden';reset();zoom.querySelector('[data-zoom="close"]').focus();});
-  zoom.addEventListener('click',function(e){var b=e.target.closest('[data-zoom]');if(!b)return;var action=b.dataset.zoom;if(action==='close')close();else if(action==='reset')reset();else zoomBy(action==='in'?1.5:1/1.5);});
+  function setImageVersion(original){
+    showOriginal=original;
+    versionButton.setAttribute('aria-pressed',String(original));
+    image.src=(original?returnFocus.dataset.originalImage:returnFocus.dataset.fullImage)||returnFocus.querySelector('img').src;
+  }
+  root.addEventListener('click',function(e){
+    var button=e.target.closest('.pv-page-img');if(!button)return;
+    returnFocus=button;
+    versionButton.hidden=!button.dataset.originalImage;
+    versionButton.textContent=L('原图','Original');
+    setImageVersion(false);
+    image.alt=button.dataset.title || button.querySelector('img').alt;
+    root.querySelector('#dreamZoomTitle').textContent=image.alt;
+    previousOverflow=document.documentElement.style.overflow;
+    zoom.hidden=false;
+    main.inert=true;
+    root.querySelector('#dreamSubbar').inert=true;
+    document.documentElement.style.overflow='hidden';
+    reset();
+    zoom.querySelector('[data-zoom="close"]').focus();
+  });
+  zoom.addEventListener('click',function(e){
+    var button=e.target.closest('[data-zoom]');if(!button)return;
+    var action=button.dataset.zoom;
+    if(action==='close')close();
+    else if(action==='original')setImageVersion(!showOriginal);
+    else if(action==='reset')reset();
+    else zoomBy(action==='in'?1.5:1/1.5);
+  });
   stage.addEventListener('wheel',function(e){e.preventDefault();var r=stage.getBoundingClientRect();zoomBy(Math.exp(-e.deltaY*.0018),e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2);},{passive:false});
   stage.addEventListener('pointerdown',function(e){if(scale<=1)return;stage.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY};stage.style.cursor='grabbing';});
   stage.addEventListener('pointermove',function(e){if(!drag)return;tx+=e.clientX-drag.x;ty+=e.clientY-drag.y;drag={x:e.clientX,y:e.clientY};transform();});
   ['pointerup','pointercancel','lostpointercapture'].forEach(function(type){stage.addEventListener(type,function(){drag=null;transform();});});
   stage.addEventListener('dblclick',function(e){if(scale>1)reset();else{var r=stage.getBoundingClientRect();zoomBy(3,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2);}});
   root.addEventListener('keydown',function(e){
-    if(!zoom.hidden){if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}if(e.key==='+' || e.key==='=')zoomBy(1.4);if(e.key==='-')zoomBy(1/1.4);if(e.key==='Tab'){var bs=Array.from(zoom.querySelectorAll('button'));if(e.shiftKey && document.activeElement===bs[0]){e.preventDefault();bs[bs.length-1].focus();}else if(!e.shiftKey && document.activeElement===bs[bs.length-1]){e.preventDefault();bs[0].focus();}}return;}
+    if(!zoom.hidden){if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}if(e.key==='+' || e.key==='=')zoomBy(1.4);if(e.key==='-')zoomBy(1/1.4);if(e.key==='Tab'){var bs=Array.from(zoom.querySelectorAll('button:not([hidden])'));if(e.shiftKey && document.activeElement===bs[0]){e.preventDefault();bs[bs.length-1].focus();}else if(!e.shiftKey && document.activeElement===bs[bs.length-1]){e.preventDefault();bs[0].focus();}}return;}
     if(/INPUT|TEXTAREA|VIDEO|BUTTON/.test(document.activeElement.tagName) || document.activeElement.isContentEditable)return;
     if(id>=0 && id<W.length && (e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();navigate((id+(e.key==='ArrowRight'?1:-1)+W.length)%W.length);}
   });

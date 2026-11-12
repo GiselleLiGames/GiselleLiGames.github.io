@@ -21,13 +21,14 @@
   function t(v,lang) { return window.SiteCopy ? SiteCopy.text(v,lang) : (typeof v === 'string' ? v : v[lang] || v.en); }
   function media(item) { var map=window.CaseStudyMedia || {}; return map[item.node || item.sourceNode] || map[item.src] || null; }
   function preview(src) { var m=media({src:src}); return m ? m.src : src.replace(/\.(png|jpg)$/,'.webp'); }
-  function originalImage(src) {
+  function levelDesignImages(src) {
     var match = /^assets\/uploads\/level-design\/([a-z0-9-]+)\.webp$/.exec(src);
-    if (!match) return '';
+    if (!match) return null;
+    var root = 'assets/uploads/level-design/';
     var name = match[1], extension = name === 'chicken-magnets-isometric' ? '.jpeg' : '.png';
-    return 'assets/uploads/level-design/original/' + name + extension;
+    return { clear: root + 'clear/' + name + '.webp', original: root + 'original/' + name + extension };
   }
-  function full(src) { var m=media({src:src}); return m ? m.full : originalImage(src) || (/^assets\/uploads\/figma\/source\//.test(src) ? src.replace(/\.(png|jpg|webp)$/,'.full.webp') : src); }
+  function full(src) { var m=media({src:src}); return m ? m.full : /^assets\/uploads\/figma\/source\//.test(src) ? src.replace(/\.(png|jpg|webp)$/,'.full.webp') : src; }
   function size(item) {
     var m=media(item); if(m) return [m.width,m.height];
     var s=(window.FIGMA_IMAGE_SIZES || {})[preview(item.src)];
@@ -91,11 +92,14 @@
     var studies=window.CURATED_CASE_STUDIES || {};
     return studies[work.assetKey] || studies[key] || null;
   }
-  function shot(img,lang,readable) {
+  function shot(img,lang) {
     img=Object.assign({},img,{cap:t(img.cap||'',lang)});
     var m=media(img), w=m?m.width:img.w, h=m?m.height:img.h, r=Math.max(.3, Math.min(w/h, 6));
-    var display=m?m.src:(readable && originalImage(img.src))||img.src;
-    return '<figure class="cs-shot" style="--r:'+r.toFixed(3)+'"><button class="pv-page-img" type="button" data-full-image="'+esc(m?m.full:full(img.src))+'" aria-label="'+esc(img.cap||'')+'">'+
+    var versions=levelDesignImages(img.src);
+    var display=versions?versions.clear:m?m.src:img.src;
+    var zoomSrc=versions?versions.clear:m?m.full:full(img.src);
+    var originalAttr=versions?' data-original-image="'+esc(versions.original)+'"':'';
+    return '<figure class="cs-shot" style="--r:'+r.toFixed(3)+'"><button class="pv-page-img" type="button" data-full-image="'+esc(zoomSrc)+'"'+originalAttr+' aria-label="'+esc(img.cap||'')+'">'+
       '<img src="'+esc(display)+'" alt="'+esc(img.cap||'')+'" width="'+w+'" height="'+h+'" loading="lazy" decoding="async"></button>'+
       (img.cap?'<figcaption>'+esc(img.cap)+'</figcaption>':'')+'</figure>';
   }
@@ -105,7 +109,7 @@
       (s.text?t(s.text,lang).split('\n').map(function(p){return '<p>'+esc(p)+'</p>';}).join(''):'');
     var main=(s.images||[]).filter(function(m){return !m.detail;}), det=(s.images||[]).filter(function(m){return m.detail;});
     /* main pictures in one big row; parameter panels / node graphs in a smaller second row */
-    var pics=(main.length||det.length)?'<div class="cs-media">'+(main.length?'<div class="cs-shots'+(s.readable?' cs-shots--readable':'')+'">'+main.map(function(img){return shot(img,lang,s.readable);}).join('')+'</div>':'')+(det.length?'<div class="cs-shots cs-shots--detail">'+det.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+'</div>':'';
+    var pics=(main.length||det.length)?'<div class="cs-media">'+(main.length?'<div class="cs-shots'+(s.readable?' cs-shots--readable':'')+'">'+main.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+(det.length?'<div class="cs-shots cs-shots--detail">'+det.map(function(img){return shot(img,lang);}).join('')+'</div>':'')+'</div>':'';
     var wide=s.readable || !s.text || !pics;
     return '<section class="cs-sec'+(wide?' cs-sec--stack':'')+'"><div class="cs-copy">'+copy+'</div>'+pics+'</section>';
   }
@@ -160,5 +164,5 @@
         '</article>';
       }).join('')+'</section>';
   }
-  window.FigmaCaseStudy={has:function(w){return !!curated(w) || chapters(w).length>0;},render:render,originalImage:originalImage};
+  window.FigmaCaseStudy={has:function(w){return !!curated(w) || chapters(w).length>0;},render:render,levelDesignImages:levelDesignImages};
 })();

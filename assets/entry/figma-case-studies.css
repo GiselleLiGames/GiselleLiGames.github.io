@@ -126,3 +126,9 @@
   .cs-shots--readable:has(.cs-shot:nth-child(2)){grid-template-columns:repeat(2,minmax(0,1fr))}
   .cs-shots--readable .cs-shot:only-child,.cs-shots--readable .cs-shot:last-child:nth-child(odd){grid-column:1 / -1}
 }
+
+.dream-zoom-toolbar [data-zoom="original"][aria-pressed="true"]{border-color:var(--pink);color:var(--pink)}
+@media(max-width:600px){
+  .dream-zoom-toolbar:has([data-zoom="original"]:not([hidden])){flex-wrap:wrap;gap:8px}
+  .dream-zoom-toolbar:has([data-zoom="original"]:not([hidden])) > div{flex-wrap:wrap}
+}
