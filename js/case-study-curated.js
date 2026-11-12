@@ -637,6 +637,7 @@ window.CURATED_CASE_STUDIES = {
         title: { zh: '峡谷动线', en: 'Canyon Route' },
         sections: [
           {
+            readable: true,
             text: {
               zh: '这份《神秘海域4》风格的关卡白盒以悬崖、桥梁和多层平台组织路线。总平面图标出了起点、终点、主路线和备选路线，也记录了演出点、敌人位置及可攀爬表面，便于检查玩家何时进入下一段挑战。',
               en: 'I organized the blockout around cliff faces, bridges and platforms at different elevations. The plan marks the start, finish, critical path and alternate routes, alongside cinematic beats, enemy positions and climbable surfaces.'
@@ -650,6 +651,7 @@ window.CURATED_CASE_STUDIES = {
         title: { zh: '桥梁与 NPC 配合', en: 'Bridges and Companion Interaction' },
         sections: [
           {
+            readable: true,
             text: {
               zh: '我把桥梁和 NPC 配合作为主要设计练习。白盒标注了跨桥路线、岩壁上的替代攀爬路线和演出触发位置，并用第三个演出点的两张示意图区分等待与继续前进时的走法。',
               en: 'Bridges and companion interaction were the focus of the study. The blockout marks the bridge crossing, alternate climbs along the cliff, and cinematic triggers. Two diagrams for the third cinematic beat show the routes for waiting and moving on.'
@@ -667,6 +669,7 @@ window.CURATED_CASE_STUDIES = {
         title: { zh: '崖间战斗与攀爬', en: 'Cliffside Combat and Climbing' },
         sections: [
           {
+            readable: true,
             text: {
               zh: '后段用桥连接高处建筑，把敌人和玩家的通行路线分布在不同层级。局部图标出了建筑内外的移动方式，以及攀爬点和跨崖跳跃之间的距离。',
               en: 'In the final stretch, bridges connect elevated buildings, with enemy positions and traversal routes spread across different heights. The detail drawings mark movement through and around the structures, including ledge spacing and jumps across the ravine.'
@@ -800,6 +803,7 @@ window.CURATED_CASE_STUDIES = {
         title: { zh: '圣诞逃亡', en: 'Christmas Escape' },
         sections: [
           {
+            readable: true,
             text: {
               zh: '玩家在四条赛道间换道，躲避电锯。障碍在两种组合之间轮换，一种配对为 1 与 3、2 与 4，另一种为 1 与 4、2 与 3。外侧栏杆升起前，报警器先抬起，给玩家留出换到安全赛道的时间。',
               en: 'Players switch between four lanes to avoid saws. Hazards alternate between two patterns, pairing lanes 1 and 3 with 2 and 4, then 1 and 4 with 2 and 3. An alarm rises before the outer barriers, giving players time to switch to a safer lane.'
@@ -848,6 +852,7 @@ window.CURATED_CASE_STUDIES = {
         },
         {
           h: { zh: '地图布局与玩家路线', en: 'Placement and Player Routes' },
+          readable: true,
           text: {
             zh: '我用高差给同类事件做空间区分，例如被矿坑事件炸飞的失踪者位于矿坑顶部。部分藏宝点需要完成前置任务，作为主航线外大片空区的隐藏探索目标。配置草图标出了目击点与实际事件点。上方的玩家攻略图可以对照玩家实际采用的路线。',
             en: 'I used elevation to distinguish similar events. For example, one missing person was thrown to the top of a mine by an explosion. Some treasure sites require a prerequisite quest and serve as hidden destinations in empty stretches off the main route. The placement sketch marks the sighting and event locations. The player guide above shows how a player traced those routes.'

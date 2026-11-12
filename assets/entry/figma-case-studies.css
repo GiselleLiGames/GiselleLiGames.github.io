@@ -115,3 +115,14 @@
   .cs-shot img{aspect-ratio:auto;object-fit:contain}
   .cs-shot:only-child button{aspect-ratio:var(--r)}
 }
+
+/* Keep labels and measurements readable in project diagrams. */
+.cs-shots--readable{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.cs-shots--readable .cs-shot,.cs-shots--readable .cs-shot:only-child{width:100%}
+.cs-shots--readable .cs-shot button{aspect-ratio:var(--r)}
+.pv-cover-zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.pv-cover-zoom:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+@media(min-width:1000px){
+  .cs-shots--readable:has(.cs-shot:nth-child(2)){grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cs-shots--readable .cs-shot:only-child,.cs-shots--readable .cs-shot:last-child:nth-child(odd){grid-column:1 / -1}
+}

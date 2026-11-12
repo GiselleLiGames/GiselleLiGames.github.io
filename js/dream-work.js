@@ -15,6 +15,13 @@
   function caption(v){return P.esc(P.t(v.title || v.label).replace(/[→↗]/g,'').trim());}
   function poster(w,v){return v.poster || w.image || (P.clip(w)||{}).poster || '';}
   function player(w,v){return '<div class="pv-player"><video controls playsinline preload="'+(w.pdf==='assets/uploads/Project1_Compressed.pdf'?'metadata':'none')+'" poster="'+P.esc(poster(w,v))+'" src="'+P.esc(v.href)+'"></video></div>';}
+  function cover(w){
+    var title=P.esc(P.t(w.title));
+    var img='<img src="'+P.esc(w.image)+'" alt="'+title+'" style="display:block;width:100%">';
+    var original=window.FigmaCaseStudy && FigmaCaseStudy.originalImage(w.image);
+    if(original)img='<button type="button" class="pv-page-img pv-cover-zoom" data-full-image="'+P.esc(original)+'" aria-label="'+L('放大原图：','Enlarge original: ')+title+'">'+img+'</button>';
+    return '<div class="pv-player">'+img+'</div>';
+  }
   function section(num,title,body,id){return '<section class="dream-section" id="'+id+'"><div class="dream-section-heading"><h2>'+title+'</h2>'+(id==='gallery'?'<small>'+L('点击放大','Click to enlarge')+'</small>':'')+'</div><div class="dream-prose">'+body+'</div></section>';}
   var outlineObserver=null;
   function readingLayout(){
@@ -63,7 +70,7 @@
     var n=0, romans=['','','','',''];
     root.querySelector('#dreamSubbar').innerHTML='<a class="dream-back" href="'+P.esc(back())+'">« '+L('返回作品集','Back to portfolio')+'</a><div class="pv-subbar__nav"><a href="work.html?id='+prev+'" aria-label="'+L('上一个作品：','Previous work: ')+P.esc(P.t(W[prev].title))+'">‹ <span class="txt">'+L('上一个','Previous')+'</span></a><a href="work.html?id='+next+'" aria-label="'+L('下一个作品：','Next work: ')+P.esc(P.t(W[next].title))+'"><span class="txt">'+L('下一个','Next')+'</span> ›</a></div>';
     main.innerHTML=
-      '<section class="pv-hero'+(isShadow?' pv-hero--timeline':'')+'"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1>'+(zh?'<span class="dream-name-secondary" lang="en">'+P.esc(w.title.en)+'</span>':'')+'</div>'+(isShadow?'<section class="pbr-section shadow-final" id="shadow-final"><header class="pbr-section-head"><div><h2>'+L('最终效果','Final result')+'</h2></div></header>'+player(w,videos[0])+'</section>':videos.length?player(w,videos[0]):'<div class="pv-player"><img src="'+P.esc(w.image)+'" alt="'+P.esc(P.t(w.title))+'" style="display:block;width:100%"></div>')+
+      '<section class="pv-hero'+(isShadow?' pv-hero--timeline':'')+'"><div><div class="pv-kicker">'+P.esc(category[zh?0:1])+' · '+P.esc(group)+'</div><h1 class="pv-htitle" id="dreamDetailTitle" tabindex="-1">'+P.esc(P.t(w.title))+'</h1>'+(zh?'<span class="dream-name-secondary" lang="en">'+P.esc(w.title.en)+'</span>':'')+'</div>'+(isShadow?'<section class="pbr-section shadow-final" id="shadow-final"><header class="pbr-section-head"><div><h2>'+L('最终效果','Final result')+'</h2></div></header>'+player(w,videos[0])+'</section>':videos.length?player(w,videos[0]):cover(w))+
       '<div class="pv-facts">'+facts.map(function(f){return '<div class="pv-fact"><small>'+f[0]+'</small><span>'+P.esc(f[1])+'</span></div>';}).join('')+'</div></section>'+
       (isShadow?ShadowCaseStudy.render(w,zh?'zh':'en'):section(romans[n++],L('概述','Overview'),overview,'overview')+
       (videos.length>1?section(romans[n++],L('视频','Videos'),'<div class="dream-media-grid">'+videos.slice(1).map(function(v,k){return '<figure>'+player(w,v)+'<figcaption>'+caption(v)+'</figcaption>'+(v.description?'<p>'+P.esc(P.t(v.description))+'</p>':'')+'</figure>';}).join('')+'</div>','video'):'')+
