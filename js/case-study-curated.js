@@ -682,7 +682,7 @@ window.CURATED_CASE_STUDIES = {
     'mall-blockout': [
       {
         id: 'mall-flow',
-        title: { zh: '关卡流程与叙事', en: 'Level Flow and Story' },
+        title: { zh: '救援任务与楼层动线', en: 'Rescue Route Through the Mall' },
         links: [
           {
             href: 'https://u0273se2y4k.feishu.cn/docx/DaY0dPvedojpnqxrRiOcPrbgnGc',
@@ -696,8 +696,50 @@ window.CURATED_CASE_STUDIES = {
         sections: [
           {
             text: {
-              zh: '白盒用不同高度的平台、楼梯和连接通道搭出商场内部。设计文档和解说视频记录了各区域的进入顺序，以及故事如何随关卡流程展开。',
-              en: 'The blockout uses platforms, stairs and connecting passages to define the mall interior. The design document and walkthrough explain the order in which players visit its spaces and how the story unfolds along that route.'
+              zh: '主角得知朋友被当作人质后，从后门进入土匪占据的废弃商场。入口附近先安排一只丧尸，让玩家用刚拿到的武士刀学习近战。随后，玩家在带有「叛徒」标记的尸体旁捡到步枪，并用它应对远处的敌人。武器教学也交代了朋友与土匪团的关系。',
+              en: 'When the protagonist learns that a friend is being held hostage, they enter the abandoned mall through a rear door. A lone zombie teaches melee with the katana. Farther in, the player finds a rifle beside a body marked “traitor” and uses it against a distant enemy. The weapon tutorial also leaves a clue about the friend’s connection to the gang.'
+            }
+          },
+          {
+            text: {
+              zh: '我用挑空大厅和长廊安排较大的战斗，用地下通道和逃生楼梯串起狭窄的探索段。谈判失败后，土匪封闭通路并释放丧尸。玩家从 A 座绕到 B 座，最终沿安全通道上到天台救人。',
+              en: 'The open atrium and long corridors accommodate larger encounters, while basement passages and fire stairs connect tighter exploration spaces. After negotiations fail, the gang seals the exits and releases the zombies. The player detours from Wing A into Wing B and climbs the fire stairs toward the rooftop rescue.'
+            }
+          }
+        ]
+      },
+      {
+        id: 'mall-lasers',
+        title: { zh: '激光改变路线和战斗', en: 'Lasers Change Routes and Encounters' },
+        sections: [
+          {
+            text: {
+              zh: '低矮或移动的激光要求玩家判断跳跃和翻滚的时机。三道连续激光可以让玩家看见另一侧的空间，同时迫使玩家从侧面绕行或从上方进入。部分机关同时控制两道激光门，改变房间之间的通路。',
+              en: 'Low and moving beams ask the player to time jumps and dodges. Three consecutive beams let the player see the space beyond while forcing a detour or an approach from above. Some switches control two laser gates, changing which rooms connect.'
+            }
+          },
+          {
+            text: {
+              zh: '激光也会伤害丧尸。玩家可以把丧尸引过光束，在小 Boss 战中借场景处理敌人。同一个装置在过路时是障碍，在战斗中可以成为玩家利用的机关。',
+              en: 'Beams also damage zombies. The player can lure enemies through them, including in a miniboss encounter. A device that blocks traversal can become a tool during combat.'
+            }
+          }
+        ]
+      },
+      {
+        id: 'mall-optional-route',
+        title: { zh: '地下支路与场景线索', en: 'Basement Detour and Environmental Clues' },
+        sections: [
+          {
+            text: {
+              zh: '可读的日记交代了土匪如何占领商场、把丧尸关在特定房间，也提示 B1 藏有激光防护服。探索支路的玩家可以找到防护服，之后靠翻滚穿过激光。主线流程根据玩家是否拿到防护服提供不同走法。',
+              en: 'Optional journals explain how the gang took over the mall and confined the zombies. One points to a protective suit hidden in the basement. Players who find it can dodge through beams, and the later route changes according to whether they have it.'
+            }
+          },
+          {
+            text: {
+              zh: '白盒用色区分空间用途。白色标记相对安全区，暖黄色标记开阔战斗区，绿色标记丧尸关押区，蓝色标记狭窄或隐蔽的通道。',
+              en: 'Blockout colors distinguish spatial roles. White marks relatively safe rooms, warm yellow marks open combat spaces, green marks zombie holding areas, and blue marks narrow or hidden passages.'
             }
           }
         ]

@@ -474,7 +474,7 @@ const CONFIG = {
       assetKey: 'mall-blockout',
       hasVideo: false,
       image: 'assets/uploads/level-design/mall-blockout.webp',
-      title: { en: 'Shopping Mall ARPG Blockout', zh: 'ARPG 商场箱庭关卡白盒' },
+      title: { en: 'Abandoned Mall · ARPG Blockout', zh: '《废弃商场》ARPG 箱庭白盒' },
       desc: {
         en: 'An original action RPG level set in a shopping mall. I used the order in which players move through the space to tell the story.',
         zh: '个人制作的动作角色扮演关卡。以商场为箱庭空间，通过玩家经过不同区域的顺序来呈现故事。',
