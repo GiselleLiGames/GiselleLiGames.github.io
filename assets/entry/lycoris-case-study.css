@@ -1,0 +1,11 @@
+/* Lycoris: technical demonstrations and their process evidence. */
+.lycoris-demo-row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
+.lycoris-study .pbr-demo video{aspect-ratio:431/270}
+.lycoris-process{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px;margin-top:28px;align-items:start}
+.lycoris-study .pbr-shot button{aspect-ratio:auto;display:block}
+.lycoris-study .pbr-shot img{height:auto;max-height:420px;object-fit:contain;object-position:top}
+.lycoris-effect+.lycoris-effect{margin-top:36px;padding-top:28px;border-top:1px solid var(--line,#ffffff2e)}
+.lycoris-effect h3{font-size:20px;line-height:1.4;margin:0 0 14px}
+.lycoris-trailer{font-size:14px;margin:28px 0 0}
+@media(max-width:900px){.lycoris-demo-row{grid-template-columns:1fr;gap:20px}.lycoris-demo-row .pbr-summary{margin-bottom:0}}
+@media(max-width:560px){.lycoris-process{grid-template-columns:1fr;gap:24px}.lycoris-effect h3{font-size:18px}}

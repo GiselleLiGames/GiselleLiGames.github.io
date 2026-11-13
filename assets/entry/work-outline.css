@@ -59,3 +59,11 @@ body.anime-site.dream-work > .pv-subbar,
 @media (prefers-reduced-motion: reduce) {
   .dream-outline a, .anime-site .pv-subbar .dream-back, .anime-site .pv-subbar__nav a { transition: none; }
 }
+
+/* Who made what, under the project facts. */
+.dream-credits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 18px; }
+.dream-credit { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--line); background: #221d2d99; }
+.dream-credit small { align-self: flex-start; padding: 3px 14px 3px 9px; background: #3a3247; color: var(--paper); font-size: 12px; font-weight: 800; clip-path: polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%); }
+.dream-credit span { color: var(--paper); font-size: 15px; line-height: 1.6; }
+.dream-credit.is-mine { border-color: var(--pink); }
+.dream-credit.is-mine small { background: var(--pink); color: white; }

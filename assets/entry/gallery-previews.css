@@ -74,3 +74,63 @@
 @media (prefers-reduced-motion: reduce) {
   .anime-stage-layout .anime-work-row, .anime-stage-media img.is-in { transition: none; }
 }
+
+/* Two portfolios stacked on the page: Technical Art first (the main one), Level Design
+   below it, in the same form. Each has its own title bar, stage and wall of tiles. */
+.anime-collection-bar.has-tracks > #animeWorksTitle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.anime-site .anime-track-title { margin: 0; font-size: 32px; font-weight: 900; line-height: 1.1; }
+.anime-site .anime-track-title small { margin-left: 6px; font-size: 12px; color: var(--pink); letter-spacing: .12em; }
+.anime-filter-wrap[hidden] { display: none; }
+.anime-collection-next { padding-top: 0; }
+.anime-collection-next .anime-preview-toggle { display: block; }
+
+/* PC / iPad: every work is an image tile, so the strong pieces show at a glance. The
+   script picks the column count (--tile-cols) so the whole wall fits one screen. */
+@media (min-width: 761px) {
+  .anime-collection { padding-top: 0; padding-bottom: 20px; scroll-margin-top: -86px; /* html has scroll-padding-top 150px; land right under the 64px nav */ }
+  .anime-collection-bar.has-tracks { min-height: 92px; padding: 14px 0; }
+  .anime-works-layout.anime-stage-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); margin-top: 20px; --works-top: 176px; }
+  .anime-stage { top: var(--works-top); }
+  .anime-stage-media { width: min(100%, calc((100vh - var(--works-top) - 300px) * 16 / 9)); }
+  .anime-stage-layout .anime-work-list { display: grid; grid-template-columns: repeat(var(--tile-cols, 2), minmax(0, 1fr)); gap: 8px; align-content: start; padding-left: 0; height: auto; min-height: 0; max-height: none; overflow: visible; /* never a scroll box: the wheel always scrolls the page */ position: sticky; top: var(--works-top); }
+  .anime-stage-layout .anime-work-row { position: relative; display: block; height: var(--tile-h, auto); aspect-ratio: auto; min-height: 0; padding: 0; border: 0; background: #0f0c16; clip-path: polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%); overflow: hidden; transition: none; }
+  .anime-stage-layout .anime-work-row.is-selected, .anime-stage-layout .anime-work-row:hover:not(.is-selected) { transform: none; }
+  .anime-stage-layout .anime-work-row::before { display: none; }
+  .anime-stage-layout .anime-row-media { position: absolute; inset: 0; width: auto; height: auto; aspect-ratio: auto; }
+  .anime-stage-layout .anime-row-media img { transition: transform .5s cubic-bezier(.2,.8,.2,1), filter .2s; filter: brightness(.82); }
+  .anime-stage-layout .anime-work-row:is(:hover, .is-selected) .anime-row-media img { transform: scale(1.05); filter: none; }
+  .anime-stage-layout .anime-work-title { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 26px 26px 9px 12px; background: linear-gradient(transparent, #0b0910e6 62%); }
+  .anime-stage-layout .anime-work-title strong { display: block; color: #fff; font-size: 16px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 4px #000a; }
+  .anime-stage-layout .anime-work-title small, .anime-stage-layout .anime-work-group { display: none; }
+  /* Selected tile: pink frame and pink title strip. */
+  .anime-stage-layout .anime-work-row.is-selected::after { content: ''; position: absolute; inset: 0; z-index: 2; border: 3px solid var(--pink); pointer-events: none; }
+  .anime-stage-layout .anime-work-row.is-selected .anime-work-title { padding-top: 7px; background: var(--pink); }
+  .anime-stage-layout .anime-work-row.is-selected .anime-work-title strong { text-shadow: none; }
+  .anime-stage-layout .anime-work-row:focus-visible { outline: 3px solid var(--cyan, #66ccff); outline-offset: -3px; }
+}
+/* Landscape screens: each portfolio fills one screen, so scrolling moves from one to the next. */
+@media (min-width: 761px) and (min-aspect-ratio: 1/1) { .anime-collection { min-height: calc(100vh - 64px); } }
+@media (min-width: 761px) and (max-aspect-ratio: 1/1) { .anime-collection { padding-bottom: 64px; } }
+@media (max-width: 760px) {
+  .anime-site .anime-track-title { font-size: 26px; }
+  .anime-collection-next { margin-top: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .anime-stage-layout .anime-row-media img { transition: none; } }
+
+/* Who made what, one line under the stage description. */
+.anime-stage-credit { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 4px; color: var(--paper); font-size: 14px; line-height: 1.5; }
+.anime-stage-credit b { display: inline-block; margin-right: 8px; padding: 1px 12px 1px 7px; background: var(--pink); color: white; font-size: 12px; font-weight: 800; clip-path: polygon(0 0,100% 0,calc(100% - 7px) 100%,0 100%); }
+.anime-stage-credit b.is-other { background: #3a3247; }
+@media (max-width: 760px) { .anime-stage-credit { display: none; } }
+
+/* Scroll cue: a pulsing double chevron, bottom centre, while there is more page below. */
+.anime-scroll-cue { position: fixed; left: 50%; bottom: 14px; z-index: 30; display: grid; place-items: center; width: 64px; height: 48px; margin-left: -32px; padding: 0; border: 0; background: #15121ccc; color: var(--pink); cursor: pointer; clip-path: polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%); backdrop-filter: blur(8px); transition: opacity .3s, transform .3s, background .18s, color .18s; }
+.anime-scroll-cue svg { fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: square; }
+.anime-scroll-cue path { animation: anime-cue 1.5s ease-in-out infinite; }
+.anime-scroll-cue path:last-child { animation-delay: .22s; }
+.anime-scroll-cue:hover { background: var(--pink); color: white; }
+.anime-scroll-cue:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+.anime-scroll-cue.is-hidden, .dream-preview-open .anime-scroll-cue, .anime-entering .anime-scroll-cue { opacity: 0; transform: translateY(16px); pointer-events: none; }
+@keyframes anime-cue { 0%, 100% { opacity: .25; transform: translateY(-3px); } 50% { opacity: 1; transform: translateY(3px); } }
+@media (max-width: 760px) { .anime-scroll-cue { width: 52px; height: 40px; margin-left: -26px; bottom: 10px; } }
+@media (prefers-reduced-motion: reduce) { .anime-scroll-cue path { animation: none; } .anime-scroll-cue { transition: none; } }

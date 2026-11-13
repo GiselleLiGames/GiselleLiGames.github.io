@@ -1,7 +1,8 @@
 /* Open the complete project in place; direct URLs use the same view. */
 (function(){
   'use strict';
-  var grid=document.getElementById('pvGrid'), dialog=document.createElement('dialog');
+  // Works live in several stacked sections now, so listen on the whole page shell.
+  var grid=document.querySelector('.anime-shell')||document.getElementById('pvGrid'), dialog=document.createElement('dialog');
   dialog.className='dream-detail dream-work';dialog.id='dreamDetail';
   dialog.setAttribute('aria-labelledby','dreamDetailTitle');document.body.appendChild(dialog);
   var view=null, opener=null, overflow='', title='', pushed=false, active=-1;

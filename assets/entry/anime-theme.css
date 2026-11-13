@@ -318,3 +318,7 @@ body.anime-site.dream-work > .pv-shell,.anime-site .dream-detail > .pv-shell { p
 .anime-intro.is-opening :is(.anime-intro-content,.anime-intro-skip) { opacity: 0; }
 @keyframes anime-flash { from { opacity: 1; } to { opacity: 0; } }
 @media(prefers-reduced-motion:reduce) { .anime-cursor,.anime-expand,.anime-intro { display: none; } .anime-entering :is(.anime-hero h1,.anime-eyebrow,.anime-intro-copy,.anime-featured),.anime-entering > .top-nav { opacity: 1; transform: none; } .anime-entering .anime-name-secondary { opacity: 1; letter-spacing: .04em; } .anime-collection-bar h2 > span > span { transform: none; } }
+
+/* Résumé: dates as clear chips instead of faint small text. */
+.anime-site .text-slate-500.font-sync.text-xs.uppercase.pt-1 { flex: none; align-self: flex-start; padding: 5px 20px 5px 12px; background: #2c2538; color: var(--paper); font-size: 15px; font-weight: 700; line-height: 1.4; letter-spacing: .02em; text-transform: none; white-space: nowrap; font-variant-numeric: tabular-nums; clip-path: polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%); }
+@media (max-width: 760px) { .anime-site .text-slate-500.font-sync.text-xs.uppercase.pt-1 { padding: 3px 16px 3px 9px; font-size: 13px; white-space: normal; } }

@@ -130,6 +130,7 @@
 
   function render(work,lang) {
     if (work.pdf === 'assets/uploads/Project1_Compressed.pdf' && window.PBRCaseStudy) return window.PBRCaseStudy.render(work,lang);
+    if (work.pdf === 'assets/uploads/Project2_Compressed.pdf' && window.LycorisCaseStudy) return window.LycorisCaseStudy.render(work,lang);
     if (work.pdf === 'assets/uploads/Project3_Compressed.pdf' && window.PCGCaseStudy) return window.PCGCaseStudy.render(work,lang);
     var cu=curated(work); if(cu) return renderCurated(cu, work, lang);
     var list=chapters(work); if(!list.length)return '';

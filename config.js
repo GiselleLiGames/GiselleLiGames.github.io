@@ -167,6 +167,11 @@ const CONFIG = {
         zh: '为 Meta Quest 3 一体机制作的装饰艺术风格赌场场景Shader，包含材质、光照与反射效果。',
       },
       tags: ['Unreal Engine', 'Meta Quest 3', 'VR', 'Shader', 'Art Deco'],
+      // 分工标注：mine = 我负责的部分；others = 队友或外部资产。显示在首页预览和详情页。
+      credits: {
+        mine:   { en: 'Shaders and lighting', zh: 'Shader 与光照' },
+        others: { en: 'Models and animation by teammates', zh: '模型与动画由队友制作' },
+      },
       clip: 'assets/clips/casino',
       detail: {
         year: '2026',
@@ -335,6 +340,10 @@ const CONFIG = {
         zh: 'Unity URP 中的自研 PBR、冰、植物与水面 Shader。',
       },
       tags: ['Unity URP', 'HLSL', 'C#'],
+      credits: {
+        mine:   { en: 'The full shader workflow', zh: 'Shader 全流程' },
+        others: { en: 'Models from Epic Games assets', zh: '模型来自 Epic 资产' },
+      },
       clip: 'assets/clips/pbr-sections/final-scene-2x',
       detail: {
         tools: 'Unity URP · HLSL · C#',
@@ -440,7 +449,7 @@ const CONFIG = {
       ],
     },
     {
-      category: 'tool',
+      category: 'design',
       group: 'work',
       hasVideo: false,
       image: 'assets/uploads/previews/tower-of-fantasy.webp',
