@@ -1,5 +1,64 @@
 /* Hand-arranged case studies. Original layout preserved; source coverage reconciled. */
 window.CURATED_CASE_STUDIES = {
+  "casino": [
+    {
+      "id": "casino-toon",
+      "title": { "zh": "场景 Toon Shader 的迭代", "en": "Developing the scene toon shader" },
+      "sections": [
+        {
+          "h": { "zh": "从基础卡渲到可调的边缘纹理", "en": "From basic toon shading to adjustable edge texture" },
+          "text": {
+            "zh": "我以团队美术的 Mood Board 为视觉参考，先在模型上测试基础 Toon Shading，再尝试风格化阴影和平面反射。最初的方向光测试中，明暗对比偏弱，纹理也过于密集，影响了大块面的清晰度。\n我为边缘纹理增加了两个 Strength 参数，让纹理强度可以针对不同材质分别调整。这样在保留笔刷感的同时，也能控制纹理对明暗分界的干扰。",
+            "en": "I used the art team's mood board as a visual reference, starting with basic toon shading on the models before testing stylized shadows and planar reflections. In the initial directional-light test, weak light–dark contrast and excessive texture made the larger forms harder to read.\nI added two Strength parameters to control the edge texture, so I could tune its intensity for different materials while retaining the brush-like character of the shading."
+          },
+          "images": [
+            { "src": "assets/uploads/casino-dev-diary/basic-toon.jpg", "w": 1920, "h": 1082, "cap": { "zh": "早期基础卡渲测试", "en": "Early basic toon-shading test" } },
+            { "src": "assets/uploads/casino-dev-diary/shadow-reflection-test.jpg", "w": 1920, "h": 1185, "cap": { "zh": "开发阶段的阴影与反射试验", "en": "Shadow and reflection experiment during development" } }
+          ]
+        },
+        {
+          "h": { "zh": "加入点光源，检查整个场景的受光", "en": "Adding point lights and checking the scene" },
+          "text": {
+            "zh": "赌场场景需要局部灯光参与塑造明暗，因此我为 Unlit Toon Shader 加入了 Point Light 支持。随着场景资产逐步加入，我持续检查整座赌场中的着色效果，也测试了手部的渲染。",
+            "en": "The casino needed local lights to shape its lighting, so I added point-light support to my Unlit toon shader. As more assets entered the scene, I checked the shading throughout the casino and tested the rendering of the hands."
+          },
+          "images": [
+            { "src": "assets/uploads/casino-dev-diary/point-light-test.jpg", "w": 1920, "h": 1139, "cap": { "zh": "Point Light 受光测试", "en": "Point-light shading test" } },
+            { "src": "assets/uploads/casino-dev-diary/unlit-toon-hands.jpg", "w": 1920, "h": 1080, "cap": { "zh": "Unlit Toon 场景与手部渲染测试", "en": "Unlit toon scene and hand-rendering test" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "casino-metal",
+      "title": { "zh": "在 Unlit 卡渲中加入金属反射", "en": "Bringing metallic reflections into Unlit toon shading" },
+      "sections": [
+        {
+          "h": { "zh": "让地板同时保留卡渲和金属质感", "en": "Combining toon shading with a metallic floor" },
+          "text": {
+            "zh": "看到 PBR 模型上的金属反射后，我希望自定义卡渲也能保留这种材质表现。因此，我继续扩展 Unlit Toon Shader，为地板加入 PBR 金属反射，让风格化明暗与金属质感可以同时存在。现有的材质球视频展示了同一 Shader 在无颜色贴图、老虎机和地板表面上的受光表现。",
+            "en": "Seeing metallic reflections on the PBR models made me want to preserve that material quality in my custom toon rendering. I extended the Unlit toon shader with PBR metallic reflections for the floor, combining stylized shading with a metallic response. The material-study video above shows the same shader on untextured, slot-machine and floor surfaces under a rotating light."
+          },
+          "images": [
+            { "src": "assets/uploads/casino-dev-diary/metallic-reflection.jpg", "w": 1167, "h": 904, "cap": { "zh": "开发阶段的 PBR 金属反射测试", "en": "PBR metallic-reflection test during development" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "casino-shadow-scope",
+      "title": { "zh": "阴影方案的取舍", "en": "Deciding how far to take shadows" },
+      "sections": [
+        {
+          "text": {
+            "zh": "我曾花较多时间为 Unlit 阴影编写 PCF（Percentage-Closer Filtering），但在深入实现前，没有先确认阴影是否是这个场景的必要条件。后来明确了不依赖阴影也可以达到场景的视觉目标，这让我重新思考实验的优先级。\n这次制作让我意识到，应先明确想要的画面，再决定哪些技术值得继续投入。对于实现成本较高的效果，我会更早验证需求，并为试验设置时间边界。",
+            "en": "I spent too long implementing percentage-closer filtering (PCF) for Unlit shadows before confirming whether shadows were essential to the scene. Once it became clear that the visual goal could work without shadows, I reconsidered the priority of that experiment.\nThis taught me to establish the desired image before committing to a difficult implementation. For expensive effects, I want to validate the need earlier and set clearer time limits for experiments."
+          },
+          "images": []
+        }
+      ]
+    }
+  ],
   "5": [
     {
       "id": "laputa",

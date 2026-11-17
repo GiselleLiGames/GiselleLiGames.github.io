@@ -161,6 +161,7 @@ const CONFIG = {
       group: 'collab',
       hasVideo: true,
       image: 'assets/uploads/previews/casino-central-orbit.webp',
+      assetKey: 'casino',
       title: { en: 'Rendering-Art Deco Casino', zh: '渲染-装饰艺术赌场' },
       desc: {
         en: 'An Art Deco casino environment in Unreal Engine, shaded for standalone Meta Quest 3 — materials, lighting and reflections built to hold up on mobile VR hardware.',
